@@ -1,0 +1,60 @@
+---
+title: Kbd
+description: Displays a keyboard key or shortcut.
+---
+
+import {
+  KbdBasic,
+  KbdInMenu,
+  KbdShortcut,
+} from "@veil-ui/registry/kbd/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add kbd" />
+
+## Usage
+
+```tsx
+import { Kbd } from "@/components/ui/kbd";
+
+<Kbd>⌘</Kbd>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource.kbd.basic}>
+  <KbdBasic />
+</ComponentPreview>
+
+### In a sentence
+
+<ComponentPreview code={demoSource.kbd.shortcut}>
+  <KbdShortcut />
+</ComponentPreview>
+
+### In a menu row
+
+<ComponentPreview code={demoSource.kbd["in-menu"]} align="start">
+  <KbdInMenu />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "...props",
+      type: 'React.ComponentProps<"kbd">',
+      description: "All native kbd attributes.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Renders a real `<kbd>` element so assistive technology can identify it.
+- Spell out shortcuts in the surrounding text when the glyphs may be ambiguous.

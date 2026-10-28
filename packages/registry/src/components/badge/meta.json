@@ -1,0 +1,10 @@
+{
+  "name": "badge",
+  "title": "Badge",
+  "description": "A compact label for status, counts and categories.",
+  "category": "data-display",
+  "type": "registry:ui",
+  "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "variants", "with-icon", "as-child"]
+}

@@ -1,0 +1,80 @@
+---
+title: Badge
+description: A compact label for status, counts and categories.
+---
+
+import {
+  BadgeAsChild,
+  BadgeBasic,
+  BadgeVariants,
+  BadgeWithIcon,
+} from "@veil-ui/registry/badge/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add badge" />
+
+## Usage
+
+```tsx
+import { Badge } from "@/components/ui/badge";
+
+<Badge variant="outline">Draft</Badge>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource.badge.basic}>
+  <BadgeBasic />
+</ComponentPreview>
+
+### Variants
+
+<ComponentPreview code={demoSource.badge.variants}>
+  <BadgeVariants />
+</ComponentPreview>
+
+### With icon
+
+<ComponentPreview code={demoSource.badge["with-icon"]}>
+  <BadgeWithIcon />
+</ComponentPreview>
+
+### As a link
+
+<ComponentPreview code={demoSource.badge["as-child"]}>
+  <BadgeAsChild />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "variant",
+      type: '"default" | "secondary" | "outline" | "muted" | "destructive"',
+      default: '"default"',
+      description: "Visual style of the badge.",
+    },
+    {
+      name: "asChild",
+      type: "boolean",
+      default: "false",
+      description: "Render the child element instead of a span.",
+    },
+    {
+      name: "...props",
+      type: 'React.ComponentProps<"span">',
+      description: "All native span attributes.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Badges are plain text containers; avoid using them as the only way to convey
+  status. Pair color with a label or icon.
+- When a badge is interactive, use `asChild` with a real link or button.

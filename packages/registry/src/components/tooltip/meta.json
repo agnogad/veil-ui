@@ -1,0 +1,10 @@
+{
+  "name": "tooltip",
+  "title": "Tooltip",
+  "description": "A short label that appears on hover or focus.",
+  "category": "overlays",
+  "type": "registry:ui",
+  "dependencies": ["@radix-ui/react-tooltip"],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "sides", "with-kbd"]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "tabs",
+  "title": "Tabs",
+  "description": "Layered sections of content, one visible at a time.",
+  "category": "navigation",
+  "type": "registry:ui",
+  "dependencies": ["@radix-ui/react-tabs"],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "with-icons", "vertical"]
+}

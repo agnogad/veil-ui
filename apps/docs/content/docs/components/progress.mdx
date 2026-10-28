@@ -1,0 +1,74 @@
+---
+title: Progress
+description: Displays completion status for a task or upload.
+---
+
+import {
+  ProgressBasic,
+  ProgressSizes,
+  ProgressWithLabel,
+} from "@veil-ui/registry/progress/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add progress" />
+
+## Usage
+
+```tsx
+import { Progress } from "@/components/ui/progress";
+
+<Progress value={60} aria-label="Upload" />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource.progress.basic}>
+  <ProgressBasic />
+</ComponentPreview>
+
+### With label
+
+<ComponentPreview code={demoSource.progress["with-label"]} align="start">
+  <ProgressWithLabel />
+</ComponentPreview>
+
+### Sizes
+
+<ComponentPreview code={demoSource.progress.sizes} align="start">
+  <ProgressSizes />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "value",
+      type: "number | null",
+      description: "Completion between 0 and 100. Null renders an indeterminate bar.",
+    },
+    {
+      name: "max",
+      type: "number",
+      default: "100",
+      description: "Upper bound of the value.",
+    },
+    {
+      name: "...props",
+      type: "Radix Progress.Root props",
+      description: "Includes getValueLabel and aria-* attributes.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Radix exposes `role="progressbar"` with `aria-valuemin`, `aria-valuemax` and
+  `aria-valuenow` automatically.
+- Always pass an accessible name with `aria-label` or `aria-labelledby`.
+- The visible percentage next to the bar should be text, not an image, so it can
+  be read and zoomed.

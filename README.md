@@ -10,13 +10,15 @@ npx veil-ui@latest add button
 
 ## Status
 
-P0 (foundations) is complete: monorepo, design tokens, registry, CLI, docs site
-and three pilot components. P1 is in progress — see the roadmap below.
+P0 (foundations) is complete: monorepo, design tokens, registry, CLI and the
+docs site. P1 is in progress with 14 of 42 core components shipped:
+button, input, textarea, label, badge, avatar, alert, progress, skeleton,
+separator, tabs, tooltip, kbd and card.
 
 | Phase | Scope | Status |
 | --- | --- | --- |
 | P0 | Foundations, registry, CLI, docs | Done |
-| P1 | 42 core components | In progress |
+| P1 | 42 core components | 14 / 42 shipped |
 | P2 | Forms, validation, selection | Planned |
 | P3 | Data display, tables, navigation, date | Planned |
 | P4 | Overlays, media, charts | Planned |

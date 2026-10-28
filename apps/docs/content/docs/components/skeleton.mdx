@@ -1,0 +1,68 @@
+---
+title: Skeleton
+description: A placeholder preview of content while data loads.
+---
+
+import {
+  SkeletonBasic,
+  SkeletonCard,
+  SkeletonList,
+} from "@veil-ui/registry/skeleton/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add skeleton" />
+
+## Usage
+
+```tsx
+import { Skeleton } from "@/components/ui/skeleton";
+
+<Skeleton className="h-4 w-32" />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource.skeleton.basic}>
+  <SkeletonBasic />
+</ComponentPreview>
+
+### Card
+
+<ComponentPreview code={demoSource.skeleton.card} align="start">
+  <SkeletonCard />
+</ComponentPreview>
+
+### List
+
+<ComponentPreview code={demoSource.skeleton.list} align="start">
+  <SkeletonList />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "className",
+      type: "string",
+      description: "Set the width, height and radius of the placeholder.",
+    },
+    {
+      name: "...props",
+      type: 'React.ComponentProps<"div">',
+      description: "All native div attributes.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Skeletons are `aria-hidden`; they should never be announced.
+- Mark the surrounding region with `aria-busy="true"` while loading, and keep
+  the skeleton layout close to the final content to avoid layout shifts.
+- Respect `prefers-reduced-motion`: the pulse animation is defined in the
+  component and pauses when reduced motion is requested.

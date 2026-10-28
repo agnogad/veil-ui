@@ -1,0 +1,68 @@
+---
+title: Separator
+description: A visual divider between groups of content.
+---
+
+import {
+  SeparatorHorizontal,
+  SeparatorVertical,
+  SeparatorWithLabel,
+} from "@veil-ui/registry/separator/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add separator" />
+
+## Usage
+
+```tsx
+import { Separator } from "@/components/ui/separator";
+
+<Separator />;
+```
+
+## Examples
+
+### Horizontal
+
+<ComponentPreview code={demoSource.separator.horizontal} align="start">
+  <SeparatorHorizontal />
+</ComponentPreview>
+
+### Vertical
+
+<ComponentPreview code={demoSource.separator.vertical}>
+  <SeparatorVertical />
+</ComponentPreview>
+
+### With label
+
+<ComponentPreview code={demoSource.separator["with-label"]}>
+  <SeparatorWithLabel />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "orientation",
+      type: '"horizontal" | "vertical"',
+      default: '"horizontal"',
+      description: "Direction of the divider.",
+    },
+    {
+      name: "decorative",
+      type: "boolean",
+      default: "true",
+      description: "Hides the separator from assistive technology.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Decorative separators are exposed with `role="none"`.
+- Set `decorative={false}` when the divider carries meaning, for example between
+  two navigation groups. Screen readers then announce it as a separator.

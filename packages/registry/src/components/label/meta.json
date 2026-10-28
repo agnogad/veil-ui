@@ -1,0 +1,10 @@
+{
+  "name": "label",
+  "title": "Label",
+  "description": "An accessible label for form controls.",
+  "category": "forms",
+  "type": "registry:ui",
+  "dependencies": ["@radix-ui/react-label"],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "required", "disabled"]
+}

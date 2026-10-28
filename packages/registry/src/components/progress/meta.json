@@ -1,0 +1,10 @@
+{
+  "name": "progress",
+  "title": "Progress",
+  "description": "Displays completion status for a task or upload.",
+  "category": "feedback",
+  "type": "registry:ui",
+  "dependencies": ["@radix-ui/react-progress"],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "with-label", "sizes"]
+}

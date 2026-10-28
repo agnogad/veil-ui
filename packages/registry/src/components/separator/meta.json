@@ -1,0 +1,10 @@
+{
+  "name": "separator",
+  "title": "Separator",
+  "description": "A visual divider between groups of content.",
+  "category": "layout",
+  "type": "registry:ui",
+  "dependencies": ["@radix-ui/react-separator"],
+  "registryDependencies": ["utils"],
+  "examples": ["horizontal", "vertical", "with-label"]
+}

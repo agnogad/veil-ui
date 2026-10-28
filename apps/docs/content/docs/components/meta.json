@@ -1,4 +1,19 @@
 {
   "title": "Components",
-  "pages": ["button", "input", "card"]
+  "pages": [
+    "button",
+    "input",
+    "textarea",
+    "label",
+    "badge",
+    "avatar",
+    "alert",
+    "progress",
+    "skeleton",
+    "separator",
+    "tabs",
+    "tooltip",
+    "kbd",
+    "card"
+  ]
 }

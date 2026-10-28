@@ -1,0 +1,78 @@
+---
+title: Tabs
+description: Layered sections of content, one visible at a time.
+---
+
+import {
+  TabsBasic,
+  TabsVertical,
+  TabsWithIcons,
+} from "@veil-ui/registry/tabs/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add tabs" />
+
+## Usage
+
+```tsx
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
+<Tabs defaultValue="account">
+  <TabsList>
+    <TabsTrigger value="account">Account</TabsTrigger>
+  </TabsList>
+  <TabsContent value="account">...</TabsContent>
+</Tabs>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource.tabs.basic} align="start">
+  <TabsBasic />
+</ComponentPreview>
+
+### With icons
+
+<ComponentPreview code={demoSource.tabs["with-icons"]} align="start">
+  <TabsWithIcons />
+</ComponentPreview>
+
+### Vertical
+
+<ComponentPreview code={demoSource.tabs.vertical} align="start">
+  <TabsVertical />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "value / defaultValue",
+      type: "string",
+      description: "Controlled or initial tab.",
+    },
+    {
+      name: "orientation",
+      type: '"horizontal" | "vertical"',
+      default: '"horizontal"',
+      description: "Arrow-key axis for the tab list.",
+    },
+    {
+      name: "onValueChange",
+      type: "(value: string) => void",
+      description: "Called when the active tab changes.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Implements the WAI-ARIA tabs pattern: roving tabindex, arrow keys, Home and
+  End.
+- `TabsList` should have an `aria-label` when the page has more than one tab set.
+- Panels are focusable and labelled by their trigger.

@@ -1,0 +1,79 @@
+---
+title: Alert
+description: Communicates a short, important message inline with the page.
+---
+
+import {
+  AlertBasic,
+  AlertDestructive,
+  AlertWithAction,
+  AlertWithIcon,
+} from "@veil-ui/registry/alert/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add alert" />
+
+## Usage
+
+```tsx
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+
+<Alert>
+  <AlertTitle>Heads up</AlertTitle>
+  <AlertDescription>Something changed.</AlertDescription>
+</Alert>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource.alert.basic} align="start">
+  <AlertBasic />
+</ComponentPreview>
+
+### Destructive
+
+<ComponentPreview code={demoSource.alert.destructive} align="start">
+  <AlertDestructive />
+</ComponentPreview>
+
+### With icon
+
+<ComponentPreview code={demoSource.alert["with-icon"]} align="start">
+  <AlertWithIcon />
+</ComponentPreview>
+
+### With action
+
+<ComponentPreview code={demoSource.alert["with-action"]} align="start">
+  <AlertWithAction />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "variant",
+      type: '"default" | "destructive"',
+      default: '"default"',
+      description: "Visual style of the alert.",
+    },
+    {
+      name: "...props",
+      type: 'React.ComponentProps<"div">',
+      description: "All native div attributes.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- The root uses `role="alert"`, so it is announced when inserted into the DOM.
+  Static alerts rendered on page load can be wrapped in a `div` without the
+  role if the announcement would be noisy.
+- Do not convey status through color alone; keep an icon or a text label.
+- Actions inside the alert should be reachable by keyboard in reading order.

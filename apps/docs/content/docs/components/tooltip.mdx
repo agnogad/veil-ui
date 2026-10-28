@@ -1,0 +1,89 @@
+---
+title: Tooltip
+description: A short label that appears on hover or focus.
+---
+
+import {
+  TooltipBasic,
+  TooltipSides,
+  TooltipWithKbd,
+} from "@veil-ui/registry/tooltip/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add tooltip" />
+
+## Usage
+
+```tsx
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+
+<TooltipProvider>
+  <Tooltip>
+    <TooltipTrigger asChild>
+      <Button>Hover</Button>
+    </TooltipTrigger>
+    <TooltipContent>Helpful text</TooltipContent>
+  </Tooltip>
+</TooltipProvider>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource.tooltip.basic}>
+  <TooltipBasic />
+</ComponentPreview>
+
+### Sides
+
+<ComponentPreview code={demoSource.tooltip.sides}>
+  <TooltipSides />
+</ComponentPreview>
+
+### With keyboard hint
+
+<ComponentPreview code={demoSource.tooltip["with-kbd"]}>
+  <TooltipWithKbd />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "delayDuration",
+      type: "number",
+      default: "700",
+      description: "Provider prop. Delay before the tooltip opens.",
+    },
+    {
+      name: "side",
+      type: '"top" | "right" | "bottom" | "left"',
+      default: '"top"',
+      description: "Preferred placement of the content.",
+    },
+    {
+      name: "sideOffset",
+      type: "number",
+      default: "6",
+      description: "Distance from the trigger in pixels.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Tooltips open on hover and keyboard focus, and are linked to the trigger with
+  `aria-describedby`.
+- Never put interactive content inside a tooltip — it cannot be reached by
+  keyboard.
+- Icon-only triggers still need an `aria-label`; the tooltip is supplementary.
+- Wrap the app once in `TooltipProvider` rather than providing it per tooltip.

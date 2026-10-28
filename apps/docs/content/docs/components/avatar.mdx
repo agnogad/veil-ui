@@ -1,0 +1,82 @@
+---
+title: Avatar
+description: An image representing a user, with an initials fallback.
+---
+
+import {
+  AvatarBasic,
+  AvatarFallbackOnly,
+  AvatarGroup,
+  AvatarSizes,
+} from "@veil-ui/registry/avatar/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add avatar" />
+
+## Usage
+
+```tsx
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+
+<Avatar>
+  <AvatarImage src="/ada.png" alt="Ada Lovelace" />
+  <AvatarFallback>AL</AvatarFallback>
+</Avatar>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource.avatar.basic}>
+  <AvatarBasic />
+</ComponentPreview>
+
+### Sizes
+
+<ComponentPreview code={demoSource.avatar.sizes}>
+  <AvatarSizes />
+</ComponentPreview>
+
+### Fallback
+
+<ComponentPreview code={demoSource.avatar["fallback-only"]}>
+  <AvatarFallbackOnly />
+</ComponentPreview>
+
+Radix renders the fallback while the image loads and whenever it fails.
+
+### Group
+
+<ComponentPreview code={demoSource.avatar.group}>
+  <AvatarGroup />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "size",
+      type: '"sm" | "default" | "lg"',
+      default: '"default"',
+      description: "Diameter of the avatar.",
+    },
+    {
+      name: "src / alt",
+      type: "string",
+      description: "Passed to AvatarImage; alt is required for meaningful images.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Always provide `alt` on `AvatarImage`. Use an empty alt only when the avatar
+  is decorative and the name appears next to it.
+- The fallback is plain text inside the avatar, so it is announced when the
+  image is unavailable.
+- In a group, add an accessible label such as `aria-label="4 teammates"` to the
+  wrapping element.

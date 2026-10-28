@@ -1,0 +1,67 @@
+---
+title: Label
+description: An accessible label for form controls.
+---
+
+import {
+  LabelBasic,
+  LabelDisabled,
+  LabelRequired,
+} from "@veil-ui/registry/label/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add label" />
+
+## Usage
+
+```tsx
+import { Label } from "@/components/ui/label";
+
+<Label htmlFor="email">Email</Label>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource.label.basic} align="start">
+  <LabelBasic />
+</ComponentPreview>
+
+### Required
+
+<ComponentPreview code={demoSource.label.required} align="start">
+  <LabelRequired />
+</ComponentPreview>
+
+### Disabled
+
+<ComponentPreview code={demoSource.label.disabled} align="start">
+  <LabelDisabled />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "htmlFor",
+      type: "string",
+      description: "Id of the control this label describes.",
+    },
+    {
+      name: "...props",
+      type: "Radix Label.Root props",
+      description: "All native label attributes.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Clicking the label focuses or toggles the associated control.
+- Radix prevents label clicks from triggering buttons nested inside the label.
+- Pair `peer-disabled` or `group-data-[disabled]` with the control's disabled
+  state so the label dims consistently.

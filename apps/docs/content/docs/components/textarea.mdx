@@ -1,0 +1,72 @@
+---
+title: Textarea
+description: A multi-line text field that grows with its content.
+---
+
+import {
+  TextareaBasic,
+  TextareaInvalid,
+  TextareaWithLabel,
+} from "@veil-ui/registry/textarea/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add textarea" />
+
+## Usage
+
+```tsx
+import { Textarea } from "@/components/ui/textarea";
+
+<Textarea placeholder="Tell us more" />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource.textarea.basic} align="start">
+  <TextareaBasic />
+</ComponentPreview>
+
+### With label
+
+<ComponentPreview code={demoSource.textarea["with-label"]} align="start">
+  <TextareaWithLabel />
+</ComponentPreview>
+
+### Invalid
+
+<ComponentPreview code={demoSource.textarea.invalid} align="start">
+  <TextareaInvalid />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "rows",
+      type: "number",
+      description: "Initial height in lines. The field also grows with field-sizing.",
+    },
+    {
+      name: "aria-invalid",
+      type: "boolean",
+      description: "Switches the border and ring to the destructive token.",
+    },
+    {
+      name: "...props",
+      type: 'React.ComponentProps<"textarea">',
+      description: "All native textarea attributes.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Provide a visible `<Label>` or an `aria-label`.
+- When invalid, set `aria-invalid` and connect the message with
+  `aria-describedby`.
+- Avoid disabling submit buttons without explaining why in text.

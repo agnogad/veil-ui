@@ -1,0 +1,10 @@
+{
+  "name": "kbd",
+  "title": "Kbd",
+  "description": "Displays a keyboard key or shortcut.",
+  "category": "typography",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "shortcut", "in-menu"]
+}
