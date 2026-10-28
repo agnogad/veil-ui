@@ -1,0 +1,10 @@
+{
+  "name": "card",
+  "title": "Card",
+  "description": "A container for related content with header, content, footer and action slots.",
+  "category": "data-display",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "with-footer", "with-action", "metric"]
+}

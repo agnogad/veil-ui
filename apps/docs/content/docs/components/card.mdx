@@ -1,0 +1,89 @@
+---
+title: Card
+description: A container for related content with header, action, content and footer slots.
+---
+
+import {
+  CardBasic,
+  CardMetric,
+  CardWithAction,
+  CardWithFooter,
+} from "@veil-ui/registry/card/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add card" />
+
+## Usage
+
+```tsx
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+
+<Card>
+  <CardHeader>
+    <CardTitle>Deployment settings</CardTitle>
+    <CardDescription>Configure your project.</CardDescription>
+  </CardHeader>
+  <CardContent>...</CardContent>
+</Card>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource.card.basic} align="start">
+  <CardBasic />
+</ComponentPreview>
+
+### With footer
+
+<ComponentPreview code={demoSource.card["with-footer"]} align="start">
+  <CardWithFooter />
+</ComponentPreview>
+
+### With action
+
+<ComponentPreview code={demoSource.card["with-action"]} align="start">
+  <CardWithAction />
+</ComponentPreview>
+
+`CardAction` occupies the second grid column and spans both header rows.
+
+### Metric
+
+<ComponentPreview code={demoSource.card.metric} align="start">
+  <CardMetric />
+</ComponentPreview>
+
+## Anatomy
+
+| Slot | Element | Notes |
+| --- | --- | --- |
+| `Card` | `div` | Vertical flex container with border and shadow |
+| `CardHeader` | `div` | Grid with optional action column |
+| `CardTitle` | `div` | Medium weight, tight leading |
+| `CardDescription` | `div` | Muted, small text |
+| `CardAction` | `div` | Top-right slot |
+| `CardContent` | `div` | Horizontal padding, no vertical padding |
+| `CardFooter` | `div` | Aligned row for actions |
+
+## API reference
+
+All slots accept `React.ComponentProps<"div">`. No custom props are added.
+
+## Accessibility
+
+- Cards are plain containers. Pick the heading level that matches your page —
+  `CardTitle` renders a `div` by default.
+- Use `asChild`-style composition manually if you need an `article`, `section`
+  or `li` wrapper.
+- Interactive cards should expose a single focusable element rather than making
+  the whole surface a button.

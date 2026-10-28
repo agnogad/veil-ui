@@ -1,0 +1,10 @@
+{
+  "name": "input",
+  "title": "Input",
+  "description": "A single-line text field with validation and disabled states.",
+  "category": "forms",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "with-label", "invalid", "disabled", "file"]
+}

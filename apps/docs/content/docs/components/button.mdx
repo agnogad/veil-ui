@@ -1,0 +1,110 @@
+---
+title: Button
+description: Triggers an action or event. Supports variants, sizes, icons and composition.
+---
+
+import {
+  ButtonAsChild,
+  ButtonBasic,
+  ButtonIcon,
+  ButtonLoading,
+  ButtonSizes,
+  ButtonVariants,
+} from "@veil-ui/registry/button/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add button" />
+
+## Usage
+
+```tsx
+import { Button } from "@/components/ui/button";
+
+<Button variant="outline">Cancel</Button>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource.button.basic}>
+  <ButtonBasic />
+</ComponentPreview>
+
+### Variants
+
+<ComponentPreview code={demoSource.button.variants}>
+  <ButtonVariants />
+</ComponentPreview>
+
+### Sizes
+
+<ComponentPreview code={demoSource.button.sizes}>
+  <ButtonSizes />
+</ComponentPreview>
+
+### With icons
+
+<ComponentPreview code={demoSource.button.icon}>
+  <ButtonIcon />
+</ComponentPreview>
+
+### Loading
+
+<ComponentPreview code={demoSource.button.loading}>
+  <ButtonLoading />
+</ComponentPreview>
+
+Disable the button and swap the leading icon for a spinner. The accessible name
+stays stable, so screen readers announce the action rather than the state
+change.
+
+### Composition
+
+<ComponentPreview code={demoSource.button["as-child"]}>
+  <ButtonAsChild />
+</ComponentPreview>
+
+`asChild` forwards styles and props to a single child element. Use it for links,
+Next.js `<Link>` or any custom trigger.
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "variant",
+      type: '"default" | "secondary" | "outline" | "ghost" | "destructive" | "link"',
+      default: '"default"',
+      description: "Visual style of the button.",
+    },
+    {
+      name: "size",
+      type: '"sm" | "default" | "lg" | "icon"',
+      default: '"default"',
+      description: "Control height and padding.",
+    },
+    {
+      name: "asChild",
+      type: "boolean",
+      default: "false",
+      description: "Render the child element instead of a button.",
+    },
+    {
+      name: "...props",
+      type: 'React.ComponentProps<"button">',
+      description: "All native button attributes, including type, disabled and onClick.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Renders a native `<button>` unless `asChild` is used.
+- Includes a 3px focus ring with offset, visible in both themes.
+- Disabled buttons use `pointer-events: none` and `opacity: 50%`.
+- Icon-only buttons must receive an `aria-label`.
+- Loading buttons keep the same accessible name; mark the button `disabled`
+  while the request is in flight.

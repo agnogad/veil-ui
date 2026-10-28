@@ -1,0 +1,10 @@
+{
+  "name": "button",
+  "title": "Button",
+  "description": "Triggers an action or event. Supports variants, sizes, icons and asChild composition.",
+  "category": "actions",
+  "type": "registry:ui",
+  "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "variants", "sizes", "icon", "loading", "as-child"]
+}

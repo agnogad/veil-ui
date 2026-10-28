@@ -1,0 +1,82 @@
+---
+title: Theming
+description: OKLCH tokens, dark mode and per-project customization.
+---
+
+Veil UI ships a monochrome token set in OKLCH. Tokens are CSS custom properties,
+mapped to Tailwind utilities through `@theme inline`, so a single override
+rethemes every component.
+
+## Core tokens
+
+| Token | Utility | Purpose |
+| --- | --- | --- |
+| `--background` | `bg-background` | Page surface |
+| `--foreground` | `text-foreground` | Primary text |
+| `--card` | `bg-card` | Raised surfaces |
+| `--muted` | `bg-muted` | Subtle fills |
+| `--muted-foreground` | `text-muted-foreground` | Secondary text |
+| `--primary` | `bg-primary` | Primary action |
+| `--secondary` | `bg-secondary` | Secondary action |
+| `--accent` | `bg-accent` | Hover surfaces |
+| `--destructive` | `bg-destructive` | Destructive action |
+| `--border` | `border-border` | Default border |
+| `--input` | `border-input` | Form border |
+| `--ring` | `ring-ring` | Focus ring |
+| `--radius` | `rounded-md` | Base radius |
+
+## Light and dark
+
+Tokens are declared on `:root` and overridden on `.dark`. Add the class to the
+`<html>` element — with `next-themes`, a theme script, or your own provider.
+
+```css
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+}
+```
+
+## Radius
+
+The whole scale derives from one value:
+
+```css
+:root {
+  --radius: 0.375rem; /* 6px */
+}
+```
+
+`--radius-sm`, `--radius-md`, `--radius-lg` and `--radius-xl` are computed from
+it, so components stay proportional.
+
+## Adding an accent
+
+Veil UI is intentionally monochrome, but a brand accent is a two-line change:
+
+```css
+:root {
+  --primary: oklch(0.55 0.22 264);
+  --primary-foreground: oklch(0.985 0 0);
+  --ring: oklch(0.55 0.22 264);
+}
+```
+
+Because components reference semantic tokens, nothing else needs to change.
+
+## Charts
+
+`--chart-1` through `--chart-5` provide a monochrome ramp for data
+visualization. Override them with a categorical palette if your product needs
+color.
+
+## Reduced motion
+
+The base layer disables animations and transitions when
+`prefers-reduced-motion: reduce` is set. Motion utilities in individual
+components respect the same query.

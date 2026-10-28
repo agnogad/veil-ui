@@ -1,0 +1,61 @@
+---
+title: CLI
+description: The veil-ui command line tool.
+---
+
+The CLI reads your `components.json`, fetches components from the registry,
+resolves their dependencies and writes the files into your project.
+
+## Commands
+
+| Command | Description |
+| --- | --- |
+| `veil-ui init` | Configure a project |
+| `veil-ui add <components...>` | Add components and dependencies |
+| `veil-ui list [query]` | List available components |
+| `veil-ui search <query>` | Search the registry |
+| `veil-ui view <component>` | Show a component's files |
+| `veil-ui doctor` | Diagnose the setup |
+
+## Add options
+
+| Flag | Description |
+| --- | --- |
+| `--overwrite` | Overwrite existing files without prompting |
+| `--no-install` | Skip installing npm dependencies |
+| `--dry-run` | Print the files that would be written |
+| `--registry <url>` | Use a different registry |
+| `--cwd <path>` | Run in another directory |
+
+## How resolution works
+
+Adding a component also adds its registry dependencies. `button`, for example,
+depends on `utils`, so the CLI writes both files and installs
+`@radix-ui/react-slot` and `class-variance-authority`.
+
+Files are placed according to `components.json`:
+
+- `registry:ui` → `aliases.ui`
+- `registry:lib` → `aliases.lib`
+- `registry:block` → `aliases.components/<name>/`
+
+`@veil-ui/utils` imports are rewritten to your configured utils alias, so the
+copied component compiles without any Veil UI package installed.
+
+## components.json
+
+| Key | Description |
+| --- | --- |
+| `style` | Registry style, currently `default` |
+| `rsc` | Whether the project uses React Server Components |
+| `tailwind.css` | Path to the global stylesheet |
+| `aliases.ui` | Where UI components are written |
+| `aliases.lib` | Where helpers are written |
+| `registry` | Registry base URL |
+
+## Using a local registry
+
+```bash
+pnpm dev # starts the docs app on :3000
+npx veil-ui add card --registry http://localhost:3000/r
+```

@@ -1,0 +1,83 @@
+---
+title: Introduction
+description: Copy-paste components for React, built on Radix UI and Tailwind CSS v4.
+---
+
+Veil UI is a collection of accessible React components that you copy into your
+project instead of installing as a dependency. You get the source, the styles
+and the types — and full control over every line.
+
+## Why copy-paste?
+
+Component libraries usually trade flexibility for convenience. The moment your
+design diverges from the library's opinion, you start fighting overrides.
+
+Veil UI takes the opposite approach:
+
+- **You own the code.** Components live in your repository and follow your
+  conventions.
+- **No wrapper API.** Props map directly to the underlying element or Radix
+  primitive.
+- **No version lock-in.** Update a component the same way you update any other
+  file in your codebase.
+- **Small surface area.** Each component is a single file you can read in one
+  sitting.
+
+## Requirements
+
+- React 19
+- Tailwind CSS v4
+- TypeScript (recommended)
+
+## Quick start
+
+Run the initializer in an existing project:
+
+```bash
+npx veil-ui@latest init
+```
+
+Then add your first component:
+
+```bash
+npx veil-ui@latest add button
+```
+
+The CLI creates `components.json`, writes the `cn()` helper, appends the design
+tokens to your global stylesheet and installs missing npm dependencies.
+
+## What is included
+
+<Cards>
+  <Card title="Installation" href="/docs/installation" />
+  <Card title="CLI" href="/docs/cli" />
+  <Card title="Theming" href="/docs/theming" />
+  <Card title="Button" href="/docs/components/button" />
+</Cards>
+
+The initial release ships the foundation layer. The full catalogue — 210
+components and 75 blocks — is being built in phases; see the
+[roadmap](/docs#roadmap).
+
+## Design principles
+
+1. **Monochrome first.** Color is a signal, not decoration. The palette is
+   built on neutral OKLCH values with a single destructive hue.
+2. **Density with air.** 4px spacing grid, 9px control height, generous
+   whitespace around groups.
+3. **Accessible by construction.** Radix primitives, visible focus rings,
+   keyboard paths tested with `axe`.
+4. **Composable slots.** `data-slot` attributes and `asChild` composition
+   instead of deeply nested wrapper props.
+
+## Roadmap
+
+| Phase | Scope | Status |
+| --- | --- | --- |
+| P0 | Foundations, registry, CLI, docs | Shipped |
+| P1 | 42 core components | In progress |
+| P2 | Forms, validation, selection | Planned |
+| P3 | Data display, tables, navigation | Planned |
+| P4 | Overlays, media, charts | Planned |
+| P5 | AI, editors, utilities | Planned |
+| P6 | 75 blocks, v1.0 | Planned |

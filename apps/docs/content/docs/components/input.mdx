@@ -1,0 +1,94 @@
+---
+title: Input
+description: A single-line text field with validation, file and disabled states.
+---
+
+import {
+  InputBasic,
+  InputDisabled,
+  InputFile,
+  InputInvalid,
+  InputWithLabel,
+} from "@veil-ui/registry/input/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add input" />
+
+## Usage
+
+```tsx
+import { Input } from "@/components/ui/input";
+
+<Input type="email" placeholder="you@example.com" />;
+```
+
+Always pair an input with a `<label>` or an `aria-label`. Placeholder text is
+not a label.
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource.input.basic}>
+  <InputBasic />
+</ComponentPreview>
+
+### With label and description
+
+<ComponentPreview code={demoSource.input["with-label"]} align="start">
+  <InputWithLabel />
+</ComponentPreview>
+
+### Invalid state
+
+<ComponentPreview code={demoSource.input.invalid} align="start">
+  <InputInvalid />
+</ComponentPreview>
+
+Set `aria-invalid` and connect the error message with `aria-describedby`. The
+border and ring switch to the destructive token automatically.
+
+### Disabled
+
+<ComponentPreview code={demoSource.input.disabled}>
+  <InputDisabled />
+</ComponentPreview>
+
+### File input
+
+<ComponentPreview code={demoSource.input.file}>
+  <InputFile />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "type",
+      type: "string",
+      default: '"text"',
+      description: "Any native input type, including file and search.",
+    },
+    {
+      name: "aria-invalid",
+      type: "boolean",
+      description: "Switches the border and ring to the destructive token.",
+    },
+    {
+      name: "...props",
+      type: 'React.ComponentProps<"input">',
+      description: "All native input attributes, including disabled and placeholder.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- The component adds no `aria-*` attributes of its own; supply a label and
+  description from the surrounding markup.
+- The focus ring is a 3px ring with a border color change, visible on both
+  surfaces.
+- Invalid inputs must also render a text message — color alone is not enough.

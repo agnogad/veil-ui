@@ -1,0 +1,108 @@
+---
+title: Installation
+description: Set up Veil UI in a Next.js or Vite project.
+---
+
+## Requirements
+
+- Node.js 20 or newer
+- React 19
+- Tailwind CSS v4
+- A `tsconfig.json` with a path alias such as `@/*`
+
+## Automatic setup
+
+<InstallCommand command="npx veil-ui@latest init" />
+
+The initializer detects your framework, stylesheet and import alias, then:
+
+1. Creates `components.json`.
+2. Writes `lib/utils.ts` with the `cn()` helper.
+3. Appends the design tokens to your global CSS.
+4. Installs `clsx`, `tailwind-merge`, `class-variance-authority` and
+   `lucide-react`.
+
+Run `npx veil-ui@latest doctor` at any time to verify the setup.
+
+## Manual setup
+
+### 1. Install dependencies
+
+```bash
+pnpm add clsx tailwind-merge class-variance-authority lucide-react
+```
+
+### 2. Add the tokens
+
+Paste the following import at the top of your global stylesheet:
+
+```css
+@import "tailwindcss";
+```
+
+Then add the token block from [Theming](/docs/theming) to the same file. The
+`init` command does this for you, including the `@theme inline` mapping that
+turns the CSS variables into Tailwind utilities such as `bg-background` and
+`text-muted-foreground`.
+
+### 3. Add the `cn` helper
+
+```ts
+import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
+```
+
+### 4. Configure aliases
+
+```json
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}
+```
+
+### 5. Create `components.json`
+
+```json
+{
+  "$schema": "https://veil-ui.dev/schema.json",
+  "style": "default",
+  "rsc": true,
+  "tsx": true,
+  "tailwind": {
+    "config": "",
+    "css": "app/globals.css",
+    "baseColor": "neutral",
+    "cssVariables": true
+  },
+  "aliases": {
+    "components": "@/components",
+    "utils": "@/lib/utils",
+    "ui": "@/components/ui",
+    "lib": "@/lib",
+    "hooks": "@/hooks"
+  },
+  "registry": "https://veil-ui.dev/r"
+}
+```
+
+## Local registry
+
+While developing this repository, point the CLI at the docs app:
+
+```json
+{
+  "registry": "http://localhost:3000/r"
+}
+```
+
+Start the docs app with `pnpm dev`, then run `npx veil-ui add button` from a
+fixture project.
