@@ -1,0 +1,19 @@
+<!-- Share Button — requires Veil UI tokens and Tailwind v4. -->
+<!-- Pair with share-button.js for the native share sheet and clipboard fallback. -->
+<button
+  type="button"
+  data-share-button
+  data-share-url="https://veil-ui.dev"
+  class="inline-flex h-9 shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground outline-none transition-colors hover:bg-primary/90 focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50"
+>
+  <svg data-share-icon class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+    <circle cx="18" cy="5" r="3" />
+    <circle cx="6" cy="12" r="3" />
+    <circle cx="18" cy="19" r="3" />
+    <path d="m8.59 13.51 6.83 3.98M15.41 6.51 8.59 10.49" />
+  </svg>
+  <svg data-copied-icon hidden class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+    <path d="M20 6 9 17l-5-5" />
+  </svg>
+  <span data-share-label aria-live="polite">Share</span>
+</button>

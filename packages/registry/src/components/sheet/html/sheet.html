@@ -1,0 +1,80 @@
+<!-- Sheet — requires Veil UI tokens and Tailwind v4. -->
+<div class="flex min-h-48 items-center justify-center p-6">
+  <button
+    type="button"
+    data-sheet-open
+    class="inline-flex h-9 items-center justify-center rounded-md border border-input bg-background px-4 text-sm font-medium outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50"
+  >
+    Open actions
+  </button>
+
+  <dialog
+    id="sheet"
+    data-sheet
+    aria-labelledby="sheet-title"
+    class="fixed inset-x-0 bottom-0 top-auto m-0 max-h-[85vh] w-full max-w-none overflow-y-auto rounded-t-xl border-t bg-background p-6 text-foreground shadow-lg backdrop:bg-black/50"
+  >
+    <div class="flex flex-col gap-4">
+      <div class="flex flex-col gap-1.5 pr-8">
+        <h2 id="sheet-title" class="text-lg font-semibold">Quick actions</h2>
+        <p class="text-sm text-muted-foreground">
+          Choose what to do with this file.
+        </p>
+      </div>
+
+      <div class="grid gap-2 sm:grid-cols-3">
+        <button
+          type="button"
+          data-sheet-close
+          class="inline-flex h-9 items-center justify-center rounded-md border border-input bg-background px-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
+        >
+          Download
+        </button>
+        <button
+          type="button"
+          data-sheet-close
+          class="inline-flex h-9 items-center justify-center rounded-md border border-input bg-background px-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
+        >
+          Rename
+        </button>
+        <button
+          type="button"
+          data-sheet-close
+          class="inline-flex h-9 items-center justify-center rounded-md border border-input bg-background px-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
+        >
+          Move
+        </button>
+      </div>
+
+      <div class="mt-auto flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">
+        <button
+          type="button"
+          data-sheet-close
+          class="inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+
+    <button
+      type="button"
+      data-sheet-close
+      aria-label="Close sheet"
+      class="absolute top-4 right-4 rounded-sm p-1 text-muted-foreground opacity-70 transition-opacity hover:opacity-100 focus-visible:ring-2 focus-visible:ring-ring"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        class="size-4"
+        aria-hidden="true"
+      >
+        <path d="M18 6 6 18M6 6l12 12" />
+      </svg>
+    </button>
+  </dialog>
+</div>

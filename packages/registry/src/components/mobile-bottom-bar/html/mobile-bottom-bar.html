@@ -1,0 +1,28 @@
+<!-- Mobile Bottom Bar — requires Veil UI tokens and Tailwind v4. -->
+<div class="mx-auto w-full max-w-sm overflow-hidden rounded-lg border">
+  <div class="flex items-center justify-between gap-4 p-4">
+    <div>
+      <p class="text-xs text-muted-foreground">Total</p>
+      <p class="text-sm font-semibold">$129.00</p>
+    </div>
+    <p class="text-xs text-muted-foreground">Shipping calculated at checkout</p>
+  </div>
+
+  <div
+    data-slot="mobile-bottom-bar"
+    class="sticky bottom-0 z-30 flex items-center gap-2 border-t bg-background/95 px-4 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 backdrop-blur"
+  >
+    <button
+      type="button"
+      class="inline-flex h-9 flex-1 items-center justify-center rounded-md border border-input bg-background px-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
+    >
+      Cancel
+    </button>
+    <button
+      type="button"
+      class="inline-flex h-9 flex-1 items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+    >
+      Checkout
+    </button>
+  </div>
+</div>

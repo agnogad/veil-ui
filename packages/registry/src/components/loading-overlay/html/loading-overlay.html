@@ -1,0 +1,42 @@
+<!-- Loading Overlay — requires Veil UI tokens and Tailwind v4. -->
+<div class="flex min-h-48 flex-col items-center justify-center gap-4 p-6">
+  <div class="relative h-40 w-full max-w-sm overflow-hidden rounded-lg border p-4">
+    <p class="text-sm text-muted-foreground">Recent activity</p>
+    <p class="mt-6 text-xs text-muted-foreground/70">
+      Content stays visible but inert while loading.
+    </p>
+  </div>
+
+  <button
+    type="button"
+    data-loading-toggle
+    class="inline-flex h-9 items-center justify-center rounded-md border border-input bg-background px-4 text-sm font-medium outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50"
+  >
+    Toggle loading overlay
+  </button>
+
+  <div
+    id="loading-overlay"
+    data-loading-overlay
+    popover
+    aria-busy="true"
+    class="fixed inset-0 m-0 hidden size-full max-h-none max-w-none border-0 bg-background/80 p-0 backdrop-blur-sm open:flex open:items-center open:justify-center"
+  >
+    <div class="flex flex-col items-center gap-2 text-sm text-muted-foreground">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="size-8 animate-spin"
+        aria-hidden="true"
+      >
+        <path d="M21 12a9 9 0 1 1-6.219-8.56" />
+      </svg>
+      <span>Syncing records</span>
+    </div>
+  </div>
+</div>

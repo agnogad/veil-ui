@@ -1,0 +1,103 @@
+<!-- Command Menu — requires Veil UI tokens and Tailwind v4. -->
+<button
+  type="button"
+  data-command-open="command-menu-dialog"
+  class="inline-flex h-9 items-center justify-center rounded-md border border-input bg-background px-4 text-sm font-medium hover:bg-accent hover:text-accent-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50"
+>
+  Open command menu
+</button>
+
+<dialog
+  id="command-menu-dialog"
+  aria-labelledby="command-menu-title"
+  class="fixed left-1/2 top-24 m-0 w-[min(32rem,90vw)] -translate-x-1/2 overflow-hidden rounded-lg border bg-popover p-0 text-popover-foreground shadow-xl opacity-0 scale-95 transition-[opacity,scale,display,overlay] [transition-behavior:allow-discrete] duration-150 open:scale-100 open:opacity-100 starting:open:opacity-0 backdrop:bg-black/40 backdrop:opacity-0 backdrop:transition-[opacity,display,overlay] backdrop:[transition-behavior:allow-discrete] open:backdrop:opacity-100 starting:open:backdrop:opacity-0"
+>
+  <h2 id="command-menu-title" class="sr-only">Command menu</h2>
+  <p class="sr-only">Search and run a command.</p>
+
+  <div class="flex items-center gap-2 border-b px-3">
+    <svg class="size-4 shrink-0 text-muted-foreground" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <circle cx="11" cy="11" r="8" />
+      <path d="m21 21-4.3-4.3" />
+    </svg>
+    <input
+      type="text"
+      data-command-input
+      role="combobox"
+      aria-autocomplete="list"
+      aria-expanded="true"
+      aria-controls="command-menu-list"
+      aria-label="Search commands…"
+      placeholder="Search commands…"
+      class="h-11 w-full bg-transparent text-sm outline-none placeholder:text-muted-foreground"
+    />
+  </div>
+
+  <div
+    id="command-menu-list"
+    role="listbox"
+    aria-label="Command menu"
+    class="max-h-72 overflow-y-auto p-2"
+  >
+    <div data-command-group role="group" aria-label="Create">
+      <div class="px-2 py-1.5 text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
+        Create
+      </div>
+      <button
+        type="button"
+        role="option"
+        data-command-item
+        data-command-label="New project"
+        aria-selected="true"
+        class="flex w-full cursor-default select-none items-center gap-2 rounded-sm px-2 py-2 text-left text-sm outline-none aria-selected:bg-accent aria-selected:text-accent-foreground"
+      >
+        New project
+        <span class="ml-auto text-xs tracking-widest text-muted-foreground">⌘N</span>
+      </button>
+      <button
+        type="button"
+        role="option"
+        data-command-item
+        data-command-label="Invite teammate"
+        aria-selected="false"
+        class="flex w-full cursor-default select-none items-center gap-2 rounded-sm px-2 py-2 text-left text-sm outline-none aria-selected:bg-accent aria-selected:text-accent-foreground"
+      >
+        Invite teammate
+      </button>
+    </div>
+
+    <div data-command-group role="group" aria-label="Navigate">
+      <div class="px-2 py-1.5 text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
+        Navigate
+      </div>
+      <button
+        type="button"
+        role="option"
+        data-command-item
+        data-command-label="Open settings"
+        aria-selected="false"
+        class="flex w-full cursor-default select-none items-center gap-2 rounded-sm px-2 py-2 text-left text-sm outline-none aria-selected:bg-accent aria-selected:text-accent-foreground"
+      >
+        Open settings
+      </button>
+      <button
+        type="button"
+        role="option"
+        data-command-item
+        data-command-label="View profile"
+        aria-selected="false"
+        class="flex w-full cursor-default select-none items-center gap-2 rounded-sm px-2 py-2 text-left text-sm outline-none aria-selected:bg-accent aria-selected:text-accent-foreground"
+      >
+        View profile
+      </button>
+    </div>
+
+    <div
+      data-command-empty
+      hidden
+      class="py-6 text-center text-sm text-muted-foreground"
+    >
+      No results found.
+    </div>
+  </div>
+</dialog>

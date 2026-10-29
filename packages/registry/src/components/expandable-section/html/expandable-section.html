@@ -1,0 +1,41 @@
+<!-- Expandable Section — requires Veil UI tokens and Tailwind v4. -->
+<details class="group w-full max-w-lg overflow-hidden rounded-lg border bg-card text-card-foreground" open>
+  <summary
+    class="flex cursor-pointer list-none items-center justify-between gap-4 px-4 py-3 text-left transition-colors hover:bg-accent/50 [&::-webkit-details-marker]:hidden"
+  >
+    <span class="flex flex-col gap-0.5">
+      <span class="text-sm font-medium">Advanced settings</span>
+      <span class="text-sm text-muted-foreground">
+        Retries, timeouts and cache behaviour.
+      </span>
+    </span>
+    <svg class="size-4 shrink-0 text-muted-foreground transition-transform duration-200 group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="m6 9 6 6 6-6" />
+    </svg>
+  </summary>
+
+  <div class="border-t px-4 py-4 text-sm">
+    <div class="grid gap-3">
+      <div class="grid gap-1.5">
+        <label for="expandable-retries" class="text-sm font-medium leading-none">Max retries</label>
+        <input
+          id="expandable-retries"
+          type="text"
+          inputmode="numeric"
+          value="3"
+          class="h-9 w-full min-w-0 rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-xs outline-none transition-[color,box-shadow,border-color] focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50"
+        />
+      </div>
+      <div class="grid gap-1.5">
+        <label for="expandable-timeout" class="text-sm font-medium leading-none">Timeout (ms)</label>
+        <input
+          id="expandable-timeout"
+          type="text"
+          inputmode="numeric"
+          value="5000"
+          class="h-9 w-full min-w-0 rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-xs outline-none transition-[color,box-shadow,border-color] focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50"
+        />
+      </div>
+    </div>
+  </div>
+</details>

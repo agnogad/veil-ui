@@ -1,0 +1,70 @@
+<!-- Mobile Navbar — requires Veil UI tokens and Tailwind v4. Pair with mobile-navbar.js. -->
+<div data-mobile-navbar class="mx-auto w-full max-w-sm">
+  <header
+    data-slot="mobile-navbar"
+    class="flex h-14 w-full items-center gap-3 rounded-md border bg-background/95 px-4 backdrop-blur"
+  >
+    <button
+      type="button"
+      data-mobile-navbar-toggle
+      aria-label="Open menu"
+      aria-expanded="false"
+      aria-controls="mobile-navbar-menu"
+      class="rounded-sm p-1.5 text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5" aria-hidden="true">
+        <path d="M4 12h16" />
+        <path d="M4 6h16" />
+        <path d="M4 18h16" />
+      </svg>
+    </button>
+    <span class="flex-1 truncate text-sm font-semibold">Veil UI</span>
+    <div class="flex items-center gap-2">
+      <button type="button" class="rounded-md bg-primary px-3 py-1.5 text-xs font-medium text-primary-foreground">
+        Sign in
+      </button>
+    </div>
+  </header>
+
+  <div id="mobile-navbar-menu" data-mobile-navbar-menu hidden>
+    <div data-mobile-navbar-overlay class="fixed inset-0 z-50 bg-black/40"></div>
+    <div
+      data-mobile-navbar-panel
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="mobile-navbar-title"
+      class="fixed inset-y-0 left-0 z-50 flex w-72 flex-col border-r bg-background p-4 shadow-lg"
+    >
+      <div class="mb-4 flex items-center justify-between">
+        <h2 id="mobile-navbar-title" class="text-sm font-semibold">Veil UI</h2>
+        <button
+          type="button"
+          data-mobile-navbar-close
+          aria-label="Close menu"
+          class="rounded-sm p-1 text-muted-foreground transition-colors hover:text-foreground"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4" aria-hidden="true">
+            <path d="M18 6 6 18" />
+            <path d="m6 6 12 12" />
+          </svg>
+        </button>
+      </div>
+      <nav aria-label="Mobile" class="grid gap-1">
+        <a href="/" aria-current="page" class="rounded-md bg-accent px-3 py-2 text-sm font-medium text-accent-foreground transition-colors hover:bg-accent hover:text-accent-foreground">
+          Home
+        </a>
+        <a href="/docs/components" class="rounded-md px-3 py-2 text-sm transition-colors hover:bg-accent hover:text-accent-foreground">
+          Components
+        </a>
+        <a href="/pricing" class="rounded-md px-3 py-2 text-sm transition-colors hover:bg-accent hover:text-accent-foreground">
+          Pricing
+        </a>
+      </nav>
+      <div class="mt-auto border-t pt-4">
+        <button type="button" class="w-full rounded-md bg-primary px-3 py-2 text-sm font-medium text-primary-foreground">
+          Sign in
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

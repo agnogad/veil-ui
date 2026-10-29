@@ -1,0 +1,81 @@
+<!-- Mobile Bottom Sheet — requires Veil UI tokens and Tailwind v4. -->
+<div class="flex min-h-48 items-center justify-center p-6">
+  <button
+    type="button"
+    data-mobile-bottom-sheet-open
+    class="inline-flex h-9 items-center justify-center rounded-md border border-input bg-background px-4 text-sm font-medium outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50"
+  >
+    Add attachment
+  </button>
+
+  <dialog
+    id="mobile-bottom-sheet"
+    data-mobile-bottom-sheet
+    aria-labelledby="mobile-bottom-sheet-title"
+    class="fixed inset-x-0 bottom-0 top-auto m-0 max-h-[85vh] w-full max-w-none overflow-y-auto rounded-t-xl border-t bg-background px-6 pt-3 pb-6 text-foreground shadow-lg backdrop:bg-black/50"
+  >
+    <div aria-hidden="true" class="mx-auto mb-3 h-1.5 w-10 rounded-full bg-muted"></div>
+
+    <div class="flex flex-col gap-4">
+      <div class="flex flex-col gap-1.5 pr-8">
+        <h2 id="mobile-bottom-sheet-title" class="text-lg font-semibold">
+          Add attachment
+        </h2>
+        <p class="text-sm text-muted-foreground">
+          Choose a source for your attachment.
+        </p>
+      </div>
+
+      <div class="grid gap-2">
+        <button
+          type="button"
+          data-mobile-bottom-sheet-close
+          class="inline-flex h-9 items-center justify-start gap-2 rounded-md bg-secondary px-4 text-sm font-medium text-secondary-foreground transition-colors hover:bg-secondary/80"
+        >
+          Take a photo
+        </button>
+        <button
+          type="button"
+          data-mobile-bottom-sheet-close
+          class="inline-flex h-9 items-center justify-start gap-2 rounded-md bg-secondary px-4 text-sm font-medium text-secondary-foreground transition-colors hover:bg-secondary/80"
+        >
+          Photo library
+        </button>
+        <button
+          type="button"
+          data-mobile-bottom-sheet-close
+          class="inline-flex h-9 items-center justify-start gap-2 rounded-md bg-secondary px-4 text-sm font-medium text-secondary-foreground transition-colors hover:bg-secondary/80"
+        >
+          Choose a file
+        </button>
+        <button
+          type="button"
+          data-mobile-bottom-sheet-close
+          class="inline-flex h-9 items-center justify-start gap-2 rounded-md bg-secondary px-4 text-sm font-medium text-secondary-foreground transition-colors hover:bg-secondary/80"
+        >
+          Paste a link
+        </button>
+      </div>
+    </div>
+
+    <button
+      type="button"
+      data-mobile-bottom-sheet-close
+      aria-label="Close bottom sheet"
+      class="absolute top-4 right-4 rounded-sm p-1 text-muted-foreground opacity-70 transition-opacity hover:opacity-100 focus-visible:ring-2 focus-visible:ring-ring"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        class="size-4"
+        aria-hidden="true"
+      >
+        <path d="M18 6 6 18M6 6l12 12" />
+      </svg>
+    </button>
+  </dialog>
+</div>

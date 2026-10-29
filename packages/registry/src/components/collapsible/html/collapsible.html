@@ -1,0 +1,16 @@
+<!-- Collapsible — requires Veil UI tokens and Tailwind v4. -->
+<details class="group w-full max-w-md">
+  <summary
+    class="flex cursor-pointer list-none items-center justify-between gap-3 rounded-md px-2 py-1.5 text-sm font-medium outline-none transition-colors hover:bg-accent/50 focus-visible:ring-2 focus-visible:ring-ring [&::-webkit-details-marker]:hidden"
+  >
+    Recent deployments
+    <svg class="size-4 text-muted-foreground transition-transform duration-200 group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="m6 9 6 6 6-6" />
+    </svg>
+  </summary>
+  <ul class="mt-3 flex flex-col gap-2 text-sm">
+    <li class="rounded-md border p-2">v2.4.0 · 12 minutes ago</li>
+    <li class="rounded-md border p-2">v2.3.1 · yesterday</li>
+    <li class="rounded-md border p-2">v2.3.0 · 3 days ago</li>
+  </ul>
+</details>

@@ -1,0 +1,40 @@
+<!-- Pagination — requires Veil UI tokens and Tailwind v4. -->
+<!-- Pair with pagination.js for page selection. -->
+<nav
+  data-pagination
+  data-total-pages="20"
+  data-current-page="5"
+  aria-label="Pagination"
+  class="flex items-center gap-1"
+>
+  <button
+    type="button"
+    data-page-prev
+    aria-label="Previous page"
+    class="inline-flex size-8 items-center justify-center rounded-md border border-transparent text-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+  >
+    <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="m15 18-6-6 6-6" />
+    </svg>
+  </button>
+  <div data-page-list class="flex items-center gap-1">
+    <button type="button" data-page="1" aria-label="Go to page 1" class="inline-flex size-8 items-center justify-center rounded-md border text-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">1</button>
+    <button type="button" data-page="2" aria-label="Go to page 2" class="inline-flex size-8 items-center justify-center rounded-md border text-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">2</button>
+    <span aria-hidden="true" class="px-1 text-sm text-muted-foreground">…</span>
+    <button type="button" data-page="4" aria-label="Go to page 4" class="inline-flex size-8 items-center justify-center rounded-md border text-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">4</button>
+    <button type="button" data-page="5" aria-current="page" aria-label="Go to page 5" class="inline-flex size-8 items-center justify-center rounded-md border border-foreground bg-foreground text-sm text-background transition-colors hover:bg-foreground hover:text-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">5</button>
+    <button type="button" data-page="6" aria-label="Go to page 6" class="inline-flex size-8 items-center justify-center rounded-md border text-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">6</button>
+    <span aria-hidden="true" class="px-1 text-sm text-muted-foreground">…</span>
+    <button type="button" data-page="20" aria-label="Go to page 20" class="inline-flex size-8 items-center justify-center rounded-md border text-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">20</button>
+  </div>
+  <button
+    type="button"
+    data-page-next
+    aria-label="Next page"
+    class="inline-flex size-8 items-center justify-center rounded-md border border-transparent text-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+  >
+    <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="m9 18 6-6-6-6" />
+    </svg>
+  </button>
+</nav>

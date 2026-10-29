@@ -1,0 +1,49 @@
+<!-- Button Group — requires Veil UI tokens and Tailwind v4. -->
+<div class="flex flex-wrap items-center gap-4">
+  <div
+    role="group"
+    aria-label="Pagination"
+    class="inline-flex w-fit items-stretch [&>*]:rounded-none [&>*:first-child]:rounded-l-md [&>*:last-child]:rounded-r-md [&>*:not(:first-child)]:-ml-px"
+  >
+    <button
+      type="button"
+      class="inline-flex h-9 items-center justify-center gap-2 whitespace-nowrap border border-input bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50"
+    >
+      Previous
+    </button>
+    <button
+      type="button"
+      class="inline-flex h-9 items-center justify-center gap-2 whitespace-nowrap border border-input bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50"
+    >
+      Next
+    </button>
+  </div>
+
+  <div
+    role="group"
+    aria-label="View mode"
+    class="inline-flex w-fit items-stretch [&>*]:rounded-none [&>*:first-child]:rounded-l-md [&>*:last-child]:rounded-r-md [&>*:not(:first-child)]:-ml-px"
+  >
+    <button
+      type="button"
+      class="inline-flex h-8 items-center justify-center gap-2 whitespace-nowrap border border-input bg-background px-3 text-xs font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50"
+    >
+      <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <rect width="7" height="7" x="3" y="3" rx="1" />
+        <rect width="7" height="7" x="14" y="3" rx="1" />
+        <rect width="7" height="7" x="14" y="14" rx="1" />
+        <rect width="7" height="7" x="3" y="14" rx="1" />
+      </svg>
+      Grid
+    </button>
+    <button
+      type="button"
+      class="inline-flex h-8 items-center justify-center gap-2 whitespace-nowrap border border-input bg-background px-3 text-xs font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50"
+    >
+      <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01" />
+      </svg>
+      List
+    </button>
+  </div>
+</div>

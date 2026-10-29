@@ -1,0 +1,55 @@
+<!-- Action Menu Button — requires Veil UI tokens and Tailwind v4. -->
+<div class="relative inline-block" data-action-menu>
+  <button
+    type="button"
+    data-action-menu-trigger
+    aria-label="Open actions"
+    aria-haspopup="menu"
+    aria-expanded="false"
+    class="inline-flex size-9 items-center justify-center rounded-md text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50"
+  >
+    <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <circle cx="12" cy="12" r="1" />
+      <circle cx="19" cy="12" r="1" />
+      <circle cx="5" cy="12" r="1" />
+    </svg>
+  </button>
+
+  <div
+    role="menu"
+    aria-label="Actions"
+    data-state="closed"
+    hidden
+    class="absolute right-0 z-50 mt-1 min-w-44 origin-top-right rounded-md border bg-popover p-1 text-popover-foreground shadow-md opacity-0 scale-95 -translate-y-1 transition-[opacity,scale,translate] duration-150 ease-out data-[state=open]:translate-y-0 data-[state=open]:scale-100 data-[state=open]:opacity-100 data-[state=closed]:pointer-events-none"
+  >
+    <button
+      type="button"
+      role="menuitem"
+      class="flex w-full items-center rounded-sm px-2 py-1.5 text-left text-sm outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+    >
+      Edit
+    </button>
+    <button
+      type="button"
+      role="menuitem"
+      class="flex w-full items-center rounded-sm px-2 py-1.5 text-left text-sm outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+    >
+      Duplicate
+    </button>
+    <button
+      type="button"
+      role="menuitem"
+      class="flex w-full items-center rounded-sm px-2 py-1.5 text-left text-sm outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+    >
+      Archive
+    </button>
+    <div role="separator" class="-mx-1 my-1 h-px bg-border"></div>
+    <button
+      type="button"
+      role="menuitem"
+      class="flex w-full items-center rounded-sm px-2 py-1.5 text-left text-sm text-destructive outline-none transition-colors hover:bg-destructive/10 focus:bg-destructive/10"
+    >
+      Delete project
+    </button>
+  </div>
+</div>

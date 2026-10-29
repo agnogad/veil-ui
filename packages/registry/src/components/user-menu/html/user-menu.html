@@ -1,0 +1,70 @@
+<!-- User Menu — requires Veil UI tokens and Tailwind v4. -->
+<div class="relative inline-flex" data-user-menu>
+  <button
+    type="button"
+    data-user-menu-trigger
+    aria-label="Open menu for Ada Lovelace"
+    aria-haspopup="menu"
+    aria-expanded="false"
+    class="inline-flex items-center gap-2 rounded-full border bg-background p-1 pr-2 text-sm font-medium transition-colors hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+  >
+    <span class="flex size-6 shrink-0 items-center justify-center overflow-hidden rounded-full bg-muted text-[10px] font-medium text-muted-foreground">
+      AL
+    </span>
+    <span class="hidden max-w-32 truncate sm:block">Ada Lovelace</span>
+    <svg class="size-3.5 text-muted-foreground" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="m6 9 6 6 6-6" />
+    </svg>
+  </button>
+
+  <div
+    role="menu"
+    aria-label="Account"
+    data-state="closed"
+    hidden
+    class="absolute right-0 z-50 mt-1 w-56 origin-top-right rounded-md border bg-popover p-1 text-popover-foreground shadow-md opacity-0 scale-95 -translate-y-1 transition-[opacity,scale,translate] duration-150 ease-out data-[state=open]:translate-y-0 data-[state=open]:scale-100 data-[state=open]:opacity-100 data-[state=closed]:pointer-events-none"
+  >
+    <div class="px-2 py-1.5">
+      <p class="truncate text-sm font-medium">Ada Lovelace</p>
+      <p class="truncate text-xs text-muted-foreground">ada@example.com</p>
+    </div>
+    <div role="separator" class="-mx-1 my-1 h-px bg-border"></div>
+
+    <a
+      href="#profile"
+      role="menuitem"
+      class="flex items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground [&_svg]:size-4"
+    >
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+        <circle cx="12" cy="7" r="4" />
+      </svg>
+      Profile
+    </a>
+    <a
+      href="#settings"
+      role="menuitem"
+      class="flex items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground [&_svg]:size-4"
+    >
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
+        <circle cx="12" cy="12" r="3" />
+      </svg>
+      Settings
+    </a>
+
+    <div role="separator" class="-mx-1 my-1 h-px bg-border"></div>
+    <button
+      type="button"
+      role="menuitem"
+      class="flex w-full items-center gap-2 rounded-sm px-2 py-1.5 text-left text-sm text-destructive outline-none transition-colors hover:bg-destructive/10 focus:bg-destructive/10 [&_svg]:size-4"
+    >
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+        <path d="m16 17 5-5-5-5" />
+        <path d="M21 12H9" />
+      </svg>
+      Sign out
+    </button>
+  </div>
+</div>

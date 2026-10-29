@@ -1,0 +1,42 @@
+<!-- Context Menu — requires Veil UI tokens and Tailwind v4. -->
+<div class="relative inline-block" data-context-menu>
+  <div
+    data-context-menu-area
+    tabindex="0"
+    class="grid h-32 w-64 place-items-center rounded-md border border-dashed text-sm text-muted-foreground outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50"
+  >
+    Right-click this area
+  </div>
+
+  <div
+    role="menu"
+    aria-label="File actions"
+    data-state="closed"
+    hidden
+    class="fixed z-50 min-w-52 origin-top-left rounded-md border bg-popover p-1 text-popover-foreground shadow-md opacity-0 scale-95 transition-[opacity,scale] duration-150 ease-out data-[state=open]:scale-100 data-[state=open]:opacity-100 data-[state=closed]:pointer-events-none"
+  >
+    <div class="px-2 py-1.5 text-xs font-medium text-muted-foreground">File</div>
+    <button
+      type="button"
+      role="menuitem"
+      class="flex w-full items-center rounded-sm px-2 py-1.5 text-left text-sm outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+    >
+      Open
+    </button>
+    <button
+      type="button"
+      role="menuitem"
+      class="flex w-full items-center rounded-sm px-2 py-1.5 text-left text-sm outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+    >
+      Rename
+    </button>
+    <div role="separator" class="-mx-1 my-1 h-px bg-border"></div>
+    <button
+      type="button"
+      role="menuitem"
+      class="flex w-full items-center rounded-sm px-2 py-1.5 text-left text-sm text-destructive outline-none transition-colors hover:bg-destructive/10 focus:bg-destructive/10"
+    >
+      Delete
+    </button>
+  </div>
+</div>

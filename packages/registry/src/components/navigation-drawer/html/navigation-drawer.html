@@ -1,0 +1,56 @@
+<!-- Navigation Drawer — requires Veil UI tokens and Tailwind v4. -->
+<div class="flex min-h-48 items-center justify-center p-6">
+  <button
+    type="button"
+    data-navigation-drawer-open
+    class="rounded-md border px-3 py-1.5 text-sm font-medium outline-none transition-colors hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring"
+  >
+    Open drawer
+  </button>
+
+  <dialog
+    id="navigation-drawer"
+    data-navigation-drawer
+    aria-labelledby="navigation-drawer-title"
+    class="fixed inset-y-0 left-0 right-auto m-0 flex h-full max-h-none w-80 max-w-[85vw] flex-col border-r bg-background p-4 text-foreground shadow-lg backdrop:bg-black/40"
+  >
+    <div class="mb-4 flex items-center justify-between gap-2">
+      <h2 id="navigation-drawer-title" class="text-sm font-semibold">
+        Navigation
+      </h2>
+      <button
+        type="button"
+        data-navigation-drawer-close
+        aria-label="Close drawer"
+        class="rounded-sm p-1 text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          class="size-4"
+          aria-hidden="true"
+        >
+          <path d="M18 6 6 18M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <p class="mb-4 text-xs text-muted-foreground">Navigation navigation</p>
+
+    <nav aria-label="Drawer" class="grid flex-1 gap-1 overflow-y-auto text-sm">
+      <a href="#overview" class="rounded-md px-2 py-1.5 hover:bg-accent">
+        Overview
+      </a>
+      <a href="#components" class="rounded-md px-2 py-1.5 hover:bg-accent">
+        Components
+      </a>
+      <a href="#settings" class="rounded-md px-2 py-1.5 hover:bg-accent">
+        Settings
+      </a>
+    </nav>
+  </dialog>
+</div>

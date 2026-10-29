@@ -1,0 +1,32 @@
+<!-- Navigation Menu — requires Veil UI tokens and Tailwind v4. -->
+<nav aria-label="Main" class="relative flex max-w-max items-center justify-center">
+  <ul class="flex flex-1 list-none items-center gap-1">
+    <li class="relative">
+      <details class="group">
+        <summary
+          class="inline-flex h-9 cursor-pointer list-none items-center justify-center gap-1 rounded-md px-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground group-open:bg-accent/50 [&::-webkit-details-marker]:hidden"
+        >
+          Getting started
+          <svg class="size-3.5 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </summary>
+        <div
+          class="absolute left-0 top-full z-50 mt-2 w-56 rounded-md border bg-popover p-1 text-popover-foreground shadow-md"
+        >
+          <a href="#installation" class="block select-none rounded-sm p-2 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+            Installation
+          </a>
+          <a href="#theming" class="block select-none rounded-sm p-2 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+            Theming
+          </a>
+        </div>
+      </details>
+    </li>
+    <li class="relative">
+      <a href="#docs" class="block select-none rounded-sm p-2 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+        Docs
+      </a>
+    </li>
+  </ul>
+</nav>

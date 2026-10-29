@@ -1,0 +1,69 @@
+<!-- Drawer — requires Veil UI tokens and Tailwind v4. -->
+<div class="flex min-h-48 items-center justify-center p-6">
+  <button
+    type="button"
+    data-drawer-open
+    class="inline-flex h-9 items-center justify-center rounded-md border border-input bg-background px-4 text-sm font-medium outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50"
+  >
+    Open notifications
+  </button>
+
+  <dialog
+    id="drawer"
+    data-drawer
+    aria-labelledby="drawer-title"
+    class="fixed inset-y-0 right-0 left-auto m-0 h-full max-h-none w-3/4 max-w-sm border-l bg-background p-6 text-foreground shadow-lg backdrop:bg-black/50"
+  >
+    <div class="flex h-full flex-col gap-4">
+      <div class="flex flex-col gap-1.5 pr-8">
+        <h2 id="drawer-title" class="text-lg font-semibold">Notifications</h2>
+        <p class="text-sm text-muted-foreground">
+          You have 3 unread notifications from this week.
+        </p>
+      </div>
+
+      <ul class="flex flex-col gap-3 text-sm">
+        <li class="rounded-md border p-3">Your invoice was paid.</li>
+        <li class="rounded-md border p-3">New comment on “Design tokens”.</li>
+        <li class="rounded-md border p-3">Weekly digest is ready.</li>
+      </ul>
+
+      <div class="mt-auto flex flex-col-reverse gap-2">
+        <button
+          type="button"
+          data-drawer-close
+          class="inline-flex h-9 items-center justify-center rounded-md border border-input bg-background px-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
+        >
+          Mark all as read
+        </button>
+        <button
+          type="button"
+          data-drawer-close
+          class="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+        >
+          Done
+        </button>
+      </div>
+
+      <button
+        type="button"
+        data-drawer-close
+        aria-label="Close drawer"
+        class="absolute top-4 right-4 rounded-sm p-1 text-muted-foreground opacity-70 transition-opacity hover:opacity-100 focus-visible:ring-2 focus-visible:ring-ring"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          class="size-4"
+          aria-hidden="true"
+        >
+          <path d="M18 6 6 18M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  </dialog>
+</div>
