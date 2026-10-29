@@ -1,0 +1,81 @@
+<!-- Form — requires Veil UI tokens and Tailwind v4. -->
+<form data-slot="form" novalidate class="grid w-full max-w-sm gap-6">
+  <div
+    data-slot="form-error"
+    role="alert"
+    class="rounded-md border border-destructive/40 bg-destructive/10 px-3 py-2 text-sm text-destructive"
+  >
+    Enter a valid email address.
+  </div>
+
+  <div data-slot="form-section" class="grid gap-4">
+    <div class="grid gap-1">
+      <h3 class="text-base font-semibold tracking-tight">Profile</h3>
+      <p class="text-sm text-muted-foreground">
+        How your account appears to teammates.
+      </p>
+    </div>
+
+    <div data-slot="form-field" class="grid gap-2">
+      <label
+        for="form-name"
+        data-slot="form-field-label"
+        class="flex select-none items-center gap-2 text-sm font-medium leading-none"
+      >
+        Name
+      </label>
+      <input
+        id="form-name"
+        type="text"
+        placeholder="Ada Lovelace"
+        class="h-9 w-full min-w-0 rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-xs outline-none transition-[color,box-shadow,border-color] placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 aria-invalid:border-destructive aria-invalid:ring-destructive/20"
+      />
+    </div>
+
+    <div data-slot="form-field" class="grid gap-2">
+      <label
+        for="form-email"
+        data-slot="form-field-label"
+        class="flex select-none items-center gap-2 text-sm font-medium leading-none"
+      >
+        Email
+      </label>
+      <input
+        id="form-email"
+        type="email"
+        value="not-an-email"
+        aria-invalid="true"
+        aria-describedby="form-email-error"
+        class="h-9 w-full min-w-0 rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-xs outline-none transition-[color,box-shadow,border-color] placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 aria-invalid:border-destructive aria-invalid:ring-destructive/20"
+      />
+      <p id="form-email-error" class="text-sm text-muted-foreground">
+        We only use this for account notifications.
+      </p>
+    </div>
+  </div>
+
+  <div data-slot="form-section" class="grid gap-4">
+    <div class="grid gap-1">
+      <h3 class="text-base font-semibold tracking-tight">Notifications</h3>
+      <p class="text-sm text-muted-foreground">
+        Choose what lands in your inbox.
+      </p>
+    </div>
+
+    <label class="flex items-center gap-2 text-sm">
+      <input
+        type="checkbox"
+        checked
+        class="size-4 rounded-sm border border-input accent-primary"
+      />
+      Weekly product digest
+    </label>
+  </div>
+
+  <button
+    type="submit"
+    class="inline-flex h-9 w-fit shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground outline-none transition-colors hover:bg-primary/90 focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50"
+  >
+    Save changes
+  </button>
+</form>

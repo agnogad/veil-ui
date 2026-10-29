@@ -1,0 +1,63 @@
+<!-- FileCard — requires Veil UI tokens and Tailwind v4. -->
+<div class="grid w-full max-w-sm gap-3">
+  <div
+    data-slot="file-card"
+    class="flex flex-col gap-3 rounded-lg border bg-card py-5 text-card-foreground shadow-xs"
+  >
+    <div data-slot="card-content" class="flex items-start gap-3 px-5">
+      <span class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-red-500/10 text-red-600 dark:text-red-400">
+        <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
+          <path d="M14 2v4a2 2 0 0 0 2 2h4M10 9H8M16 13H8M16 17H8" />
+        </svg>
+      </span>
+      <div class="min-w-0 flex-1">
+        <p class="truncate text-sm font-medium">quarterly-report.pdf</p>
+        <p class="text-xs text-muted-foreground">2.4 MB · PDF</p>
+      </div>
+      <div class="flex shrink-0 items-center gap-1">
+        <button
+          type="button"
+          aria-label="Download quarterly-report.pdf"
+          class="inline-flex size-9 items-center justify-center rounded-md text-sm font-medium outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:ring-2 focus-visible:ring-ring"
+        >
+          <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div
+    data-slot="file-card"
+    class="flex flex-col gap-3 rounded-lg border bg-card py-5 text-card-foreground shadow-xs"
+  >
+    <div data-slot="card-content" class="flex items-start gap-3 px-5">
+      <span class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-sky-500/10 text-sky-600 dark:text-sky-400">
+        <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
+          <path d="M14 2v4a2 2 0 0 0 2 2h4M10 9H8M16 13H8M16 17H8" />
+        </svg>
+      </span>
+      <div class="min-w-0 flex-1">
+        <p class="truncate text-sm font-medium">notes.txt</p>
+        <p class="text-xs text-muted-foreground">4 KB · TEXT</p>
+        <p class="mt-1 text-sm text-muted-foreground">
+          Shared with the design team.
+        </p>
+      </div>
+      <div class="flex shrink-0 items-center gap-1">
+        <button
+          type="button"
+          aria-label="Remove notes.txt"
+          class="inline-flex size-9 items-center justify-center rounded-md text-sm font-medium outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:ring-2 focus-visible:ring-ring"
+        >
+          <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6M10 11v6M14 11v6" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

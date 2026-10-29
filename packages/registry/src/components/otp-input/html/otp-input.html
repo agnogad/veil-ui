@@ -1,0 +1,25 @@
+<!-- OTP input — pair with otp-input.js. Requires Veil UI tokens and Tailwind v4. -->
+<div class="grid w-full max-w-sm gap-3">
+  <p id="otp-label" class="text-sm font-medium leading-none">
+    Verification code
+  </p>
+  <div
+    data-otp-input
+    role="group"
+    aria-labelledby="otp-label"
+    class="flex items-center gap-2"
+  >
+    <input type="text" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]*" maxlength="1" aria-label="Verification code, digit 1" class="size-10 rounded-md border border-input bg-transparent text-center text-lg font-medium tabular-nums shadow-xs outline-none transition-[color,box-shadow] selection:bg-primary selection:text-primary-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50" />
+    <input type="text" inputmode="numeric" autocomplete="off" pattern="[0-9]*" maxlength="1" aria-label="Verification code, digit 2" class="size-10 rounded-md border border-input bg-transparent text-center text-lg font-medium tabular-nums shadow-xs outline-none transition-[color,box-shadow] selection:bg-primary selection:text-primary-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50" />
+    <input type="text" inputmode="numeric" autocomplete="off" pattern="[0-9]*" maxlength="1" aria-label="Verification code, digit 3" class="size-10 rounded-md border border-input bg-transparent text-center text-lg font-medium tabular-nums shadow-xs outline-none transition-[color,box-shadow] selection:bg-primary selection:text-primary-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50" />
+    <input type="text" inputmode="numeric" autocomplete="off" pattern="[0-9]*" maxlength="1" aria-label="Verification code, digit 4" class="size-10 rounded-md border border-input bg-transparent text-center text-lg font-medium tabular-nums shadow-xs outline-none transition-[color,box-shadow] selection:bg-primary selection:text-primary-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50" />
+    <input type="text" inputmode="numeric" autocomplete="off" pattern="[0-9]*" maxlength="1" aria-label="Verification code, digit 5" class="size-10 rounded-md border border-input bg-transparent text-center text-lg font-medium tabular-nums shadow-xs outline-none transition-[color,box-shadow] selection:bg-primary selection:text-primary-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50" />
+    <input type="text" inputmode="numeric" autocomplete="off" pattern="[0-9]*" maxlength="1" aria-label="Verification code, digit 6" class="size-10 rounded-md border border-input bg-transparent text-center text-lg font-medium tabular-nums shadow-xs outline-none transition-[color,box-shadow] selection:bg-primary selection:text-primary-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50" />
+  </div>
+  <p data-otp-output class="text-sm text-muted-foreground">
+    Entered 0 of 6 digits
+  </p>
+  <p data-otp-complete class="hidden text-sm font-medium text-primary">
+    Code complete
+  </p>
+</div>

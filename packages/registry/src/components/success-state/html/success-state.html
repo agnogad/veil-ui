@@ -1,0 +1,29 @@
+<!-- Success State — requires Veil UI tokens and Tailwind v4. -->
+<div
+  role="status"
+  class="flex max-w-lg flex-col items-center justify-center gap-3 rounded-lg border border-emerald-500/30 bg-emerald-500/5 px-6 py-12 text-center"
+>
+  <div
+    aria-hidden="true"
+    class="flex size-10 items-center justify-center rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400"
+  >
+    <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <circle cx="12" cy="12" r="10" />
+      <path d="m9 12 2 2 4-4" />
+    </svg>
+  </div>
+  <div class="grid gap-1">
+    <p class="text-sm font-medium text-foreground">Payment complete</p>
+    <p class="text-sm text-muted-foreground">
+      A receipt was sent to your inbox.
+    </p>
+  </div>
+  <div class="mt-2">
+    <button
+      type="button"
+      class="inline-flex h-8 items-center justify-center rounded-md border border-input bg-background px-3 text-xs font-medium hover:bg-accent hover:text-accent-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50"
+    >
+      View receipt
+    </button>
+  </div>
+</div>

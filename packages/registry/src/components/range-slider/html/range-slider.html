@@ -1,0 +1,36 @@
+<!-- Range slider — pair with range-slider.js. Requires Veil UI tokens and Tailwind v4. -->
+<div class="grid w-full max-w-sm gap-2" data-range-slider>
+  <div class="relative h-5">
+    <div class="absolute inset-x-0 top-1/2 h-1.5 -translate-y-1/2 rounded-full bg-primary/15"></div>
+    <div
+      data-range-fill
+      class="absolute top-1/2 h-1.5 -translate-y-1/2 rounded-full bg-primary"
+      style="left: 20%; right: 20%"
+    ></div>
+    <input
+      data-range-min
+      type="range"
+      min="0"
+      max="100"
+      step="5"
+      value="20"
+      aria-label="Minimum price"
+      class="pointer-events-none absolute inset-0 h-5 w-full appearance-none bg-transparent outline-none [&::-moz-range-thumb]:pointer-events-auto [&::-moz-range-thumb]:size-4 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border [&::-moz-range-thumb]:border-primary [&::-moz-range-thumb]:bg-background [&::-moz-range-track]:bg-transparent [&::-webkit-slider-runnable-track]:bg-transparent [&::-webkit-slider-thumb]:pointer-events-auto [&::-webkit-slider-thumb]:size-4 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:border [&::-webkit-slider-thumb]:border-primary [&::-webkit-slider-thumb]:bg-background [&::-webkit-slider-thumb]:shadow-sm"
+    />
+    <input
+      data-range-max
+      type="range"
+      min="0"
+      max="100"
+      step="5"
+      value="80"
+      aria-label="Maximum price"
+      class="pointer-events-none absolute inset-0 h-5 w-full appearance-none bg-transparent outline-none [&::-moz-range-thumb]:pointer-events-auto [&::-moz-range-thumb]:size-4 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border [&::-moz-range-thumb]:border-primary [&::-moz-range-thumb]:bg-background [&::-moz-range-track]:bg-transparent [&::-webkit-slider-runnable-track]:bg-transparent [&::-webkit-slider-thumb]:pointer-events-auto [&::-webkit-slider-thumb]:size-4 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:border [&::-webkit-slider-thumb]:border-primary [&::-webkit-slider-thumb]:bg-background [&::-webkit-slider-thumb]:shadow-sm"
+    />
+  </div>
+  <div class="flex justify-between text-xs text-muted-foreground">
+    <span>$0</span>
+    <span data-range-output>Selected $20–$80</span>
+    <span>$100+</span>
+  </div>
+</div>

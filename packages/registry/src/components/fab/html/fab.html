@@ -1,0 +1,46 @@
+<!-- FAB — requires Veil UI tokens and Tailwind v4. -->
+<div class="relative h-44 w-full max-w-md overflow-hidden rounded-lg border bg-muted/20">
+  <p class="absolute top-4 left-4 text-sm text-muted-foreground">
+    Floating above the page
+  </p>
+
+  <button
+    type="button"
+    data-slot="fab"
+    data-position="bottom-right"
+    aria-label="Create item"
+    style="position: absolute"
+    class="absolute right-4 bottom-4 z-50 inline-flex size-12 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg outline-none transition-[color,background-color,box-shadow] hover:bg-primary/90 focus-visible:ring-[3px] focus-visible:ring-ring/50 [&_svg]:size-5 [&_svg]:shrink-0"
+  >
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M5 12h14M12 5v14" />
+    </svg>
+  </button>
+
+  <button
+    type="button"
+    data-slot="fab"
+    data-position="bottom-left"
+    aria-label="New project"
+    style="position: absolute"
+    class="absolute bottom-4 left-4 z-50 inline-flex h-12 items-center justify-center gap-2 rounded-full bg-primary px-5 text-sm font-medium text-primary-foreground shadow-lg outline-none transition-[color,background-color,box-shadow] hover:bg-primary/90 focus-visible:ring-[3px] focus-visible:ring-ring/50 [&_svg]:size-5 [&_svg]:shrink-0"
+  >
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497Z" />
+    </svg>
+    <span>New project</span>
+  </button>
+
+  <button
+    type="button"
+    data-slot="fab"
+    data-position="bottom-center"
+    aria-label="Start chat"
+    style="position: absolute"
+    class="absolute bottom-4 left-1/2 z-50 inline-flex size-14 -translate-x-1/2 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg outline-none transition-[color,background-color,box-shadow] hover:bg-primary/90 focus-visible:ring-[3px] focus-visible:ring-ring/50 [&_svg]:size-5 [&_svg]:shrink-0"
+  >
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z" />
+    </svg>
+  </button>
+</div>

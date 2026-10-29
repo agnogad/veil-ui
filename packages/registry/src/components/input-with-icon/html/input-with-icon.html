@@ -1,0 +1,22 @@
+<!-- Input with Icon — requires Veil UI tokens and Tailwind v4. -->
+<div class="grid w-full max-w-xs gap-4">
+  <div data-slot="input-with-icon" class="relative w-full">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg>
+    <input
+      type="email"
+      aria-label="Email"
+      placeholder="you@example.com"
+      class="h-9 w-full min-w-0 rounded-md border border-input bg-transparent py-1 pl-9 pr-3 text-sm shadow-xs outline-none transition-[color,box-shadow,border-color] placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 dark:bg-input/30"
+    />
+  </div>
+
+  <div data-slot="input-with-icon" class="relative w-full">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="pointer-events-none absolute right-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" aria-hidden="true"><circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" /></svg>
+    <input
+      type="search"
+      aria-label="Search"
+      placeholder="Search…"
+      class="h-9 w-full min-w-0 rounded-md border border-input bg-transparent py-1 pl-3 pr-9 text-sm shadow-xs outline-none transition-[color,box-shadow,border-color] placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 dark:bg-input/30"
+    />
+  </div>
+</div>

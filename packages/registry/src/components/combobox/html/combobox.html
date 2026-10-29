@@ -1,0 +1,70 @@
+<!-- Combobox — pair with combobox.js. Requires Veil UI tokens and Tailwind v4. -->
+<div class="relative w-full max-w-xs" data-combobox>
+  <input type="hidden" data-combobox-value />
+  <button
+    type="button"
+    data-combobox-trigger
+    role="combobox"
+    aria-haspopup="listbox"
+    aria-expanded="false"
+    aria-controls="framework-list"
+    class="flex h-9 w-full items-center justify-between gap-2 rounded-md border border-input bg-background px-4 text-sm font-medium shadow-xs outline-none transition-[color,background-color,border-color,box-shadow] hover:bg-accent hover:text-accent-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50"
+  >
+    <span data-combobox-label class="truncate text-muted-foreground">
+      Select framework
+    </span>
+    <svg class="size-4 shrink-0 opacity-50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="m7 15 5 5 5-5M7 9l5-5 5 5" />
+    </svg>
+  </button>
+
+  <div
+    data-combobox-content
+    data-state="closed"
+    hidden
+    class="absolute left-0 z-50 mt-1 w-full origin-top rounded-md border bg-popover p-0 text-popover-foreground shadow-md opacity-0 scale-95 -translate-y-1 transition-[opacity,scale,translate] duration-150 ease-out data-[state=open]:translate-y-0 data-[state=open]:scale-100 data-[state=open]:opacity-100 data-[state=closed]:pointer-events-none"
+  >
+    <div class="border-b px-3">
+      <input
+        data-combobox-search
+        type="text"
+        role="combobox"
+        aria-label="Search frameworks"
+        aria-controls="framework-list"
+        aria-expanded="true"
+        placeholder="Search…"
+        autocomplete="off"
+        class="h-9 w-full bg-transparent text-sm outline-none placeholder:text-muted-foreground"
+      />
+    </div>
+    <div id="framework-list" role="listbox" aria-label="Framework" class="max-h-60 overflow-y-auto p-1">
+      <button type="button" role="option" tabindex="-1" data-combobox-option data-value="next" data-label="Next.js" class="flex w-full cursor-default select-none items-center justify-between gap-2 rounded-sm px-2 py-1.5 text-left text-sm outline-none hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+        <span>Next.js</span>
+        <svg data-check class="size-4 opacity-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="m5 12 4 4 10-10" />
+        </svg>
+      </button>
+      <button type="button" role="option" tabindex="-1" data-combobox-option data-value="remix" data-label="Remix" class="flex w-full cursor-default select-none items-center justify-between gap-2 rounded-sm px-2 py-1.5 text-left text-sm outline-none hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+        <span>Remix</span>
+        <svg data-check class="size-4 opacity-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="m5 12 4 4 10-10" />
+        </svg>
+      </button>
+      <button type="button" role="option" tabindex="-1" data-combobox-option data-value="astro" data-label="Astro" class="flex w-full cursor-default select-none items-center justify-between gap-2 rounded-sm px-2 py-1.5 text-left text-sm outline-none hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+        <span>Astro</span>
+        <svg data-check class="size-4 opacity-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="m5 12 4 4 10-10" />
+        </svg>
+      </button>
+      <button type="button" role="option" tabindex="-1" data-combobox-option data-value="vite" data-label="Vite" class="flex w-full cursor-default select-none items-center justify-between gap-2 rounded-sm px-2 py-1.5 text-left text-sm outline-none hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+        <span>Vite</span>
+        <svg data-check class="size-4 opacity-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="m5 12 4 4 10-10" />
+        </svg>
+      </button>
+      <p data-combobox-empty hidden class="px-2 py-4 text-center text-sm text-muted-foreground">
+        No results found.
+      </p>
+    </div>
+  </div>
+</div>

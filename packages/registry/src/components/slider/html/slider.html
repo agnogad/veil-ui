@@ -1,0 +1,20 @@
+<!-- Slider — requires Veil UI tokens and Tailwind v4. -->
+<div class="grid w-full max-w-sm gap-3">
+  <label for="volume" class="text-sm font-medium leading-none">
+    Volume
+  </label>
+  <div class="relative flex h-5 w-full items-center">
+    <div class="absolute inset-x-0 h-1.5 rounded-full bg-primary/15"></div>
+    <div class="absolute left-0 h-1.5 w-[40%] rounded-full bg-primary"></div>
+    <input
+      id="volume"
+      type="range"
+      min="0"
+      max="100"
+      step="1"
+      value="40"
+      class="relative z-10 h-5 w-full cursor-pointer appearance-none bg-transparent outline-none [&::-moz-range-thumb]:size-4 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border [&::-moz-range-thumb]:border-primary [&::-moz-range-thumb]:bg-background [&::-moz-range-track]:bg-transparent [&::-webkit-slider-runnable-track]:h-1.5 [&::-webkit-slider-runnable-track]:bg-transparent [&::-webkit-slider-thumb]:-mt-[5px] [&::-webkit-slider-thumb]:size-4 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:border [&::-webkit-slider-thumb]:border-primary [&::-webkit-slider-thumb]:bg-background [&::-webkit-slider-thumb]:shadow-sm focus-visible:[&::-webkit-slider-thumb]:ring-[3px] focus-visible:[&::-webkit-slider-thumb]:ring-ring/50"
+    />
+  </div>
+  <p class="text-sm text-muted-foreground">Volume: 40</p>
+</div>

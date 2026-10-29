@@ -1,0 +1,64 @@
+<!-- Notification — requires Veil UI tokens and Tailwind v4. -->
+<div class="grid max-w-lg gap-3">
+  <div
+    data-slot="notification"
+    class="relative flex w-full items-start gap-3 rounded-lg border bg-card p-3 text-sm shadow-xs"
+  >
+    <div
+      aria-hidden="true"
+      class="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-full bg-muted text-muted-foreground"
+    >
+      <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <circle cx="6" cy="6" r="3" />
+        <path d="M6 9v12M18 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM18 9v12M6 15h12" />
+      </svg>
+    </div>
+    <div class="grid min-w-0 flex-1 gap-0.5">
+      <p class="truncate font-medium">Deployment finished</p>
+      <p class="text-muted-foreground">Production is running commit 4f2a91c.</p>
+      <span class="text-xs text-muted-foreground">2 minutes ago</span>
+    </div>
+  </div>
+
+  <div
+    data-slot="notification"
+    data-unread
+    class="relative flex w-full items-start gap-3 rounded-lg border border-primary/30 bg-primary/5 p-3 text-sm shadow-xs"
+  >
+    <div
+      aria-hidden="true"
+      class="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-full bg-muted text-muted-foreground"
+    >
+      <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z" />
+      </svg>
+    </div>
+    <div class="grid min-w-0 flex-1 gap-0.5">
+      <div class="flex items-center gap-2">
+        <p class="truncate font-medium">New comment on your review</p>
+        <span class="sr-only">Unread</span>
+      </div>
+      <p class="text-muted-foreground">Ada left feedback on the spacing tokens.</p>
+      <span class="text-xs text-muted-foreground">10 minutes ago</span>
+      <div class="mt-2 flex gap-2">
+        <button type="button" class="inline-flex h-8 items-center justify-center rounded-md bg-primary px-3 text-xs font-medium text-primary-foreground hover:bg-primary/90">
+          Reply
+        </button>
+        <button type="button" class="inline-flex h-8 items-center justify-center rounded-md border border-input bg-background px-3 text-xs font-medium hover:bg-accent hover:text-accent-foreground">
+          Open thread
+        </button>
+      </div>
+    </div>
+    <button
+      type="button"
+      data-notification-dismiss
+      aria-label="Dismiss notification"
+      class="-mt-1 -mr-1 inline-flex size-8 shrink-0 items-center justify-center rounded-md outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50"
+    >
+      <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M18 6 6 18M6 6l12 12" />
+      </svg>
+    </button>
+    <span aria-hidden="true" class="absolute top-3 right-3 size-1.5 rounded-full bg-primary"></span>
+  </div>
+</div>

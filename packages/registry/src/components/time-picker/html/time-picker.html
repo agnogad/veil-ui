@@ -1,0 +1,56 @@
+<!-- TimePicker — requires Veil UI tokens and Tailwind v4. -->
+<!-- Pair with time-picker.js to sync the native time input and presets. -->
+<div data-time-picker class="w-fit">
+  <button
+    type="button"
+    popovertarget="time-picker-demo"
+    aria-label="Choose time"
+    aria-haspopup="dialog"
+    class="inline-flex h-9 w-40 items-center justify-start gap-2 rounded-md border border-input bg-background px-4 py-2 text-sm font-normal shadow-xs outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50"
+  >
+    <svg class="size-4 opacity-60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <circle cx="12" cy="12" r="10" />
+      <path d="M12 6v6l4 2" />
+    </svg>
+    <span data-time-label>09:30</span>
+  </button>
+
+  <div
+    id="time-picker-demo"
+    popover
+    data-time-popover
+    aria-label="Choose time"
+    class="m-0 w-56 rounded-md border bg-popover p-3 text-popover-foreground shadow-md opacity-0 scale-95 transition-[opacity,scale,display,overlay] [transition-behavior:allow-discrete] duration-150 open:opacity-100 open:scale-100 starting:open:opacity-0"
+    style="position: fixed; inset: auto; top: 5rem; left: 2rem"
+  >
+    <label class="grid gap-1">
+      <span class="text-xs font-medium text-muted-foreground">Time</span>
+      <input
+        type="time"
+        data-time-input
+        value="09:30"
+        step="300"
+        aria-label="Choose time, time input"
+        class="h-9 w-full rounded-md border border-input bg-transparent px-3 text-sm tabular-nums shadow-xs outline-none transition-colors focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50"
+      />
+    </label>
+
+    <p class="mt-3 text-xs font-medium text-muted-foreground">Presets</p>
+    <div class="mt-1 grid grid-cols-2 gap-1">
+      <button type="button" data-time-preset="09:00" class="flex h-8 items-center justify-center rounded-md text-sm tabular-nums outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:ring-2 focus-visible:ring-ring">09:00</button>
+      <button type="button" data-time-preset="12:00" class="flex h-8 items-center justify-center rounded-md text-sm tabular-nums outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:ring-2 focus-visible:ring-ring">12:00</button>
+      <button type="button" data-time-preset="15:00" class="flex h-8 items-center justify-center rounded-md text-sm tabular-nums outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:ring-2 focus-visible:ring-ring">15:00</button>
+      <button type="button" data-time-preset="18:00" class="flex h-8 items-center justify-center rounded-md text-sm tabular-nums outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:ring-2 focus-visible:ring-ring">18:00</button>
+    </div>
+
+    <div class="mt-3 flex justify-end border-t pt-3">
+      <button
+        type="button"
+        data-time-done
+        class="inline-flex h-8 items-center justify-center rounded-md bg-secondary px-3 text-xs font-medium text-secondary-foreground outline-none transition-colors hover:bg-secondary/80 focus-visible:ring-[3px] focus-visible:ring-ring/50"
+      >
+        Done
+      </button>
+    </div>
+  </div>
+</div>

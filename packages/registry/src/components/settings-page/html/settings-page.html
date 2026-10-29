@@ -1,0 +1,148 @@
+<!-- Settings Page — requires Veil UI tokens and Tailwind v4. -->
+<div data-slot="settings-page" class="mx-auto grid w-full max-w-7xl grid-cols-1 gap-8 px-4 py-8 sm:px-6 lg:grid-cols-[260px_1fr]">
+  <aside class="min-w-0 lg:sticky lg:top-8 lg:self-start">
+    <nav aria-label="Settings" class="rounded-lg border p-2">
+      <div class="grid gap-1">
+        <p class="px-2 py-1.5 text-xs font-medium text-muted-foreground">Account</p>
+        <a href="#profile" aria-current="page" class="flex items-center gap-2 rounded-md bg-accent px-2 py-1.5 text-sm font-medium text-accent-foreground transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
+          Profile
+        </a>
+        <a href="#notifications" class="flex items-center gap-2 rounded-md px-2 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4" aria-hidden="true"><path d="M10.268 21a2 2 0 0 0 3.464 0" /><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" /></svg>
+          Notifications
+        </a>
+        <a href="#appearance" class="flex items-center gap-2 rounded-md px-2 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4" aria-hidden="true"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor" /><circle cx="17.5" cy="10.5" r=".5" fill="currentColor" /><circle cx="8.5" cy="7.5" r=".5" fill="currentColor" /><circle cx="6.5" cy="12.5" r=".5" fill="currentColor" /><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z" /></svg>
+          Appearance
+        </a>
+        <a href="#security" class="flex items-center gap-2 rounded-md px-2 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg>
+          Security
+        </a>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="min-w-0 space-y-6">
+    <div>
+      <h1 class="text-xl font-semibold tracking-tight">Settings</h1>
+      <p class="text-sm text-muted-foreground">Manage your profile and workspace preferences.</p>
+    </div>
+
+    <div data-slot="card" class="flex flex-col gap-4 rounded-lg border bg-card py-5 text-card-foreground shadow-xs">
+      <div data-slot="card-header" class="grid auto-rows-min items-start gap-1 px-5">
+        <div data-slot="card-title" class="text-base font-medium leading-none">Profile</div>
+        <div data-slot="card-description" class="text-sm text-muted-foreground">
+          This information is visible to people in your workspace.
+        </div>
+      </div>
+      <div data-slot="card-content" class="space-y-5 px-5">
+        <div class="flex items-center gap-4">
+          <span class="flex size-14 shrink-0 items-center justify-center overflow-hidden rounded-full bg-muted text-base font-medium text-muted-foreground">MC</span>
+          <div class="flex flex-wrap gap-2">
+            <button type="button" class="inline-flex h-8 items-center justify-center rounded-md border border-input bg-background px-3 text-xs font-medium transition-colors hover:bg-accent hover:text-accent-foreground">
+              Change avatar
+            </button>
+            <button type="button" class="inline-flex h-8 items-center justify-center rounded-md px-3 text-xs font-medium transition-colors hover:bg-accent hover:text-accent-foreground">
+              Remove
+            </button>
+          </div>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="space-y-1.5">
+            <label for="settings-name" class="flex select-none items-center gap-2 text-sm font-medium leading-none">Full name</label>
+            <input id="settings-name" type="text" value="Mira Chen" class="h-9 w-full min-w-0 rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-xs outline-none transition-[color,box-shadow,border-color] focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 dark:bg-input/30" />
+          </div>
+          <div class="space-y-1.5">
+            <label for="settings-handle" class="flex select-none items-center gap-2 text-sm font-medium leading-none">Handle</label>
+            <input id="settings-handle" type="text" value="@mirachen" class="h-9 w-full min-w-0 rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-xs outline-none transition-[color,box-shadow,border-color] focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 dark:bg-input/30" />
+          </div>
+          <div class="space-y-1.5 sm:col-span-2">
+            <label for="settings-email" class="flex select-none items-center gap-2 text-sm font-medium leading-none">Email</label>
+            <input id="settings-email" type="email" value="mira@acme.dev" class="h-9 w-full min-w-0 rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-xs outline-none transition-[color,box-shadow,border-color] focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 dark:bg-input/30" />
+            <p class="text-xs text-muted-foreground">We only use this address for account notifications.</p>
+          </div>
+          <div class="space-y-1.5 sm:col-span-2">
+            <label for="settings-bio" class="flex select-none items-center gap-2 text-sm font-medium leading-none">Bio</label>
+            <textarea id="settings-bio" rows="3" class="flex min-h-16 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-xs outline-none transition-[color,box-shadow,border-color] focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 field-sizing-content dark:bg-input/30">Product lead at Acme. Building calm tools for busy teams.</textarea>
+          </div>
+        </div>
+      </div>
+      <div data-slot="card-footer" class="flex items-center justify-end gap-2 border-t px-5 pt-4">
+        <button type="button" class="inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground">Cancel</button>
+        <button type="button" class="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90">Save changes</button>
+      </div>
+    </div>
+
+    <div data-slot="card" class="flex flex-col gap-4 rounded-lg border bg-card py-5 text-card-foreground shadow-xs">
+      <div data-slot="card-header" class="grid auto-rows-min items-start gap-1 px-5">
+        <div data-slot="card-title" class="text-base font-medium leading-none">Notifications</div>
+        <div data-slot="card-description" class="text-sm text-muted-foreground">Choose which updates you want to receive.</div>
+      </div>
+      <div data-slot="card-content" class="divide-y px-5">
+        <div class="flex items-center justify-between gap-4 py-3 first:pt-0 last:pb-0">
+          <div>
+            <p class="text-sm font-medium">Product updates</p>
+            <p class="text-xs text-muted-foreground">News about releases and new components.</p>
+          </div>
+          <label class="inline-flex cursor-pointer items-center">
+            <input type="checkbox" class="peer sr-only" checked aria-label="Product updates" />
+            <span class="relative inline-flex h-5 w-9 shrink-0 items-center rounded-full border border-transparent bg-input shadow-xs transition-colors after:absolute after:left-0.5 after:top-0.5 after:size-4 after:rounded-full after:bg-background after:shadow-sm after:transition-transform peer-checked:bg-primary peer-checked:after:translate-x-4 peer-focus-visible:ring-[3px] peer-focus-visible:ring-ring/50"></span>
+          </label>
+        </div>
+        <div class="flex items-center justify-between gap-4 py-3 first:pt-0 last:pb-0">
+          <div>
+            <p class="text-sm font-medium">Weekly digest</p>
+            <p class="text-xs text-muted-foreground">A summary of workspace activity each Monday.</p>
+          </div>
+          <label class="inline-flex cursor-pointer items-center">
+            <input type="checkbox" class="peer sr-only" checked aria-label="Weekly digest" />
+            <span class="relative inline-flex h-5 w-9 shrink-0 items-center rounded-full border border-transparent bg-input shadow-xs transition-colors after:absolute after:left-0.5 after:top-0.5 after:size-4 after:rounded-full after:bg-background after:shadow-sm after:transition-transform peer-checked:bg-primary peer-checked:after:translate-x-4 peer-focus-visible:ring-[3px] peer-focus-visible:ring-ring/50"></span>
+          </label>
+        </div>
+        <div class="flex items-center justify-between gap-4 py-3 first:pt-0 last:pb-0">
+          <div>
+            <p class="text-sm font-medium">Mentions</p>
+            <p class="text-xs text-muted-foreground">When someone mentions you in a comment.</p>
+          </div>
+          <label class="inline-flex cursor-pointer items-center">
+            <input type="checkbox" class="peer sr-only" checked aria-label="Mentions" />
+            <span class="relative inline-flex h-5 w-9 shrink-0 items-center rounded-full border border-transparent bg-input shadow-xs transition-colors after:absolute after:left-0.5 after:top-0.5 after:size-4 after:rounded-full after:bg-background after:shadow-sm after:transition-transform peer-checked:bg-primary peer-checked:after:translate-x-4 peer-focus-visible:ring-[3px] peer-focus-visible:ring-ring/50"></span>
+          </label>
+        </div>
+        <div class="flex items-center justify-between gap-4 py-3 first:pt-0 last:pb-0">
+          <div>
+            <p class="text-sm font-medium">Marketing email</p>
+            <p class="text-xs text-muted-foreground">Occasional tips and case studies.</p>
+          </div>
+          <label class="inline-flex cursor-pointer items-center">
+            <input type="checkbox" class="peer sr-only" aria-label="Marketing email" />
+            <span class="relative inline-flex h-5 w-9 shrink-0 items-center rounded-full border border-transparent bg-input shadow-xs transition-colors after:absolute after:left-0.5 after:top-0.5 after:size-4 after:rounded-full after:bg-background after:shadow-sm after:transition-transform peer-checked:bg-primary peer-checked:after:translate-x-4 peer-focus-visible:ring-[3px] peer-focus-visible:ring-ring/50"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div data-slot="card" class="flex flex-col gap-4 rounded-lg border bg-card py-5 text-card-foreground shadow-xs">
+      <div data-slot="card-header" class="grid auto-rows-min items-start gap-1 px-5">
+        <div data-slot="card-title" class="text-base font-medium leading-none">Danger zone</div>
+        <div data-slot="card-description" class="text-sm text-muted-foreground">
+          Deleting your account removes all related data permanently.
+        </div>
+      </div>
+      <div data-slot="card-content" class="px-5">
+        <div class="flex flex-wrap items-center justify-between gap-3 rounded-lg border border-destructive/30 bg-destructive/5 p-4">
+          <div>
+            <p class="text-sm font-medium">Delete account</p>
+            <p class="text-xs text-muted-foreground">This action cannot be undone.</p>
+          </div>
+          <button type="button" class="inline-flex h-8 items-center justify-center gap-2 rounded-md bg-destructive px-3 text-xs font-medium text-destructive-foreground transition-colors hover:bg-destructive/90">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4" aria-hidden="true"><path d="M3 6h18" /><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6" /><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2" /></svg>
+            Delete account
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

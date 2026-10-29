@@ -1,0 +1,38 @@
+<!-- Form Field — requires Veil UI tokens and Tailwind v4. -->
+<div class="grid w-full max-w-sm gap-5">
+  <div data-slot="form-field" class="grid gap-2">
+    <label data-slot="form-field-label" for="field-name" class="flex select-none items-center gap-2 text-sm font-medium leading-none">
+      Name
+      <span class="text-destructive" aria-hidden="true">*</span>
+    </label>
+    <input
+      id="field-name"
+      data-slot="input"
+      placeholder="Ada Lovelace"
+      required
+      aria-describedby="field-name-description"
+      class="h-9 w-full min-w-0 rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-xs outline-none transition-[color,box-shadow,border-color] placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 dark:bg-input/30"
+    />
+    <p id="field-name-description" data-slot="form-field-description" class="text-sm text-muted-foreground">
+      Shown on your public profile. Markdown is supported.
+    </p>
+  </div>
+
+  <div data-slot="form-field" data-invalid="true" class="grid gap-2">
+    <label data-slot="form-field-label" for="field-email" class="text-sm font-medium leading-none">
+      Email
+    </label>
+    <input
+      id="field-email"
+      data-slot="input"
+      type="email"
+      value="not-an-email"
+      aria-invalid="true"
+      aria-describedby="field-email-error"
+      class="h-9 w-full min-w-0 rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-xs outline-none transition-[color,box-shadow,border-color] placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:bg-input/30"
+    />
+    <p id="field-email-error" data-slot="form-field-error" role="alert" class="text-sm font-medium text-destructive">
+      Enter a valid email address.
+    </p>
+  </div>
+</div>

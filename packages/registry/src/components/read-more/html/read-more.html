@@ -1,0 +1,25 @@
+<!-- Read More — requires Veil UI tokens and Tailwind v4. -->
+<div data-read-more data-lines="3" class="grid max-w-sm gap-2 text-sm">
+  <div
+    id="read-more-content"
+    data-read-more-content
+    data-clamp="line-clamp-3"
+    class="line-clamp-3"
+  >
+    Buttons, inputs, navigation and overlays arrive as source files. Keep what you
+    need, delete the rest, and edit every class. The registry only resolves
+    dependencies and writes files, so there is no runtime to upgrade or fight with
+    later.
+  </div>
+  <button
+    type="button"
+    data-read-more-toggle
+    aria-expanded="false"
+    aria-controls="read-more-content"
+    data-more-label="Read more"
+    data-less-label="Show less"
+    class="w-fit rounded-sm text-xs font-medium text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+  >
+    Read more
+  </button>
+</div>

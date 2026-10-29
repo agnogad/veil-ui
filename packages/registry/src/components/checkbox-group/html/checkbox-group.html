@@ -1,0 +1,46 @@
+<!-- Checkbox group — requires Veil UI tokens and Tailwind v4. -->
+<fieldset class="grid gap-3">
+  <legend class="mb-1 text-sm font-medium">Email preferences</legend>
+
+  <label class="flex items-start gap-2 text-sm">
+    <input type="checkbox" name="email-preferences" value="news" class="peer sr-only" checked />
+    <span
+      class="mt-0.5 flex size-4 shrink-0 items-center justify-center rounded-sm border border-input shadow-xs transition-colors peer-checked:border-primary peer-checked:bg-primary peer-checked:text-primary-foreground peer-focus-visible:border-ring peer-focus-visible:ring-[3px] peer-focus-visible:ring-ring/50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 [&_svg]:opacity-0 peer-checked:[&_svg]:opacity-100"
+    >
+      <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="m5 12 4 4 10-10" />
+      </svg>
+    </span>
+    <span class="grid gap-0.5">
+      <span class="font-medium leading-none">Product news</span>
+      <span class="text-muted-foreground">Release notes and feature announcements.</span>
+    </span>
+  </label>
+
+  <label class="flex items-start gap-2 text-sm">
+    <input type="checkbox" name="email-preferences" value="tips" class="peer sr-only" />
+    <span
+      class="mt-0.5 flex size-4 shrink-0 items-center justify-center rounded-sm border border-input shadow-xs transition-colors peer-checked:border-primary peer-checked:bg-primary peer-checked:text-primary-foreground peer-focus-visible:border-ring peer-focus-visible:ring-[3px] peer-focus-visible:ring-ring/50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 [&_svg]:opacity-0 peer-checked:[&_svg]:opacity-100"
+    >
+      <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="m5 12 4 4 10-10" />
+      </svg>
+    </span>
+    <span class="grid gap-0.5">
+      <span class="font-medium leading-none">Tips and tricks</span>
+      <span class="text-muted-foreground">Short guides for getting more out of Veil.</span>
+    </span>
+  </label>
+
+  <label class="flex items-start gap-2 text-sm">
+    <input type="checkbox" name="email-preferences" value="billing" class="peer sr-only" />
+    <span
+      class="mt-0.5 flex size-4 shrink-0 items-center justify-center rounded-sm border border-input shadow-xs transition-colors peer-checked:border-primary peer-checked:bg-primary peer-checked:text-primary-foreground peer-focus-visible:border-ring peer-focus-visible:ring-[3px] peer-focus-visible:ring-ring/50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 [&_svg]:opacity-0 peer-checked:[&_svg]:opacity-100"
+    >
+      <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="m5 12 4 4 10-10" />
+      </svg>
+    </span>
+    <span class="font-medium leading-none">Billing updates</span>
+  </label>
+</fieldset>

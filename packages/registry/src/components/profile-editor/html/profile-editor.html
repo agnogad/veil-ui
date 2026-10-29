@@ -1,0 +1,39 @@
+<!-- Profile Editor — requires Veil UI tokens and Tailwind v4. -->
+<form data-slot="profile-editor" class="grid w-full max-w-lg gap-5 rounded-xl border bg-background p-5">
+  <div class="flex items-center gap-4">
+    <span class="flex size-10 shrink-0 items-center justify-center overflow-hidden rounded-full bg-muted text-sm font-medium text-muted-foreground">AL</span>
+    <button type="button" class="inline-flex h-8 items-center justify-center gap-2 rounded-md border border-input bg-background px-3 text-xs font-medium transition-colors hover:bg-accent hover:text-accent-foreground">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z" /><circle cx="12" cy="13" r="3" /></svg>
+      Change photo
+    </button>
+  </div>
+
+  <div class="grid gap-2">
+    <label for="profile-name" class="text-sm font-medium leading-none">Name</label>
+    <input id="profile-name" type="text" value="Ada Lovelace" required class="h-9 w-full min-w-0 rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-xs outline-none transition-[color,box-shadow,border-color] placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 dark:bg-input/30" />
+  </div>
+
+  <div class="grid gap-2">
+    <label for="profile-handle" class="text-sm font-medium leading-none">Handle</label>
+    <input id="profile-handle" type="text" value="ada" placeholder="ada" class="h-9 w-full min-w-0 rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-xs outline-none transition-[color,box-shadow,border-color] placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 dark:bg-input/30" />
+  </div>
+
+  <div class="grid gap-2">
+    <label for="profile-bio" class="text-sm font-medium leading-none">Bio</label>
+    <textarea id="profile-bio" rows="3" placeholder="A short introduction." class="flex min-h-16 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-xs outline-none transition-[color,box-shadow,border-color] placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 field-sizing-content dark:bg-input/30">Mathematician and writer.</textarea>
+  </div>
+
+  <div class="grid gap-2">
+    <label for="profile-website" class="text-sm font-medium leading-none">Website</label>
+    <input id="profile-website" type="url" value="https://ada.dev" placeholder="https://example.com" class="h-9 w-full min-w-0 rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-xs outline-none transition-[color,box-shadow,border-color] placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 dark:bg-input/30" />
+  </div>
+
+  <div class="flex justify-end gap-2">
+    <button type="button" class="inline-flex h-9 items-center justify-center rounded-md border border-input bg-background px-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground">
+      Cancel
+    </button>
+    <button type="submit" class="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90">
+      Save changes
+    </button>
+  </div>
+</form>

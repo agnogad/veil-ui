@@ -1,0 +1,40 @@
+<!-- Connection Status — requires Veil UI tokens and Tailwind v4. -->
+<div class="flex flex-col gap-2">
+  <span
+    data-connection-status
+    data-connection-auto
+    data-status="online"
+    role="status"
+    aria-live="polite"
+    class="inline-flex items-center gap-1.5 text-xs text-emerald-700 dark:text-emerald-400"
+  >
+    <span aria-hidden="true" class="relative flex size-2">
+      <span data-connection-ping class="absolute hidden size-full animate-ping rounded-full bg-emerald-500 opacity-60"></span>
+      <span data-connection-dot class="relative inline-flex size-2 rounded-full bg-emerald-500"></span>
+    </span>
+    <span data-connection-label>Connected</span>
+  </span>
+
+  <span
+    role="status"
+    aria-live="polite"
+    class="inline-flex items-center gap-1.5 text-xs text-amber-700 dark:text-amber-400"
+  >
+    <span aria-hidden="true" class="relative flex size-2">
+      <span class="absolute inline-flex size-full animate-ping rounded-full bg-amber-500 opacity-60"></span>
+      <span class="relative inline-flex size-2 rounded-full bg-amber-500"></span>
+    </span>
+    Connecting
+  </span>
+
+  <span
+    role="status"
+    aria-live="polite"
+    class="inline-flex items-center gap-1.5 text-xs text-red-700 dark:text-red-400"
+  >
+    <span aria-hidden="true" class="relative flex size-2">
+      <span class="relative inline-flex size-2 rounded-full bg-red-500"></span>
+    </span>
+    Disconnected
+  </span>
+</div>

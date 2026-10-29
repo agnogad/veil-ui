@@ -1,0 +1,48 @@
+<!-- FileUpload — requires Veil UI tokens and Tailwind v4. -->
+<!-- Pair with file-upload.js for drag and drop, size limits and the file list. -->
+<div
+  data-file-upload
+  data-max-files="3"
+  data-max-size="2097152"
+  class="flex w-full max-w-lg flex-col gap-3"
+>
+  <div
+    role="button"
+    tabindex="0"
+    aria-label="Drop your receipts"
+    data-upload-surface
+    data-dragging="false"
+    class="flex cursor-pointer flex-col items-center justify-center gap-2 rounded-lg border-2 border-dashed border-muted-foreground/25 px-6 py-10 text-center outline-none transition-colors hover:border-muted-foreground/50 hover:bg-accent/40 focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 data-[dragging=true]:border-primary data-[dragging=true]:bg-primary/5"
+  >
+    <svg class="size-8 text-muted-foreground" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M12 13v8M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242" />
+      <path d="m8 17 4-4 4 4" />
+    </svg>
+    <p class="text-sm font-medium">Drop your receipts</p>
+    <p class="text-xs text-muted-foreground">Max 2 MB per file · up to 3 files</p>
+    <span class="text-sm font-medium text-primary underline underline-offset-4">
+      Browse files
+    </span>
+  </div>
+  <input
+    type="file"
+    data-upload-input
+    accept="image/png,image/jpeg,.pdf"
+    multiple
+    tabindex="-1"
+    aria-hidden="true"
+    class="sr-only"
+  />
+  <p data-upload-error hidden role="alert" class="text-sm text-destructive"></p>
+  <ul data-upload-list class="flex flex-col gap-2"></ul>
+  <div data-upload-footer hidden class="flex items-center justify-between gap-3">
+    <p data-upload-count class="text-sm text-muted-foreground"></p>
+    <button
+      type="button"
+      data-upload-button
+      class="inline-flex h-9 shrink-0 items-center justify-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground outline-none transition-colors hover:bg-primary/90 focus-visible:ring-[3px] focus-visible:ring-ring/50"
+    >
+      Upload
+    </button>
+  </div>
+</div>

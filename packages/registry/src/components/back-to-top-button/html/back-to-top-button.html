@@ -1,0 +1,47 @@
+<!-- Back to Top Button — requires Veil UI tokens and Tailwind v4. -->
+<div class="relative w-full max-w-md">
+  <div
+    data-back-to-top-scroll
+    data-threshold="120"
+    class="h-64 overflow-y-auto rounded-lg border p-4"
+  >
+    <div class="grid gap-3 text-sm text-muted-foreground">
+      <p class="font-medium text-foreground">Scroll this panel</p>
+      <p>
+        Long pages pair a floating control with a scroll listener. The button stays
+        out of the way until the reader is far enough down the page.
+      </p>
+      <p>
+        Buttons, inputs, navigation and overlays arrive as source files. Keep what
+        you need, delete the rest, and edit every class.
+      </p>
+      <p>
+        The registry only resolves dependencies and writes files, so there is no
+        runtime to upgrade or fight with later.
+      </p>
+      <p>
+        Scroll back up to hide the button again, or press it to glide to the top.
+      </p>
+      <p>
+        Every component ships with accessible names, focus rings and reduced
+        motion friendly transitions.
+      </p>
+      <p>
+        Compose primitives into layouts, then copy the markup straight into your
+        application.
+      </p>
+      <p class="text-foreground">You have reached the end of the panel.</p>
+    </div>
+  </div>
+
+  <button
+    type="button"
+    data-back-to-top
+    aria-label="Back to top"
+    class="absolute right-4 bottom-4 z-10 hidden size-9 inline-flex items-center justify-center rounded-md bg-primary text-primary-foreground shadow-md outline-none transition-colors hover:bg-primary/90 focus-visible:ring-[3px] focus-visible:ring-ring/50 [&_svg]:size-4"
+  >
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="m5 12 7-7 7 7M12 19V5" />
+    </svg>
+  </button>
+</div>

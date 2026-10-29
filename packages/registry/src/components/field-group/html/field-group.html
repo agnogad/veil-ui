@@ -1,0 +1,37 @@
+<!-- Field Group — requires Veil UI tokens and Tailwind v4. -->
+<fieldset data-slot="field-group" class="grid w-full max-w-md gap-4 border-0 p-0">
+  <legend data-slot="field-group-legend" class="mb-3 text-sm font-medium">
+    Billing address
+  </legend>
+
+  <div data-slot="field-group-row" class="grid gap-4 sm:grid-cols-2">
+    <div class="grid gap-2">
+      <label for="billing-first" class="text-sm font-medium leading-none">First name</label>
+      <input
+        id="billing-first"
+        type="text"
+        autocomplete="given-name"
+        class="h-9 w-full min-w-0 rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-xs outline-none transition-[color,box-shadow,border-color] placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 dark:bg-input/30"
+      />
+    </div>
+    <div class="grid gap-2">
+      <label for="billing-last" class="text-sm font-medium leading-none">Last name</label>
+      <input
+        id="billing-last"
+        type="text"
+        autocomplete="family-name"
+        class="h-9 w-full min-w-0 rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-xs outline-none transition-[color,box-shadow,border-color] placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 dark:bg-input/30"
+      />
+    </div>
+  </div>
+
+  <div class="grid gap-2">
+    <label for="billing-street" class="text-sm font-medium leading-none">Street</label>
+    <input
+      id="billing-street"
+      type="text"
+      autocomplete="street-address"
+      class="h-9 w-full min-w-0 rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-xs outline-none transition-[color,box-shadow,border-color] placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 dark:bg-input/30"
+    />
+  </div>
+</fieldset>

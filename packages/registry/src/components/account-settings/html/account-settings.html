@@ -1,0 +1,93 @@
+<!-- Account Settings — requires Veil UI tokens and Tailwind v4. Pair with account-settings.js. -->
+<div
+  data-account-settings
+  data-slot="account-settings"
+  class="grid w-full max-w-2xl gap-5 rounded-xl border bg-background p-5 sm:grid-cols-[180px_1fr]"
+>
+  <nav aria-label="Settings sections" class="grid content-start gap-1">
+    <button
+      type="button"
+      data-account-tab="profile"
+      data-active="true"
+      aria-current="page"
+      class="inline-flex items-center gap-2 rounded-md px-3 py-2 text-left text-sm text-muted-foreground transition-colors hover:bg-accent/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring data-[active=true]:bg-accent data-[active=true]:font-medium data-[active=true]:text-accent-foreground"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
+      Profile
+    </button>
+    <button
+      type="button"
+      data-account-tab="security"
+      data-active="false"
+      class="inline-flex items-center gap-2 rounded-md px-3 py-2 text-left text-sm text-muted-foreground transition-colors hover:bg-accent/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring data-[active=true]:bg-accent data-[active=true]:font-medium data-[active=true]:text-accent-foreground"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg>
+      Security
+    </button>
+    <button
+      type="button"
+      data-account-tab="notifications"
+      data-active="false"
+      class="inline-flex items-center gap-2 rounded-md px-3 py-2 text-left text-sm text-muted-foreground transition-colors hover:bg-accent/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring data-[active=true]:bg-accent data-[active=true]:font-medium data-[active=true]:text-accent-foreground"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4" aria-hidden="true"><path d="M10.268 21a2 2 0 0 0 3.464 0" /><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" /></svg>
+      Notifications
+    </button>
+  </nav>
+
+  <div class="rounded-lg border bg-background p-5">
+    <div data-account-section="profile" class="grid gap-4">
+      <h2 class="text-sm font-semibold">Profile</h2>
+      <div class="grid gap-2">
+        <label for="account-name" class="text-sm font-medium leading-none">Name</label>
+        <input id="account-name" type="text" value="Ada Lovelace" class="h-9 w-full min-w-0 rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-xs outline-none transition-[color,box-shadow,border-color] focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 dark:bg-input/30" />
+      </div>
+      <div class="grid gap-2">
+        <label for="account-email" class="text-sm font-medium leading-none">Email</label>
+        <input id="account-email" type="email" value="ada@example.com" class="h-9 w-full min-w-0 rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-xs outline-none transition-[color,box-shadow,border-color] focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 dark:bg-input/30" />
+      </div>
+      <div>
+        <button type="button" class="inline-flex h-8 items-center justify-center rounded-md bg-primary px-3 text-xs font-medium text-primary-foreground transition-colors hover:bg-primary/90">
+          Save profile
+        </button>
+      </div>
+    </div>
+
+    <div data-account-section="security" class="grid gap-4" hidden>
+      <h2 class="text-sm font-semibold">Security</h2>
+      <div class="grid gap-2">
+        <label for="account-password" class="text-sm font-medium leading-none">New password</label>
+        <input id="account-password" type="password" class="h-9 w-full min-w-0 rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-xs outline-none transition-[color,box-shadow,border-color] focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 dark:bg-input/30" />
+      </div>
+      <div class="flex items-center justify-between gap-3 rounded-md border p-3">
+        <div class="text-sm">
+          <p class="font-medium">Two-factor authentication</p>
+          <p class="text-xs text-muted-foreground">Require a code from your authenticator app.</p>
+        </div>
+        <label class="inline-flex cursor-pointer items-center">
+          <input type="checkbox" class="peer sr-only" aria-label="Two-factor authentication" />
+          <span class="relative inline-flex h-5 w-9 shrink-0 items-center rounded-full border border-transparent bg-input shadow-xs transition-colors after:absolute after:left-0.5 after:top-0.5 after:size-4 after:rounded-full after:bg-background after:shadow-sm after:transition-transform peer-checked:bg-primary peer-checked:after:translate-x-4 peer-focus-visible:ring-[3px] peer-focus-visible:ring-ring/50"></span>
+        </label>
+      </div>
+      <div>
+        <button type="button" class="inline-flex h-8 items-center justify-center rounded-md bg-primary px-3 text-xs font-medium text-primary-foreground transition-colors hover:bg-primary/90">
+          Update security
+        </button>
+      </div>
+    </div>
+
+    <div data-account-section="notifications" class="grid gap-4" hidden>
+      <h2 class="text-sm font-semibold">Notifications</h2>
+      <div class="flex items-center justify-between gap-3 rounded-md border p-3">
+        <div class="text-sm">
+          <p class="font-medium">Product updates</p>
+          <p class="text-xs text-muted-foreground">Monthly changelog and new components.</p>
+        </div>
+        <label class="inline-flex cursor-pointer items-center">
+          <input type="checkbox" class="peer sr-only" checked aria-label="Product updates" />
+          <span class="relative inline-flex h-5 w-9 shrink-0 items-center rounded-full border border-transparent bg-input shadow-xs transition-colors after:absolute after:left-0.5 after:top-0.5 after:size-4 after:rounded-full after:bg-background after:shadow-sm after:transition-transform peer-checked:bg-primary peer-checked:after:translate-x-4 peer-focus-visible:ring-[3px] peer-focus-visible:ring-ring/50"></span>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>

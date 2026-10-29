@@ -1,0 +1,40 @@
+<!-- Autocomplete — pair with autocomplete.js. Requires Veil UI tokens and Tailwind v4. -->
+<div class="relative w-full max-w-xs" data-autocomplete>
+  <label for="city" class="mb-1.5 block text-sm font-medium leading-none">City</label>
+  <input
+    id="city"
+    data-autocomplete-input
+    type="text"
+    role="combobox"
+    aria-autocomplete="list"
+    aria-expanded="false"
+    aria-controls="city-list"
+    autocomplete="off"
+    placeholder="Search cities…"
+    class="h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-xs outline-none transition-[color,box-shadow,border-color] placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50"
+  />
+  <ul
+    id="city-list"
+    data-autocomplete-list
+    role="listbox"
+    aria-label="City"
+    hidden
+    class="absolute left-0 z-50 mt-1 max-h-60 w-full overflow-y-auto rounded-md border bg-popover p-1 text-popover-foreground shadow-md"
+  >
+    <li id="city-option-berlin" role="option" data-autocomplete-option data-label="Berlin" class="cursor-pointer rounded-sm px-2 py-1.5 text-sm">
+      Berlin
+    </li>
+    <li id="city-option-istanbul" role="option" data-autocomplete-option data-label="Istanbul" class="cursor-pointer rounded-sm px-2 py-1.5 text-sm">
+      Istanbul
+    </li>
+    <li id="city-option-lisbon" role="option" data-autocomplete-option data-label="Lisbon" class="cursor-pointer rounded-sm px-2 py-1.5 text-sm">
+      Lisbon
+    </li>
+    <li id="city-option-tokyo" role="option" data-autocomplete-option data-label="Tokyo" class="cursor-pointer rounded-sm px-2 py-1.5 text-sm">
+      Tokyo
+    </li>
+    <li data-autocomplete-empty hidden class="px-2 py-3 text-center text-sm text-muted-foreground">
+      No cities match that search.
+    </li>
+  </ul>
+</div>

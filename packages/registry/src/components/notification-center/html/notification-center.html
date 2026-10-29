@@ -1,0 +1,116 @@
+<!-- Notification Center — requires Veil UI tokens and Tailwind v4. -->
+<div data-notification-center class="inline-block">
+  <button
+    type="button"
+    popovertarget="notification-center-panel"
+    aria-label="Notifications (1 unread)"
+    aria-haspopup="dialog"
+    data-notification-trigger
+    class="relative inline-flex size-9 shrink-0 items-center justify-center rounded-md outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50"
+  >
+    <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" />
+      <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
+    </svg>
+    <span
+      data-notification-badge
+      aria-hidden="true"
+      class="absolute -top-0.5 -right-0.5 flex size-4 items-center justify-center rounded-full bg-primary text-[10px] font-medium text-primary-foreground"
+    >
+      1
+    </span>
+  </button>
+
+  <div
+    id="notification-center-panel"
+    popover
+    role="dialog"
+    data-notification-center-panel
+    data-slot="notification-center"
+    aria-label="Notifications"
+    class="fixed inset-auto top-16 right-4 m-0 grid w-80 gap-3 rounded-lg border bg-popover p-3 text-popover-foreground shadow-md outline-none open:animate-in open:fade-in-0 open:zoom-in-95"
+  >
+    <div class="flex items-center justify-between gap-2">
+      <p class="text-sm font-semibold">Notifications</p>
+      <button
+        type="button"
+        data-notification-mark-all
+        class="inline-flex h-8 items-center justify-center rounded-md px-3 text-xs font-medium hover:bg-accent hover:text-accent-foreground"
+      >
+        Mark all read
+      </button>
+    </div>
+
+    <div class="grid max-h-80 gap-2 overflow-y-auto">
+      <div
+        data-notification-item
+        data-unread
+        data-slot="notification"
+        class="relative flex w-full items-start gap-3 rounded-lg border border-primary/30 bg-primary/5 p-3 text-sm shadow-xs"
+      >
+        <div
+          aria-hidden="true"
+          class="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-full bg-muted text-muted-foreground"
+        >
+          <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z" />
+          </svg>
+        </div>
+        <div class="grid min-w-0 flex-1 gap-0.5">
+          <div class="flex items-center gap-2">
+            <p class="truncate font-medium">Deployment finished</p>
+            <span class="sr-only">Unread</span>
+          </div>
+          <p class="text-muted-foreground">Production is running commit 4f2a91c.</p>
+          <span class="text-xs text-muted-foreground">2 minutes ago</span>
+        </div>
+        <button
+          type="button"
+          data-notification-center-dismiss
+          aria-label="Dismiss notification"
+          class="-mt-1 -mr-1 inline-flex size-8 shrink-0 items-center justify-center rounded-md hover:bg-accent hover:text-accent-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50"
+        >
+          <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M18 6 6 18M6 6l12 12" />
+          </svg>
+        </button>
+        <span data-notification-center-dot aria-hidden="true" class="absolute top-3 right-3 size-1.5 rounded-full bg-primary"></span>
+      </div>
+
+      <div
+        data-notification-item
+        data-slot="notification"
+        class="relative flex w-full items-start gap-3 rounded-lg border bg-card p-3 text-sm shadow-xs"
+      >
+        <div
+          aria-hidden="true"
+          class="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-full bg-muted text-muted-foreground"
+        >
+          <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="6" cy="6" r="3" />
+            <path d="M6 9v12M18 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM18 9v12M6 15h12" />
+          </svg>
+        </div>
+        <div class="grid min-w-0 flex-1 gap-0.5">
+          <p class="truncate font-medium">New comment on your review</p>
+          <p class="text-muted-foreground">Ada left feedback on the spacing tokens.</p>
+          <span class="text-xs text-muted-foreground">10 minutes ago</span>
+        </div>
+        <button
+          type="button"
+          data-notification-center-dismiss
+          aria-label="Dismiss notification"
+          class="-mt-1 -mr-1 inline-flex size-8 shrink-0 items-center justify-center rounded-md hover:bg-accent hover:text-accent-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50"
+        >
+          <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M18 6 6 18M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <p data-notification-empty hidden class="py-6 text-center text-sm text-muted-foreground">
+      You're all caught up.
+    </p>
+  </div>
+</div>

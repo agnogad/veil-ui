@@ -1,0 +1,22 @@
+<!-- TagsInput — requires Veil UI tokens and Tailwind v4. -->
+<!-- Pair with tags-input.js to add and remove chips. -->
+<div class="flex w-full max-w-md flex-col gap-2">
+  <div
+    data-tags-input
+    data-slot="tags-input"
+    class="flex min-h-9 w-full flex-wrap items-center gap-1.5 rounded-md border border-input bg-transparent px-2 py-1.5 shadow-xs transition-[color,box-shadow] focus-within:border-ring focus-within:ring-[3px] focus-within:ring-ring/50"
+  >
+    <div data-tags-list class="contents"></div>
+    <input
+      type="text"
+      data-tags-field
+      aria-label="Skills"
+      placeholder="Add a tag"
+      autocomplete="off"
+      class="h-6 min-w-24 flex-1 bg-transparent text-sm outline-none placeholder:text-muted-foreground"
+    />
+  </div>
+  <p class="text-xs text-muted-foreground">
+    Press Enter or comma to add a tag. Backspace removes the last one.
+  </p>
+</div>

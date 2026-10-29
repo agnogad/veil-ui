@@ -1,0 +1,40 @@
+<!-- Radio group — requires Veil UI tokens and Tailwind v4. -->
+<fieldset class="grid gap-3">
+  <legend class="mb-1 text-sm font-medium">Plan</legend>
+
+  <label class="flex items-start gap-2 text-sm">
+    <input type="radio" name="plan" value="standard" class="peer sr-only" checked />
+    <span
+      class="mt-1 flex size-4 shrink-0 items-center justify-center rounded-full border border-input shadow-xs transition-[color,box-shadow,border-color] peer-checked:border-primary peer-checked:[&>span]:opacity-100 peer-focus-visible:border-ring peer-focus-visible:ring-[3px] peer-focus-visible:ring-ring/50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50"
+    >
+      <span class="size-2 rounded-full bg-primary opacity-0 transition-opacity"></span>
+    </span>
+    <span class="grid gap-0.5">
+      <span class="font-medium leading-none">Standard</span>
+      <span class="text-muted-foreground">For individuals and small teams.</span>
+    </span>
+  </label>
+
+  <label class="flex items-start gap-2 text-sm">
+    <input type="radio" name="plan" value="enterprise" class="peer sr-only" />
+    <span
+      class="mt-1 flex size-4 shrink-0 items-center justify-center rounded-full border border-input shadow-xs transition-[color,box-shadow,border-color] peer-checked:border-primary peer-checked:[&>span]:opacity-100 peer-focus-visible:border-ring peer-focus-visible:ring-[3px] peer-focus-visible:ring-ring/50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50"
+    >
+      <span class="size-2 rounded-full bg-primary opacity-0 transition-opacity"></span>
+    </span>
+    <span class="grid gap-0.5">
+      <span class="font-medium leading-none">Enterprise</span>
+      <span class="text-muted-foreground">SSO, audit logs and dedicated support.</span>
+    </span>
+  </label>
+
+  <label class="flex items-start gap-2 text-sm text-muted-foreground">
+    <input type="radio" name="plan" value="legacy" class="peer sr-only" disabled />
+    <span
+      class="mt-1 flex size-4 shrink-0 items-center justify-center rounded-full border border-input shadow-xs peer-disabled:cursor-not-allowed peer-disabled:opacity-50"
+    >
+      <span class="size-2 rounded-full bg-primary opacity-0"></span>
+    </span>
+    <span class="font-medium leading-none">Legacy (unavailable)</span>
+  </label>
+</fieldset>

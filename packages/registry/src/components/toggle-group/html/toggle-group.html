@@ -1,0 +1,40 @@
+<!-- Toggle group — requires Veil UI tokens and Tailwind v4. -->
+<div
+  role="group"
+  aria-label="Text alignment"
+  class="inline-flex w-fit items-center rounded-md"
+>
+  <label class="cursor-pointer">
+    <input type="radio" name="alignment" value="left" class="peer sr-only" checked />
+    <span
+      class="inline-flex h-9 min-w-9 items-center justify-center rounded-l-md border border-input bg-transparent px-2.5 text-sm font-medium shadow-xs outline-none transition-[color,background-color,box-shadow] hover:bg-muted peer-checked:bg-accent peer-checked:text-accent-foreground peer-focus-visible:border-ring peer-focus-visible:ring-[3px] peer-focus-visible:ring-ring/50"
+    >
+      <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M21 6H3M15 12H3M17 18H3" />
+      </svg>
+      <span class="sr-only">Align left</span>
+    </span>
+  </label>
+  <label class="cursor-pointer">
+    <input type="radio" name="alignment" value="center" class="peer sr-only" />
+    <span
+      class="-ml-px inline-flex h-9 min-w-9 items-center justify-center border border-input bg-transparent px-2.5 text-sm font-medium shadow-xs outline-none transition-[color,background-color,box-shadow] hover:bg-muted peer-checked:bg-accent peer-checked:text-accent-foreground peer-focus-visible:border-ring peer-focus-visible:ring-[3px] peer-focus-visible:ring-ring/50"
+    >
+      <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M21 6H3M17 12H7M19 18H5" />
+      </svg>
+      <span class="sr-only">Align center</span>
+    </span>
+  </label>
+  <label class="cursor-pointer">
+    <input type="radio" name="alignment" value="right" class="peer sr-only" />
+    <span
+      class="-ml-px inline-flex h-9 min-w-9 items-center justify-center rounded-r-md border border-input bg-transparent px-2.5 text-sm font-medium shadow-xs outline-none transition-[color,background-color,box-shadow] hover:bg-muted peer-checked:bg-accent peer-checked:text-accent-foreground peer-focus-visible:border-ring peer-focus-visible:ring-[3px] peer-focus-visible:ring-ring/50"
+    >
+      <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M21 6H3M21 12H9M21 18H7" />
+      </svg>
+      <span class="sr-only">Align right</span>
+    </span>
+  </label>
+</div>

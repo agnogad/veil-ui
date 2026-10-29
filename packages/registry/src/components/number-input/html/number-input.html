@@ -1,0 +1,46 @@
+<!-- Number input — pair with number-input.js. Requires Veil UI tokens and Tailwind v4. -->
+<div class="grid w-full max-w-60 gap-1.5">
+  <label for="seats" class="text-sm font-medium leading-none">Seats</label>
+  <div
+    data-number-input
+    class="flex h-9 w-full items-center overflow-hidden rounded-md border border-input bg-transparent shadow-xs transition-[color,box-shadow] focus-within:border-ring focus-within:ring-[3px] focus-within:ring-ring/50"
+  >
+    <button
+      type="button"
+      tabindex="-1"
+      aria-label="Decrease value"
+      data-number-step="-1"
+      class="inline-flex size-8 shrink-0 items-center justify-center text-muted-foreground outline-none transition-colors hover:bg-accent hover:text-accent-foreground disabled:pointer-events-none disabled:opacity-50"
+    >
+      <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M5 12h14" />
+      </svg>
+    </button>
+    <input
+      id="seats"
+      data-number-field
+      type="number"
+      inputmode="decimal"
+      role="spinbutton"
+      value="3"
+      min="1"
+      max="50"
+      step="1"
+      class="h-full w-full min-w-0 bg-transparent text-center text-sm tabular-nums outline-none [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+    />
+    <button
+      type="button"
+      tabindex="-1"
+      aria-label="Increase value"
+      data-number-step="1"
+      class="inline-flex size-8 shrink-0 items-center justify-center text-muted-foreground outline-none transition-colors hover:bg-accent hover:text-accent-foreground disabled:pointer-events-none disabled:opacity-50"
+    >
+      <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M5 12h14M12 5v14" />
+      </svg>
+    </button>
+  </div>
+  <p class="text-sm text-muted-foreground">
+    <span data-number-output>3</span> seats selected
+  </p>
+</div>

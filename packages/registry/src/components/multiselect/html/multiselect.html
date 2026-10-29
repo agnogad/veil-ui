@@ -1,0 +1,87 @@
+<!-- Multiselect — pair with multiselect.js. Requires Veil UI tokens and Tailwind v4. -->
+<div class="relative w-full max-w-xs" data-multiselect>
+  <button
+    type="button"
+    data-multiselect-trigger
+    aria-haspopup="listbox"
+    aria-expanded="false"
+    aria-controls="teams-menu"
+    class="flex h-9 w-full items-center justify-between gap-2 rounded-md border border-input bg-background px-4 text-sm font-medium shadow-xs outline-none transition-[color,background-color,border-color,box-shadow] hover:bg-accent hover:text-accent-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50"
+  >
+    <span data-multiselect-label class="truncate text-muted-foreground">
+      Choose teams
+    </span>
+    <svg class="size-4 shrink-0 opacity-50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="m7 15 5 5 5-5M7 9l5-5 5 5" />
+    </svg>
+  </button>
+
+  <div
+    id="teams-menu"
+    data-multiselect-menu
+    data-state="closed"
+    hidden
+    class="absolute left-0 z-50 mt-1 max-h-72 w-full origin-top overflow-y-auto rounded-md border bg-popover p-1 text-popover-foreground shadow-md opacity-0 scale-95 -translate-y-1 transition-[opacity,scale,translate] duration-150 ease-out data-[state=open]:translate-y-0 data-[state=open]:scale-100 data-[state=open]:opacity-100 data-[state=closed]:pointer-events-none"
+  >
+    <p class="px-2 py-1.5 text-xs font-medium text-muted-foreground">Teams</p>
+    <div class="border-b px-1 pb-1">
+      <input
+        data-multiselect-search
+        type="text"
+        placeholder="Filter teams…"
+        aria-label="Filter teams"
+        class="h-8 w-full rounded-sm bg-transparent px-2 text-sm outline-none placeholder:text-muted-foreground"
+      />
+    </div>
+    <div data-multiselect-options class="grid pt-1">
+      <label data-multiselect-option data-label="Design" class="flex cursor-pointer items-center gap-2 rounded-sm px-2 py-1.5 text-sm hover:bg-accent hover:text-accent-foreground">
+        <input type="checkbox" value="design" class="peer sr-only" />
+        <span class="flex size-4 shrink-0 items-center justify-center rounded-sm border border-input shadow-xs peer-checked:border-primary peer-checked:bg-primary peer-checked:text-primary-foreground [&_svg]:opacity-0 peer-checked:[&_svg]:opacity-100">
+          <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="m5 12 4 4 10-10" />
+          </svg>
+        </span>
+        <span class="flex-1">Design</span>
+      </label>
+      <label data-multiselect-option data-label="Engineering" class="flex cursor-pointer items-center gap-2 rounded-sm px-2 py-1.5 text-sm hover:bg-accent hover:text-accent-foreground">
+        <input type="checkbox" value="engineering" class="peer sr-only" />
+        <span class="flex size-4 shrink-0 items-center justify-center rounded-sm border border-input shadow-xs peer-checked:border-primary peer-checked:bg-primary peer-checked:text-primary-foreground [&_svg]:opacity-0 peer-checked:[&_svg]:opacity-100">
+          <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="m5 12 4 4 10-10" />
+          </svg>
+        </span>
+        <span class="flex-1">Engineering</span>
+      </label>
+      <label data-multiselect-option data-label="Marketing" class="flex cursor-pointer items-center gap-2 rounded-sm px-2 py-1.5 text-sm hover:bg-accent hover:text-accent-foreground">
+        <input type="checkbox" value="marketing" class="peer sr-only" />
+        <span class="flex size-4 shrink-0 items-center justify-center rounded-sm border border-input shadow-xs peer-checked:border-primary peer-checked:bg-primary peer-checked:text-primary-foreground [&_svg]:opacity-0 peer-checked:[&_svg]:opacity-100">
+          <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="m5 12 4 4 10-10" />
+          </svg>
+        </span>
+        <span class="flex-1">Marketing</span>
+      </label>
+      <label data-multiselect-option data-label="Support" class="flex cursor-pointer items-center gap-2 rounded-sm px-2 py-1.5 text-sm hover:bg-accent hover:text-accent-foreground">
+        <input type="checkbox" value="support" class="peer sr-only" />
+        <span class="flex size-4 shrink-0 items-center justify-center rounded-sm border border-input shadow-xs peer-checked:border-primary peer-checked:bg-primary peer-checked:text-primary-foreground [&_svg]:opacity-0 peer-checked:[&_svg]:opacity-100">
+          <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="m5 12 4 4 10-10" />
+          </svg>
+        </span>
+        <span class="flex-1">Support</span>
+      </label>
+    </div>
+    <p data-multiselect-empty hidden class="px-2 py-3 text-center text-sm text-muted-foreground">
+      No teams match that search.
+    </p>
+    <div class="mt-1 border-t pt-1">
+      <button
+        type="button"
+        data-multiselect-clear
+        class="flex w-full items-center justify-start rounded-sm px-2 py-1.5 text-sm font-medium outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:bg-accent"
+      >
+        Clear selection
+      </button>
+    </div>
+  </div>
+</div>

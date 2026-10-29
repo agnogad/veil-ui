@@ -1,0 +1,28 @@
+<!-- Error Boundary — requires Veil UI tokens and Tailwind v4. -->
+<div
+  data-slot="error-boundary"
+  role="alert"
+  class="flex max-w-lg flex-col items-center justify-center gap-3 rounded-lg border border-destructive/30 bg-destructive/5 px-6 py-12 text-center"
+>
+  <div
+    aria-hidden="true"
+    class="flex size-10 items-center justify-center rounded-full bg-destructive/10 text-destructive"
+  >
+    <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z" />
+      <path d="M12 9v4M12 17h.01" />
+    </svg>
+  </div>
+  <div class="grid gap-1">
+    <p class="text-sm font-medium text-foreground">Something went wrong</p>
+    <p class="text-sm text-muted-foreground">
+      The demo could not render this widget.
+    </p>
+  </div>
+  <button
+    type="button"
+    class="inline-flex h-8 items-center justify-center rounded-md border border-input bg-background px-3 text-xs font-medium hover:bg-accent hover:text-accent-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50"
+  >
+    Try again
+  </button>
+</div>

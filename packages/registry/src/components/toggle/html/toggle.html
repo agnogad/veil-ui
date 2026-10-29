@@ -1,0 +1,38 @@
+<!-- Toggle — requires Veil UI tokens and Tailwind v4. -->
+<div class="flex flex-wrap items-center gap-3">
+  <label class="inline-flex cursor-pointer text-sm">
+    <input type="checkbox" class="peer sr-only" checked />
+    <span
+      class="inline-flex h-9 min-w-9 items-center justify-center gap-2 rounded-md bg-transparent px-2.5 font-medium outline-none transition-[color,background-color,box-shadow] hover:bg-muted hover:text-muted-foreground peer-checked:bg-accent peer-checked:text-accent-foreground peer-focus-visible:border-ring peer-focus-visible:ring-[3px] peer-focus-visible:ring-ring/50 peer-disabled:pointer-events-none peer-disabled:opacity-50"
+    >
+      <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
+      </svg>
+      <span class="sr-only">Bookmark this page</span>
+    </span>
+  </label>
+
+  <label class="inline-flex cursor-pointer text-sm">
+    <input type="checkbox" class="peer sr-only" />
+    <span
+      class="inline-flex h-9 min-w-9 items-center justify-center gap-2 rounded-md border border-input bg-transparent px-2.5 font-medium shadow-xs outline-none transition-[color,background-color,box-shadow] hover:bg-accent hover:text-accent-foreground peer-checked:bg-accent peer-checked:text-accent-foreground peer-focus-visible:border-ring peer-focus-visible:ring-[3px] peer-focus-visible:ring-ring/50 peer-disabled:pointer-events-none peer-disabled:opacity-50"
+    >
+      <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
+      </svg>
+      Save
+    </span>
+  </label>
+
+  <label class="inline-flex cursor-pointer text-sm text-muted-foreground">
+    <input type="checkbox" class="peer sr-only" disabled />
+    <span
+      class="inline-flex h-9 min-w-9 items-center justify-center gap-2 rounded-md border border-input bg-transparent px-2.5 font-medium shadow-xs opacity-50"
+    >
+      <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
+      </svg>
+      Locked
+    </span>
+  </label>
+</div>

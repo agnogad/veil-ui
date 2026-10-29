@@ -1,0 +1,32 @@
+<!-- Input Group — requires Veil UI tokens and Tailwind v4. -->
+<div class="grid w-full max-w-sm gap-4">
+  <div
+    data-slot="input-group"
+    class="flex h-9 w-full items-center rounded-md border border-input bg-transparent shadow-xs transition-[color,box-shadow,border-color] focus-within:border-ring focus-within:ring-[3px] focus-within:ring-ring/50 has-[input[aria-invalid=true]]:border-destructive has-[input[aria-invalid=true]]:ring-destructive/20 dark:bg-input/30 [&>input]:h-full [&>input]:min-w-0 [&>input]:flex-1 [&>input]:rounded-none [&>input]:border-0 [&>input]:bg-transparent [&>input]:shadow-none [&>input]:focus-visible:border-0 [&>input]:focus-visible:ring-0 [&>input]:disabled:opacity-50"
+  >
+    <div data-slot="input-group-addon" data-align="inline-start" class="flex h-full shrink-0 items-center gap-2 pl-3 text-sm text-muted-foreground [&_svg]:size-4 [&_svg]:shrink-0">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8" /></svg>
+    </div>
+    <input
+      type="email"
+      placeholder="you@example.com"
+      aria-label="Email"
+      class="h-full min-w-0 flex-1 rounded-none border-0 bg-transparent px-3 text-sm shadow-none outline-none placeholder:text-muted-foreground focus-visible:ring-0"
+    />
+  </div>
+
+  <div
+    data-slot="input-group"
+    class="flex h-9 w-full items-center rounded-md border border-input bg-transparent shadow-xs transition-[color,box-shadow,border-color] focus-within:border-ring focus-within:ring-[3px] focus-within:ring-ring/50 has-[input[aria-invalid=true]]:border-destructive has-[input[aria-invalid=true]]:ring-destructive/20 dark:bg-input/30 [&>input]:h-full [&>input]:min-w-0 [&>input]:flex-1 [&>input]:rounded-none [&>input]:border-0 [&>input]:bg-transparent [&>input]:shadow-none [&>input]:focus-visible:border-0 [&>input]:focus-visible:ring-0 [&>input]:disabled:opacity-50"
+  >
+    <div data-slot="input-group-addon" data-align="inline-start" class="flex h-full shrink-0 items-center gap-2 pl-3 text-sm text-muted-foreground">
+      veil.dev/
+    </div>
+    <input
+      type="text"
+      placeholder="project-name"
+      aria-label="Project slug"
+      class="h-full min-w-0 flex-1 rounded-none border-0 bg-transparent px-3 text-sm shadow-none outline-none placeholder:text-muted-foreground focus-visible:ring-0"
+    />
+  </div>
+</div>

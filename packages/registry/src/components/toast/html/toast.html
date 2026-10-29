@@ -1,0 +1,58 @@
+<!-- Toast — requires Veil UI tokens and Tailwind v4. -->
+<div data-toast-demo class="flex flex-col gap-3">
+  <div class="flex flex-wrap gap-2">
+    <button
+      type="button"
+      data-toast-trigger="default"
+      class="inline-flex h-9 items-center justify-center rounded-md border border-input bg-background px-4 text-sm font-medium hover:bg-accent hover:text-accent-foreground"
+    >
+      Show toast
+    </button>
+    <button
+      type="button"
+      data-toast-trigger="success"
+      class="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground hover:bg-primary/90"
+    >
+      Success
+    </button>
+    <button
+      type="button"
+      data-toast-trigger="destructive"
+      class="inline-flex h-9 items-center justify-center rounded-md bg-destructive px-4 text-sm font-medium text-destructive-foreground hover:bg-destructive/90"
+    >
+      Destructive
+    </button>
+  </div>
+
+  <div
+    data-toaster
+    aria-label="Notifications"
+    class="fixed right-0 bottom-0 z-50 flex max-h-screen w-full flex-col gap-2 p-4 sm:max-w-sm"
+  >
+    <template id="toast-template">
+      <div
+        data-slot="toast"
+        data-state="open"
+        data-variant="default"
+        class="pointer-events-auto relative flex w-full items-start gap-3 rounded-lg border border-border bg-background p-4 pr-10 text-sm text-foreground shadow-lg data-[state=closed]:animate-out data-[state=closed]:fade-out-80 data-[state=open]:animate-in data-[state=open]:slide-in-from-bottom-full"
+      >
+        <div class="grid flex-1 gap-1">
+          <p data-toast-title class="font-medium">Changes saved</p>
+          <p data-toast-description data-slot="toast-description" class="opacity-90">
+            Your profile was updated.
+          </p>
+        </div>
+        <button
+          type="button"
+          data-toast-close
+          aria-label="Dismiss notification"
+          class="absolute top-2 right-2 inline-flex size-8 items-center justify-center rounded-md hover:bg-accent hover:text-accent-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50"
+        >
+          <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M18 6 6 18M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </template>
+  </div>
+</div>

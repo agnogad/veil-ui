@@ -1,0 +1,31 @@
+<!-- Phone input — requires Veil UI tokens and Tailwind v4. -->
+<div class="grid w-full max-w-sm gap-1.5">
+  <label for="phone" class="text-sm font-medium leading-none">Phone number</label>
+  <div class="flex w-full max-w-sm items-center">
+    <label class="sr-only" for="phone-country">Country code</label>
+    <select
+      id="phone-country"
+      class="h-9 w-28 shrink-0 appearance-none rounded-md rounded-r-none border border-r-0 border-input bg-transparent px-2 text-sm shadow-xs outline-none transition-[color,box-shadow,border-color] focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50"
+    >
+      <option value="US" selected>🇺🇸 +1</option>
+      <option value="GB">🇬🇧 +44</option>
+      <option value="TR">🇹🇷 +90</option>
+      <option value="DE">🇩🇪 +49</option>
+      <option value="FR">🇫🇷 +33</option>
+      <option value="JP">🇯🇵 +81</option>
+      <option value="BR">🇧🇷 +55</option>
+      <option value="IN">🇮🇳 +91</option>
+    </select>
+    <input
+      id="phone"
+      type="tel"
+      inputmode="tel"
+      autocomplete="tel-national"
+      placeholder="555 123 4567"
+      class="h-9 w-full min-w-0 rounded-md rounded-l-none border border-input bg-transparent px-3 py-1 text-sm shadow-xs outline-none transition-[color,box-shadow,border-color] placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50"
+    />
+  </div>
+  <p class="text-sm text-muted-foreground">
+    Numbers are stored without the dial code.
+  </p>
+</div>

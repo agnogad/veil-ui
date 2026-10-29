@@ -1,0 +1,25 @@
+<!-- Form Actions — requires Veil UI tokens and Tailwind v4. -->
+<div class="w-full max-w-md">
+  <div data-slot="form-actions" data-align="between" class="flex flex-wrap items-center justify-between gap-2 border-t pt-4">
+    <button
+      type="button"
+      class="inline-flex h-9 items-center justify-center gap-2 rounded-md px-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
+    >
+      Delete draft
+    </button>
+    <div class="flex flex-wrap items-center gap-2">
+      <button
+        type="button"
+        class="inline-flex h-9 items-center justify-center gap-2 rounded-md border border-input bg-background px-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
+      >
+        Cancel
+      </button>
+      <button
+        type="button"
+        class="inline-flex h-9 items-center justify-center gap-2 rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+      >
+        Publish
+      </button>
+    </div>
+  </div>
+</div>

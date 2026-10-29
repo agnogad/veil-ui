@@ -1,0 +1,48 @@
+<!-- FilePreview — requires Veil UI tokens and Tailwind v4. -->
+<div
+  data-slot="file-preview"
+  class="flex w-full max-w-md flex-col gap-4 overflow-hidden rounded-lg border bg-card py-5 text-card-foreground shadow-xs"
+>
+  <div data-slot="card-header" class="grid auto-rows-min items-start gap-1 px-5">
+    <h3 data-slot="card-title" class="text-sm font-semibold leading-none">
+      release-notes.md
+    </h3>
+    <p class="text-xs text-muted-foreground">12 KB · text/markdown</p>
+  </div>
+  <div data-slot="card-content" class="space-y-3 px-5">
+    <pre class="max-h-48 overflow-auto whitespace-pre-wrap rounded-md border bg-muted/40 p-3 text-xs"># Release 2.4
+
+- Added data table sorting
+- Improved focus rings</pre>
+    <a
+      href="#"
+      class="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
+    >
+      <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
+      </svg>
+      Download
+    </a>
+  </div>
+</div>
+
+<div
+  data-slot="file-preview"
+  class="mt-4 flex w-full max-w-md flex-col gap-4 overflow-hidden rounded-lg border bg-card py-5 text-card-foreground shadow-xs"
+>
+  <div data-slot="card-header" class="grid auto-rows-min items-start gap-1 px-5">
+    <h3 data-slot="card-title" class="text-sm font-semibold leading-none">
+      contract.pdf
+    </h3>
+    <p class="text-xs text-muted-foreground">640 KB · application/pdf</p>
+  </div>
+  <div data-slot="card-content" class="space-y-3 px-5">
+    <div class="flex min-h-24 flex-col items-center justify-center gap-2 rounded-md border border-dashed bg-muted/30 text-sm text-muted-foreground">
+      <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
+        <path d="M14 2v4a2 2 0 0 0 2 2h4M10 9H8M16 13H8M16 17H8" />
+      </svg>
+      <span>No preview available</span>
+    </div>
+  </div>
+</div>
