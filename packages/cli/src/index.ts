@@ -15,13 +15,16 @@ const program = new Command();
 
 program
   .name("veil-ui")
-  .description("Copy-paste UI components for React, built on Radix UI and Tailwind CSS.")
+  .description(
+    "Copy-paste UI components for React, Vue and plain HTML, built on Tailwind CSS.",
+  )
   .version(pkg.version);
 
 program
   .command("init")
   .description("Set up Veil UI in your project")
   .option("--cwd <path>", "working directory")
+  .option("--framework <framework>", "react, vue or html")
   .option("--force", "overwrite an existing components.json")
   .option("--no-install", "skip installing dependencies")
   .action(async (options) => {
@@ -34,6 +37,7 @@ program
   .argument("<components...>", "component names, e.g. button dialog")
   .option("--cwd <path>", "working directory")
   .option("--registry <url>", "registry base URL")
+  .option("--framework <framework>", "react, vue or html")
   .option("--overwrite", "overwrite existing files without prompting")
   .option("--no-install", "skip installing npm dependencies")
   .option("--dry-run", "print the files that would be written")
@@ -47,6 +51,7 @@ program
   .argument("[query]", "filter by name or description")
   .option("--cwd <path>", "working directory")
   .option("--registry <url>", "registry base URL")
+  .option("--framework <framework>", "react, vue or html")
   .option("--json", "print raw JSON")
   .action(async (query: string | undefined, options) => {
     await run(() => list({ ...options, query }));
@@ -58,6 +63,7 @@ program
   .argument("<query>", "search query")
   .option("--cwd <path>", "working directory")
   .option("--registry <url>", "registry base URL")
+  .option("--framework <framework>", "react, vue or html")
   .action(async (query: string, options) => {
     await run(() => list({ ...options, query }));
   });
@@ -68,6 +74,7 @@ program
   .argument("<component>", "component name")
   .option("--cwd <path>", "working directory")
   .option("--registry <url>", "registry base URL")
+  .option("--framework <framework>", "react, vue or html")
   .option("--code", "print file contents")
   .action(async (name: string, options) => {
     await run(() => view(name, options));
@@ -78,6 +85,7 @@ program
   .description("Diagnose your Veil UI setup")
   .option("--cwd <path>", "working directory")
   .option("--registry <url>", "registry base URL")
+  .option("--framework <framework>", "react, vue or html")
   .action(async (options) => {
     await run(() => doctor(options));
   });

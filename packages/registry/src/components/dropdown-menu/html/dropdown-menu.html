@@ -1,0 +1,48 @@
+<!-- Dropdown menu — pair with dropdown-menu.js. Requires Veil UI tokens and Tailwind v4. -->
+<div class="relative inline-block" data-dropdown>
+  <button
+    type="button"
+    data-dropdown-trigger
+    aria-haspopup="menu"
+    aria-expanded="false"
+    class="inline-flex h-9 items-center justify-center gap-2 rounded-md border border-input bg-background px-4 text-sm font-medium hover:bg-accent hover:text-accent-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50"
+  >
+    Open menu
+    <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="m6 9 6 6 6-6" />
+    </svg>
+  </button>
+
+  <div
+    role="menu"
+    aria-label="Account actions"
+    hidden
+    class="absolute right-0 z-50 mt-1 min-w-44 rounded-md border bg-popover p-1 text-popover-foreground shadow-md"
+  >
+    <div class="px-2 py-1.5 text-xs font-medium text-muted-foreground">My account</div>
+    <button
+      type="button"
+      role="menuitem"
+      class="flex w-full items-center gap-2 rounded-sm px-2 py-1.5 text-left text-sm outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+    >
+      Profile
+      <span class="ml-auto text-xs tracking-widest text-muted-foreground">⇧⌘P</span>
+    </button>
+    <button
+      type="button"
+      role="menuitem"
+      class="flex w-full items-center gap-2 rounded-sm px-2 py-1.5 text-left text-sm outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+    >
+      Billing
+      <span class="ml-auto text-xs tracking-widest text-muted-foreground">⌘B</span>
+    </button>
+    <div role="separator" class="-mx-1 my-1 h-px bg-border"></div>
+    <button
+      type="button"
+      role="menuitem"
+      class="flex w-full items-center gap-2 rounded-sm px-2 py-1.5 text-left text-sm text-destructive outline-none transition-colors hover:bg-destructive/10 focus:bg-destructive/10"
+    >
+      Delete account
+    </button>
+  </div>
+</div>

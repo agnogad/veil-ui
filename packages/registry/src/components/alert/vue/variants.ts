@@ -1,0 +1,19 @@
+import { cva, type VariantProps } from "class-variance-authority";
+
+export const alertVariants = cva(
+  "relative flex w-full items-start gap-3 rounded-lg border px-4 py-3 text-sm [&>svg]:size-4 [&>svg]:shrink-0 [&>svg]:translate-y-0.5",
+  {
+    variants: {
+      variant: {
+        default: "bg-card text-card-foreground [&>svg]:text-muted-foreground",
+        destructive:
+          "border-destructive/35 bg-destructive/5 text-destructive [&>svg]:text-destructive",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+    },
+  },
+);
+
+export type AlertVariants = VariantProps<typeof alertVariants>;

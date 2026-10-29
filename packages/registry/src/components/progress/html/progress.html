@@ -1,0 +1,30 @@
+<!-- Progress — requires Veil UI tokens and Tailwind v4. -->
+<div class="grid max-w-sm gap-6">
+  <div>
+    <div class="mb-2 flex items-center justify-between text-sm">
+      <span class="font-medium">Uploading assets</span>
+      <span class="text-muted-foreground">64%</span>
+    </div>
+    <div
+      role="progressbar"
+      aria-valuemin="0"
+      aria-valuemax="100"
+      aria-valuenow="64"
+      aria-label="Uploading assets"
+      class="relative h-1.5 w-full overflow-hidden rounded-full bg-primary/15"
+    >
+      <div class="h-full w-full rounded-full bg-primary transition-transform duration-300" style="transform: translateX(-36%)"></div>
+    </div>
+  </div>
+
+  <div
+    role="progressbar"
+    aria-valuemin="0"
+    aria-valuemax="100"
+    aria-valuenow="100"
+    aria-label="Complete"
+    class="relative h-1.5 w-full overflow-hidden rounded-full bg-primary/15"
+  >
+    <div class="h-full w-full rounded-full bg-primary" style="transform: translateX(0)"></div>
+  </div>
+</div>

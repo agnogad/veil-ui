@@ -1,6 +1,11 @@
 import pc from "picocolors";
 
-import { DEFAULT_REGISTRY, logger, readConfig } from "../lib/config";
+import {
+  DEFAULT_REGISTRY,
+  logger,
+  normalizeFramework,
+  readConfig,
+} from "../lib/config";
 import { createRegistryClient, fetchIndexWithFallback } from "../lib/registry";
 
 interface ListOptions {
@@ -8,14 +13,16 @@ interface ListOptions {
   registry?: string;
   json?: boolean;
   query?: string;
+  framework?: string;
 }
 
 export async function list(options: ListOptions = {}) {
   const cwd = options.cwd ?? process.cwd();
   const config = await readConfig(cwd);
+  const framework = normalizeFramework(options.framework ?? config.framework);
   const registryUrl = options.registry ?? config.registry ?? DEFAULT_REGISTRY;
 
-  const index = await fetchIndexWithFallback(registryUrl);
+  const index = await fetchIndexWithFallback(registryUrl, framework);
   if (!index) return;
 
   const query = options.query?.toLowerCase();
@@ -52,19 +59,28 @@ export async function list(options: ListOptions = {}) {
   }
 
   console.log(
-    `\n${pc.dim(`${items.length} component(s) · ${registryUrl}`)}`,
+    `\n${pc.dim(`${items.length} component(s) · ${framework} · ${registryUrl}`)}`,
   );
 }
 
-export async function view(name: string, options: { cwd?: string; registry?: string; code?: boolean } = {}) {
+export async function view(
+  name: string,
+  options: {
+    cwd?: string;
+    registry?: string;
+    code?: boolean;
+    framework?: string;
+  } = {},
+) {
   const cwd = options.cwd ?? process.cwd();
   const config = await readConfig(cwd);
+  const framework = normalizeFramework(options.framework ?? config.framework);
   const registryUrl = options.registry ?? config.registry ?? DEFAULT_REGISTRY;
-  const client = createRegistryClient(registryUrl);
+  const client = createRegistryClient(registryUrl, framework);
 
   const item = await client.item(name);
 
-  console.log(`\n${pc.bold(item.title)} ${pc.dim(`(${item.name})`)}`);
+  console.log(`\n${pc.bold(item.title)} ${pc.dim(`(${item.name} · ${framework})`)}`);
   console.log(item.description);
   if (item.dependencies?.length) {
     console.log(`\n${pc.bold("Dependencies")}: ${item.dependencies.join(", ")}`);
@@ -84,6 +100,6 @@ export async function view(name: string, options: { cwd?: string; registry?: str
     }
   }
   console.log(
-    `\n${pc.dim(`Install: npx veil-ui add ${item.name}`)}`,
+    `\n${pc.dim(`Install: npx veil-ui add ${item.name}${framework === "react" ? "" : ` --framework ${framework}`}`)}`,
   );
 }

@@ -1,0 +1,77 @@
+<!-- Button — requires Veil UI tokens (or shadcn-style CSS variables) and Tailwind v4. -->
+<div class="flex flex-col gap-6">
+  <!-- Variants -->
+  <div class="flex flex-wrap items-center gap-2">
+    <button
+      class="inline-flex h-9 shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground outline-none transition-colors hover:bg-primary/90 focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50"
+    >
+      Primary
+    </button>
+    <button
+      class="inline-flex h-9 shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-md bg-secondary px-4 py-2 text-sm font-medium text-secondary-foreground outline-none transition-colors hover:bg-secondary/80 focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50"
+    >
+      Secondary
+    </button>
+    <button
+      class="inline-flex h-9 shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-md border border-input bg-background px-4 py-2 text-sm font-medium outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50"
+    >
+      Outline
+    </button>
+    <button
+      class="inline-flex h-9 shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50"
+    >
+      Ghost
+    </button>
+    <button
+      class="inline-flex h-9 shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-md bg-destructive px-4 py-2 text-sm font-medium text-destructive-foreground outline-none transition-colors hover:bg-destructive/90 focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-destructive/20 disabled:pointer-events-none disabled:opacity-50"
+    >
+      Delete
+    </button>
+  </div>
+
+  <!-- Sizes -->
+  <div class="flex flex-wrap items-center gap-2">
+    <button
+      class="inline-flex h-8 shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-md bg-primary px-3 text-xs font-medium text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:ring-[3px] focus-visible:ring-ring/50"
+    >
+      Small
+    </button>
+    <button
+      class="inline-flex h-9 shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:ring-[3px] focus-visible:ring-ring/50"
+    >
+      Default
+    </button>
+    <button
+      class="inline-flex h-10 shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-md bg-primary px-6 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:ring-[3px] focus-visible:ring-ring/50"
+    >
+      Large
+    </button>
+    <button
+      aria-label="Add item"
+      class="inline-flex size-9 shrink-0 items-center justify-center rounded-md bg-primary text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:ring-[3px] focus-visible:ring-ring/50"
+    >
+      <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M12 5v14M5 12h14" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Loading and disabled -->
+  <div class="flex flex-wrap items-center gap-2">
+    <button
+      disabled
+      class="inline-flex h-9 items-center justify-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground opacity-50"
+    >
+      <svg class="size-4 animate-spin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M21 12a9 9 0 1 1-6.219-8.56" />
+      </svg>
+      Deploying
+    </button>
+    <a
+      href="#"
+      class="inline-flex h-9 items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-medium text-primary underline-offset-4 hover:underline"
+    >
+      Read the docs
+    </a>
+  </div>
+</div>

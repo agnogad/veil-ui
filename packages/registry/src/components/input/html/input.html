@@ -1,0 +1,26 @@
+<!-- Input — requires Veil UI tokens and Tailwind v4. -->
+<div class="grid max-w-sm gap-2">
+  <label for="email-input" class="text-sm font-medium leading-none">Email</label>
+  <input
+    id="email-input"
+    type="email"
+    placeholder="you@example.com"
+    class="h-9 w-full min-w-0 rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-xs outline-none transition-[color,box-shadow,border-color] placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-input/30"
+  />
+  <p class="text-xs text-muted-foreground">We only use this for account notices.</p>
+</div>
+
+<div class="mt-6 grid max-w-sm gap-2">
+  <label for="invalid-input" class="text-sm font-medium leading-none">Workspace slug</label>
+  <input
+    id="invalid-input"
+    aria-invalid="true"
+    value="veil ui"
+    class="h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-xs outline-none aria-invalid:border-destructive aria-invalid:ring-[3px] aria-invalid:ring-destructive/20"
+  />
+  <p class="text-xs text-destructive">Use lowercase letters, numbers and dashes.</p>
+</div>
+
+<div class="mt-6 max-w-sm">
+  <input type="file" class="w-full text-sm file:mr-3 file:h-7 file:rounded-md file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground" />
+</div>

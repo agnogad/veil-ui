@@ -1,0 +1,24 @@
+<!-- Label — requires Veil UI tokens and Tailwind v4. -->
+<div class="grid max-w-sm gap-2">
+  <label for="label-demo" class="flex select-none items-center gap-2 text-sm font-medium leading-none">
+    Email address
+  </label>
+  <input
+    id="label-demo"
+    type="email"
+    class="h-9 w-full rounded-md border border-input bg-transparent px-3 text-sm shadow-xs outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50"
+  />
+</div>
+
+<!-- Disabled group example -->
+<div class="group mt-6 grid max-w-sm gap-2" data-disabled="true">
+  <label class="flex select-none items-center gap-2 text-sm font-medium leading-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50">
+    Organization
+    <span class="rounded bg-muted px-1.5 py-0.5 text-[10px] text-muted-foreground">Locked</span>
+  </label>
+  <input
+    disabled
+    value="Acme Inc."
+    class="h-9 w-full rounded-md border border-input bg-transparent px-3 text-sm shadow-xs outline-none disabled:cursor-not-allowed disabled:opacity-50"
+  />
+</div>

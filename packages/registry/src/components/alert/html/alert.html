@@ -1,0 +1,28 @@
+<!-- Alert — requires Veil UI tokens and Tailwind v4. -->
+<div class="grid max-w-lg gap-4">
+  <div role="alert" class="relative flex w-full items-start gap-3 rounded-lg border bg-card px-4 py-3 text-sm text-card-foreground">
+    <svg class="size-4 shrink-0 translate-y-0.5 text-muted-foreground" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <circle cx="12" cy="12" r="10" />
+      <path d="M12 16v-4M12 8h.01" />
+    </svg>
+    <div class="grid gap-1">
+      <div class="font-medium tracking-tight">Heads up</div>
+      <div class="text-sm text-muted-foreground">
+        You can invite up to three teammates on the free plan.
+      </div>
+    </div>
+  </div>
+
+  <div role="alert" class="relative flex w-full items-start gap-3 rounded-lg border border-destructive/35 bg-destructive/5 px-4 py-3 text-sm text-destructive">
+    <svg class="size-4 shrink-0 translate-y-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z" />
+      <path d="M12 9v4M12 17h.01" />
+    </svg>
+    <div class="grid gap-1">
+      <div class="font-medium tracking-tight">Deployment failed</div>
+      <div class="text-sm text-destructive/90">
+        The build exited with code 1. Check the logs for the failing step.
+      </div>
+    </div>
+  </div>
+</div>

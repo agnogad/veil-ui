@@ -37,6 +37,8 @@ export interface ComponentsConfig {
   style: string;
   rsc: boolean;
   tsx: boolean;
+  /** Runtime that installed components target. Defaults to React. */
+  framework?: Framework;
   tailwind: {
     config: string;
     css: string;
@@ -52,6 +54,24 @@ export interface ComponentsConfig {
   };
   registry: string;
 }
+
+export type Framework = "react" | "vue" | "html";
+
+export const FRAMEWORKS: Framework[] = ["react", "vue", "html"];
+
+export function normalizeFramework(value?: string | null): Framework {
+  if (!value || value === "react") return "react";
+  if (value === "vue" || value === "html") return value;
+  fail(
+    `Unknown framework "${value}". Use one of: ${FRAMEWORKS.join(", ")}.`,
+  );
+}
+
+/** Resolve an alias without tsconfig, e.g. "@/components/ui" -> <cwd>/components/ui. */
+export function staticAliasDir(cwd: string, alias: string) {
+  return path.resolve(cwd, alias.replace(/^[@~]\//, ""));
+}
+
 
 export const CONFIG_FILE = "components.json";
 

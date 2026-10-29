@@ -8,7 +8,7 @@ export interface ProjectInfo {
   cwd: string;
   hasPackageJson: boolean;
   name?: string;
-  framework: "next" | "vite" | "remix" | "unknown";
+  framework: "next" | "vue" | "vite" | "remix" | "unknown";
   tailwindMajor: number | null;
   rsc: boolean;
   srcDir: boolean;
@@ -62,7 +62,7 @@ function detectCssFile(cwd: string, framework: ProjectInfo["framework"]) {
   }
 
   if (framework === "next") return "app/globals.css";
-  if (framework === "vite") return "src/index.css";
+  if (framework === "vite" || framework === "vue") return "src/index.css";
   return null;
 }
 
@@ -70,13 +70,15 @@ export async function detectProject(cwd: string): Promise<ProjectInfo> {
   const pkg = await readPackageJson(cwd);
   const dependencies = { ...pkg?.dependencies, ...pkg?.devDependencies };
 
-  const framework: ProjectInfo["framework"] = dependencies.next
-    ? "next"
-    : dependencies.vite
-      ? "vite"
-      : dependencies["@remix-run/react"]
-        ? "remix"
-        : "unknown";
+  const framework: ProjectInfo["framework"] = dependencies.vue || dependencies.nuxt
+    ? "vue"
+    : dependencies.next
+      ? "next"
+      : dependencies.vite
+        ? "vite"
+        : dependencies["@remix-run/react"]
+          ? "remix"
+          : "unknown";
 
   const tailwindRange = dependencies.tailwindcss;
   const tailwindMajor = tailwindRange

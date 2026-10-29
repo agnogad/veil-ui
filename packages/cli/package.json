@@ -1,7 +1,7 @@
 {
   "name": "veil-ui",
   "version": "0.1.0",
-  "description": "Copy-paste UI components for React. Built on Radix UI and Tailwind CSS.",
+  "description": "Copy-paste UI components for React, Vue and plain HTML. Built on Tailwind CSS.",
   "license": "MIT",
   "type": "module",
   "bin": {

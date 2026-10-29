@@ -1,0 +1,144 @@
+---
+title: Vue and HTML
+description: Use the same components in React, Vue and plain HTML.
+---
+
+Veil UI ships the same design system for three runtimes. React is the reference
+implementation; Vue and plain HTML builds are generated from the same source
+folder and published in their own registry indexes.
+
+## Support matrix
+
+| Framework | Runtime | Registry | Components |
+| --- | --- | --- | --- |
+| React | React 19 + Radix UI | `/r` | 298 |
+| Vue | Vue 3.5 + Reka UI | `/r/vue` | 20, growing |
+| HTML | Tailwind v4 + native elements | `/r/html` | 20, growing |
+
+Vue and HTML coverage grows in waves. Every component page lists the ports it
+has in a **Vue and plain HTML** section at the bottom, and the CLI tells you
+when a component is not available for your framework yet.
+
+## Vue
+
+### Setup
+
+```bash
+npx veil-ui init --framework vue
+npx veil-ui add button card tabs accordion
+```
+
+`init` writes `components.json` with `"framework": "vue"`, installs
+`reka-ui`, `lucide-vue-next`, `class-variance-authority`, `clsx` and
+`tailwind-merge`, and adds the tokens to your stylesheet.
+
+Vue files are installed as folders so compound components stay importable from
+one path:
+
+```
+components/ui/button/
+├─ index.ts        re-exports Button and buttonVariants
+├─ Button.vue
+└─ variants.ts
+```
+
+### Usage
+
+```vue
+<script setup lang="ts">
+import { Button } from "@/components/ui/button";
+</script>
+
+<template>
+  <Button variant="outline" @click="save">Save changes</Button>
+</template>
+```
+
+- Behaviour and accessibility come from [Reka UI](https://reka-ui.com), the
+  Vue port of Radix primitives.
+- `as-child` composition works through Reka's `Primitive`.
+- Interactive components accept `v-model`: `Switch`, `Checkbox`, `Tabs`,
+  `Accordion`, `Popover`, `DropdownMenu` and `AlertDialog`.
+
+## Plain HTML
+
+### Setup
+
+```bash
+npx veil-ui init --framework html
+npx veil-ui add card input tabs alert-dialog
+```
+
+Plain HTML mode does not require a `package.json`, TypeScript or a path alias.
+It writes `veil-ui.css` with the design tokens and installs snippets into
+`components/ui/`:
+
+```
+components/ui/
+├─ button.html
+├─ tabs.html
+├─ tabs.js        only for components that need behaviour
+├─ alert-dialog.html
+└─ alert-dialog.js
+```
+
+Load your compiled Tailwind stylesheet, the tokens and any sibling script:
+
+```html
+<link rel="stylesheet" href="/styles.css" />
+<script src="components/ui/tabs.js"></script>
+
+<button class="inline-flex h-9 items-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground">
+  Save changes
+</button>
+```
+
+For prototypes, Tailwind's browser build can compile classes at runtime. For
+production, run the Tailwind CLI or your bundler over the HTML files so the
+stylesheet is generated ahead of time.
+
+Interactive HTML ports stay dependency-free:
+
+| Pattern | Technique |
+| --- | --- |
+| Accordion | native `<details>` / `<summary>` |
+| Switch, Checkbox | native checkbox + Tailwind `peer` variants |
+| Tooltip | CSS on `:hover` / `:focus-within` |
+| Popover | native `popover` attribute |
+| Tabs | ARIA roles + a small `tabs.js` |
+| Dropdown menu | ARIA menu + `dropdown-menu.js` |
+| Alert dialog | native `<dialog>` + `alert-dialog.js` |
+
+Copy the markup from the component page, or install it with the CLI so the
+sibling script is written next to the snippet.
+
+## Switching frameworks
+
+The framework lives in `components.json`:
+
+```json
+{
+  "framework": "vue"
+}
+```
+
+Override it for a single command with `--framework`:
+
+```bash
+npx veil-ui add button --framework html
+npx veil-ui list --framework vue
+npx veil-ui view card --framework html --code
+```
+
+## Ported components
+
+The first wave covers the primitives every other component builds on:
+
+`accordion`, `alert`, `alert-dialog`, `avatar`, `badge`, `button`, `card`,
+`checkbox`, `dropdown-menu`, `input`, `label`, `popover`, `progress`,
+`separator`, `skeleton`, `spinner`, `switch`, `tabs`, `textarea`, `tooltip`.
+
+New ports land in batches. The React registry stays the source of truth; Vue
+and HTML outputs are validated during `pnpm registry:build` (Vue SFCs are
+parsed with `@vue/compiler-sfc`, and cross-component imports are resolved
+against the Vue registry).

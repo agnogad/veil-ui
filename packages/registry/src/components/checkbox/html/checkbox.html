@@ -1,0 +1,38 @@
+<!-- Checkbox — native checkbox, no JavaScript. Requires Veil UI tokens and Tailwind v4. -->
+<div class="grid gap-3 text-sm">
+  <label class="inline-flex items-center gap-2">
+    <input type="checkbox" class="peer sr-only" checked />
+    <span
+      class="flex size-4 shrink-0 items-center justify-center rounded-sm border border-input text-primary-foreground shadow-xs outline-none transition-colors peer-checked:border-primary peer-checked:bg-primary peer-focus-visible:ring-[3px] peer-focus-visible:ring-ring/50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 peer-checked:[&>svg]:opacity-100"
+    >
+      <svg class="size-3.5 opacity-0 transition-opacity" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M20 6 9 17l-5-5" />
+      </svg>
+    </span>
+    Accept terms and conditions
+  </label>
+
+  <label class="inline-flex items-center gap-2">
+    <input type="checkbox" class="peer sr-only" />
+    <span
+      class="flex size-4 shrink-0 items-center justify-center rounded-sm border border-input text-primary-foreground shadow-xs outline-none transition-colors peer-checked:border-primary peer-checked:bg-primary peer-focus-visible:ring-[3px] peer-focus-visible:ring-ring/50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 peer-checked:[&>svg]:opacity-100"
+    >
+      <svg class="size-3.5 opacity-0 transition-opacity" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M20 6 9 17l-5-5" />
+      </svg>
+    </span>
+    Send me product news
+  </label>
+
+  <label class="inline-flex items-center gap-2 text-muted-foreground">
+    <input type="checkbox" class="peer sr-only" disabled />
+    <span
+      class="flex size-4 shrink-0 items-center justify-center rounded-sm border border-input text-primary-foreground shadow-xs outline-none transition-colors peer-checked:border-primary peer-checked:bg-primary peer-focus-visible:ring-[3px] peer-focus-visible:ring-ring/50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 peer-checked:[&>svg]:opacity-100"
+    >
+      <svg class="size-3.5 opacity-0 transition-opacity" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M20 6 9 17l-5-5" />
+      </svg>
+    </span>
+    Enterprise only
+  </label>
+</div>

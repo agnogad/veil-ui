@@ -1,0 +1,36 @@
+<!-- Avatar — requires Veil UI tokens and Tailwind v4. -->
+<div class="flex items-center gap-4">
+  <!-- Image -->
+  <span class="relative flex size-10 shrink-0 overflow-hidden rounded-full bg-muted">
+    <img
+      src="https://github.com/shadcn.png"
+      alt="Ada Lovelace"
+      class="aspect-square size-full object-cover"
+    />
+  </span>
+
+  <!-- Initials fallback -->
+  <span class="relative flex size-10 shrink-0 overflow-hidden rounded-full bg-muted">
+    <span class="flex size-full items-center justify-center rounded-full bg-muted text-sm font-medium text-muted-foreground">
+      AL
+    </span>
+  </span>
+
+  <!-- Sizes -->
+  <span class="relative flex size-6 shrink-0 items-center justify-center overflow-hidden rounded-full bg-muted text-[10px] font-medium text-muted-foreground">
+    SM
+  </span>
+  <span class="relative flex size-8 shrink-0 items-center justify-center overflow-hidden rounded-full bg-muted text-xs font-medium text-muted-foreground">
+    DF
+  </span>
+  <span class="relative flex size-10 shrink-0 items-center justify-center overflow-hidden rounded-full bg-muted text-sm font-medium text-muted-foreground">
+    LG
+  </span>
+
+  <!-- Stacked group -->
+  <span class="flex -space-x-2">
+    <span class="relative flex size-8 items-center justify-center rounded-full border-2 border-background bg-muted text-xs font-medium text-muted-foreground">AL</span>
+    <span class="relative flex size-8 items-center justify-center rounded-full border-2 border-background bg-muted text-xs font-medium text-muted-foreground">GH</span>
+    <span class="relative flex size-8 items-center justify-center rounded-full border-2 border-background bg-muted text-xs font-medium text-muted-foreground">+3</span>
+  </span>
+</div>

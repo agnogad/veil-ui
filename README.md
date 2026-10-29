@@ -4,16 +4,18 @@
 
 # Veil UI
 
-**Copy-paste React components. Radix behaviour, Tailwind v4 styling, zero lock-in.**
+**Copy-paste components for React, Vue and plain HTML. Radix/Reka behaviour, Tailwind v4 styling, zero lock-in.**
 
-A monochrome component registry for React 19 — 298 components, 691 live examples and 30 page templates.
-One command writes readable source into your codebase. No wrapper package to upgrade, no runtime to fight.
+A monochrome component registry — 298 React components, 691 live examples, 30 page templates,
+and a growing Vue + HTML surface. One command writes readable source into your codebase. No
+wrapper package to upgrade, no runtime to fight.
 
 [![CI](https://img.shields.io/github/actions/workflow/status/agnogad/veil-ui/ci.yml?branch=main&style=flat-square&label=CI)](https://github.com/agnogad/veil-ui/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/license-MIT-0A0A0A?style=flat-square)](./LICENSE)
 [![React](https://img.shields.io/badge/React-19-0A0A0A?style=flat-square&logo=react&logoColor=white)](https://react.dev)
+[![Vue](https://img.shields.io/badge/Vue-3.5-0A0A0A?style=flat-square&logo=vue.js&logoColor=white)](https://vuejs.org)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-v4-0A0A0A?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
-[![Radix UI](https://img.shields.io/badge/Radix-UI-0A0A0A?style=flat-square)](https://www.radix-ui.com)
+[![Radix UI](https://img.shields.io/badge/Radix%20%2B%20Reka-UI-0A0A0A?style=flat-square)](https://www.radix-ui.com)
 [![Components](https://img.shields.io/badge/components-298-0A0A0A?style=flat-square)](#whats-inside)
 [![Examples](https://img.shields.io/badge/examples-691-0A0A0A?style=flat-square)](#whats-inside)
 
@@ -29,11 +31,12 @@ Most component libraries ask you to import their runtime, adopt their release ca
 override their opinions. Veil UI does the opposite: the registry is a catalog of source files,
 and the CLI copies the ones you need into your project.
 
-- **You own the source.** Every component arrives as plain TypeScript you can edit, extend or delete.
-- **Accessible by default.** Radix primitives handle focus, keyboard interaction and ARIA semantics. Every component has a render, behaviour and `axe-core` test.
+- **You own the source.** Every component arrives as plain source you can edit, extend or delete.
+- **Accessible by default.** Radix and Reka UI primitives handle focus, keyboard interaction and ARIA semantics. Every React component has a render, behaviour and `axe-core` test.
 - **One design language.** A monochrome OKLCH palette, a single destructive hue, a 6px base radius and dark mode out of the box.
-- **Composable API.** Variants via `cva`, class merging via `cn`, `data-slot` attributes and `asChild` composition.
+- **Composable API.** Variants via `cva`, class merging via `cn`, `data-slot` attributes and composition through `asChild` / `as-child`.
 - **No drift.** Demos, documentation and tests live next to the source, so the docs always match the code.
+- **Three runtimes, one registry.** React, Vue and plain HTML outputs are compiled from the same component folders.
 
 ## Quick start
 
@@ -66,6 +69,35 @@ The CLI reads `components.json`, resolves registry dependencies, installs missin
 and rewrites `@veil-ui/utils` imports to your own alias. Run `npx veil-ui@latest doctor` at any
 time to validate the setup.
 
+### Vue and plain HTML
+
+```bash
+# Vue 3.5 + Reka UI
+npx veil-ui@latest init --framework vue
+npx veil-ui@latest add button card tabs
+```
+
+```vue
+<script setup lang="ts">
+import { Button } from "@/components/ui/button";
+</script>
+
+<template>
+  <Button variant="outline">Cancel</Button>
+  <Button>Approve changes</Button>
+</template>
+```
+
+```bash
+# No package.json, TypeScript or alias required
+npx veil-ui@latest init --framework html
+npx veil-ui@latest add card tabs alert-dialog
+```
+
+Plain HTML installs Tailwind markup into `components/ui/*.html`, plus a dependency-free
+sibling `.js` file for interactive components (tabs, dropdowns, dialogs). The tokens live in
+`veil-ui.css`. See the [Vue and HTML guide](apps/docs/content/docs/frameworks.mdx).
+
 ### CLI
 
 | Command | Description |
@@ -77,10 +109,23 @@ time to validate the setup.
 | `veil-ui view <component>` | Print a component's files |
 | `veil-ui doctor` | Diagnose the local setup |
 
-`add` supports `--overwrite`, `--no-install`, `--dry-run`, `--registry <url>` and `--cwd <path>`.
+`add` supports `--framework <react|vue|html>`, `--overwrite`, `--no-install`, `--dry-run`, `--registry <url>` and `--cwd <path>`.
 Full reference: [`apps/docs/content/docs/cli.mdx`](apps/docs/content/docs/cli.mdx).
 
 ## What's inside
+
+| Framework | Runtime | Registry | Components |
+| --- | --- | --- | ---: |
+| React | React 19 + Radix UI | `/r` | 298 |
+| Vue | Vue 3.5 + Reka UI | `/r/vue` | 20 |
+| HTML | Tailwind v4 + native elements | `/r/html` | 20 |
+
+The Vue and HTML waves begin with the primitives everything else builds on:
+accordion, alert, alert dialog, avatar, badge, button, card, checkbox, dropdown menu, input,
+label, popover, progress, separator, skeleton, spinner, switch, tabs, textarea and tooltip.
+New ports land in batches, and every component page shows the frameworks it supports.
+
+React coverage by group:
 
 | Group | Components | Examples |
 | --- | ---: | ---: |
@@ -122,8 +167,9 @@ veil-ui/
 ├─ packages/
 │  ├─ cli/                      `veil-ui` CLI — init, add, list, search, view, doctor
 │  ├─ registry/                 Single source of truth for components
-│  │  ├─ scripts/               Registry compiler
-│  │  └─ src/components/        One folder per component
+│  │  ├─ scripts/               Registry compiler (React + Vue + HTML)
+│  │  ├─ src/components/        One folder per component
+│  │  └─ src/frameworks/vue/    Shared Vue helpers
 │  ├─ tokens/                   OKLCH theme tokens and Tailwind v4 mapping
 │  └─ utils/                    `cn()` helper shared inside the monorepo
 ├─ scripts/e2e-cli.mjs          End-to-end CLI check against a local registry
@@ -134,15 +180,18 @@ Every component is a self-contained folder:
 
 ```
 packages/registry/src/components/button/
-├─ index.tsx      Component source (what the CLI ships)
+├─ index.tsx      React source (shipped as ui/button.tsx)
 ├─ meta.json      Registry metadata, dependencies and example names
 ├─ demo.tsx       Live examples rendered by the docs
-└─ test.tsx       Render, behaviour and axe-core accessibility tests
+├─ test.tsx       Render, behaviour and axe-core accessibility tests
+├─ vue/           index.ts + Button.vue + variants.ts (Reka UI)
+└─ html/          button.html (+ button.js when behaviour is needed)
 ```
 
-`pnpm registry:build` compiles these folders into `apps/docs/public/r/*.json`, generates the
-source shown in the docs and validates metadata, names and demo exports. Generated output is
-never committed — the source folders are the only truth.
+`pnpm registry:build` compiles these folders into `apps/docs/public/r/*.json`, `r/vue/*.json`
+and `r/html/*.json`, validates metadata, demo exports and Vue SFC syntax, and generates the
+source shown in the docs. Generated output is never committed — the source folders are the
+only truth.
 
 ## Development
 
@@ -170,9 +219,9 @@ npx veil-ui add card --registry http://localhost:3000/r
 
 | Layer | Choice |
 | --- | --- |
-| Framework | React 19, Next.js 16 (App Router, Turbopack) |
+| Framework | React 19, Next.js 16 (App Router, Turbopack), Vue 3.5 |
 | Styling | Tailwind CSS v4, OKLCH CSS variables |
-| Behaviour | Radix UI primitives, `cmdk`, `embla-carousel`, `react-day-picker`, Recharts |
+| Behaviour | Radix UI primitives, Reka UI (Vue), `cmdk`, `embla-carousel`, `react-day-picker`, Recharts |
 | API | TypeScript, `class-variance-authority`, `clsx` + `tailwind-merge` |
 | Docs | Fumadocs, MDX, generated registry source |
 | Tooling | pnpm workspaces, Turborepo, tsup, Vitest, Testing Library, axe-core, oxlint, Prettier |
@@ -182,7 +231,7 @@ npx veil-ui add card --registry http://localhost:3000/r
 
 - **Monochrome first.** Foreground, background and neutral surfaces carry the interface; colour is reserved for status.
 - **Tokens over classes.** Semantic utilities such as `bg-background`, `text-muted-foreground` and `border-border` map to CSS variables.
-- **Behaviour is delegated.** Radix owns focus management, portalling and keyboard semantics.
+- **Behaviour is delegated.** Radix and Reka UI own focus management, portalling and keyboard semantics; HTML ports use native `<dialog>`, `<details>` and the popover API.
 - **Small, explicit APIs.** `cva` for variants, `cn` for overrides, `data-slot` for styling hooks.
 - **The registry is the product.** There is no separate runtime package to publish or version.
 
@@ -195,6 +244,7 @@ The documentation app lives in `apps/docs`. Run `pnpm dev` and open
 | --- | --- |
 | Introduction | `apps/docs/content/docs/index.mdx` |
 | Installation | `apps/docs/content/docs/installation.mdx` |
+| Vue and HTML | `apps/docs/content/docs/frameworks.mdx` |
 | Theming | `apps/docs/content/docs/theming.mdx` |
 | CLI | `apps/docs/content/docs/cli.mdx` |
 | Components | `apps/docs/content/docs/components/*.mdx` |
@@ -213,13 +263,13 @@ source code and installation command.
 | P4 | Overlays, media, charts | ✅ Done |
 | P5 | Mobile, landing and marketing | ✅ Done |
 | P6 | Auth flows and 30 page templates | ✅ Done |
-| P7 | v1 polish — final audit, CLI release, hosted docs | 🚧 In progress |
+| P7 | v1 polish — final audit, CLI release, hosted docs, Vue/HTML parity | 🚧 In progress |
 
 ## Contributing
 
 Contributions are welcome. Before opening a pull request:
 
-1. Add the component as a folder under `packages/registry/src/components/<name>/` with `index.tsx`, `meta.json`, `demo.tsx` and `test.tsx`.
+1. Add the component as a folder under `packages/registry/src/components/<name>/` with `index.tsx`, `meta.json`, `demo.tsx` and `test.tsx`. Vue and HTML ports go in `vue/` and `html/` inside the same folder.
 2. Run `pnpm registry:build` so metadata and demo exports validate.
 3. Run `pnpm test`, `pnpm typecheck` and `pnpm lint`.
 4. Keep accessibility checks green — tests disable only `color-contrast` and `region` from axe.

@@ -12,8 +12,10 @@ import {
   fail,
   installCommand,
   logger,
+  normalizeFramework,
   readConfig,
   resolveAlias,
+  staticAliasDir,
 } from "../lib/config";
 import { ensureDir, relative } from "../lib/fs";
 import { readPackageJson } from "../lib/project";
@@ -30,20 +32,34 @@ interface AddOptions {
   overwrite?: boolean;
   install?: boolean;
   dryRun?: boolean;
+  framework?: string;
 }
 
+/**
+ * Map a registry path onto the consumer's alias directories:
+ *   ui/button.tsx                    -> <ui>/button.tsx
+ *   components/ui/button/Button.vue  -> <ui>/button/Button.vue
+ *   components/ui/tabs.js            -> <ui>/tabs.js
+ *   lib/utils.ts                     -> <lib>/utils.ts
+ */
 function targetFor(
   file: RegistryFile,
   item: RegistryItem,
   dirs: { ui: string; lib: string; components: string },
 ) {
-  const base = path.basename(file.path);
+  const normalized = file.path.split(path.sep).join("/");
 
-  if (file.type === "registry:lib") return path.join(dirs.lib, base);
-  if (file.type === "registry:ui") return path.join(dirs.ui, base);
-  if (file.type === "registry:block") return path.join(dirs.components, item.name, base);
+  if (normalized.startsWith("components/ui/")) {
+    return path.join(dirs.ui, normalized.slice("components/ui/".length));
+  }
+  if (normalized.startsWith("ui/")) {
+    return path.join(dirs.ui, normalized.slice("ui/".length));
+  }
+  if (normalized.startsWith("lib/")) {
+    return path.join(dirs.lib, normalized.slice("lib/".length));
+  }
 
-  return path.join(dirs.components, item.name, base);
+  return path.join(dirs.components, item.name, path.basename(normalized));
 }
 
 async function confirmOverwrite(file: string) {
@@ -64,13 +80,23 @@ export async function add(names: string[], options: AddOptions = {}) {
 
   const cwd = path.resolve(options.cwd ?? process.cwd());
   const config: ComponentsConfig = await readConfig(cwd);
+  const framework = normalizeFramework(options.framework ?? config.framework);
   const registryUrl = options.registry ?? config.registry ?? DEFAULT_REGISTRY;
 
-  const uiDir = await resolveAlias(cwd, config.aliases.ui);
-  const libDir = await resolveAlias(cwd, config.aliases.lib);
-  const componentsDir = await resolveAlias(cwd, config.aliases.components);
+  const dirs =
+    framework === "html"
+      ? {
+          ui: staticAliasDir(cwd, config.aliases.ui),
+          lib: staticAliasDir(cwd, config.aliases.lib),
+          components: staticAliasDir(cwd, config.aliases.components),
+        }
+      : {
+          ui: (await resolveAlias(cwd, config.aliases.ui)).dir,
+          lib: (await resolveAlias(cwd, config.aliases.lib)).dir,
+          components: (await resolveAlias(cwd, config.aliases.components)).dir,
+        };
 
-  const client = createRegistryClient(registryUrl);
+  const client = createRegistryClient(registryUrl, framework);
   const items = await resolveItems(client, names);
 
   const plan: Array<{ file: RegistryFile; item: RegistryItem; target: string }> = [];
@@ -79,11 +105,7 @@ export async function add(names: string[], options: AddOptions = {}) {
       plan.push({
         file,
         item,
-        target: targetFor(file, item, {
-          ui: uiDir.dir,
-          lib: libDir.dir,
-          components: componentsDir.dir,
-        }),
+        target: targetFor(file, item, dirs),
       });
     }
   }
@@ -122,7 +144,11 @@ export async function add(names: string[], options: AddOptions = {}) {
   const installed = { ...pkg?.dependencies, ...pkg?.devDependencies };
   const missing = dependencies.filter((dependency) => !installed[dependency]);
 
-  if (options.install !== false && missing.length > 0) {
+  if (
+    framework !== "html" &&
+    options.install !== false &&
+    missing.length > 0
+  ) {
     const pm = detectPackageManager(cwd);
     const { command, args } = installCommand(pm, missing);
     logger.info(`Installing ${missing.join(", ")} with ${command}...`);
@@ -140,8 +166,14 @@ export async function add(names: string[], options: AddOptions = {}) {
     logger.warn(`Skipped existing files: ${skipped.join(", ")}`);
   }
 
+  if (framework === "html") {
+    logger.info(
+      `HTML snippets are static markup. Load any matching .js file with a <script> tag; see ${relative(cwd, dirs.ui)}.`,
+    );
+  }
+
   logger.step("Done");
   logger.muted(
-    `Added ${items.map((item) => item.name).join(", ")} · ${written.length} file(s) written.`,
+    `Added ${items.map((item) => item.name).join(", ")} (${framework}) · ${written.length} file(s) written.`,
   );
 }

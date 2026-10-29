@@ -1,6 +1,6 @@
 import pc from "picocolors";
 
-import { logger } from "./config";
+import { type Framework, logger } from "./config";
 
 export interface RegistryFile {
   path: string;
@@ -15,6 +15,7 @@ export interface RegistryItem {
   title: string;
   description: string;
   category?: string;
+  framework?: Framework;
   dependencies: string[];
   registryDependencies: string[];
   files: RegistryFile[];
@@ -26,6 +27,7 @@ export interface RegistryIndexItem {
   title: string;
   description: string;
   category?: string;
+  framework?: Framework;
   dependencies: string[];
   registryDependencies: string[];
 }
@@ -33,6 +35,7 @@ export interface RegistryIndexItem {
 export interface RegistryIndex {
   name: string;
   homepage?: string;
+  framework?: Framework;
   items: RegistryIndexItem[];
 }
 
@@ -59,15 +62,19 @@ async function getJson<T>(url: string): Promise<T> {
   return (await response.json()) as T;
 }
 
-export function createRegistryClient(baseUrl: string) {
+export function createRegistryClient(
+  baseUrl: string,
+  framework: Framework = "react",
+) {
   const base = baseUrl.replace(/\/$/, "");
+  const root = framework === "react" ? base : `${base}/${framework}`;
 
   return {
     async index() {
-      return getJson<RegistryIndex>(`${base}/registry.json`);
+      return getJson<RegistryIndex>(`${root}/registry.json`);
     },
     async item(name: string) {
-      return getJson<RegistryItem>(`${base}/${name}.json`);
+      return getJson<RegistryItem>(`${root}/${name}.json`);
     },
   };
 }
@@ -105,13 +112,16 @@ export async function resolveItems(
   });
 }
 
-export async function fetchIndexWithFallback(baseUrl: string) {
-  const client = createRegistryClient(baseUrl);
+export async function fetchIndexWithFallback(
+  baseUrl: string,
+  framework: Framework = "react",
+) {
+  const client = createRegistryClient(baseUrl, framework);
   try {
     return await client.index();
   } catch {
     logger.warn(
-      "Registry index is unavailable; run `veil-ui doctor` to check the registry URL.",
+      `Registry index is unavailable for ${framework}; run \`veil-ui doctor\` to check the registry URL.`,
     );
     return null;
   }
