@@ -1,0 +1,66 @@
+---
+title: Center
+description: Centers its children horizontally and vertically.
+---
+
+import {
+  CenterBasic,
+  CenterEmpty,
+  CenterFullHeight,
+} from "@veil-ui/registry/center/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add center" />
+
+## Usage
+
+```tsx
+import { Center } from "@/components/ui/center";
+
+<Center className="h-64">
+  <Spinner />
+</Center>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource.center.basic}>
+  <CenterBasic />
+</ComponentPreview>
+
+### Full height
+
+<ComponentPreview code={demoSource.center["full-height"]}>
+  <CenterFullHeight />
+</ComponentPreview>
+
+### Empty state
+
+<ComponentPreview code={demoSource.center.empty}>
+  <CenterEmpty />
+</ComponentPreview>
+
+Add `flex-col` when the content should stack, as in the empty state.
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "...props",
+      type: 'React.ComponentProps<"div">',
+      description:
+        "All native div attributes. Pass a height or min-height to give the centering a box.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Presentational wrapper only; it adds no roles.
+- Centering is visual. Keep the DOM order logical, and give the centered content
+  a real heading or label when it carries meaning.

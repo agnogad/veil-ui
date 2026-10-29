@@ -1,0 +1,94 @@
+---
+title: Input Group
+description: Attaches icons, text or actions to the start or end of an input.
+---
+
+import {
+  InputGroupWithButton,
+  InputGroupWithIcon,
+  InputGroupWithText,
+} from "@veil-ui/registry/input-group/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add input-group" />
+
+## Usage
+
+```tsx
+import { InputGroup, InputGroupAddon } from "@/components/ui/input-group";
+import { Input } from "@/components/ui/input";
+import { AtSign } from "lucide-react";
+
+<InputGroup>
+  <InputGroupAddon>
+    <AtSign />
+  </InputGroupAddon>
+  <Input placeholder="you@example.com" aria-label="Email" />
+</InputGroup>;
+```
+
+## Examples
+
+### With icon
+
+<ComponentPreview code={demoSource["input-group"]["with-icon"]}>
+  <InputGroupWithIcon />
+</ComponentPreview>
+
+### With text
+
+<ComponentPreview code={demoSource["input-group"]["with-text"]}>
+  <InputGroupWithText />
+</ComponentPreview>
+
+Prefixes and suffixes inherit the muted foreground colour so the editable text
+stays the focal point.
+
+### With action
+
+<ComponentPreview code={demoSource["input-group"]["with-button"]}>
+  <InputGroupWithButton />
+</ComponentPreview>
+
+## API reference
+
+### InputGroup
+
+<PropsTable
+  data={[
+    {
+      name: "...props",
+      type: 'React.ComponentProps<"div">',
+      description:
+        "All native div attributes. The wrapper owns the border, focus ring and invalid state.",
+    },
+  ]}
+/>
+
+### InputGroupAddon
+
+<PropsTable
+  data={[
+    {
+      name: "align",
+      type: '"inline-start" | "inline-end"',
+      default: '"inline-start"',
+      description: "Which side of the input the addon sits on.",
+    },
+    {
+      name: "...props",
+      type: 'React.ComponentProps<"div">',
+      description: "All native div attributes.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- The wrapper mirrors focus with `focus-within`, so the ring surrounds the whole
+  group.
+- An inner `aria-invalid` input turns the group border destructive.
+- Addons are plain content; decorative icons should be hidden or followed by a
+  real label on the input.

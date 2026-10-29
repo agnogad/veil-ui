@@ -1,0 +1,10 @@
+{
+  "name": "input-group",
+  "title": "Input Group",
+  "description": "Attaches icons, text or actions to the start or end of an input.",
+  "category": "forms",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["input", "utils"],
+  "examples": ["with-icon", "with-text", "with-button"]
+}

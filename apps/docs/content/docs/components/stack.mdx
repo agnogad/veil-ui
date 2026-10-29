@@ -1,0 +1,94 @@
+---
+title: Stack
+description: Arranges children in a row or column with consistent gaps.
+---
+
+import {
+  StackHorizontal,
+  StackToolbar,
+  StackVertical,
+} from "@veil-ui/registry/stack/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add stack" />
+
+## Usage
+
+```tsx
+import { Stack } from "@/components/ui/stack";
+
+<Stack gap="sm">
+  <Item />
+  <Item />
+</Stack>;
+```
+
+## Examples
+
+### Vertical
+
+<ComponentPreview code={demoSource.stack.vertical}>
+  <StackVertical />
+</ComponentPreview>
+
+### Horizontal
+
+<ComponentPreview code={demoSource.stack.horizontal}>
+  <StackHorizontal />
+</ComponentPreview>
+
+### Toolbar
+
+<ComponentPreview code={demoSource.stack.toolbar}>
+  <StackToolbar />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "direction",
+      type: '"row" | "column"',
+      default: '"column"',
+      description: "Main axis of the flex container.",
+    },
+    {
+      name: "gap",
+      type: '"none" | "xs" | "sm" | "md" | "lg" | "xl"',
+      default: '"md"',
+      description: "Space between children: 0, 4, 8, 16, 24 or 32px.",
+    },
+    {
+      name: "align",
+      type: '"start" | "center" | "end" | "stretch" | "baseline"',
+      default: '"stretch"',
+      description: "Cross-axis alignment.",
+    },
+    {
+      name: "justify",
+      type: '"start" | "center" | "end" | "between" | "around"',
+      default: '"start"',
+      description: "Main-axis distribution.",
+    },
+    {
+      name: "wrap",
+      type: "boolean",
+      default: "false",
+      description: "Allow children to wrap onto multiple lines.",
+    },
+    {
+      name: "...props",
+      type: 'React.ComponentProps<"div">',
+      description: "All native div attributes.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Presentational flex wrapper; it adds no ARIA roles or landmarks.
+- `direction`, `gap`, `align` and `justify` map to static classes, so they work
+  with Tailwind's compiler and never rely on runtime string interpolation.

@@ -1,0 +1,10 @@
+{
+  "name": "search-input",
+  "title": "Search Input",
+  "description": "A search field with a leading icon and an optional clear action.",
+  "category": "forms",
+  "type": "registry:ui",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["input", "utils"],
+  "examples": ["basic", "with-value", "controlled"]
+}

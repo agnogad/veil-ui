@@ -1,0 +1,10 @@
+{
+  "name": "button-group",
+  "title": "Button Group",
+  "description": "Joins related buttons into a single segmented control.",
+  "category": "actions",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "vertical", "with-icon"]
+}

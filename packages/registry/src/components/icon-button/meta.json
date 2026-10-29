@@ -1,0 +1,10 @@
+{
+  "name": "icon-button",
+  "title": "Icon Button",
+  "description": "A square button for a single icon. Requires an accessible label.",
+  "category": "actions",
+  "type": "registry:ui",
+  "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "variants", "sizes", "as-child"]
+}

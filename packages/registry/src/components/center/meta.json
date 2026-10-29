@@ -1,0 +1,10 @@
+{
+  "name": "center",
+  "title": "Center",
+  "description": "Centers its children horizontally and vertically.",
+  "category": "layout",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "full-height", "empty"]
+}

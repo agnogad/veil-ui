@@ -1,0 +1,98 @@
+---
+title: Icon Button
+description: A square button for a single icon. Requires an accessible label.
+---
+
+import {
+  IconButtonAsChild,
+  IconButtonBasic,
+  IconButtonSizes,
+  IconButtonVariants,
+} from "@veil-ui/registry/icon-button/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add icon-button" />
+
+## Usage
+
+```tsx
+import { IconButton } from "@/components/ui/icon-button";
+import { Plus } from "lucide-react";
+
+<IconButton aria-label="Add item">
+  <Plus />
+</IconButton>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["icon-button"].basic}>
+  <IconButtonBasic />
+</ComponentPreview>
+
+### Variants
+
+<ComponentPreview code={demoSource["icon-button"].variants}>
+  <IconButtonVariants />
+</ComponentPreview>
+
+### Sizes
+
+<ComponentPreview code={demoSource["icon-button"].sizes}>
+  <IconButtonSizes />
+</ComponentPreview>
+
+### Composition
+
+<ComponentPreview code={demoSource["icon-button"]["as-child"]}>
+  <IconButtonAsChild />
+</ComponentPreview>
+
+`asChild` forwards the styling and props to a single child, so the same visual
+result can be applied to a link.
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "variant",
+      type: '"default" | "secondary" | "outline" | "ghost" | "destructive"',
+      default: '"default"',
+      description: "Visual style of the button.",
+    },
+    {
+      name: "size",
+      type: '"sm" | "default" | "lg"',
+      default: '"default"',
+      description: "Square control size: 32px, 36px or 40px.",
+    },
+    {
+      name: "aria-label",
+      type: "string",
+      description: "Required accessible name. The icon itself is decorative.",
+    },
+    {
+      name: "asChild",
+      type: "boolean",
+      default: "false",
+      description: "Render the child element instead of a button.",
+    },
+    {
+      name: "...props",
+      type: 'React.ComponentProps<"button">',
+      description: "All native button attributes except aria-label.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- `aria-label` is required at the type level, so an icon-only button cannot
+  ship without a name.
+- Icons inherit `currentColor` and are sized to match the button.
+- Disabled buttons use `pointer-events: none` and `opacity: 50%`.

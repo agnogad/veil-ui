@@ -1,0 +1,10 @@
+{
+  "name": "grid",
+  "title": "Grid",
+  "description": "A responsive grid with sensible column breakpoints.",
+  "category": "layout",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "two-columns", "dashboard"]
+}

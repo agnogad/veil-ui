@@ -41,6 +41,11 @@ if (!Element.prototype.scrollIntoView) {
   Element.prototype.scrollIntoView = () => {};
 }
 
+// axe probes canvas to detect icon ligatures. jsdom ships no canvas backend, so
+// return null instead of throwing into stderr.
+HTMLCanvasElement.prototype.getContext = (() =>
+  null) as typeof HTMLCanvasElement.prototype.getContext;
+
 afterEach(() => {
   cleanup();
 });

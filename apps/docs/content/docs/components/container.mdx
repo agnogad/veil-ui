@@ -1,0 +1,62 @@
+---
+title: Container
+description: Centers content and constrains its width with responsive gutters.
+---
+
+import {
+  ContainerPage,
+  ContainerSizes,
+} from "@veil-ui/registry/container/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add container" />
+
+## Usage
+
+```tsx
+import { Container } from "@/components/ui/container";
+
+<Container size="md">{children}</Container>;
+```
+
+## Examples
+
+### Sizes
+
+<ComponentPreview code={demoSource.container.sizes}>
+  <ContainerSizes />
+</ComponentPreview>
+
+### Page section
+
+<ComponentPreview code={demoSource.container.page}>
+  <ContainerPage />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "size",
+      type: '"sm" | "md" | "lg" | "full"',
+      default: '"lg"',
+      description:
+        "Maximum width: 768px, 1024px, 1280px, or unconstrained.",
+    },
+    {
+      name: "...props",
+      type: 'React.ComponentProps<"div">',
+      description: "All native div attributes.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Purely presentational. It renders a neutral `<div>`, so landmark semantics
+  belong on the surrounding `<main>`, `<section>` or `<header>`.
+- Gutters are 16px on mobile and 24px from the `sm` breakpoint up, keeping text
+  clear of the viewport edge.

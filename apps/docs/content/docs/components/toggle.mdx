@@ -1,0 +1,99 @@
+---
+title: Toggle
+description: A two-state button that can be pressed or unpressed.
+---
+
+import {
+  ToggleBasic,
+  ToggleOutline,
+  ToggleSizes,
+  ToggleWithText,
+} from "@veil-ui/registry/toggle/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add toggle" />
+
+## Usage
+
+```tsx
+import { Toggle } from "@/components/ui/toggle";
+import { Bookmark } from "lucide-react";
+
+<Toggle aria-label="Bookmark this page">
+  <Bookmark />
+</Toggle>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource.toggle.basic}>
+  <ToggleBasic />
+</ComponentPreview>
+
+### Outline
+
+<ComponentPreview code={demoSource.toggle.outline}>
+  <ToggleOutline />
+</ComponentPreview>
+
+### Sizes
+
+<ComponentPreview code={demoSource.toggle.sizes}>
+  <ToggleSizes />
+</ComponentPreview>
+
+### With text
+
+<ComponentPreview code={demoSource.toggle["with-text"]}>
+  <ToggleWithText />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "variant",
+      type: '"default" | "outline"',
+      default: '"default"',
+      description: "Visual style of the toggle.",
+    },
+    {
+      name: "size",
+      type: '"sm" | "default" | "lg"',
+      default: '"default"',
+      description: "Control height and padding.",
+    },
+    {
+      name: "pressed",
+      type: "boolean",
+      description: "Controlled pressed state.",
+    },
+    {
+      name: "defaultPressed",
+      type: "boolean",
+      default: "false",
+      description: "Initial pressed state when uncontrolled.",
+    },
+    {
+      name: "onPressedChange",
+      type: "(pressed: boolean) => void",
+      description: "Called when the pressed state changes.",
+    },
+    {
+      name: "...props",
+      type: "TogglePrimitive.Root props",
+      description: "All Radix Toggle props, including disabled and aria-label.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Exposes `aria-pressed` and toggles it on click, Space and Enter.
+- Icon-only toggles need an `aria-label`; toggles with text use the text as the
+  accessible name.

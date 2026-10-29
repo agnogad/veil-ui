@@ -1,0 +1,10 @@
+{
+  "name": "stack",
+  "title": "Stack",
+  "description": "Arranges children in a row or column with consistent gaps.",
+  "category": "layout",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["utils"],
+  "examples": ["vertical", "horizontal", "toolbar"]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "toggle-group",
+  "title": "Toggle Group",
+  "description": "A set of toggle buttons where one or many can be active.",
+  "category": "actions",
+  "type": "registry:ui",
+  "dependencies": ["@radix-ui/react-toggle-group", "class-variance-authority"],
+  "registryDependencies": ["toggle", "utils"],
+  "examples": ["single", "multiple", "outline", "sizes"]
+}

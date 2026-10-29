@@ -1,0 +1,79 @@
+---
+title: Grid
+description: A responsive grid with sensible column breakpoints.
+---
+
+import {
+  GridBasic,
+  GridDashboard,
+  GridTwoColumns,
+} from "@veil-ui/registry/grid/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add grid" />
+
+## Usage
+
+```tsx
+import { Grid } from "@/components/ui/grid";
+
+<Grid cols={3} gap="md">
+  <Item />
+  <Item />
+  <Item />
+</Grid>;
+```
+
+## Examples
+
+### Three columns
+
+<ComponentPreview code={demoSource.grid.basic}>
+  <GridBasic />
+</ComponentPreview>
+
+### Two columns
+
+<ComponentPreview code={demoSource.grid["two-columns"]}>
+  <GridTwoColumns />
+</ComponentPreview>
+
+### Dashboard tiles
+
+<ComponentPreview code={demoSource.grid.dashboard}>
+  <GridDashboard />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "cols",
+      type: "1 | 2 | 3 | 4 | 6 | 12",
+      default: "3",
+      description:
+        "Target column count at the largest breakpoint. Smaller viewports collapse to 1–4 columns.",
+    },
+    {
+      name: "gap",
+      type: '"none" | "xs" | "sm" | "md" | "lg" | "xl"',
+      default: '"md"',
+      description: "Space between cells: 0, 4, 8, 16, 24 or 32px.",
+    },
+    {
+      name: "...props",
+      type: 'React.ComponentProps<"div">',
+      description: "All native div attributes.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Presentational layout primitive with no ARIA roles.
+- Responsive classes are static per `cols` value, so Tailwind can detect them.
+- Source order follows DOM order at every breakpoint; use it for reading order,
+  not just visual placement.

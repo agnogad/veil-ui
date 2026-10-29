@@ -2,8 +2,15 @@
   "title": "Components",
   "pages": [
     "button",
+    "icon-button",
+    "button-group",
+    "toggle",
+    "toggle-group",
     "input",
     "textarea",
+    "password-input",
+    "search-input",
+    "input-group",
     "label",
     "badge",
     "avatar",
@@ -14,6 +21,10 @@
     "tabs",
     "tooltip",
     "kbd",
-    "card"
+    "card",
+    "container",
+    "stack",
+    "grid",
+    "center"
   ]
 }

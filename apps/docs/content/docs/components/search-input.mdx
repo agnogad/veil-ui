@@ -1,0 +1,89 @@
+---
+title: Search Input
+description: A search field with a leading icon and an optional clear action.
+---
+
+import {
+  SearchInputBasic,
+  SearchInputControlled,
+  SearchInputWithValue,
+} from "@veil-ui/registry/search-input/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add search-input" />
+
+## Usage
+
+```tsx
+import { SearchInput } from "@/components/ui/search-input";
+
+<SearchInput placeholder="Search components..." aria-label="Search components" />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["search-input"].basic}>
+  <SearchInputBasic />
+</ComponentPreview>
+
+### With a value
+
+<ComponentPreview code={demoSource["search-input"]["with-value"]}>
+  <SearchInputWithValue />
+</ComponentPreview>
+
+The clear button appears as soon as the field has a value.
+
+### Controlled
+
+<ComponentPreview code={demoSource["search-input"].controlled}>
+  <SearchInputControlled />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "value",
+      type: "string",
+      description: "Controlled query value.",
+    },
+    {
+      name: "defaultValue",
+      type: "string",
+      description: "Initial query value when uncontrolled.",
+    },
+    {
+      name: "onChange",
+      type: "React.ChangeEventHandler<HTMLInputElement>",
+      description: "Called when the query changes.",
+    },
+    {
+      name: "onClear",
+      type: "() => void",
+      description: "Called when the clear button is pressed.",
+    },
+    {
+      name: "containerClassName",
+      type: "string",
+      description: "Classes for the positioning wrapper.",
+    },
+    {
+      name: "...props",
+      type: 'React.ComponentProps<"input">',
+      description: "All native input attributes except type.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Uses `type="search"`, so the field is announced as a searchbox.
+- The leading icon is decorative and hidden from assistive technology.
+- The clear action is a button named “Clear search”.
+- Render a `<Label>` or pass `aria-label`; a placeholder is not a substitute.

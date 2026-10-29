@@ -1,0 +1,77 @@
+---
+title: Button Group
+description: Joins related buttons into a single segmented control.
+---
+
+import {
+  ButtonGroupBasic,
+  ButtonGroupVertical,
+  ButtonGroupWithIcon,
+} from "@veil-ui/registry/button-group/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add button-group" />
+
+## Usage
+
+```tsx
+import { ButtonGroup } from "@/components/ui/button-group";
+import { Button } from "@/components/ui/button";
+
+<ButtonGroup aria-label="Pagination">
+  <Button variant="outline">Previous</Button>
+  <Button variant="outline">Next</Button>
+</ButtonGroup>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["button-group"].basic}>
+  <ButtonGroupBasic />
+</ComponentPreview>
+
+### Vertical
+
+<ComponentPreview code={demoSource["button-group"].vertical}>
+  <ButtonGroupVertical />
+</ComponentPreview>
+
+### With icons
+
+<ComponentPreview code={demoSource["button-group"]["with-icon"]}>
+  <ButtonGroupWithIcon />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "orientation",
+      type: '"horizontal" | "vertical"',
+      default: '"horizontal"',
+      description: "Direction the grouped buttons flow.",
+    },
+    {
+      name: "aria-label",
+      type: "string",
+      description: "Names the group for assistive technology.",
+    },
+    {
+      name: "...props",
+      type: 'React.ComponentProps<"div">',
+      description: "All native div attributes.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Renders `role="group"` so screen readers announce the grouping.
+- Always pass an `aria-label` that describes the set, such as “Pagination”.
+- Focus rings stay visible; overflow is avoided with overlapping negative
+  margins rather than clipped outlines.

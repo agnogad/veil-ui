@@ -1,0 +1,10 @@
+{
+  "name": "container",
+  "title": "Container",
+  "description": "Centers content and constrains its width with responsive gutters.",
+  "category": "layout",
+  "type": "registry:ui",
+  "dependencies": ["class-variance-authority"],
+  "registryDependencies": ["utils"],
+  "examples": ["sizes", "page"]
+}

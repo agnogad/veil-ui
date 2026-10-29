@@ -1,0 +1,10 @@
+{
+  "name": "toggle",
+  "title": "Toggle",
+  "description": "A two-state button that can be pressed or unpressed.",
+  "category": "actions",
+  "type": "registry:ui",
+  "dependencies": ["@radix-ui/react-toggle", "class-variance-authority"],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "outline", "sizes", "with-text"]
+}

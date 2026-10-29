@@ -1,0 +1,10 @@
+{
+  "name": "password-input",
+  "title": "Password Input",
+  "description": "A password field with a show/hide toggle.",
+  "category": "forms",
+  "type": "registry:ui",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["input", "utils"],
+  "examples": ["basic", "with-label", "disabled"]
+}

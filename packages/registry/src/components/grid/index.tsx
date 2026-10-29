@@ -1,0 +1,40 @@
+import type * as React from "react";
+
+import { cn } from "@veil-ui/utils";
+
+const columns = {
+  1: "grid-cols-1",
+  2: "grid-cols-1 sm:grid-cols-2",
+  3: "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3",
+  4: "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4",
+  6: "grid-cols-2 md:grid-cols-3 lg:grid-cols-6",
+  12: "grid-cols-4 md:grid-cols-6 lg:grid-cols-12",
+} as const;
+
+const gaps = {
+  none: "gap-0",
+  xs: "gap-1",
+  sm: "gap-2",
+  md: "gap-4",
+  lg: "gap-6",
+  xl: "gap-8",
+} as const;
+
+interface GridProps extends React.ComponentProps<"div"> {
+  /** Responsive column counts: 1, 2, 3, 4, 6 or 12. */
+  cols?: keyof typeof columns;
+  gap?: keyof typeof gaps;
+}
+
+function Grid({ className, cols = 3, gap = "md", ...props }: GridProps) {
+  return (
+    <div
+      data-slot="grid"
+      data-cols={cols}
+      className={cn("grid", columns[cols], gaps[gap], className)}
+      {...props}
+    />
+  );
+}
+
+export { Grid };
