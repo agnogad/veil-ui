@@ -1,0 +1,14 @@
+<script setup lang="ts">
+import { cn } from "@/lib/utils";
+
+const props = defineProps<{ class?: string }>();
+</script>
+
+<template>
+  <tfoot
+    data-slot="table-footer"
+    :class="cn('border-t bg-muted/50 font-medium', props.class)"
+  >
+    <slot />
+  </tfoot>
+</template>

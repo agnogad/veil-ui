@@ -1,0 +1,38 @@
+<!-- ImageWithFallback — requires Veil UI tokens and Tailwind v4. -->
+<div class="flex flex-wrap items-start gap-6">
+  <div
+    data-slot="image"
+    role="img"
+    aria-label="A mountain valley"
+    class="aspect-video w-72 overflow-hidden rounded-lg bg-gradient-to-br from-emerald-200 to-sky-300"
+  >
+    <svg viewBox="0 0 600 450" class="size-full" aria-hidden="true">
+      <path d="M0 400 L160 180 L300 360 L420 220 L600 430 L600 450 L0 450Z" fill="#0f172a" fill-opacity=".45" />
+    </svg>
+  </div>
+
+  <div
+    data-slot="image-fallback"
+    class="flex min-h-24 w-72 flex-col items-center justify-center gap-2 rounded-lg border border-dashed bg-muted/40 p-4 text-center text-sm text-muted-foreground"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="size-5"
+      aria-hidden="true"
+    >
+      <line x1="2" x2="22" y1="2" y2="22" />
+      <path d="M10.41 10.41a2 2 0 1 1-2.83-2.83" />
+      <line x1="13.5" x2="6" y1="13.5" y2="21" />
+      <line x1="18" x2="21" y1="12" y2="15" />
+      <path d="M3.59 3.59A2 2 0 0 0 3 5v14a2 2 0 0 0 2 2h14a2 2 0 0 0 1.41-.59" />
+      <path d="M21 15V5a2 2 0 0 0-2-2H9" />
+    </svg>
+    <span>Team offsite</span>
+  </div>
+</div>

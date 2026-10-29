@@ -1,0 +1,14 @@
+<script setup lang="ts">
+import { cn } from "@/lib/utils";
+
+const props = defineProps<{ class?: string }>();
+</script>
+
+<template>
+  <div
+    data-slot="sidebar-footer"
+    :class="cn('shrink-0 border-t p-2', props.class)"
+  >
+    <slot />
+  </div>
+</template>

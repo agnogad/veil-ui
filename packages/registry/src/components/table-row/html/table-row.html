@@ -1,0 +1,25 @@
+<!-- Table row — requires Veil UI tokens and Tailwind v4. -->
+<div class="relative w-full overflow-x-auto">
+  <table class="w-full caption-bottom text-sm">
+    <thead class="[&_tr]:border-b">
+      <tr class="border-b transition-colors hover:bg-muted/50">
+        <th scope="col" class="h-10 whitespace-nowrap px-3 text-left align-middle font-medium text-muted-foreground">Member</th>
+        <th scope="col" class="h-10 whitespace-nowrap px-3 text-left align-middle font-medium text-muted-foreground">Role</th>
+      </tr>
+    </thead>
+    <tbody class="[&_tr:last-child]:border-0">
+      <tr class="border-b transition-colors hover:bg-muted/50">
+        <td class="whitespace-nowrap p-3 align-middle">Mira Chen</td>
+        <td class="whitespace-nowrap p-3 align-middle">Owner</td>
+      </tr>
+      <tr class="border-b bg-muted transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted" data-state="selected">
+        <td class="whitespace-nowrap p-3 align-middle">Ada Lovelace</td>
+        <td class="whitespace-nowrap p-3 align-middle">Admin</td>
+      </tr>
+      <tr class="border-b transition-colors hover:bg-muted/50">
+        <td class="whitespace-nowrap p-3 align-middle">Grace Hopper</td>
+        <td class="whitespace-nowrap p-3 align-middle">Member</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

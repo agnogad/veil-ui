@@ -1,0 +1,38 @@
+<!-- Chip — requires Veil UI tokens and Tailwind v4. -->
+<div class="flex flex-col gap-4">
+  <div class="flex flex-wrap gap-2">
+    <span class="inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden whitespace-nowrap rounded-md border border-transparent bg-muted px-2 py-0.5 text-xs font-medium text-muted-foreground">
+      React
+    </span>
+    <span class="inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden whitespace-nowrap rounded-md border border-transparent bg-muted px-2 py-0.5 text-xs font-medium text-muted-foreground">
+      TypeScript
+    </span>
+    <span class="inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden whitespace-nowrap rounded-md border border-transparent bg-muted px-2 py-0.5 text-xs font-medium text-muted-foreground">
+      Tailwind
+    </span>
+  </div>
+
+  <div class="flex flex-wrap gap-2" role="group" aria-label="Filter by team">
+    <button
+      type="button"
+      aria-pressed="true"
+      class="inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden whitespace-nowrap rounded-md border border-transparent bg-primary px-2 py-0.5 text-xs font-medium text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50"
+    >
+      Design
+    </button>
+    <button
+      type="button"
+      aria-pressed="false"
+      class="inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden whitespace-nowrap rounded-md border px-2 py-0.5 text-xs font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50"
+    >
+      Engineering
+    </button>
+    <button
+      type="button"
+      aria-pressed="false"
+      class="inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden whitespace-nowrap rounded-md border px-2 py-0.5 text-xs font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50"
+    >
+      Product
+    </button>
+  </div>
+</div>

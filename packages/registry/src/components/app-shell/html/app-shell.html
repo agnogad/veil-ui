@@ -1,0 +1,18 @@
+<!-- App Shell — requires Veil UI tokens and Tailwind v4. -->
+<div class="grid min-h-dvh grid-rows-[auto_1fr] bg-background">
+  <header class="sticky top-0 z-30 border-b bg-background/80 backdrop-blur">
+    <div class="flex h-12 items-center px-4 text-sm font-medium">Workspace</div>
+  </header>
+  <div class="grid min-h-0 lg:grid-cols-[280px_1fr]">
+    <aside class="hidden min-h-0 overflow-y-auto border-r bg-muted/20 lg:block">
+      <nav aria-label="Main" class="grid gap-1 p-3 text-sm">
+        <a href="#" aria-current="page" class="rounded-md bg-accent px-2 py-1.5 font-medium text-accent-foreground">Overview</a>
+        <a href="#" class="rounded-md px-2 py-1.5 text-muted-foreground hover:bg-accent hover:text-accent-foreground">Projects</a>
+        <a href="#" class="rounded-md px-2 py-1.5 text-muted-foreground hover:bg-accent hover:text-accent-foreground">Settings</a>
+      </nav>
+    </aside>
+    <main class="min-w-0 overflow-x-hidden">
+      <div class="p-4 text-sm text-muted-foreground">Main content area.</div>
+    </main>
+  </div>
+</div>

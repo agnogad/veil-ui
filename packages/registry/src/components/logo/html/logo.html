@@ -1,0 +1,45 @@
+<!-- Logo — requires Veil UI tokens and Tailwind v4. -->
+<div class="flex flex-wrap items-center gap-8">
+  <a
+    href="/"
+    class="inline-flex rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+  >
+    <div data-slot="logo" class="inline-flex items-center gap-2">
+      <span
+        data-slot="logo-mark"
+        class="flex size-8 shrink-0 items-center justify-center overflow-hidden rounded-md bg-gradient-to-br from-primary to-primary/60 text-sm font-bold text-primary-foreground"
+      >
+        V
+      </span>
+      <span data-slot="logo-name" class="text-base font-semibold tracking-tight">
+        Veil UI
+      </span>
+    </div>
+  </a>
+
+  <div data-slot="logo" class="inline-flex items-center gap-2.5">
+    <span
+      data-slot="logo-mark"
+      class="flex size-10 shrink-0 items-center justify-center overflow-hidden rounded-md border bg-muted"
+    >
+      <svg viewBox="0 0 24 24" class="size-6 text-foreground" aria-hidden="true">
+        <path d="M4 5h16l-8 14Z" fill="currentColor" />
+      </svg>
+    </span>
+    <span data-slot="logo-name" class="text-lg font-semibold tracking-tight">
+      Acme
+    </span>
+  </div>
+
+  <div data-slot="logo" class="inline-flex items-center gap-1.5">
+    <span
+      data-slot="logo-mark"
+      class="flex size-6 shrink-0 items-center justify-center overflow-hidden rounded-md bg-foreground text-[10px] font-bold text-background"
+    >
+      V
+    </span>
+    <span data-slot="logo-name" class="text-sm font-semibold tracking-tight">
+      Veil
+    </span>
+  </div>
+</div>

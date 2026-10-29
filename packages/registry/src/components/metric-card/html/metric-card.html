@@ -1,0 +1,25 @@
+<!-- Metric card — requires Veil UI tokens and Tailwind v4. -->
+<div class="max-w-sm rounded-lg border bg-card py-5 text-card-foreground shadow-xs">
+  <div class="space-y-3 px-5">
+    <div class="flex items-baseline justify-between gap-2">
+      <span class="text-sm text-muted-foreground">Monthly revenue</span>
+      <span class="text-xs text-muted-foreground">73%</span>
+    </div>
+    <p class="text-2xl font-semibold tracking-tight">
+      $18,240<span class="ml-1 text-sm font-normal text-muted-foreground">of $25,000</span>
+    </p>
+    <div
+      role="progressbar"
+      aria-label="Monthly revenue"
+      aria-valuemin="0"
+      aria-valuemax="25000"
+      aria-valuenow="18240"
+      class="h-2 w-full overflow-hidden rounded-full bg-muted"
+    >
+      <div class="h-full rounded-full bg-primary transition-all" style="width: 73%"></div>
+    </div>
+    <p class="text-xs text-muted-foreground">
+      $6,760 remaining to reach the quarterly target.
+    </p>
+  </div>
+</div>

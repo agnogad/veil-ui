@@ -1,0 +1,34 @@
+<!-- StatusIndicator — requires Veil UI tokens and Tailwind v4. -->
+<div class="flex flex-wrap items-center gap-4">
+  <span data-slot="status-indicator" data-status="online" class="inline-flex items-center gap-1.5 text-xs text-muted-foreground">
+    <span class="relative flex size-2" aria-hidden="true">
+      <span class="relative inline-flex size-2 rounded-full bg-emerald-500"></span>
+    </span>
+    Online
+  </span>
+  <span data-slot="status-indicator" data-status="away" class="inline-flex items-center gap-1.5 text-xs text-muted-foreground">
+    <span class="relative flex size-2" aria-hidden="true">
+      <span class="relative inline-flex size-2 rounded-full bg-amber-500"></span>
+    </span>
+    Away
+  </span>
+  <span data-slot="status-indicator" data-status="busy" class="inline-flex items-center gap-1.5 text-xs text-muted-foreground">
+    <span class="relative flex size-2" aria-hidden="true">
+      <span class="relative inline-flex size-2 rounded-full bg-red-500"></span>
+    </span>
+    In a meeting
+  </span>
+  <span data-slot="status-indicator" data-status="offline" class="inline-flex items-center gap-1.5 text-xs text-muted-foreground">
+    <span class="relative flex size-2" aria-hidden="true">
+      <span class="relative inline-flex size-2 rounded-full bg-muted-foreground"></span>
+    </span>
+    Offline
+  </span>
+  <span data-slot="status-indicator" data-status="online" class="inline-flex items-center gap-1.5 text-xs text-muted-foreground">
+    <span class="relative flex size-2" aria-hidden="true">
+      <span class="absolute inline-flex size-full animate-ping rounded-full bg-emerald-500 opacity-75"></span>
+      <span class="relative inline-flex size-2 rounded-full bg-emerald-500"></span>
+    </span>
+    Live
+  </span>
+</div>

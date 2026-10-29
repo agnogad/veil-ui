@@ -1,0 +1,18 @@
+<script setup lang="ts">
+import { StatusIndicator } from "./index";
+</script>
+
+<template>
+  <div class="grid gap-4">
+    <div class="flex flex-wrap items-center gap-4">
+      <StatusIndicator status="online" label="Online" />
+      <StatusIndicator status="away" label="Away" />
+      <StatusIndicator status="busy" label="In a meeting" />
+      <StatusIndicator status="offline" label="Offline" />
+    </div>
+    <div class="flex flex-wrap items-center gap-4">
+      <StatusIndicator status="online" label="Live" pulse />
+      <StatusIndicator status="busy" pulse />
+    </div>
+  </div>
+</template>

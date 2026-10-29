@@ -1,0 +1,47 @@
+<!-- LogoCloud — requires Veil UI tokens and Tailwind v4. -->
+<ul
+  data-slot="logo-cloud"
+  class="grid list-none grid-cols-2 items-center justify-items-center gap-6 sm:grid-cols-4"
+>
+  <li data-slot="logo-cloud-item">
+    <a
+      href="https://example.com/acme"
+      class="rounded-sm opacity-80 transition-opacity hover:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+    >
+      <span class="flex items-center gap-2 text-sm font-semibold text-muted-foreground">
+        <span class="size-5 rounded bg-gradient-to-br from-sky-500 to-indigo-500" aria-hidden="true"></span>
+        Acme
+      </span>
+    </a>
+  </li>
+  <li data-slot="logo-cloud-item">
+    <a
+      href="https://example.com/globex"
+      class="rounded-sm opacity-80 transition-opacity hover:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+    >
+      <span class="flex items-center gap-2 text-sm font-semibold text-muted-foreground">
+        <svg viewBox="0 0 24 24" class="size-5" aria-hidden="true">
+          <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2" />
+          <path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20" fill="none" stroke="currentColor" stroke-width="2" />
+        </svg>
+        Globex
+      </span>
+    </a>
+  </li>
+  <li data-slot="logo-cloud-item">
+    <span class="flex items-center gap-2 text-sm font-semibold text-muted-foreground">
+      <svg viewBox="0 0 24 24" class="size-5" aria-hidden="true">
+        <path d="M12 2 22 20H2Z" fill="currentColor" />
+      </svg>
+      Initech
+    </span>
+  </li>
+  <li data-slot="logo-cloud-item">
+    <span class="flex items-center gap-2 text-sm font-semibold text-muted-foreground">
+      <span class="grid size-5 place-items-center rounded-full border border-current text-[9px] font-bold" aria-hidden="true">
+        U
+      </span>
+      Umbrella
+    </span>
+  </li>
+</ul>

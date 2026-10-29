@@ -1,0 +1,24 @@
+<!-- Full Screen Layout — requires Veil UI tokens and Tailwind v4. -->
+<div class="flex min-h-dvh flex-col bg-background">
+  <header class="border-b">
+    <div class="px-4 py-3 sm:px-6">
+      <span class="text-sm font-medium">Workspace</span>
+    </div>
+  </header>
+  <main class="flex flex-1 flex-col items-center justify-center p-4 sm:p-6">
+    <div class="w-full max-w-xs rounded-lg border bg-card p-6 text-center text-card-foreground shadow-xs">
+      <p class="text-sm font-semibold">Sign in</p>
+      <p class="mt-1 text-xs text-muted-foreground">
+        Use the centered layout for auth screens.
+      </p>
+      <button class="mt-4 inline-flex h-9 w-full items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground hover:bg-primary/90">
+        Continue
+      </button>
+    </div>
+  </main>
+  <footer class="border-t">
+    <div class="px-4 py-3 sm:px-6">
+      <span class="text-xs text-muted-foreground">Status: online</span>
+    </div>
+  </footer>
+</div>

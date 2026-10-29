@@ -1,0 +1,25 @@
+<!-- Circular progress — requires Veil UI tokens and Tailwind v4. -->
+<div
+  role="progressbar"
+  aria-label="Progress"
+  aria-valuemin="0"
+  aria-valuemax="100"
+  aria-valuenow="65"
+  class="relative inline-flex size-12 items-center justify-center"
+>
+  <svg width="48" height="48" class="-rotate-90" aria-hidden="true">
+    <circle cx="24" cy="24" r="22" fill="none" stroke-width="4" class="stroke-muted" />
+    <circle
+      cx="24"
+      cy="24"
+      r="22"
+      fill="none"
+      stroke-width="4"
+      stroke-linecap="round"
+      stroke-dasharray="138.23"
+      stroke-dashoffset="48.38"
+      class="stroke-primary transition-[stroke-dashoffset]"
+    />
+  </svg>
+  <span class="absolute text-xs font-medium">65%</span>
+</div>

@@ -1,0 +1,32 @@
+<!-- Image — requires Veil UI tokens and Tailwind v4. -->
+<div class="grid max-w-md gap-4">
+  <div
+    data-slot="image"
+    role="img"
+    aria-label="A lake below snowy mountains"
+    class="aspect-video w-full max-w-md overflow-hidden rounded-lg border bg-gradient-to-br from-sky-200 to-violet-300"
+  >
+    <svg
+      viewBox="0 0 800 600"
+      preserveAspectRatio="xMidYMid slice"
+      class="size-full object-cover"
+      aria-hidden="true"
+    >
+      <circle cx="640" cy="120" r="64" fill="#fff" fill-opacity=".8" />
+      <path d="M0 560 L220 280 L380 460 L520 320 L800 600 L0 600Z" fill="#1e293b" fill-opacity=".55" />
+      <path d="M0 600 L300 360 L520 520 L680 420 L800 500 L800 600Z" fill="#0f172a" fill-opacity=".5" />
+    </svg>
+  </div>
+
+  <div
+    data-slot="image"
+    role="img"
+    aria-label="A lake below snowy mountains, square crop"
+    class="aspect-square size-40 overflow-hidden rounded-lg bg-gradient-to-tr from-emerald-200 to-sky-300"
+  >
+    <svg viewBox="0 0 400 400" class="size-full" aria-hidden="true">
+      <circle cx="300" cy="100" r="48" fill="#fff" fill-opacity=".75" />
+      <path d="M0 400 L120 180 L220 320 L300 220 L400 380 L400 400Z" fill="#0f172a" fill-opacity=".45" />
+    </svg>
+  </div>
+</div>

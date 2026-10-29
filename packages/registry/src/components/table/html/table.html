@@ -1,0 +1,40 @@
+<!-- Table — requires Veil UI tokens and Tailwind v4. -->
+<div class="relative w-full overflow-x-auto">
+  <table class="w-full caption-bottom text-sm">
+    <caption class="mt-4 text-sm text-muted-foreground">Recent invoices</caption>
+    <thead class="[&_tr]:border-b">
+      <tr class="border-b transition-colors hover:bg-muted/50">
+        <th scope="col" class="h-10 whitespace-nowrap px-3 text-left align-middle font-medium text-muted-foreground">Invoice</th>
+        <th scope="col" class="h-10 whitespace-nowrap px-3 text-left align-middle font-medium text-muted-foreground">Status</th>
+        <th scope="col" class="h-10 whitespace-nowrap px-3 text-left align-middle font-medium text-muted-foreground">Method</th>
+        <th scope="col" class="h-10 whitespace-nowrap px-3 text-right align-middle font-medium text-muted-foreground">Amount</th>
+      </tr>
+    </thead>
+    <tbody class="[&_tr:last-child]:border-0">
+      <tr class="border-b transition-colors hover:bg-muted/50">
+        <td class="whitespace-nowrap p-3 align-middle font-medium">INV-001</td>
+        <td class="whitespace-nowrap p-3 align-middle">Paid</td>
+        <td class="whitespace-nowrap p-3 align-middle">Credit card</td>
+        <td class="whitespace-nowrap p-3 text-right align-middle">$250.00</td>
+      </tr>
+      <tr class="border-b transition-colors hover:bg-muted/50">
+        <td class="whitespace-nowrap p-3 align-middle font-medium">INV-002</td>
+        <td class="whitespace-nowrap p-3 align-middle">Pending</td>
+        <td class="whitespace-nowrap p-3 align-middle">PayPal</td>
+        <td class="whitespace-nowrap p-3 text-right align-middle">$150.00</td>
+      </tr>
+      <tr class="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted" data-state="selected">
+        <td class="whitespace-nowrap p-3 align-middle font-medium">INV-003</td>
+        <td class="whitespace-nowrap p-3 align-middle">Paid</td>
+        <td class="whitespace-nowrap p-3 align-middle">Bank transfer</td>
+        <td class="whitespace-nowrap p-3 text-right align-middle">$350.00</td>
+      </tr>
+    </tbody>
+    <tfoot class="border-t bg-muted/50 font-medium">
+      <tr class="border-b transition-colors hover:bg-muted/50">
+        <td class="whitespace-nowrap p-3 align-middle" colspan="3">Total</td>
+        <td class="whitespace-nowrap p-3 text-right align-middle">$750.00</td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
