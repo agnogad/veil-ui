@@ -83,6 +83,7 @@ function NavigationMenuContent({
       data-slot="navigation-menu-content"
       className={cn(
         "absolute left-0 top-full z-50 mt-2 w-56 rounded-md border bg-popover p-1 text-popover-foreground shadow-md",
+        "data-[motion^=from-]:animate-in data-[motion^=from-]:fade-in-0 data-[motion^=from-]:zoom-in-95 data-[motion^=to-]:animate-out data-[motion^=to-]:fade-out-0 data-[motion^=to-]:zoom-out-95",
         className,
       )}
       {...props}

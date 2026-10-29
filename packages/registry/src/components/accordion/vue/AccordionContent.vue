@@ -9,7 +9,7 @@ const props = defineProps<{ class?: string }>();
 <template>
   <AccordionContent
     data-slot="accordion-content"
-    class="overflow-hidden data-[state=closed]:hidden"
+    class="overflow-hidden data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up"
   >
     <div :class="cn('pb-4 text-sm text-muted-foreground', props.class)">
       <slot />

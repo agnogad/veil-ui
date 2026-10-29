@@ -17,7 +17,10 @@ function SheetOverlay({
   return (
     <DialogPrimitive.Overlay
       data-slot="sheet-overlay"
-      className={cn("fixed inset-0 z-50 bg-black/50", className)}
+      className={cn(
+        "fixed inset-0 z-50 bg-black/50 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=closed]:animate-out data-[state=closed]:fade-out-0",
+        className,
+      )}
       {...props}
     />
   );
@@ -26,10 +29,12 @@ function SheetOverlay({
 type SheetSide = "top" | "right" | "bottom" | "left";
 
 const sideClasses: Record<SheetSide, string> = {
-  top: "inset-x-0 top-0 max-h-[85vh] border-b",
-  bottom: "inset-x-0 bottom-0 max-h-[85vh] border-t",
-  left: "inset-y-0 left-0 h-full w-3/4 border-r sm:max-w-sm",
-  right: "inset-y-0 right-0 h-full w-3/4 border-l sm:max-w-sm",
+  top: "inset-x-0 top-0 max-h-[85vh] border-b data-[state=open]:slide-in-from-top-full data-[state=closed]:slide-out-to-top-full",
+  bottom:
+    "inset-x-0 bottom-0 max-h-[85vh] border-t data-[state=open]:slide-in-from-bottom-full data-[state=closed]:slide-out-to-bottom-full",
+  left: "inset-y-0 left-0 h-full w-3/4 border-r sm:max-w-sm data-[state=open]:slide-in-from-left-full data-[state=closed]:slide-out-to-left-full",
+  right:
+    "inset-y-0 right-0 h-full w-3/4 border-l sm:max-w-sm data-[state=open]:slide-in-from-right-full data-[state=closed]:slide-out-to-right-full",
 };
 
 interface SheetContentProps
@@ -51,6 +56,7 @@ function SheetContent({
         data-side={side}
         className={cn(
           "fixed z-50 flex flex-col gap-4 overflow-y-auto border bg-background p-6 shadow-lg outline-none",
+          "data-[state=open]:animate-in data-[state=closed]:animate-out [--veil-animation-duration:300ms] [--veil-exit-duration:200ms]",
           sideClasses[side],
           className,
         )}

@@ -17,7 +17,10 @@ function BottomSheetOverlay({
   return (
     <DialogPrimitive.Overlay
       data-slot="bottom-sheet-overlay"
-      className={cn("fixed inset-0 z-50 bg-black/50", className)}
+      className={cn(
+        "fixed inset-0 z-50 bg-black/50 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=closed]:animate-out data-[state=closed]:fade-out-0",
+        className,
+      )}
       {...props}
     />
   );
@@ -35,6 +38,8 @@ function BottomSheetContent({
         data-slot="bottom-sheet-content"
         className={cn(
           "fixed inset-x-0 bottom-0 z-50 flex max-h-[85vh] flex-col gap-4 overflow-y-auto rounded-t-xl border-t bg-background px-6 pb-6 pt-3 shadow-lg outline-none",
+          "data-[state=open]:animate-in data-[state=closed]:animate-out [--veil-animation-duration:300ms] [--veil-exit-duration:200ms]",
+          "data-[state=open]:slide-in-from-bottom-full data-[state=closed]:slide-out-to-bottom-full",
           className,
         )}
         {...props}

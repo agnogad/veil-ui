@@ -29,12 +29,16 @@ function NavigationDrawer({
     <Dialog.Root open={open} onOpenChange={onOpenChange}>
       {trigger ? <Dialog.Trigger asChild>{trigger}</Dialog.Trigger> : null}
       <Dialog.Portal>
-        <Dialog.Overlay className="fixed inset-0 z-50 bg-black/40" />
+        <Dialog.Overlay className="fixed inset-0 z-50 bg-black/40 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=closed]:animate-out data-[state=closed]:fade-out-0" />
         <Dialog.Content
           data-slot="navigation-drawer"
+          data-side={side}
           className={cn(
             "fixed inset-y-0 z-50 flex w-80 max-w-[85vw] flex-col border bg-background p-4 shadow-lg focus:outline-none",
-            side === "left" ? "left-0 border-r" : "right-0 border-l",
+            "data-[state=open]:animate-in data-[state=closed]:animate-out [--veil-animation-duration:300ms] [--veil-exit-duration:200ms]",
+            side === "left"
+              ? "left-0 border-r data-[state=open]:slide-in-from-left-full data-[state=closed]:slide-out-to-left-full"
+              : "right-0 border-l data-[state=open]:slide-in-from-right-full data-[state=closed]:slide-out-to-right-full",
           )}
         >
           <div className="mb-4 flex items-center justify-between gap-2">

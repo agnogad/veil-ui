@@ -124,3 +124,292 @@
   --radius-lg: calc(var(--radius) + 2px);
   --radius-xl: calc(var(--radius) + 6px);
 }
+
+/*
+ * Motion
+ *
+ * Hand-written enter/exit utilities with no runtime dependency. Components opt
+ * in with `animate-in` / `animate-out` plus modifiers, for example:
+ *
+ *   data-[state=open]:animate-in data-[state=open]:fade-in-0
+ *
+ * Retime globally with --veil-animation-duration / --veil-exit-duration, or per
+ * element with an arbitrary property such as [--veil-animation-duration:300ms].
+ *
+ * Keyframes animate `transform` rather than the `translate`/`scale` longhands,
+ * so they compose with centering utilities like -translate-x-1/2.
+ */
+
+@keyframes veil-enter {
+  from {
+    opacity: var(--veil-enter-opacity, 1);
+    transform: translate3d(
+        var(--veil-enter-translate-x, 0px),
+        var(--veil-enter-translate-y, 0px),
+        0
+      )
+      scale3d(var(--veil-enter-scale, 1), var(--veil-enter-scale, 1), 1);
+  }
+}
+
+@keyframes veil-exit {
+  to {
+    opacity: var(--veil-exit-opacity, 1);
+    transform: translate3d(
+        var(--veil-exit-translate-x, 0px),
+        var(--veil-exit-translate-y, 0px),
+        0
+      )
+      scale3d(var(--veil-exit-scale, 1), var(--veil-exit-scale, 1), 1);
+  }
+}
+
+@keyframes veil-collapse-down {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    height: var(
+      --radix-accordion-content-height,
+      var(
+        --reka-accordion-content-height,
+        var(
+          --radix-collapsible-content-height,
+          var(--reka-collapsible-content-height, auto)
+        )
+      )
+    );
+    opacity: 1;
+  }
+}
+
+@keyframes veil-collapse-up {
+  from {
+    height: var(
+      --radix-accordion-content-height,
+      var(
+        --reka-accordion-content-height,
+        var(
+          --radix-collapsible-content-height,
+          var(--reka-collapsible-content-height, auto)
+        )
+      )
+    );
+    opacity: 1;
+  }
+  to {
+    height: 0;
+    opacity: 0;
+  }
+}
+
+@utility animate-in {
+  animation-name: veil-enter;
+  animation-duration: var(--veil-animation-duration, 150ms);
+  animation-timing-function: var(
+    --veil-animation-ease,
+    cubic-bezier(0.16, 1, 0.3, 1)
+  );
+  animation-fill-mode: backwards;
+}
+
+@utility animate-out {
+  animation-name: veil-exit;
+  animation-duration: var(--veil-exit-duration, 120ms);
+  animation-timing-function: var(
+    --veil-exit-ease,
+    cubic-bezier(0.4, 0, 1, 1)
+  );
+  animation-fill-mode: forwards;
+  pointer-events: none;
+}
+
+@utility animate-accordion-down {
+  animation-name: veil-collapse-down;
+  animation-duration: var(--veil-accordion-duration, 200ms);
+  animation-timing-function: var(
+    --veil-animation-ease,
+    cubic-bezier(0.16, 1, 0.3, 1)
+  );
+  animation-fill-mode: backwards;
+}
+
+@utility animate-accordion-up {
+  animation-name: veil-collapse-up;
+  animation-duration: var(--veil-accordion-duration, 200ms);
+  animation-timing-function: var(
+    --veil-exit-ease,
+    cubic-bezier(0.4, 0, 1, 1)
+  );
+  animation-fill-mode: forwards;
+}
+
+@utility animate-collapsible-down {
+  animation-name: veil-collapse-down;
+  animation-duration: var(--veil-accordion-duration, 200ms);
+  animation-timing-function: var(
+    --veil-animation-ease,
+    cubic-bezier(0.16, 1, 0.3, 1)
+  );
+  animation-fill-mode: backwards;
+}
+
+@utility animate-collapsible-up {
+  animation-name: veil-collapse-up;
+  animation-duration: var(--veil-accordion-duration, 200ms);
+  animation-timing-function: var(
+    --veil-exit-ease,
+    cubic-bezier(0.4, 0, 1, 1)
+  );
+  animation-fill-mode: forwards;
+}
+
+@utility fade-in-0 {
+  --veil-enter-opacity: 0;
+}
+
+@utility fade-out-0 {
+  --veil-exit-opacity: 0;
+}
+
+/* 80% opacity remaining, matching the shadcn naming. */
+@utility fade-out-80 {
+  --veil-exit-opacity: 0.8;
+}
+
+@utility zoom-in-95 {
+  --veil-enter-scale: 0.95;
+}
+
+@utility zoom-out-95 {
+  --veil-exit-scale: 0.95;
+}
+
+@utility slide-in-from-top-1 {
+  --veil-enter-translate-y: -0.25rem;
+}
+
+@utility slide-in-from-top-2 {
+  --veil-enter-translate-y: -0.5rem;
+}
+
+@utility slide-in-from-top-4 {
+  --veil-enter-translate-y: -1rem;
+}
+
+@utility slide-in-from-top-full {
+  --veil-enter-translate-y: -100%;
+}
+
+@utility slide-in-from-bottom-1 {
+  --veil-enter-translate-y: 0.25rem;
+}
+
+@utility slide-in-from-bottom-2 {
+  --veil-enter-translate-y: 0.5rem;
+}
+
+@utility slide-in-from-bottom-4 {
+  --veil-enter-translate-y: 1rem;
+}
+
+@utility slide-in-from-bottom-full {
+  --veil-enter-translate-y: 100%;
+}
+
+@utility slide-in-from-left-1 {
+  --veil-enter-translate-x: -0.25rem;
+}
+
+@utility slide-in-from-left-2 {
+  --veil-enter-translate-x: -0.5rem;
+}
+
+@utility slide-in-from-left-4 {
+  --veil-enter-translate-x: -1rem;
+}
+
+@utility slide-in-from-left-full {
+  --veil-enter-translate-x: -100%;
+}
+
+@utility slide-in-from-right-1 {
+  --veil-enter-translate-x: 0.25rem;
+}
+
+@utility slide-in-from-right-2 {
+  --veil-enter-translate-x: 0.5rem;
+}
+
+@utility slide-in-from-right-4 {
+  --veil-enter-translate-x: 1rem;
+}
+
+@utility slide-in-from-right-full {
+  --veil-enter-translate-x: 100%;
+}
+
+@utility slide-out-to-top-1 {
+  --veil-exit-translate-y: -0.25rem;
+}
+
+@utility slide-out-to-top-2 {
+  --veil-exit-translate-y: -0.5rem;
+}
+
+@utility slide-out-to-top-4 {
+  --veil-exit-translate-y: -1rem;
+}
+
+@utility slide-out-to-top-full {
+  --veil-exit-translate-y: -100%;
+}
+
+@utility slide-out-to-bottom-1 {
+  --veil-exit-translate-y: 0.25rem;
+}
+
+@utility slide-out-to-bottom-2 {
+  --veil-exit-translate-y: 0.5rem;
+}
+
+@utility slide-out-to-bottom-4 {
+  --veil-exit-translate-y: 1rem;
+}
+
+@utility slide-out-to-bottom-full {
+  --veil-exit-translate-y: 100%;
+}
+
+@utility slide-out-to-left-1 {
+  --veil-exit-translate-x: -0.25rem;
+}
+
+@utility slide-out-to-left-2 {
+  --veil-exit-translate-x: -0.5rem;
+}
+
+@utility slide-out-to-left-4 {
+  --veil-exit-translate-x: -1rem;
+}
+
+@utility slide-out-to-left-full {
+  --veil-exit-translate-x: -100%;
+}
+
+@utility slide-out-to-right-1 {
+  --veil-exit-translate-x: 0.25rem;
+}
+
+@utility slide-out-to-right-2 {
+  --veil-exit-translate-x: 0.5rem;
+}
+
+@utility slide-out-to-right-4 {
+  --veil-exit-translate-x: 1rem;
+}
+
+@utility slide-out-to-right-full {
+  --veil-exit-translate-x: 100%;
+}

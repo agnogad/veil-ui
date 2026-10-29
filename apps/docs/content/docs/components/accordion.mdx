@@ -52,7 +52,9 @@ import {
 
 - `Accordion` requires `type="single"` or `type="multiple"`; single mode accepts `collapsible`.
 - `AccordionTrigger` renders inside a heading wrapper with a rotating chevron.
-- `AccordionContent` animates its height and hides closed panels.
+- `AccordionContent` animates its measured height between open and closed
+  states using the `animate-accordion-down` / `animate-accordion-up` utilities
+  from the shipped motion layer.
 
 ## Accessibility
 

@@ -43,7 +43,15 @@ describe("Sheet", () => {
     render(<Example side="bottom" />);
 
     await user.click(screen.getByRole("button", { name: "Open sheet" }));
-    expect(screen.getByRole("dialog")).toHaveAttribute("data-side", "bottom");
+    const dialog = screen.getByRole("dialog");
+    expect(dialog).toHaveAttribute("data-side", "bottom");
+    expect(dialog.className).toContain(
+      "data-[state=open]:slide-in-from-bottom-full",
+    );
+    expect(dialog.className).toContain(
+      "data-[state=closed]:slide-out-to-bottom-full",
+    );
+    expect(dialog.className).toContain("[--veil-animation-duration:300ms]");
   });
 
   it("has no accessibility violations", async () => {

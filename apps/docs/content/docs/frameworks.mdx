@@ -59,6 +59,8 @@ import { Button } from "@/components/ui/button";
 - `as-child` composition works through Reka's `Primitive`.
 - Interactive components accept `v-model`: `Switch`, `Checkbox`, `Tabs`,
   `Accordion`, `Popover`, `DropdownMenu` and `AlertDialog`.
+- Motion uses the same `animate-in` / `animate-out` utilities as React; Reka
+  exposes the popper and accordion CSS variables the keyframes read.
 
 ## Plain HTML
 
@@ -108,6 +110,12 @@ Interactive HTML ports stay dependency-free:
 | Tabs | ARIA roles + a small `tabs.js` |
 | Dropdown menu | ARIA menu + `dropdown-menu.js` |
 | Alert dialog | native `<dialog>` + `alert-dialog.js` |
+
+HTML motion relies on native CSS: `@starting-style`, `::details-content` with
+`interpolate-size`, `transition-behavior: allow-discrete` and native
+dialog/popover state selectors. No animation classes are required beyond the
+Tailwind utilities already in each snippet. Browsers that predate these
+features open and close instantly — still functional, just unanimated.
 
 Copy the markup from the component page, or install it with the CLI so the
 sibling script is written next to the snippet.

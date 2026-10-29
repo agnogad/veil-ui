@@ -63,7 +63,7 @@ function Lightbox({
         <DialogPrimitive.Trigger asChild>{trigger}</DialogPrimitive.Trigger>
       ) : null}
       <DialogPrimitive.Portal>
-        <DialogPrimitive.Overlay className="fixed inset-0 z-50 bg-black/90" />
+        <DialogPrimitive.Overlay className="fixed inset-0 z-50 bg-black/90 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=closed]:animate-out data-[state=closed]:fade-out-0" />
         <DialogPrimitive.Content
           aria-label={label}
           data-slot="lightbox"
@@ -78,6 +78,7 @@ function Lightbox({
           }}
           className={cn(
             "fixed inset-0 z-50 flex flex-col items-center justify-center gap-4 bg-black/90 p-6 outline-none",
+            "data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=closed]:animate-out data-[state=closed]:fade-out-0",
             className,
           )}
         >

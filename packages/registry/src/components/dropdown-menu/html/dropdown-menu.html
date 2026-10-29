@@ -16,8 +16,9 @@
   <div
     role="menu"
     aria-label="Account actions"
+    data-state="closed"
     hidden
-    class="absolute right-0 z-50 mt-1 min-w-44 rounded-md border bg-popover p-1 text-popover-foreground shadow-md"
+    class="absolute right-0 z-50 mt-1 min-w-44 origin-top rounded-md border bg-popover p-1 text-popover-foreground shadow-md opacity-0 scale-95 -translate-y-1 transition-[opacity,scale,translate] duration-150 ease-out data-[state=open]:translate-y-0 data-[state=open]:scale-100 data-[state=open]:opacity-100 data-[state=closed]:pointer-events-none"
   >
     <div class="px-2 py-1.5 text-xs font-medium text-muted-foreground">My account</div>
     <button

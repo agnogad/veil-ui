@@ -84,6 +84,18 @@ describe("Accordion", () => {
     expect(trigger).toHaveAttribute("aria-expanded", "true");
   });
 
+  it("uses height animation utilities on content", async () => {
+    const user = userEvent.setup();
+    render(<Example />);
+
+    await user.click(screen.getByRole("button", { name: "First panel" }));
+    const content = document.querySelector('[data-slot="accordion-content"]');
+    expect(content).not.toBeNull();
+    expect(content?.className).toContain("animate-accordion-down");
+    expect(content?.className).toContain("animate-accordion-up");
+    expect(content?.className).not.toContain("data-[state=closed]:hidden");
+  });
+
   it("has no accessibility violations", async () => {
     const user = userEvent.setup();
     const { container } = render(<Example />);

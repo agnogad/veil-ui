@@ -40,6 +40,21 @@ describe("BottomSheet", () => {
     expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
   });
 
+  it("animates up from the bottom", async () => {
+    const user = userEvent.setup();
+    render(<Example />);
+
+    await user.click(screen.getByRole("button", { name: "Open sheet" }));
+    const dialog = screen.getByRole("dialog");
+    expect(dialog.className).toContain(
+      "data-[state=open]:slide-in-from-bottom-full",
+    );
+    expect(dialog.className).toContain(
+      "data-[state=closed]:slide-out-to-bottom-full",
+    );
+    expect(dialog.className).toContain("[--veil-animation-duration:300ms]");
+  });
+
   it("has no accessibility violations", async () => {
     const user = userEvent.setup();
     render(<Example />);

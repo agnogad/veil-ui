@@ -49,8 +49,8 @@ function MobileNavbar({
           </button>
         </Dialog.Trigger>
         <Dialog.Portal>
-          <Dialog.Overlay className="fixed inset-0 z-50 bg-black/40" />
-          <Dialog.Content className="fixed inset-y-0 left-0 z-50 flex w-72 flex-col border-r bg-background p-4 shadow-lg focus:outline-none">
+          <Dialog.Overlay className="fixed inset-0 z-50 bg-black/40 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=closed]:animate-out data-[state=closed]:fade-out-0" />
+          <Dialog.Content className="fixed inset-y-0 left-0 z-50 flex w-72 flex-col border-r bg-background p-4 shadow-lg focus:outline-none data-[state=open]:animate-in data-[state=closed]:animate-out [--veil-animation-duration:300ms] [--veil-exit-duration:200ms] data-[state=open]:slide-in-from-left-full data-[state=closed]:slide-out-to-left-full">
             <div className="mb-4 flex items-center justify-between">
               <Dialog.Title className="text-sm font-semibold">
                 {title}

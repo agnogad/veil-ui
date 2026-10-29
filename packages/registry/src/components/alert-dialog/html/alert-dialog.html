@@ -11,7 +11,7 @@
   id="delete-account-dialog"
   aria-labelledby="delete-account-title"
   aria-describedby="delete-account-description"
-  class="w-[calc(100%-2rem)] max-w-md rounded-lg border bg-background p-6 text-foreground shadow-lg backdrop:bg-black/50"
+  class="w-[calc(100%-2rem)] max-w-md rounded-lg border bg-background p-6 text-foreground shadow-lg opacity-0 scale-95 transition-[opacity,scale,display,overlay] [transition-behavior:allow-discrete] duration-150 open:opacity-100 open:scale-100 starting:open:opacity-0 backdrop:bg-black/50 backdrop:opacity-0 backdrop:transition-[opacity,display,overlay] backdrop:[transition-behavior:allow-discrete] open:backdrop:opacity-100 starting:open:backdrop:opacity-0"
 >
   <form method="dialog" class="grid gap-4">
     <div class="flex flex-col gap-2">

@@ -55,8 +55,8 @@ function CommandMenu({
     <Dialog.Root open={isOpen} onOpenChange={handleOpenChange}>
       {trigger ? <Dialog.Trigger asChild>{trigger}</Dialog.Trigger> : null}
       <Dialog.Portal>
-        <Dialog.Overlay className="fixed inset-0 z-50 bg-black/40" />
-        <Dialog.Content className="fixed left-1/2 top-24 z-50 w-[min(32rem,90vw)] -translate-x-1/2 overflow-hidden rounded-lg border bg-popover text-popover-foreground shadow-xl focus:outline-none">
+        <Dialog.Overlay className="fixed inset-0 z-50 bg-black/40 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=closed]:animate-out data-[state=closed]:fade-out-0" />
+        <Dialog.Content className="fixed left-1/2 top-24 z-50 w-[min(32rem,90vw)] -translate-x-1/2 overflow-hidden rounded-lg border bg-popover text-popover-foreground shadow-xl focus:outline-none data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95">
           <Dialog.Title className="sr-only">{title}</Dialog.Title>
           <Dialog.Description className="sr-only">
             Search and run a command.

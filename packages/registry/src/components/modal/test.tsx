@@ -53,6 +53,19 @@ describe("Modal", () => {
     expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
   });
 
+  it("animates the content and overlay", async () => {
+    const user = userEvent.setup();
+    render(<Example />);
+
+    await user.click(screen.getByRole("button", { name: "Open modal" }));
+    const dialog = screen.getByRole("dialog");
+    expect(dialog.className).toContain("data-[state=open]:zoom-in-95");
+    expect(dialog.className).toContain("data-[state=closed]:zoom-out-95");
+
+    const overlay = document.querySelector('[data-slot="modal-overlay"]');
+    expect(overlay?.className).toContain("data-[state=closed]:fade-out-0");
+  });
+
   it("has no accessibility violations", async () => {
     const user = userEvent.setup();
     render(<Example />);

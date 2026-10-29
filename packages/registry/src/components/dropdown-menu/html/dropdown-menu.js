@@ -5,22 +5,47 @@ document.querySelectorAll("[data-dropdown]").forEach((root) => {
   if (!trigger || !menu) return;
 
   const items = [...menu.querySelectorAll('[role="menuitem"]')];
+  let closeTimer;
+
+  const isOpen = () => menu.dataset.state === "open";
+
+  const finalizeClose = () => {
+    if (isOpen()) return;
+    window.clearTimeout(closeTimer);
+    closeTimer = undefined;
+    menu.hidden = true;
+  };
 
   const close = (restoreFocus = false) => {
-    menu.hidden = true;
+    if (!isOpen()) return;
+    menu.dataset.state = "closed";
     trigger.setAttribute("aria-expanded", "false");
+    const onTransitionEnd = (event) => {
+      if (event.target !== menu) return;
+      if (!["opacity", "scale", "translate"].includes(event.propertyName)) return;
+      menu.removeEventListener("transitionend", onTransitionEnd);
+      finalizeClose();
+    };
+    menu.addEventListener("transitionend", onTransitionEnd);
+    // Fallback for reduced-motion / browsers that skip the transition.
+    closeTimer = window.setTimeout(finalizeClose, 200);
     if (restoreFocus) trigger.focus();
   };
 
   const open = (focusFirst = false) => {
+    window.clearTimeout(closeTimer);
+    closeTimer = undefined;
     menu.hidden = false;
+    // Commit the closed styles before flipping state so the enter transition runs.
+    void menu.offsetWidth;
+    menu.dataset.state = "open";
     trigger.setAttribute("aria-expanded", "true");
     if (focusFirst) items[0]?.focus();
   };
 
   trigger.addEventListener("click", () => {
-    if (menu.hidden) open();
-    else close(true);
+    if (isOpen()) close(true);
+    else open();
   });
 
   trigger.addEventListener("keydown", (event) => {
@@ -35,7 +60,7 @@ document.querySelectorAll("[data-dropdown]").forEach((root) => {
   });
 
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && !menu.hidden) close(true);
+    if (event.key === "Escape" && isOpen()) close(true);
   });
 
   items.forEach((item, index) => {

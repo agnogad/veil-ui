@@ -75,8 +75,62 @@ Because components reference semantic tokens, nothing else needs to change.
 visualization. Override them with a categorical palette if your product needs
 color.
 
-## Reduced motion
+## Motion
 
-The base layer disables animations and transitions when
-`prefers-reduced-motion: reduce` is set. Motion utilities in individual
-components respect the same query.
+Veil UI ships a small, dependency-free motion layer in the tokens. It is plain
+CSS — no animation package, no JavaScript — so it works in React, Vue and plain
+HTML alike.
+
+Components opt in with two core utilities:
+
+| Utility | Keyframes | Default timing |
+| --- | --- | --- |
+| `animate-in` | `veil-enter` | `150ms`, `cubic-bezier(0.16, 1, 0.3, 1)`, `backwards` |
+| `animate-out` | `veil-exit` | `120ms`, `cubic-bezier(0.4, 0, 1, 1)`, `forwards` |
+
+Three kinds of modifier utilities tune the keyframes:
+
+| Group | Classes | Effect |
+| --- | --- | --- |
+| Fade | `fade-in-0`, `fade-out-0`, `fade-out-80` | Target opacity |
+| Zoom | `zoom-in-95`, `zoom-out-95` | Scale target |
+| Slide | `slide-in-from-{top,bottom,left,right}-{1,2,4,full}` | Translate offset |
+| Slide | `slide-out-to-{top,bottom,left,right}-{1,2,4,full}` | Translate offset |
+
+They are composed with state variants, exactly like Radix examples:
+
+```tsx
+<DialogContent
+  className="data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95
+             data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95"
+/>
+```
+
+Disclosure panels use dedicated height keyframes that read the primitive's
+measured content height:
+
+```tsx
+<AccordionContent className="overflow-hidden data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up" />
+```
+
+`animate-collapsible-down` / `animate-collapsible-up` do the same for
+collapsibles.
+
+### Retiming
+
+Durations come from CSS variables, so a single class retimes the animation
+without touching transitions:
+
+```tsx
+<SheetContent className="[--veil-animation-duration:300ms] [--veil-exit-duration:200ms]" />
+```
+
+`duration-*` utilities set *transition* duration and do not retime
+animations — use the variables above.
+
+### Reduced motion
+
+The base layer collapses every animation and transition to near-zero duration
+when `prefers-reduced-motion: reduce` is set. Enter/exit still runs (so Radix
+presence logic remains correct) but is imperceptible; nothing gets stuck
+mid-animation.
