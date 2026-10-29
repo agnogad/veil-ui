@@ -2,7 +2,6 @@ import { Compass, HeartHandshake, Leaf, Users } from "lucide-react";
 
 import { cn } from "@veil-ui/utils";
 
-import { Avatar, AvatarFallback } from "../avatar/index";
 import { AvatarGroup } from "../avatar-group/index";
 import { Badge } from "../badge/index";
 import { Button } from "../button/index";

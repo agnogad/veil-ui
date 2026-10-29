@@ -5,6 +5,12 @@
   "category": "forms",
   "type": "registry:ui",
   "dependencies": [],
-  "registryDependencies": ["slider", "utils"],
-  "examples": ["basic"]
+  "registryDependencies": [
+    "slider",
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "steps"
+  ]
 }

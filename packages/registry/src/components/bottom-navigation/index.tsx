@@ -13,24 +13,33 @@ interface BottomNavigationItem {
   badge?: React.ReactNode;
 }
 
+type BottomNavigationVariant = "default" | "floating";
+
 interface BottomNavigationProps
   extends Omit<React.ComponentProps<"nav">, "onSelect"> {
   items: BottomNavigationItem[];
   onSelect?: (item: BottomNavigationItem) => void;
+  variant?: BottomNavigationVariant;
 }
 
 function BottomNavigation({
   items,
   onSelect,
+  variant = "default",
   className,
   ...props
 }: BottomNavigationProps) {
   return (
     <nav
       data-slot="bottom-navigation"
+      data-variant={variant}
       aria-label="Bottom"
       className={cn(
-        "flex w-full items-stretch justify-around border-t bg-background pb-[env(safe-area-inset-bottom)]",
+        "flex w-full items-stretch justify-around bg-background",
+        variant === "default" &&
+          "border-t pb-[env(safe-area-inset-bottom)]",
+        variant === "floating" &&
+          "mx-auto w-[calc(100%-2rem)] max-w-md gap-1 rounded-2xl border p-1 shadow-lg backdrop-blur supports-[backdrop-filter]:bg-background/80",
         className,
       )}
       {...props}
@@ -51,9 +60,9 @@ function BottomNavigation({
           </>
         );
         const classes = cn(
-          "relative flex flex-1 flex-col items-center gap-1 py-2 text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
-          item.active &&
-            "text-foreground after:absolute after:inset-x-4 after:top-0 after:h-0.5 after:rounded-full after:bg-foreground",
+          "relative flex flex-1 flex-col items-center gap-1 rounded-xl py-2 text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+          item.active && variant === "default" && "text-foreground after:absolute after:inset-x-4 after:top-0 after:h-0.5 after:rounded-full after:bg-foreground",
+          item.active && variant === "floating" && "bg-muted text-foreground",
         );
 
         return item.href ? (
@@ -82,4 +91,8 @@ function BottomNavigation({
 }
 
 export { BottomNavigation };
-export type { BottomNavigationItem, BottomNavigationProps };
+export type {
+  BottomNavigationItem,
+  BottomNavigationProps,
+  BottomNavigationVariant,
+};

@@ -1,6 +1,6 @@
 "use client";
 
-import { Check, Copy, Link2, Mail, MessageCircle, Send } from "lucide-react";
+import { Check, Link2, Mail, MessageCircle, Send } from "lucide-react";
 import { useState } from "react";
 import type * as React from "react";
 

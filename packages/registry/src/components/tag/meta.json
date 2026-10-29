@@ -5,6 +5,12 @@
   "category": "feedback",
   "type": "registry:ui",
   "dependencies": [],
-  "registryDependencies": ["badge", "utils"],
-  "examples": ["basic"]
+  "registryDependencies": [
+    "badge",
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "status"
+  ]
 }

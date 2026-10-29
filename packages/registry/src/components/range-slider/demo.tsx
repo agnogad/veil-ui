@@ -22,3 +22,27 @@ export function RangeSliderBasic() {
     </div>
   );
 }
+
+export function RangeSliderSteps() {
+  const [range, setRange] = useState([20, 60]);
+
+  return (
+    <div className="grid w-full max-w-sm gap-2">
+      <RangeSlider
+        value={range}
+        onValueChange={setRange}
+        min={0}
+        max={100}
+        step={20}
+        aria-label="Budget range"
+      />
+      <div className="flex justify-between text-xs text-muted-foreground">
+        <span>$0</span>
+        <span>
+          Selected ${range[0]}–${range[1]}
+        </span>
+        <span>$100+</span>
+      </div>
+    </div>
+  );
+}

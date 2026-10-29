@@ -56,7 +56,7 @@ const users = [
   { name: "Sam Rivera", email: "sam@acme.dev", role: "Editor", status: "offline" },
 ];
 
-function AdminDashboard({ className, ...props }: React.ComponentProps<"div">) {
+function AdminDashboard({ className }: React.ComponentProps<"div">) {
   return (
     <AppShell
       data-slot="admin-dashboard"

@@ -6,5 +6,5 @@
   "type": "registry:ui",
   "dependencies": ["lucide-react"],
   "registryDependencies": ["utils"],
-  "examples": ["basic", "badges"]
+  "examples": ["basic", "badges", "floating", "interactive"]
 }

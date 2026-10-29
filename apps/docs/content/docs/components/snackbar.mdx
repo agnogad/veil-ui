@@ -3,7 +3,10 @@ title: Snackbar
 description: Alias of Toast for brief, bottom-anchored messages.
 ---
 
-import { SnackbarBasic } from "@veil-ui/registry/snackbar/demo";
+import {
+  SnackbarAction,
+  SnackbarBasic,
+} from "@veil-ui/registry/snackbar/demo";
 import demoSource from "@/lib/generated/demo-source.json";
 
 ## Installation
@@ -31,6 +34,12 @@ import {
 
 <ComponentPreview code={demoSource["snackbar"]["basic"]}>
   <SnackbarBasic />
+</ComponentPreview>
+
+### With action
+
+<ComponentPreview code={demoSource["snackbar"]["action"]}>
+  <SnackbarAction />
 </ComponentPreview>
 
 ## API reference

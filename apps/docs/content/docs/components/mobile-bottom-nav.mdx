@@ -1,0 +1,90 @@
+---
+title: Mobile Bottom Nav
+description: A thumb-friendly mobile tab bar with icons, labels, badges and a floating variant.
+---
+
+import {
+  MobileBottomNavBadges,
+  MobileBottomNavBasic,
+  MobileBottomNavFloating,
+} from "@veil-ui/registry/mobile-bottom-nav/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add mobile-bottom-nav" />
+
+## Usage
+
+```tsx
+import { Home, Search, User } from "lucide-react";
+import { MobileBottomNav } from "@/components/ui/mobile-bottom-nav";
+
+<MobileBottomNav
+  items={[
+    { label: "Home", icon: Home, href: "/", active: true },
+    { label: "Search", icon: Search, href: "/search" },
+    { label: "Account", icon: User, href: "/account" },
+  ]}
+/>;
+```
+
+The bar reserves `env(safe-area-inset-bottom)` so labels stay clear of the iOS
+home indicator. Pass `onSelect` and omit `href` to control navigation yourself.
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["mobile-bottom-nav"]["basic"]}>
+  <MobileBottomNavBasic />
+</ComponentPreview>
+
+### Badges
+
+<ComponentPreview code={demoSource["mobile-bottom-nav"]["badges"]}>
+  <MobileBottomNavBadges />
+</ComponentPreview>
+
+### Floating
+
+<ComponentPreview code={demoSource["mobile-bottom-nav"]["floating"]}>
+  <MobileBottomNavFloating />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "items",
+      type: "{ label; icon; href?; active?; badge? }[]",
+      required: true,
+      description: "Destinations, each with a required lucide icon.",
+    },
+    {
+      name: "variant",
+      type: '"default" | "floating"',
+      description:
+        "Default pins the bar to the bottom edge; floating renders a rounded, elevated pill.",
+    },
+    {
+      name: "onSelect",
+      type: "(item) => void",
+      description: "Called instead of navigating when an item is clicked.",
+    },
+    {
+      name: "...props",
+      type: 'React.ComponentProps<"nav">',
+      description: "All native nav attributes.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Renders a labelled `<nav>` landmark with a `Bottom` accessible name.
+- The active destination receives `aria-current="page"`.
+- Every destination is a native link or button, so it stays keyboard reachable
+  and keeps a visible focus ring.
+- Badges are visual; make sure any meaningful count is also announced elsewhere.

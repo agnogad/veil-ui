@@ -28,7 +28,7 @@ export default function HomePage() {
             className="mb-8 inline-flex items-center gap-2 rounded-full border bg-background/80 px-3 py-1 text-xs text-muted-foreground backdrop-blur transition-colors hover:text-foreground"
           >
             <span className="size-1.5 rounded-full bg-emerald-500" aria-hidden />
-            v0.1.0 — 297 components, 669 examples, 30 page templates
+            v0.1.0 — 298 components, 691 examples, 30 page templates
             <ArrowRight className="size-3" aria-hidden />
           </a>
 
@@ -63,7 +63,7 @@ export default function HomePage() {
       <section className="border-b">
         <div className="mx-auto grid max-w-5xl grid-cols-2 divide-x divide-border border-x md:grid-cols-4">
           {[
-            { label: "Components", value: "297" },
+            { label: "Components", value: "298" },
             { label: "Page templates", value: "30" },
             { label: "Runtime wrappers", value: "0" },
             { label: "License", value: "MIT" },

@@ -5,7 +5,6 @@ import {
   FileText,
   LayoutDashboard,
   Package,
-  Search,
   Settings,
   ShoppingCart,
   Users,
@@ -72,7 +71,7 @@ const statusVariant = {
   Refunded: "outline",
 } as const;
 
-function DashboardPage({ className, ...props }: React.ComponentProps<"div">) {
+function DashboardPage({ className }: React.ComponentProps<"div">) {
   return (
     <AppShell
       data-slot="dashboard-page"

@@ -29,3 +29,55 @@ export function ToasterBasic() {
     </ToastProvider>
   );
 }
+
+function ToasterVariantTriggers() {
+  const { toast } = useToast();
+
+  return (
+    <div className="flex flex-wrap gap-2">
+      <Button
+        variant="outline"
+        onClick={() =>
+          toast({
+            title: "Draft saved",
+            variant: "success",
+          })
+        }
+      >
+        Success
+      </Button>
+      <Button
+        variant="outline"
+        onClick={() =>
+          toast({
+            title: "Upload failed",
+            description: "Check your connection and try again.",
+            variant: "destructive",
+          })
+        }
+      >
+        Destructive
+      </Button>
+      <Button
+        variant="outline"
+        onClick={() =>
+          toast({
+            title: "Maintenance tonight",
+            description: "The API will be read-only from 22:00.",
+          })
+        }
+      >
+        Default
+      </Button>
+    </div>
+  );
+}
+
+export function ToasterVariants() {
+  return (
+    <ToastProvider>
+      <ToasterVariantTriggers />
+      <Toaster />
+    </ToastProvider>
+  );
+}

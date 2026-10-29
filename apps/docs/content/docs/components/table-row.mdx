@@ -3,7 +3,10 @@ title: Table Row
 description: A re-export of the Table row primitive for standalone composition.
 ---
 
-import { TableRowBasic } from "@veil-ui/registry/table-row/demo";
+import {
+  TableRowBasic,
+  TableRowSelected,
+} from "@veil-ui/registry/table-row/demo";
 import demoSource from "@/lib/generated/demo-source.json";
 
 ## Installation
@@ -13,14 +16,20 @@ import demoSource from "@/lib/generated/demo-source.json";
 ## Usage
 
 ```tsx
-import { Table, TableBody, TableCell, TableHeader } from "@/components/ui/table";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+} from "@/components/ui/table";
 import { TableRow } from "@/components/ui/table-row";
 
 <Table>
   <TableHeader>
     <TableRow>
-      <TableCell>Plan</TableCell>
-      <TableCell>Seats</TableCell>
+      <TableHead>Plan</TableHead>
+      <TableHead>Seats</TableHead>
     </TableRow>
   </TableHeader>
   <TableBody>
@@ -38,6 +47,12 @@ import { TableRow } from "@/components/ui/table-row";
 
 <ComponentPreview code={demoSource["table-row"]["basic"]}>
   <TableRowBasic />
+</ComponentPreview>
+
+### Selected row
+
+<ComponentPreview code={demoSource["table-row"]["selected"]}>
+  <TableRowSelected />
 </ComponentPreview>
 
 ## API reference

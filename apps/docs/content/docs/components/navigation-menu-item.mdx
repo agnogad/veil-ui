@@ -3,7 +3,10 @@ title: Navigation Menu Item
 description: Alias entry that re-exports NavigationMenuItem.
 ---
 
-import { NavigationMenuItemBasic } from "@veil-ui/registry/navigation-menu-item/demo";
+import {
+  NavigationMenuItemBasic,
+  NavigationMenuItemWithDescription,
+} from "@veil-ui/registry/navigation-menu-item/demo";
 import demoSource from "@/lib/generated/demo-source.json";
 
 ## Installation
@@ -28,6 +31,12 @@ import { NavigationMenuItem } from "@/components/ui/navigation-menu-item";
 
 <ComponentPreview code={demoSource["navigation-menu-item"]["basic"]}>
   <NavigationMenuItemBasic />
+</ComponentPreview>
+
+### With description
+
+<ComponentPreview code={demoSource["navigation-menu-item"]["with-description"]}>
+  <NavigationMenuItemWithDescription />
 </ComponentPreview>
 
 ## API reference

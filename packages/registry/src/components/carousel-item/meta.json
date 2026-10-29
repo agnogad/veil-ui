@@ -5,6 +5,11 @@
   "category": "overlays",
   "type": "registry:ui",
   "dependencies": [],
-  "registryDependencies": ["utils"],
-  "examples": ["basic"]
+  "registryDependencies": [
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "two-up"
+  ]
 }

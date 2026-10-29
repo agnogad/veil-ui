@@ -3,7 +3,10 @@ title: Tree Item
 description: The tree node primitive re-exported for custom trees.
 ---
 
-import { TreeItemBasic } from "@veil-ui/registry/tree-item/demo";
+import {
+  TreeItemBasic,
+  TreeItemNested,
+} from "@veil-ui/registry/tree-item/demo";
 import demoSource from "@/lib/generated/demo-source.json";
 
 ## Installation
@@ -26,6 +29,12 @@ import { TreeItem } from "@/components/ui/tree-item";
 
 <ComponentPreview code={demoSource["tree-item"]["basic"]}>
   <TreeItemBasic />
+</ComponentPreview>
+
+### Nested
+
+<ComponentPreview code={demoSource["tree-item"]["nested"]}>
+  <TreeItemNested />
 </ComponentPreview>
 
 ## API reference

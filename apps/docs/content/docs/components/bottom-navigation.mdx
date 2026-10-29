@@ -6,6 +6,8 @@ description: A thumb-friendly tab bar for primary mobile destinations.
 import {
   BottomNavigationBadges,
   BottomNavigationBasic,
+  BottomNavigationFloating,
+  BottomNavigationInteractive,
 } from "@veil-ui/registry/bottom-navigation/demo";
 import demoSource from "@/lib/generated/demo-source.json";
 
@@ -41,6 +43,18 @@ import { BottomNavigation } from "@/components/ui/bottom-navigation";
   <BottomNavigationBadges />
 </ComponentPreview>
 
+### Floating
+
+<ComponentPreview code={demoSource["bottom-navigation"]["floating"]}>
+  <BottomNavigationFloating />
+</ComponentPreview>
+
+### Interactive
+
+<ComponentPreview code={demoSource["bottom-navigation"]["interactive"]}>
+  <BottomNavigationInteractive />
+</ComponentPreview>
+
 ## API reference
 
 <PropsTable
@@ -55,6 +69,12 @@ import { BottomNavigation } from "@/components/ui/bottom-navigation";
       name: "onSelect",
       type: "(item) => void",
       description: "Called instead of navigating when an item is clicked.",
+    },
+    {
+      name: "variant",
+      type: '"default" | "floating"',
+      description:
+        "Default is a pinned bar with a top border; floating renders a rounded, elevated pill.",
     },
     {
       name: "...props",

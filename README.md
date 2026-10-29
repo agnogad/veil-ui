@@ -6,7 +6,7 @@
 
 **Copy-paste React components. Radix behaviour, Tailwind v4 styling, zero lock-in.**
 
-A monochrome component registry for React 19 — 297 components, 669 live examples and 30 page templates.
+A monochrome component registry for React 19 — 298 components, 691 live examples and 30 page templates.
 One command writes readable source into your codebase. No wrapper package to upgrade, no runtime to fight.
 
 [![CI](https://img.shields.io/github/actions/workflow/status/agnogad/veil-ui/ci.yml?branch=main&style=flat-square&label=CI)](https://github.com/agnogad/veil-ui/actions/workflows/ci.yml)
@@ -14,8 +14,8 @@ One command writes readable source into your codebase. No wrapper package to upg
 [![React](https://img.shields.io/badge/React-19-0A0A0A?style=flat-square&logo=react&logoColor=white)](https://react.dev)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-v4-0A0A0A?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 [![Radix UI](https://img.shields.io/badge/Radix-UI-0A0A0A?style=flat-square)](https://www.radix-ui.com)
-[![Components](https://img.shields.io/badge/components-297-0A0A0A?style=flat-square)](#whats-inside)
-[![Examples](https://img.shields.io/badge/examples-669-0A0A0A?style=flat-square)](#whats-inside)
+[![Components](https://img.shields.io/badge/components-298-0A0A0A?style=flat-square)](#whats-inside)
+[![Examples](https://img.shields.io/badge/examples-691-0A0A0A?style=flat-square)](#whats-inside)
 
 [Quick start](#quick-start) · [Components](#whats-inside) · [Repository](#repository-layout) · [Development](#development) · [Roadmap](#roadmap)
 
@@ -85,20 +85,20 @@ Full reference: [`apps/docs/content/docs/cli.mdx`](apps/docs/content/docs/cli.md
 | Group | Components | Examples |
 | --- | ---: | ---: |
 | Actions | 18 | 60 |
-| Forms | 38 | 111 |
-| Feedback | 22 | 55 |
-| Data display | 30 | 62 |
+| Forms | 38 | 112 |
+| Feedback | 22 | 60 |
+| Data display | 30 | 66 |
 | Charts | 15 | 30 |
 | Media | 13 | 26 |
-| Navigation | 25 | 46 |
-| Overlays | 15 | 38 |
+| Navigation | 25 | 54 |
+| Overlays | 15 | 39 |
 | Typography | 19 | 47 |
 | Layout | 22 | 64 |
-| Mobile | 20 | 40 |
+| Mobile | 21 | 43 |
 | Landing | 20 | 40 |
 | Auth | 10 | 20 |
 | Page templates | 30 | 30 |
-| **Total** | **297** | **669** |
+| **Total** | **298** | **691** |
 
 Highlights across the catalog:
 
@@ -106,7 +106,7 @@ Highlights across the catalog:
 - **Data display** — tables, sortable data tables, trees, key-value lists, timelines, activity feeds and Recharts-powered charts.
 - **Overlays** — dialogs, alert dialogs, sheets, drawers, popovers, hover cards, context menus, command palette and toasts.
 - **Navigation** — navbars, sidebars, tabs, breadcrumbs, pagination, back-to-top and a full command menu.
-- **Mobile** — app shell, mobile headers, bottom bars, swipe rows, pickers and safe-area helpers.
+- **Mobile** — app shell, mobile headers, bottom nav and action bars, swipe rows, pickers and safe-area helpers.
 - **Landing** — heroes, feature grids, pricing tables, testimonials, FAQ sections, CTAs and footers.
 - **Auth & pages** — login, signup, reset and OTP flows, plus 30 full-page templates for dashboards, commerce, content, chat, kanban, settings and error states.
 

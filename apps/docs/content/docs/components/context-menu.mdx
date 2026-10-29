@@ -3,7 +3,10 @@ title: Context Menu
 description: Radix context menu triggered by right click or long press.
 ---
 
-import { ContextMenuBasic } from "@veil-ui/registry/context-menu/demo";
+import {
+  ContextMenuBasic,
+  ContextMenuShortcuts,
+} from "@veil-ui/registry/context-menu/demo";
 import demoSource from "@/lib/generated/demo-source.json";
 
 ## Installation
@@ -35,6 +38,12 @@ import {
 
 <ComponentPreview code={demoSource["context-menu"]["basic"]}>
   <ContextMenuBasic />
+</ComponentPreview>
+
+### Shortcuts
+
+<ComponentPreview code={demoSource["context-menu"]["shortcuts"]}>
+  <ContextMenuShortcuts />
 </ComponentPreview>
 
 ## API reference

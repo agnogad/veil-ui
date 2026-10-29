@@ -3,7 +3,10 @@ title: List Item
 description: A re-export of the List View item primitive.
 ---
 
-import { ListItemBasic } from "@veil-ui/registry/list-item/demo";
+import {
+  ListItemBasic,
+  ListItemMembers,
+} from "@veil-ui/registry/list-item/demo";
 import demoSource from "@/lib/generated/demo-source.json";
 
 ## Installation
@@ -27,6 +30,12 @@ import { ListItem } from "@/components/ui/list-item";
 
 <ComponentPreview code={demoSource["list-item"]["basic"]}>
   <ListItemBasic />
+</ComponentPreview>
+
+### Members
+
+<ComponentPreview code={demoSource["list-item"]["members"]}>
+  <ListItemMembers />
 </ComponentPreview>
 
 ## API reference

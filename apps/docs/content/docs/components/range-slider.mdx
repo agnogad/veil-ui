@@ -3,7 +3,10 @@ title: Range Slider
 description: A two-thumb slider for selecting a numeric range.
 ---
 
-import { RangeSliderBasic } from "@veil-ui/registry/range-slider/demo";
+import {
+  RangeSliderBasic,
+  RangeSliderSteps,
+} from "@veil-ui/registry/range-slider/demo";
 import demoSource from "@/lib/generated/demo-source.json";
 
 ## Installation
@@ -24,6 +27,12 @@ import { RangeSlider } from "@/components/ui/range-slider";
 
 <ComponentPreview code={demoSource["range-slider"]["basic"]}>
   <RangeSliderBasic />
+</ComponentPreview>
+
+### Stepped
+
+<ComponentPreview code={demoSource["range-slider"]["steps"]}>
+  <RangeSliderSteps />
 </ComponentPreview>
 
 ## API reference

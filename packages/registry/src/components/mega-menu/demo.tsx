@@ -40,3 +40,38 @@ export function MegaMenuBasic() {
     />
   );
 }
+
+export function MegaMenuCompact() {
+  return (
+    <MegaMenu
+      aria-label="Resources"
+      items={[
+        {
+          label: "Learn",
+          columns: [
+            {
+              title: "Guides",
+              links: [
+                {
+                  label: "Installation",
+                  description: "Set up tokens, utils and aliases.",
+                  href: "#installation",
+                },
+                {
+                  label: "Theming",
+                  description: "Swap the OKLCH palette in one place.",
+                  href: "#theming",
+                },
+                {
+                  label: "CLI reference",
+                  description: "Every command and flag.",
+                  href: "#cli",
+                },
+              ],
+            },
+          ],
+        },
+      ]}
+    />
+  );
+}

@@ -5,6 +5,12 @@
   "category": "feedback",
   "type": "registry:ui",
   "dependencies": [],
-  "registryDependencies": ["toast", "utils"],
-  "examples": ["basic"]
+  "registryDependencies": [
+    "toast",
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "variants"
+  ]
 }

@@ -233,6 +233,7 @@
     "mobile-header",
     "mobile-toolbar",
     "mobile-bottom-bar",
+    "mobile-bottom-nav",
     "mobile-tab-bar",
     "mobile-fab",
     "mobile-drawer",

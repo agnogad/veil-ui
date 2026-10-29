@@ -3,7 +3,10 @@ title: Table Cell
 description: A re-export of the Table cell primitive for standalone composition.
 ---
 
-import { TableCellBasic } from "@veil-ui/registry/table-cell/demo";
+import {
+  TableCellBasic,
+  TableCellStatus,
+} from "@veil-ui/registry/table-cell/demo";
 import demoSource from "@/lib/generated/demo-source.json";
 
 ## Installation
@@ -32,6 +35,12 @@ import { TableCell } from "@/components/ui/table-cell";
 
 <ComponentPreview code={demoSource["table-cell"]["basic"]}>
   <TableCellBasic />
+</ComponentPreview>
+
+### Status cells
+
+<ComponentPreview code={demoSource["table-cell"]["status"]}>
+  <TableCellStatus />
 </ComponentPreview>
 
 ## API reference

@@ -3,7 +3,10 @@ title: Progress Bar
 description: Alias of Progress for horizontal completion indicators.
 ---
 
-import { ProgressBarBasic } from "@veil-ui/registry/progress-bar/demo";
+import {
+  ProgressBarBasic,
+  ProgressBarLabeled,
+} from "@veil-ui/registry/progress-bar/demo";
 import demoSource from "@/lib/generated/demo-source.json";
 
 ## Installation
@@ -24,6 +27,12 @@ import { ProgressBar } from "@/components/ui/progress-bar";
 
 <ComponentPreview code={demoSource["progress-bar"]["basic"]}>
   <ProgressBarBasic />
+</ComponentPreview>
+
+### With labels
+
+<ComponentPreview code={demoSource["progress-bar"]["labeled"]}>
+  <ProgressBarLabeled />
 </ComponentPreview>
 
 ## API reference

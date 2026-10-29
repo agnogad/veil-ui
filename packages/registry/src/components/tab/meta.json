@@ -5,6 +5,12 @@
   "category": "navigation",
   "type": "registry:ui",
   "dependencies": [],
-  "registryDependencies": ["tabs", "utils"],
-  "examples": ["basic"]
+  "registryDependencies": [
+    "tabs",
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "icons"
+  ]
 }

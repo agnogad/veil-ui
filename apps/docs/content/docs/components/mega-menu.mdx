@@ -3,7 +3,10 @@ title: Mega Menu
 description: A multi-column navigation panel built on the navigation menu.
 ---
 
-import { MegaMenuBasic } from "@veil-ui/registry/mega-menu/demo";
+import {
+  MegaMenuBasic,
+  MegaMenuCompact,
+} from "@veil-ui/registry/mega-menu/demo";
 import demoSource from "@/lib/generated/demo-source.json";
 
 ## Installation
@@ -36,6 +39,12 @@ import { MegaMenu } from "@/components/ui/mega-menu";
 
 <ComponentPreview code={demoSource["mega-menu"]["basic"]}>
   <MegaMenuBasic />
+</ComponentPreview>
+
+### Compact
+
+<ComponentPreview code={demoSource["mega-menu"]["compact"]}>
+  <MegaMenuCompact />
 </ComponentPreview>
 
 ## API reference

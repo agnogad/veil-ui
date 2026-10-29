@@ -3,7 +3,10 @@ title: Carousel Item
 description: A single slide within a carousel track.
 ---
 
-import { CarouselItemBasic } from "@veil-ui/registry/carousel-item/demo";
+import {
+  CarouselItemBasic,
+  CarouselItemTwoUp,
+} from "@veil-ui/registry/carousel-item/demo";
 import demoSource from "@/lib/generated/demo-source.json";
 
 ## Installation
@@ -24,6 +27,12 @@ import { CarouselItem } from "@/components/ui/carousel-item";
 
 <ComponentPreview code={demoSource["carousel-item"]["basic"]}>
   <CarouselItemBasic />
+</ComponentPreview>
+
+### Two-up
+
+<ComponentPreview code={demoSource["carousel-item"]["two-up"]}>
+  <CarouselItemTwoUp />
 </ComponentPreview>
 
 ## API reference

@@ -1,0 +1,19 @@
+{
+  "name": "mobile-bottom-nav",
+  "title": "Mobile Bottom Nav",
+  "description": "A thumb-friendly mobile tab bar with icons, labels, badges and a floating variant.",
+  "category": "mobile",
+  "type": "registry:ui",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "bottom-navigation",
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "badges",
+    "floating"
+  ]
+}

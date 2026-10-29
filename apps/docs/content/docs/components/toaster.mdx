@@ -3,7 +3,10 @@ title: Toaster
 description: Alias entry for the Toast provider, hook and viewport.
 ---
 
-import { ToasterBasic } from "@veil-ui/registry/toaster/demo";
+import {
+  ToasterBasic,
+  ToasterVariants,
+} from "@veil-ui/registry/toaster/demo";
 import demoSource from "@/lib/generated/demo-source.json";
 
 ## Installation
@@ -27,6 +30,12 @@ import { Toaster, ToastProvider, useToast } from "@/components/ui/toaster";
 
 <ComponentPreview code={demoSource["toaster"]["basic"]}>
   <ToasterBasic />
+</ComponentPreview>
+
+### Variants
+
+<ComponentPreview code={demoSource["toaster"]["variants"]}>
+  <ToasterVariants />
 </ComponentPreview>
 
 ## API reference
