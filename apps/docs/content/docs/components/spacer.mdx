@@ -1,0 +1,70 @@
+---
+title: Spacer
+description: Adds flexible or fixed space between flex children.
+---
+
+import {
+  SpacerFixed,
+  SpacerFlexible,
+  SpacerToolbar,
+} from "@veil-ui/registry/spacer/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add spacer" />
+
+## Usage
+
+```tsx
+import { Spacer } from "@/components/ui/spacer";
+
+<div className="flex items-center">
+  <span>Left</span>
+  <Spacer />
+  <span>Right</span>
+</div>;
+```
+
+## Examples
+
+### Flexible
+
+<ComponentPreview code={demoSource.spacer.flexible}>
+  <SpacerFlexible />
+</ComponentPreview>
+
+### Fixed size
+
+<ComponentPreview code={demoSource.spacer.fixed}>
+  <SpacerFixed />
+</ComponentPreview>
+
+### Toolbar
+
+<ComponentPreview code={demoSource.spacer.toolbar}>
+  <SpacerToolbar />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "size",
+      type: '"xs" | "sm" | "md" | "lg" | "xl"',
+      description:
+        "Fixed size: 4, 8, 16, 24 or 32px. Omit to fill the remaining space.",
+    },
+    {
+      name: "...props",
+      type: 'React.ComponentProps<"div">',
+      description: "All native div attributes.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Renders an `aria-hidden` element, so it is invisible to assistive technology.
+- It must live inside a flex container; otherwise use margins instead.

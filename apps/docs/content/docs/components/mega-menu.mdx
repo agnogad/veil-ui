@@ -1,0 +1,63 @@
+---
+title: Mega Menu
+description: A multi-column navigation panel built on the navigation menu.
+---
+
+import { MegaMenuBasic } from "@veil-ui/registry/mega-menu/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add mega-menu" />
+
+## Usage
+
+```tsx
+import { MegaMenu } from "@/components/ui/mega-menu";
+
+<MegaMenu
+  items={[
+    {
+      label: "Products",
+      columns: [
+        {
+          title: "Platform",
+          links: [{ label: "Analytics", href: "/analytics" }],
+        },
+      ],
+    },
+  ]}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["mega-menu"]["basic"]}>
+  <MegaMenuBasic />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "items",
+      type: "{ label; columns: { title; links: { label; description?; href }[] }[] }[]",
+      required: true,
+      description: "Top-level menus with grouped links.",
+    },
+    {
+      name: "...props",
+      type: "React.ComponentProps<typeof NavigationMenu>",
+      description: "Forwarded to the underlying navigation menu.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Reuses Navigation Menu behavior: roving focus, Escape to close and
+  automatic trigger/panel wiring.
+- Column titles are visual headings; each link keeps its own accessible name.

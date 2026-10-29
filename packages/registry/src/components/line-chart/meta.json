@@ -1,0 +1,18 @@
+{
+  "name": "line-chart",
+  "title": "Line Chart",
+  "description": "A responsive multi-series line chart built on Recharts.",
+  "category": "charts",
+  "type": "registry:ui",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [
+    "chart",
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "single"
+  ]
+}

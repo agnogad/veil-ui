@@ -1,0 +1,43 @@
+---
+title: QR Code
+description: A scannable QR code rendered as SVG with a caption.
+---
+
+import { QrcodeBasic, QrcodeLabeled } from "@veil-ui/registry/qrcode/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add qrcode" />
+
+## Usage
+
+```tsx
+import { QRCode } from "@/components/ui/qrcode";
+
+<QRCode value="https://veil-ui.dev" />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["qrcode"]["basic"]}>
+  <QrcodeBasic />
+</ComponentPreview>
+
+### Labeled
+
+<ComponentPreview code={demoSource["qrcode"]["labeled"]}>
+  <QrcodeLabeled />
+</ComponentPreview>
+
+## API reference
+
+The package exports `qrcode` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Media players use native `<video>` and `<audio>` controls with accessible labels.
+- Images require meaningful `alt` text; clickable thumbnails are buttons named `Play <title>`.
+- Decorative play overlays, durations and icons are hidden from assistive technology.

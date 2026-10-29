@@ -1,0 +1,16 @@
+{
+  "name": "mobile-drawer",
+  "title": "Mobile Drawer",
+  "description": "The Drawer component exposed with mobile naming.",
+  "category": "mobile",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "drawer",
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "right"
+  ]
+}

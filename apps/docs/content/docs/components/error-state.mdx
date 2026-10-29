@@ -1,0 +1,76 @@
+---
+title: Error State
+description: A prominent failure message with an optional retry action.
+---
+
+import {
+  ErrorStateBasic,
+  ErrorStateCustom,
+  ErrorStateWithRetry,
+} from "@veil-ui/registry/error-state/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add error-state" />
+
+## Usage
+
+```tsx
+import { ErrorState } from "@/components/ui/error-state";
+
+<ErrorState
+  title="Could not load invoices"
+  description="Check your connection and try again."
+  action={<button type="button">Retry</button>}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["error-state"]["basic"]}>
+  <ErrorStateBasic />
+</ComponentPreview>
+
+### With retry
+
+<ComponentPreview code={demoSource["error-state"]["with-retry"]}>
+  <ErrorStateWithRetry />
+</ComponentPreview>
+
+### Custom message
+
+<ComponentPreview code={demoSource["error-state"]["custom"]}>
+  <ErrorStateCustom />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "title",
+      type: "React.ReactNode",
+      default: '"Something went wrong"',
+      description: "Headline for the failure.",
+    },
+    {
+      name: "description",
+      type: "React.ReactNode",
+      default: "Unexpected error copy",
+      description: "Explanation or recovery hint.",
+    },
+    {
+      name: "action",
+      type: "React.ReactNode",
+      description: "Recovery control, typically Retry.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Rendered inside `role="alert"`, so it is announced when it appears.
+- The icon is decorative; keep the title specific so users know what failed.

@@ -1,0 +1,16 @@
+{
+  "name": "interactive-card",
+  "title": "Interactive Card",
+  "description": "A card that behaves as one interactive surface with keyboard support.",
+  "category": "data-display",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "card",
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "disabled"
+  ]
+}

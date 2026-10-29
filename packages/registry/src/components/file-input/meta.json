@@ -1,0 +1,10 @@
+{
+  "name": "file-input",
+  "title": "File Input",
+  "description": "A styled native file input with a selected-file list and helper text.",
+  "category": "forms",
+  "type": "registry:ui",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["button", "utils"],
+  "examples": ["basic", "multiple", "error"]
+}

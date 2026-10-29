@@ -1,0 +1,89 @@
+---
+title: Code Block
+description: A preformatted code sample with a filename, line numbers and copy button.
+---
+
+import {
+  CodeBlockBasic,
+  CodeBlockFilename,
+  CodeBlockLineNumbers,
+} from "@veil-ui/registry/code-block/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add code-block" />
+
+## Usage
+
+```tsx
+import { CodeBlock } from "@/components/ui/code-block";
+
+<CodeBlock
+  code={'const answer = 42;'}
+  language="ts"
+  filename="answer.ts"
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["code-block"].basic}>
+  <CodeBlockBasic />
+</ComponentPreview>
+
+### Filename
+
+<ComponentPreview code={demoSource["code-block"].filename}>
+  <CodeBlockFilename />
+</ComponentPreview>
+
+### Line numbers
+
+<ComponentPreview code={demoSource["code-block"]["line-numbers"]}>
+  <CodeBlockLineNumbers />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "code",
+      type: "string",
+      description: "The source text to display and copy.",
+    },
+    {
+      name: "language",
+      type: "string",
+      description: "Fallback label shown when no filename is provided.",
+    },
+    {
+      name: "filename",
+      type: "string",
+      description: "File label in the header bar.",
+    },
+    {
+      name: "showLineNumbers",
+      type: "boolean",
+      default: "false",
+      description: "Number each line; numbers are hidden from assistive tech.",
+    },
+    {
+      name: "copyable",
+      type: "boolean",
+      default: "true",
+      description: "Show the copy button in the header.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- The copy button is labelled "Copy code" and switches to "Copied" after a
+  successful copy.
+- Line numbers are decorative and hidden from screen readers, so the code text
+  stays clean when read aloud.
+- The sample scrolls horizontally instead of wrapping long lines.

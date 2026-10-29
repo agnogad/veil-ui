@@ -1,0 +1,58 @@
+---
+title: Caption
+description: Small supporting text for images, fields and metadata.
+---
+
+import {
+  CaptionBasic,
+  CaptionWithFigure,
+} from "@veil-ui/registry/caption/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add caption" />
+
+## Usage
+
+```tsx
+import { Caption } from "@/components/ui/caption";
+
+<Caption>Updated 2 minutes ago</Caption>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource.caption.basic}>
+  <CaptionBasic />
+</ComponentPreview>
+
+### With a figure
+
+<ComponentPreview code={demoSource.caption["with-figure"]}>
+  <CaptionWithFigure />
+</ComponentPreview>
+
+Wrap captions for images in a `figcaption` so the association is programmatic.
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "tone",
+      type: '"default" | "muted"',
+      default: '"muted"',
+      description: "Foreground color tone.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Caption text stays at a legible size and inherits the surrounding color
+  contrast.
+- Use it inside `figcaption` for media, or next to form fields for hints. Avoid
+  relying on it for critical instructions.

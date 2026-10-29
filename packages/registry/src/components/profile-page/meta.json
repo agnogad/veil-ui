@@ -1,0 +1,25 @@
+{
+  "name": "profile-page",
+  "title": "Profile Page",
+  "description": "A social profile page with cover, tabs, posts and sidebar.",
+  "category": "pages",
+  "type": "registry:block",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "avatar",
+    "badge",
+    "button",
+    "card",
+    "image-card",
+    "logo",
+    "profile-card",
+    "progress",
+    "segmented-navigation"
+  ],
+  "examples": [
+    "basic"
+  ]
+}

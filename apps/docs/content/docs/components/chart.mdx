@@ -1,0 +1,53 @@
+---
+title: Chart
+description: A responsive chart shell with shared config, tooltip and legend content.
+---
+
+import { ChartBasic, ChartCompact } from "@veil-ui/registry/chart/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add chart" />
+
+## Usage
+
+```tsx
+import { Bar, BarChart, XAxis } from "recharts";
+
+import { ChartContainer, ChartTooltip } from "@/components/ui/chart";
+
+const config = { revenue: { label: "Revenue", color: "#6366f1" } };
+
+<ChartContainer config={config} height={300}>
+  <BarChart data={data}>
+    <XAxis dataKey="month" />
+    <ChartTooltip />
+    <Bar dataKey="revenue" fill="#6366f1" />
+  </BarChart>
+</ChartContainer>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["chart"]["basic"]}>
+  <ChartBasic />
+</ComponentPreview>
+
+### Compact
+
+<ComponentPreview code={demoSource["chart"]["compact"]}>
+  <ChartCompact />
+</ComponentPreview>
+
+## API reference
+
+The package exports `chart` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Charts render inside a container with an explicit height so they stay responsive without layout shift.
+- Color is never the only encoding; pair charts with labels, summaries or a data table for critical information.
+- Tooltips and legends are rendered as HTML, so their text is available to assistive technology.

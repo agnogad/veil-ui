@@ -1,0 +1,96 @@
+---
+title: Notification Center
+description: A bell trigger with an unread badge and a popover list of notifications.
+---
+
+import {
+  NotificationCenterBasic,
+  NotificationCenterEmpty,
+  NotificationCenterMarkAllRead,
+} from "@veil-ui/registry/notification-center/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add notification-center" />
+
+## Usage
+
+```tsx
+import { NotificationCenter } from "@/components/ui/notification-center";
+
+<NotificationCenter
+  notifications={[
+    {
+      id: "1",
+      title: "Deployment finished",
+      description: "Production is live.",
+      unread: true,
+    },
+  ]}
+  onMarkAllRead={() => undefined}
+  onDismiss={(id) => console.log(id)}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["notification-center"]["basic"]}>
+  <NotificationCenterBasic />
+</ComponentPreview>
+
+### Empty
+
+<ComponentPreview code={demoSource["notification-center"]["empty"]}>
+  <NotificationCenterEmpty />
+</ComponentPreview>
+
+### Mark all read
+
+<ComponentPreview code={demoSource["notification-center"]["mark-all-read"]}>
+  <NotificationCenterMarkAllRead />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "notifications",
+      type: "{ id; title; description?; timestamp?; unread?; icon? }[]",
+      required: true,
+      description: "Entries shown in the popover.",
+    },
+    {
+      name: "onMarkAllRead",
+      type: "() => void",
+      description: "Shows the action when unread items exist.",
+    },
+    {
+      name: "onDismiss",
+      type: "(id) => void",
+      description: "Adds a dismiss control to every entry.",
+    },
+    {
+      name: "title",
+      type: "string",
+      default: '"Notifications"',
+      description: "Popover heading and accessible name.",
+    },
+    {
+      name: "emptyLabel",
+      type: "React.ReactNode",
+      default: '"You\'re all caught up."',
+      description: "Copy for an empty list.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- The bell trigger is named “Notifications” and appends the unread count,
+  e.g. “Notifications (2 unread)”.
+- The popover is a labelled dialog with focus management from Radix.
+- Entries reuse Notification's unread label and dismiss control names.

@@ -1,0 +1,37 @@
+---
+title: Progress Bar
+description: Alias of Progress for horizontal completion indicators.
+---
+
+import { ProgressBarBasic } from "@veil-ui/registry/progress-bar/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add progress-bar" />
+
+## Usage
+
+```tsx
+import { ProgressBar } from "@/components/ui/progress-bar";
+
+<ProgressBar value={60} aria-label="Upload progress" />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["progress-bar"]["basic"]}>
+  <ProgressBarBasic />
+</ComponentPreview>
+
+## API reference
+
+`ProgressBar` re-exports [Progress](/docs/components/progress). It takes
+`value` from 0 to 100 and all native div attributes.
+
+## Accessibility
+
+- Radix Progress exposes `role="progressbar"` and the value attributes.
+- Provide an `aria-label` when no visible label describes the task.

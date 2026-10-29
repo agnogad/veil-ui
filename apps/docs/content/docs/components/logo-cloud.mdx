@@ -1,0 +1,69 @@
+---
+title: Logo Cloud
+description: A responsive grid of customer or partner logos.
+---
+
+import {
+  LogoCloudBasic,
+  LogoCloudLinked,
+} from "@veil-ui/registry/logo-cloud/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add logo-cloud" />
+
+## Usage
+
+```tsx
+import { LogoCloud } from "@/components/ui/logo-cloud";
+
+<LogoCloud
+  items={[
+    { name: "Acme", src: "/logos/acme.svg" },
+    { name: "Globex", href: "https://globex.example" },
+  ]}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["logo-cloud"].basic}>
+  <LogoCloudBasic />
+</ComponentPreview>
+
+### Linked
+
+<ComponentPreview code={demoSource["logo-cloud"].linked}>
+  <LogoCloudLinked />
+</ComponentPreview>
+
+Items without a `src` render their name as text, which keeps the component
+useful before final artwork exists.
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "items",
+      type: "LogoCloudItem[]",
+      description: "Entries with name, optional image source and optional href.",
+    },
+    {
+      name: "columns",
+      type: "2 | 3 | 4 | 5 | 6",
+      default: "4",
+      description: "Column count at the small breakpoint and above.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Images always receive the item name as alt text.
+- Linked logos keep a visible focus ring and an accessible name from the image
+  alt or text label.
+- The grid is a plain list, so assistive technology announces the item count.

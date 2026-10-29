@@ -1,0 +1,78 @@
+---
+title: Mobile Navbar
+description: A compact header with a slide-in dialog menu for small screens.
+---
+
+import {
+  MobileNavbarBasic,
+  MobileNavbarWithActions,
+} from "@veil-ui/registry/mobile-navbar/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add mobile-navbar" />
+
+## Usage
+
+```tsx
+import { MobileNavbar } from "@/components/ui/mobile-navbar";
+
+<MobileNavbar
+  title="Acme"
+  links={[
+    { label: "Home", href: "/" },
+    { label: "Docs", href: "/docs" },
+  ]}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["mobile-navbar"]["basic"]}>
+  <MobileNavbarBasic />
+</ComponentPreview>
+
+### With actions
+
+<ComponentPreview code={demoSource["mobile-navbar"]["with-actions"]}>
+  <MobileNavbarWithActions />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "title",
+      type: "React.ReactNode",
+      required: true,
+      description: "Brand or page title shown next to the menu button.",
+    },
+    {
+      name: "links",
+      type: "{ label; href; active? }[]",
+      required: true,
+      description: "Navigation entries rendered inside the drawer.",
+    },
+    {
+      name: "actions",
+      type: "React.ReactNode",
+      description: "Optional controls rendered at the end of the header.",
+    },
+    {
+      name: "...props",
+      type: 'React.ComponentProps<"header">',
+      description: "All native header attributes.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- The menu button is announced as “Open menu” and exposes
+  `aria-expanded` / `aria-controls`.
+- The drawer traps focus and closes on Escape through Radix Dialog.
+- Mark the current page with `active` so its link gets `aria-current`.

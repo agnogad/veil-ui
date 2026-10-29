@@ -1,0 +1,10 @@
+{
+  "name": "cluster",
+  "title": "Cluster",
+  "description": "Wraps a set of items with even gaps and sensible alignment.",
+  "category": "layout",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "between", "tags"]
+}

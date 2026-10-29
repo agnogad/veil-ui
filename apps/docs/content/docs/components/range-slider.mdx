@@ -1,0 +1,37 @@
+---
+title: Range Slider
+description: A two-thumb slider for selecting a numeric range.
+---
+
+import { RangeSliderBasic } from "@veil-ui/registry/range-slider/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add range-slider" />
+
+## Usage
+
+```tsx
+import { RangeSlider } from "@/components/ui/range-slider";
+
+<RangeSlider defaultValue={[20, 80]} min={0} max={100} aria-label="Price range" />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["range-slider"]["basic"]}>
+  <RangeSliderBasic />
+</ComponentPreview>
+
+## API reference
+
+The package exports `range-slider` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Each thumb is independently focusable with full keyboard support and exposes its own value.
+- Error and disabled states are exposed through native attributes and Radix data attributes.
+- Focus-visible rings follow the shared token system in both themes.

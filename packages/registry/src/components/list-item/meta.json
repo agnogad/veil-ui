@@ -1,0 +1,15 @@
+{
+  "name": "list-item",
+  "title": "List Item",
+  "description": "A re-export of the List View item primitive.",
+  "category": "data-display",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "list-view",
+    "utils"
+  ],
+  "examples": [
+    "basic"
+  ]
+}

@@ -1,0 +1,48 @@
+---
+title: Pricing Section
+description: A three-plan pricing layout with an optional selection callback.
+---
+
+import { PricingSectionBasic, PricingSectionSelectable } from "@veil-ui/registry/pricing-section/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add pricing-section" />
+
+## Usage
+
+```tsx
+import { PricingSection } from "@/components/ui/pricing-section";
+
+<PricingSection
+  plans={[
+    { name: "Team", price: "$24", features: ["Unlimited projects"], highlighted: true },
+  ]}
+  onSelectPlan={(plan) => choosePlan(plan)}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["pricing-section"]["basic"]}>
+  <PricingSectionBasic />
+</ComponentPreview>
+
+### Selectable
+
+<ComponentPreview code={demoSource["pricing-section"]["selectable"]}>
+  <PricingSectionSelectable />
+</ComponentPreview>
+
+## API reference
+
+The package exports `pricing-section` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Pages keep a single `h1` in the hero and use `h2`/`h3` for section hierarchy.
+- Call-to-action elements are real links or buttons with discernible labels.
+- Decorative icons are `aria-hidden` and meaningful images require `alt` text.

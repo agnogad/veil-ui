@@ -1,0 +1,10 @@
+{
+  "name": "alert-dialog",
+  "title": "Alert Dialog",
+  "description": "A modal confirmation that interrupts the user for destructive actions.",
+  "category": "feedback",
+  "type": "registry:ui",
+  "dependencies": ["@radix-ui/react-alert-dialog"],
+  "registryDependencies": ["button", "utils"],
+  "examples": ["basic", "destructive"]
+}

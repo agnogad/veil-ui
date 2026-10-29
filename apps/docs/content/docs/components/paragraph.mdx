@@ -1,0 +1,69 @@
+---
+title: Paragraph
+description: Body copy with relaxed leading, balanced wrapping and a muted tone.
+---
+
+import {
+  ParagraphBasic,
+  ParagraphLead,
+  ParagraphMuted,
+} from "@veil-ui/registry/paragraph/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add paragraph" />
+
+## Usage
+
+```tsx
+import { Paragraph } from "@/components/ui/paragraph";
+
+<Paragraph tone="muted">Supporting copy for the section.</Paragraph>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource.paragraph.basic}>
+  <ParagraphBasic />
+</ComponentPreview>
+
+### Muted
+
+<ComponentPreview code={demoSource.paragraph.muted}>
+  <ParagraphMuted />
+</ComponentPreview>
+
+### Lead
+
+<ComponentPreview code={demoSource.paragraph.lead}>
+  <ParagraphLead />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "size",
+      type: '"sm" | "base" | "lg"',
+      default: '"base"',
+      description: "Font size preset.",
+    },
+    {
+      name: "tone",
+      type: '"default" | "muted"',
+      default: '"default"',
+      description: "Foreground color tone.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Renders a `<p>` with relaxed leading and balanced wrapping for readable
+  measure.
+- Pair the lead size with a `max-w-prose` container to keep line length
+  comfortable.

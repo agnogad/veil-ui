@@ -1,0 +1,10 @@
+{
+  "name": "form-repeater",
+  "title": "Form Repeater",
+  "description": "Repeatable groups of fields with add, remove and row limits.",
+  "category": "forms",
+  "type": "registry:ui",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["button", "input", "utils"],
+  "examples": ["basic", "limited", "disabled"]
+}

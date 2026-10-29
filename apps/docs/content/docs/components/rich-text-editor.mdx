@@ -1,0 +1,45 @@
+---
+title: Rich Text Editor
+description: A lightweight content-editable editor with bold, italic and underline controls.
+---
+
+import { RichTextEditorBasic, RichTextEditorDisabled } from "@veil-ui/registry/rich-text-editor/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add rich-text-editor" />
+
+## Usage
+
+```tsx
+import { RichTextEditor } from "@/components/ui/rich-text-editor";
+
+<RichTextEditor defaultValue="<p>Hello</p>" onChange={setHtml} />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["rich-text-editor"]["basic"]}>
+  <RichTextEditorBasic />
+</ComponentPreview>
+
+### Disabled
+
+<ComponentPreview code={demoSource["rich-text-editor"]["disabled"]}>
+  <RichTextEditorDisabled />
+</ComponentPreview>
+
+## API reference
+
+- `RichTextEditor` re-exports the `RichText` component and its props under an editor name.
+- `defaultValue` is the initial HTML, `onChange` emits sanitised HTML on input.
+- `placeholder` and `disabled` configure the editable surface; formatting buttons apply bold, italic and underline.
+
+## Accessibility
+
+- The editable area is labelled and exposes `aria-multiline`.
+- Formatting buttons report their pressed state with `aria-pressed`.
+- Output is sanitised against an allowlist before it reaches the DOM.

@@ -1,0 +1,19 @@
+{
+  "name": "testimonial-card",
+  "title": "Testimonial Card",
+  "description": "A customer quote with rating, avatar and attribution.",
+  "category": "data-display",
+  "type": "registry:ui",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "avatar",
+    "card",
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "compact"
+  ]
+}

@@ -1,0 +1,48 @@
+---
+title: User Profile
+description: A profile summary card with cover, stats and actions.
+---
+
+import { UserProfileBasic, UserProfileCompact } from "@veil-ui/registry/user-profile/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add user-profile" />
+
+## Usage
+
+```tsx
+import { UserProfile } from "@/components/ui/user-profile";
+
+<UserProfile
+  name="Mira Chen"
+  handle="@mirachen"
+  bio="Product lead at Acme."
+  stats={[{ label: "Followers", value: "1.2k" }]}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["user-profile"]["basic"]}>
+  <UserProfileBasic />
+</ComponentPreview>
+
+### Compact
+
+<ComponentPreview code={demoSource["user-profile"]["compact"]}>
+  <UserProfileCompact />
+</ComponentPreview>
+
+## API reference
+
+The package exports `user-profile` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Forms use native inputs with associated labels and descriptive error text.
+- Submission states are announced through disabled controls and live error messaging.
+- Social providers are buttons with discernible provider names.

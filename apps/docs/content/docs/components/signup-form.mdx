@@ -1,0 +1,43 @@
+---
+title: Signup Form
+description: Account creation form with terms acceptance and validation.
+---
+
+import { SignupFormBasic, SignupFormWithError } from "@veil-ui/registry/signup-form/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add signup-form" />
+
+## Usage
+
+```tsx
+import { SignupForm } from "@/components/ui/signup-form";
+
+<SignupForm onSubmit={createAccount} loginHref="/login" />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["signup-form"]["basic"]}>
+  <SignupFormBasic />
+</ComponentPreview>
+
+### With Error
+
+<ComponentPreview code={demoSource["signup-form"]["with-error"]}>
+  <SignupFormWithError />
+</ComponentPreview>
+
+## API reference
+
+The package exports `signup-form` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Forms use native inputs with associated labels and descriptive error text.
+- Submission states are announced through disabled controls and live error messaging.
+- Social providers are buttons with discernible provider names.

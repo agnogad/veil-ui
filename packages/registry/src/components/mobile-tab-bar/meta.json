@@ -1,0 +1,16 @@
+{
+  "name": "mobile-tab-bar",
+  "title": "Mobile Tab Bar",
+  "description": "The tab bar primitives exposed with mobile naming.",
+  "category": "mobile",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "tab-bar",
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "settings"
+  ]
+}

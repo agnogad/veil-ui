@@ -1,0 +1,10 @@
+{
+  "name": "color-picker",
+  "title": "Color Picker",
+  "description": "A hex input, native color field and preset swatches in a popover.",
+  "category": "forms",
+  "type": "registry:ui",
+  "dependencies": ["@radix-ui/react-popover", "lucide-react"],
+  "registryDependencies": ["button", "utils"],
+  "examples": ["basic", "presets", "disabled"]
+}

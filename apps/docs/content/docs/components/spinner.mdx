@@ -1,0 +1,77 @@
+---
+title: Spinner
+description: An animated indicator for work in progress.
+---
+
+import {
+  SpinnerBasic,
+  SpinnerButton,
+  SpinnerSizes,
+} from "@veil-ui/registry/spinner/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add spinner" />
+
+## Usage
+
+```tsx
+import { Spinner } from "@/components/ui/spinner";
+
+<Spinner />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource.spinner.basic}>
+  <SpinnerBasic />
+</ComponentPreview>
+
+### Sizes
+
+<ComponentPreview code={demoSource.spinner.sizes}>
+  <SpinnerSizes />
+</ComponentPreview>
+
+### Inside a button
+
+<ComponentPreview code={demoSource.spinner.button}>
+  <SpinnerButton />
+</ComponentPreview>
+
+Keep the button's accessible name stable while it is busy; the spinner adds
+screen-reader-only state text instead of replacing the label.
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "size",
+      type: '"sm" | "default" | "lg"',
+      default: '"default"',
+      description: "Icon size: 16, 20 or 24px.",
+    },
+    {
+      name: "label",
+      type: "string",
+      default: '"Loading"',
+      description: "Screen-reader-only status text.",
+    },
+    {
+      name: "...props",
+      type: 'React.ComponentProps<"span">',
+      description: "All native span attributes.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Renders a `role="status"` live region, so the label is announced politely.
+- The icon itself is `aria-hidden`; the status text comes from `label`.
+- Pass a specific `label` such as “Deploying” when the spinner represents a
+  named task.

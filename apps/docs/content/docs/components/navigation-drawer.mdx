@@ -1,0 +1,76 @@
+---
+title: Navigation Drawer
+description: A side panel that slides in for mobile navigation.
+---
+
+import {
+  NavigationDrawerBasic,
+  NavigationDrawerRight,
+} from "@veil-ui/registry/navigation-drawer/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add navigation-drawer" />
+
+## Usage
+
+```tsx
+import { NavigationDrawer } from "@/components/ui/navigation-drawer";
+
+<NavigationDrawer title="Menu" trigger={<button type="button">Menu</button>}>
+  <nav aria-label="Mobile">
+    <a href="/">Home</a>
+  </nav>
+</NavigationDrawer>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["navigation-drawer"]["basic"]}>
+  <NavigationDrawerBasic />
+</ComponentPreview>
+
+### Right
+
+<ComponentPreview code={demoSource["navigation-drawer"]["right"]}>
+  <NavigationDrawerRight />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "title",
+      type: "string",
+      required: true,
+      description: "Drawer heading, also used as the dialog name.",
+    },
+    {
+      name: "trigger",
+      type: "React.ReactNode",
+      description: "Element that opens the drawer.",
+    },
+    {
+      name: "side",
+      type: '"left" | "right"',
+      default: '"left"',
+      description: "Edge the panel slides in from.",
+    },
+    {
+      name: "open / onOpenChange",
+      type: "boolean / (open) => void",
+      description: "Controlled state.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Radix Dialog supplies the overlay, focus trap and Escape handling.
+- The panel is labelled by its title; the description falls back to a
+  screen-reader-only sentence when omitted.
+- The close control is named “Close drawer”.

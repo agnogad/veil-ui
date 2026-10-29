@@ -1,0 +1,121 @@
+---
+title: Toast
+description: A provider, hook and viewport for transient, accessible notifications.
+---
+
+import {
+  ToastBasic,
+  ToastPersistent,
+  ToastVariants,
+  ToastWithAction,
+} from "@veil-ui/registry/toast/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add toast" />
+
+## Usage
+
+```tsx
+import { Button } from "@/components/ui/button";
+import { Toaster, ToastProvider, useToast } from "@/components/ui/toast";
+
+function SaveButton() {
+  const { toast } = useToast();
+  return (
+    <Button
+      onClick={() =>
+        toast({
+          title: "Changes saved",
+          description: "Your profile was updated.",
+        })
+      }
+    >
+      Save
+    </Button>
+  );
+}
+
+<ToastProvider>
+  <SaveButton />
+  <Toaster />
+</ToastProvider>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["toast"]["basic"]}>
+  <ToastBasic />
+</ComponentPreview>
+
+### Variants
+
+<ComponentPreview code={demoSource["toast"]["variants"]}>
+  <ToastVariants />
+</ComponentPreview>
+
+### With action
+
+<ComponentPreview code={demoSource["toast"]["with-action"]}>
+  <ToastWithAction />
+</ComponentPreview>
+
+### Persistent
+
+<ComponentPreview code={demoSource["toast"]["persistent"]}>
+  <ToastPersistent />
+</ComponentPreview>
+
+## API reference
+
+### `useToast()`
+
+Returns `{ toast, dismiss }`. `toast(options)` queues a message and returns
+its id; `dismiss(id)` closes it early.
+
+<PropsTable
+  data={[
+    {
+      name: "title",
+      type: "React.ReactNode",
+      required: true,
+      description: "Headline of the toast.",
+    },
+    {
+      name: "description",
+      type: "React.ReactNode",
+      description: "Supporting copy.",
+    },
+    {
+      name: "variant",
+      type: '"default" | "success" | "destructive"',
+      default: '"default"',
+      description: "Visual tone.",
+    },
+    {
+      name: "duration",
+      type: "number",
+      default: "provider duration (5000)",
+      description: "Milliseconds before auto-dismiss; use Infinity to keep it open.",
+    },
+    {
+      name: "action",
+      type: "React.ReactNode",
+      description: "Optional inline control such as Undo.",
+    },
+  ]}
+/>
+
+`ToastProvider` accepts `duration` and `label` (the screen-reader label for
+the region). `Toaster` renders the fixed viewport and must be inside the
+provider.
+
+## Accessibility
+
+- Radix Toast announces entries through a labelled live region and pauses
+  dismissal while focused or hovered.
+- The close control is named “Dismiss notification”.
+- Use `destructive` for failures and avoid stacking many toasts at once.

@@ -1,0 +1,110 @@
+---
+title: Resizable Panel
+description: Resizable panel groups with drag handles and keyboard support.
+---
+
+import {
+  ResizablePanelHorizontal,
+  ResizablePanelVertical,
+  ResizablePanelWithHandle,
+} from "@veil-ui/registry/resizable-panel/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add resizable-panel" />
+
+## Usage
+
+```tsx
+import {
+  ResizableHandle,
+  ResizablePanel,
+  ResizablePanelGroup,
+} from "@/components/ui/resizable-panel";
+
+<ResizablePanelGroup orientation="horizontal" className="h-64 rounded-md border">
+  <ResizablePanel defaultSize="30%">Sidebar</ResizablePanel>
+  <ResizableHandle withHandle />
+  <ResizablePanel defaultSize="70%">Content</ResizablePanel>
+</ResizablePanelGroup>;
+```
+
+## Examples
+
+### Horizontal
+
+<ComponentPreview code={demoSource["resizable-panel"].horizontal}>
+  <ResizablePanelHorizontal />
+</ComponentPreview>
+
+### Vertical
+
+<ComponentPreview code={demoSource["resizable-panel"].vertical}>
+  <ResizablePanelVertical />
+</ComponentPreview>
+
+### With handle
+
+<ComponentPreview code={demoSource["resizable-panel"]["with-handle"]}>
+  <ResizablePanelWithHandle />
+</ComponentPreview>
+
+Sizes without a unit are percentages; pass `"200px"` or `{200}` for pixel
+constraints.
+
+## API reference
+
+### ResizablePanelGroup
+
+<PropsTable
+  data={[
+    {
+      name: "orientation",
+      type: '"horizontal" | "vertical"',
+      default: '"horizontal"',
+      description: "Axis along which panels resize.",
+    },
+    {
+      name: "defaultLayout",
+      type: "Layout",
+      description: "Remembered layout for the group.",
+    },
+    {
+      name: "...props",
+      type: "React.ComponentProps<typeof Group>",
+      description: "All react-resizable-panels group props.",
+    },
+  ]}
+/>
+
+### ResizablePanel
+
+Accepts `defaultSize`, `minSize`, `maxSize`, `collapsible`, `collapsedSize` and
+the rest of the panel props from `react-resizable-panels`.
+
+### ResizableHandle
+
+<PropsTable
+  data={[
+    {
+      name: "withHandle",
+      type: "boolean",
+      default: "false",
+      description: "Show a grip affordance in the middle of the handle.",
+    },
+    {
+      name: "...props",
+      type: "React.ComponentProps<typeof Separator>",
+      description: "All react-resizable-panels separator props.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- The underlying library provides keyboard resizing and ARIA separator
+  semantics.
+- The optional grip is decorative; the handle itself remains the interactive
+  control.
+- Give the group a fixed height, otherwise there is no space to resize.

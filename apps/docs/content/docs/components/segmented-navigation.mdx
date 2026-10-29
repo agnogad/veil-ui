@@ -1,0 +1,74 @@
+---
+title: Segmented Navigation
+description: A compact tablist for switching between views or filters.
+---
+
+import {
+  SegmentedNavigationBasic,
+  SegmentedNavigationDisabled,
+} from "@veil-ui/registry/segmented-navigation/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add segmented-navigation" />
+
+## Usage
+
+```tsx
+import { SegmentedNavigation } from "@/components/ui/segmented-navigation";
+
+<SegmentedNavigation
+  aria-label="View"
+  options={[
+    { value: "list", label: "List" },
+    { value: "board", label: "Board" },
+  ]}
+  value="list"
+  onValueChange={(value) => console.log(value)}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["segmented-navigation"]["basic"]}>
+  <SegmentedNavigationBasic />
+</ComponentPreview>
+
+### Disabled
+
+<ComponentPreview code={demoSource["segmented-navigation"]["disabled"]}>
+  <SegmentedNavigationDisabled />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "options",
+      type: "{ value; label; disabled? }[]",
+      required: true,
+      description: "Segments to render.",
+    },
+    {
+      name: "value / onValueChange",
+      type: "string / (value) => void",
+      description: "Controlled selection; falls back to internal state.",
+    },
+    {
+      name: "label",
+      type: "string",
+      default: '"View"',
+      description: "Accessible name for the tablist.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Implements a `tablist` with `tab` children and `aria-selected`.
+- Arrow keys move selection; disabled options are skipped.
+- Names the group through `label`.

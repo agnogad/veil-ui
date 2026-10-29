@@ -1,0 +1,51 @@
+---
+title: Table Row
+description: A re-export of the Table row primitive for standalone composition.
+---
+
+import { TableRowBasic } from "@veil-ui/registry/table-row/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add table-row" />
+
+## Usage
+
+```tsx
+import { Table, TableBody, TableCell, TableHeader } from "@/components/ui/table";
+import { TableRow } from "@/components/ui/table-row";
+
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableCell>Plan</TableCell>
+      <TableCell>Seats</TableCell>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>Team</TableCell>
+      <TableCell>8</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["table-row"]["basic"]}>
+  <TableRowBasic />
+</ComponentPreview>
+
+## API reference
+
+The package exports `table-row` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Content uses semantic HTML — lists are lists, tables are tables and metadata uses a definition list.
+- Interactive elements are real buttons or links with visible focus states.
+- Images require meaningful `alt` text; icons used decoratively are `aria-hidden`.

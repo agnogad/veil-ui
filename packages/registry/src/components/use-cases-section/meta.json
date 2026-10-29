@@ -1,0 +1,17 @@
+{
+  "name": "use-cases-section",
+  "title": "Use Cases Section",
+  "description": "A grid of audience or workflow use cases with links.",
+  "category": "marketing",
+  "type": "registry:ui",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "plain"
+  ]
+}

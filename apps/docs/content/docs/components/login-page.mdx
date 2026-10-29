@@ -1,0 +1,37 @@
+---
+title: Login Page
+description: A full login page with auth form and social providers.
+---
+
+import { LoginPageBasic } from "@veil-ui/registry/login-page/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add login-page" />
+
+## Usage
+
+```tsx
+import { LoginPage } from "@/components/ui/login-page";
+
+<LoginPage />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["login-page"]["basic"]}>
+  <LoginPageBasic />
+</ComponentPreview>
+
+## API reference
+
+The package exports `login-page` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Page templates use semantic landmarks and a single page-level heading.
+- Navigation links and actions have discernible names and visible focus styles.
+- Decorative imagery uses empty alt text; content images carry descriptions.

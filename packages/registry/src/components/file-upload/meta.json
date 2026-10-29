@@ -1,0 +1,10 @@
+{
+  "name": "file-upload",
+  "title": "File Upload",
+  "description": "A dropzone with a file list, size limits and an upload action.",
+  "category": "forms",
+  "type": "registry:ui",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["button", "dropzone", "utils"],
+  "examples": ["basic", "limits", "disabled"]
+}

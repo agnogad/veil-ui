@@ -1,0 +1,6 @@
+<svg width="112" height="112" viewBox="0 0 112 112" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Veil UI">
+  <rect width="112" height="112" rx="28" fill="#0A0A0A"/>
+  <path d="M24 32c9.5 20.5 20 30.5 32 30.5S78.5 52.5 88 32" stroke="#FAFAFA" stroke-width="7" stroke-linecap="round"/>
+  <path d="M32 62c7.5 9.5 15 14 24 14s16.5-4.5 24-14" stroke="#FAFAFA" stroke-opacity=".4" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="56" cy="24" r="4" fill="#FAFAFA"/>
+</svg>

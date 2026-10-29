@@ -1,0 +1,57 @@
+---
+title: Code
+description: Inline code with a subtle background and monospace type.
+---
+
+import { CodeBasic, CodeInSentence } from "@veil-ui/registry/code/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add code" />
+
+## Usage
+
+```tsx
+import { Code } from "@/components/ui/code";
+
+<p>
+  Run <Code>npx veil-ui add button</Code> to copy the component.
+</p>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource.code.basic}>
+  <CodeBasic />
+</ComponentPreview>
+
+### In a sentence
+
+<ComponentPreview code={demoSource.code["in-sentence"]}>
+  <CodeInSentence />
+</ComponentPreview>
+
+For multi-line samples use Code Block, which adds a copy button, filename label
+and line numbers.
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "...props",
+      type: "ComponentProps<'code'>",
+      description: "All native code attributes.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Uses the native `<code>` element, so assistive technology can identify it as
+  code.
+- Text inherits the surrounding font size proportionally and keeps a contrast
+  ratio close to body copy.

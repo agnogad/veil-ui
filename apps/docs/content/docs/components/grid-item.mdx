@@ -1,0 +1,78 @@
+---
+title: Grid Item
+description: Places an item across columns and rows of a 12-column grid.
+---
+
+import {
+  GridItemBasic,
+  GridItemDashboard,
+  GridItemSpans,
+} from "@veil-ui/registry/grid-item/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add grid-item" />
+
+## Usage
+
+```tsx
+import { Grid } from "@/components/ui/grid";
+import { GridItem } from "@/components/ui/grid-item";
+
+<Grid cols={12}>
+  <GridItem colSpan={8}>Main</GridItem>
+  <GridItem colSpan={4}>Aside</GridItem>
+</Grid>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["grid-item"].basic}>
+  <GridItemBasic />
+</ComponentPreview>
+
+### Spans
+
+<ComponentPreview code={demoSource["grid-item"].spans}>
+  <GridItemSpans />
+</ComponentPreview>
+
+### Dashboard
+
+<ComponentPreview code={demoSource["grid-item"].dashboard}>
+  <GridItemDashboard />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "colSpan",
+      type: "1–12",
+      default: "1",
+      description: "Columns to span on a 12-column parent grid.",
+    },
+    {
+      name: "rowSpan",
+      type: "1–6",
+      default: "1",
+      description: "Rows to span on the parent grid.",
+    },
+    {
+      name: "...props",
+      type: 'React.ComponentProps<"div">',
+      description: "All native div attributes.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Presentational wrapper; grid placement is visual only.
+- Keep the reading order of the items matching the visual order.
+- For responsive placement, add your own `sm:`/`lg:` span classes through
+  `className`.

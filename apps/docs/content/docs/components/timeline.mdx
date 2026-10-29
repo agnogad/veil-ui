@@ -1,0 +1,48 @@
+---
+title: Timeline
+description: An ordered sequence of events with status icons and connectors.
+---
+
+import { TimelineBasic, TimelineSimple } from "@veil-ui/registry/timeline/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add timeline" />
+
+## Usage
+
+```tsx
+import { Timeline } from "@/components/ui/timeline";
+
+<Timeline
+  items={[
+    { title: "Order placed", time: "09:12" },
+    { title: "Out for delivery", time: "Tomorrow" },
+  ]}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["timeline"]["basic"]}>
+  <TimelineBasic />
+</ComponentPreview>
+
+### Simple
+
+<ComponentPreview code={demoSource["timeline"]["simple"]}>
+  <TimelineSimple />
+</ComponentPreview>
+
+## API reference
+
+The package exports `timeline` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Content uses semantic HTML — lists are lists, tables are tables and metadata uses a definition list.
+- Interactive elements are real buttons or links with visible focus states.
+- Images require meaningful `alt` text; icons used decoratively are `aria-hidden`.

@@ -6,7 +6,11 @@ import { afterEach } from "vitest";
 // jsdom has no layout engine, so axe cannot compute contrast or ligature
 // metrics. Every other rule still runs.
 axe.configure({
-  rules: [{ id: "color-contrast", enabled: false }],
+  rules: [
+    { id: "color-contrast", enabled: false },
+    // Component tests render fragments outside a page landmark.
+    { id: "region", enabled: false },
+  ],
 });
 
 // Radix primitives rely on these browser APIs for collision and size detection.
@@ -17,6 +21,22 @@ class ResizeObserverMock {
 }
 
 globalThis.ResizeObserver = ResizeObserverMock as unknown as typeof ResizeObserver;
+
+// Embla carousel observes slide visibility to sync its scroll state.
+class IntersectionObserverMock implements IntersectionObserver {
+  readonly root = null;
+  readonly rootMargin = "";
+  readonly thresholds = [];
+  observe() {}
+  unobserve() {}
+  disconnect() {}
+  takeRecords() {
+    return [];
+  }
+}
+
+globalThis.IntersectionObserver =
+  IntersectionObserverMock as unknown as typeof IntersectionObserver;
 
 if (!window.matchMedia) {
   window.matchMedia = ((query: string) => ({

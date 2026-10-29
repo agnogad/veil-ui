@@ -1,0 +1,10 @@
+{
+  "name": "logo",
+  "title": "Logo",
+  "description": "A brand mark and wordmark lockup in three sizes.",
+  "category": "typography",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "link", "sizes"]
+}

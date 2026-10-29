@@ -1,0 +1,26 @@
+{
+  "name": "product-detail-page",
+  "title": "Product Detail Page",
+  "description": "A product page with gallery, purchase panel and related items.",
+  "category": "pages",
+  "type": "registry:block",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "accordion",
+    "badge",
+    "breadcrumb",
+    "button",
+    "input",
+    "logo",
+    "marketing-footer",
+    "navbar",
+    "product-card",
+    "separator"
+  ],
+  "examples": [
+    "basic"
+  ]
+}

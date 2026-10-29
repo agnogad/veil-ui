@@ -1,0 +1,86 @@
+---
+title: Cluster
+description: Wraps a set of items with even gaps and sensible alignment.
+---
+
+import {
+  ClusterBasic,
+  ClusterBetween,
+  ClusterTags,
+} from "@veil-ui/registry/cluster/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add cluster" />
+
+## Usage
+
+```tsx
+import { Cluster } from "@/components/ui/cluster";
+
+<Cluster gap="sm">
+  <Badge>React</Badge>
+  <Badge>Tailwind</Badge>
+  <Badge>Radix UI</Badge>
+</Cluster>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource.cluster.basic}>
+  <ClusterBasic />
+</ComponentPreview>
+
+### Space between
+
+<ComponentPreview code={demoSource.cluster.between}>
+  <ClusterBetween />
+</ComponentPreview>
+
+### Tag list
+
+<ComponentPreview code={demoSource.cluster.tags}>
+  <ClusterTags />
+</ComponentPreview>
+
+Cluster is a flex row that wraps. Use it for tag lists, toolbars and any row of
+items that should reflow on narrow screens.
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "gap",
+      type: '"none" | "xs" | "sm" | "md" | "lg" | "xl"',
+      default: '"sm"',
+      description: "Space between items: 0, 4, 8, 16, 24 or 32px.",
+    },
+    {
+      name: "align",
+      type: '"start" | "center" | "end" | "baseline"',
+      default: '"center"',
+      description: "Cross-axis alignment.",
+    },
+    {
+      name: "justify",
+      type: '"start" | "center" | "end" | "between" | "around"',
+      default: '"start"',
+      description: "Main-axis distribution.",
+    },
+    {
+      name: "...props",
+      type: 'React.ComponentProps<"div">',
+      description: "All native div attributes.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Presentational flex wrapper; it adds no ARIA roles or landmarks.
+- `gap`, `align` and `justify` map to static classes, so they work with
+  Tailwind's compiler and never rely on runtime string interpolation.

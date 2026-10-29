@@ -1,0 +1,16 @@
+{
+  "name": "chart-legend",
+  "title": "Chart Legend",
+  "description": "A standalone legend of labeled color swatches.",
+  "category": "charts",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "chart",
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "computing"
+  ]
+}

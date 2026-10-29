@@ -1,0 +1,17 @@
+{
+  "name": "mobile-search",
+  "title": "Mobile Search",
+  "description": "A rounded search field with clear and recent-suggestion controls.",
+  "category": "mobile",
+  "type": "registry:ui",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "minimal"
+  ]
+}

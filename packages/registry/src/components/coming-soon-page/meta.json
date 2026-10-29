@@ -1,0 +1,22 @@
+{
+  "name": "coming-soon-page",
+  "title": "Coming Soon Page",
+  "description": "A waitlist landing page with countdown and email capture.",
+  "category": "pages",
+  "type": "registry:block",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "avatar",
+    "avatar-group",
+    "badge",
+    "button",
+    "input",
+    "logo"
+  ],
+  "examples": [
+    "basic"
+  ]
+}

@@ -1,0 +1,77 @@
+---
+title: Scroll Area
+description: A styled scroll container with always-available scrollbars.
+---
+
+import {
+  ScrollAreaBoth,
+  ScrollAreaHorizontal,
+  ScrollAreaVertical,
+} from "@veil-ui/registry/scroll-area/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add scroll-area" />
+
+## Usage
+
+```tsx
+import { ScrollArea } from "@/components/ui/scroll-area";
+
+<ScrollArea className="h-64 rounded-md border">
+  <div className="p-4">Scrollable content</div>
+</ScrollArea>;
+```
+
+## Examples
+
+### Vertical
+
+<ComponentPreview code={demoSource["scroll-area"].vertical}>
+  <ScrollAreaVertical />
+</ComponentPreview>
+
+### Horizontal
+
+<ComponentPreview code={demoSource["scroll-area"].horizontal}>
+  <ScrollAreaHorizontal />
+</ComponentPreview>
+
+### Both axes
+
+<ComponentPreview code={demoSource["scroll-area"].both}>
+  <ScrollAreaBoth />
+</ComponentPreview>
+
+## API reference
+
+`ScrollArea` wraps the Radix root and viewport. Give it a height or width so
+there is something to scroll.
+
+<PropsTable
+  data={[
+    {
+      name: "type",
+      type: '"auto" | "always" | "scroll" | "hover"',
+      default: '"hover"',
+      description: "When the scrollbar becomes visible.",
+    },
+    {
+      name: "...props",
+      type: "React.ComponentProps<typeof ScrollAreaPrimitive.Root>",
+      description: "All Radix scroll area root props.",
+    },
+  ]}
+/>
+
+### Subcomponents
+
+- `ScrollBar` — scrollbar with its thumb; pass `orientation="horizontal"` for
+  horizontal scrollers.
+
+## Accessibility
+
+- The viewport is keyboard scrollable and shows a visible focus ring.
+- Scrollbars are pointer affordances; content remains reachable with the
+  keyboard and screen readers.

@@ -1,0 +1,47 @@
+---
+title: Combobox
+description: A searchable single-select popover powered by cmdk.
+---
+
+import { ComboboxBasic, ComboboxDisabled } from "@veil-ui/registry/combobox/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add combobox" />
+
+## Usage
+
+```tsx
+import { Combobox } from "@/components/ui/combobox";
+
+<Combobox
+  label="Assignee"
+  options={members}
+  onValueChange={setAssignee}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["combobox"]["basic"]}>
+  <ComboboxBasic />
+</ComponentPreview>
+
+### Disabled
+
+<ComponentPreview code={demoSource["combobox"]["disabled"]}>
+  <ComboboxDisabled />
+</ComponentPreview>
+
+## API reference
+
+The package exports `combobox` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- The trigger and search field are labelled; Arrow keys move through the list and Enter selects the active option.
+- Error and disabled states are exposed through native attributes and Radix data attributes.
+- Focus-visible rings follow the shared token system in both themes.

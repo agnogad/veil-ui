@@ -1,0 +1,15 @@
+{
+  "name": "mobile-app-shell",
+  "title": "Mobile App Shell",
+  "description": "A safe-area aware phone frame with header, scrollable body and footer slots.",
+  "category": "mobile",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "with-fab"
+  ]
+}

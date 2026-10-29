@@ -1,0 +1,17 @@
+{
+  "name": "infinite-scroll",
+  "title": "Infinite Scroll",
+  "description": "A sentinel-based list that loads more content when scrolled into view.",
+  "category": "mobile",
+  "type": "registry:ui",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "end-state"
+  ]
+}

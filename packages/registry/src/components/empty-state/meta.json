@@ -1,0 +1,10 @@
+{
+  "name": "empty-state",
+  "title": "Empty State",
+  "description": "A centered placeholder for lists, tables and panels without content.",
+  "category": "feedback",
+  "type": "registry:ui",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "with-action", "custom"]
+}

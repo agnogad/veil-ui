@@ -1,0 +1,15 @@
+{
+  "name": "timeline",
+  "title": "Timeline",
+  "description": "An ordered sequence of events with status icons and connectors.",
+  "category": "data-display",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "simple"
+  ]
+}

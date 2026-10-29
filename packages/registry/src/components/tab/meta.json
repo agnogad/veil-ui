@@ -1,0 +1,10 @@
+{
+  "name": "tab",
+  "title": "Tab",
+  "description": "Alias entry for the Tabs primitives.",
+  "category": "navigation",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["tabs", "utils"],
+  "examples": ["basic"]
+}

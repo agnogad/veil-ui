@@ -1,0 +1,26 @@
+{
+  "name": "analytics-page",
+  "title": "Analytics Page",
+  "description": "A traffic analytics page with charts, goals and top pages.",
+  "category": "pages",
+  "type": "registry:block",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "area-chart",
+    "bar-chart",
+    "badge",
+    "button",
+    "card",
+    "donut-chart",
+    "progress",
+    "select",
+    "statistic-card",
+    "table"
+  ],
+  "examples": [
+    "basic"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "image-gallery",
+  "title": "Image Gallery",
+  "description": "A thumbnail grid that opens images in a lightbox.",
+  "category": "media",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "lightbox",
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "two-columns"
+  ]
+}

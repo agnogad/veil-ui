@@ -1,0 +1,16 @@
+{
+  "name": "testimonials-section",
+  "title": "Testimonials Section",
+  "description": "A responsive grid of customer testimonial cards.",
+  "category": "marketing",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "testimonial-card",
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "pair"
+  ]
+}

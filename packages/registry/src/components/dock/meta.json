@@ -1,0 +1,10 @@
+{
+  "name": "dock",
+  "title": "Dock",
+  "description": "A floating application dock with icon buttons and an active marker.",
+  "category": "navigation",
+  "type": "registry:ui",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "active"]
+}

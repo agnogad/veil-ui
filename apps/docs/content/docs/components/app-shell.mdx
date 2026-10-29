@@ -1,0 +1,83 @@
+---
+title: App Shell
+description: A full-height application frame with a sidebar, header and main area.
+---
+
+import {
+  AppShellBasic,
+  AppShellHeader,
+  AppShellSidebarWidth,
+} from "@veil-ui/registry/app-shell/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add app-shell" />
+
+## Usage
+
+```tsx
+import { AppShell } from "@/components/ui/app-shell";
+
+<AppShell sidebar={<Sidebar />} header={<Topbar />}>
+  <Dashboard />
+</AppShell>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["app-shell"].basic}>
+  <AppShellBasic />
+</ComponentPreview>
+
+### Header only
+
+<ComponentPreview code={demoSource["app-shell"].header}>
+  <AppShellHeader />
+</ComponentPreview>
+
+### Wider sidebar
+
+<ComponentPreview code={demoSource["app-shell"]["sidebar-width"]}>
+  <AppShellSidebarWidth />
+</ComponentPreview>
+
+The shell fills the viewport height. The sidebar is hidden below the `lg`
+breakpoint so the main area stays usable on mobile.
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "sidebar",
+      type: "React.ReactNode",
+      description: "Persistent sidebar content; hidden below lg.",
+    },
+    {
+      name: "header",
+      type: "React.ReactNode",
+      description: "Sticky top bar spanning the full width.",
+    },
+    {
+      name: "sidebarWidth",
+      type: '"sm" | "md" | "lg"',
+      default: '"md"',
+      description: "220, 280 or 340px sidebar at the lg breakpoint.",
+    },
+    {
+      name: "...props",
+      type: 'React.ComponentProps<"div">',
+      description: "All native div attributes.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Renders a `main` landmark plus an `aside` when a sidebar is provided.
+- Compose the header and sidebar with real `nav`, `header` and heading elements.
+- The mobile story is intentionally simple: hide the sidebar and expose the same
+  navigation elsewhere, for example through a Drawer.

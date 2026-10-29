@@ -1,0 +1,25 @@
+{
+  "name": "onboarding-page",
+  "title": "Onboarding Page",
+  "description": "A guided onboarding step with progress and workspace questions.",
+  "category": "pages",
+  "type": "registry:block",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button",
+    "card",
+    "input",
+    "label",
+    "logo",
+    "progress",
+    "select",
+    "stepper"
+  ],
+  "examples": [
+    "basic"
+  ]
+}

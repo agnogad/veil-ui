@@ -1,0 +1,37 @@
+---
+title: Admin Dashboard
+description: An operations console with resource metrics and deploy timeline.
+---
+
+import { AdminDashboardBasic } from "@veil-ui/registry/admin-dashboard/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add admin-dashboard" />
+
+## Usage
+
+```tsx
+import { AdminDashboard } from "@/components/ui/admin-dashboard";
+
+<AdminDashboard />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["admin-dashboard"]["basic"]}>
+  <AdminDashboardBasic />
+</ComponentPreview>
+
+## API reference
+
+The package exports `admin-dashboard` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Page templates use semantic landmarks and a single page-level heading.
+- Navigation links and actions have discernible names and visible focus styles.
+- Decorative imagery uses empty alt text; content images carry descriptions.

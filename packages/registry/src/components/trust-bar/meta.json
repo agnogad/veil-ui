@@ -1,0 +1,16 @@
+{
+  "name": "trust-bar",
+  "title": "Trust Bar",
+  "description": "A logo cloud band for customer and investor logos.",
+  "category": "marketing",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "logo-cloud",
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "compact"
+  ]
+}

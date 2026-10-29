@@ -1,0 +1,15 @@
+{
+  "name": "mobile-page-indicator",
+  "title": "Mobile Page Indicator",
+  "description": "Dot indicators for swipeable mobile pages.",
+  "category": "mobile",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "interactive"
+  ]
+}

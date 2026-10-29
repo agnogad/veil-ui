@@ -1,0 +1,37 @@
+---
+title: Blog Page
+description: A journal index with featured post and article grid.
+---
+
+import { BlogPageBasic } from "@veil-ui/registry/blog-page/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add blog-page" />
+
+## Usage
+
+```tsx
+import { BlogPage } from "@/components/ui/blog-page";
+
+<BlogPage />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["blog-page"]["basic"]}>
+  <BlogPageBasic />
+</ComponentPreview>
+
+## API reference
+
+The package exports `blog-page` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Page templates use semantic landmarks and a single page-level heading.
+- Navigation links and actions have discernible names and visible focus styles.
+- Decorative imagery uses empty alt text; content images carry descriptions.

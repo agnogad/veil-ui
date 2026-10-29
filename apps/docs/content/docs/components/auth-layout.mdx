@@ -1,0 +1,51 @@
+---
+title: Auth Layout
+description: A split authentication layout with brand panel and footer.
+---
+
+import { AuthLayoutBasic, AuthLayoutMinimal } from "@veil-ui/registry/auth-layout/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add auth-layout" />
+
+## Usage
+
+```tsx
+import { AuthLayout } from "@/components/ui/auth-layout";
+import { LoginForm } from "@/components/ui/login-form";
+
+<AuthLayout
+  title="Veil UI"
+  description="Accessible components for product teams."
+  highlights={["Copy the source", "Accessible defaults"]}
+  footer="Protected by enterprise-grade security."
+>
+  <LoginForm />
+</AuthLayout>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["auth-layout"]["basic"]}>
+  <AuthLayoutBasic />
+</ComponentPreview>
+
+### Minimal
+
+<ComponentPreview code={demoSource["auth-layout"]["minimal"]}>
+  <AuthLayoutMinimal />
+</ComponentPreview>
+
+## API reference
+
+The package exports `auth-layout` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Forms use native inputs with associated labels and descriptive error text.
+- Submission states are announced through disabled controls and live error messaging.
+- Social providers are buttons with discernible provider names.

@@ -1,0 +1,15 @@
+{
+  "name": "image",
+  "title": "Image",
+  "description": "A rounded image with optional aspect ratio presets.",
+  "category": "media",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "video-ratio"
+  ]
+}

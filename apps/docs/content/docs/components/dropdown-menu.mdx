@@ -1,0 +1,66 @@
+---
+title: Dropdown Menu
+description: Radix dropdown menu with labels, shortcuts and destructive items.
+---
+
+import {
+  DropdownMenuBasic,
+  DropdownMenuGroups,
+} from "@veil-ui/registry/dropdown-menu/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add dropdown-menu" />
+
+## Usage
+
+```tsx
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+
+<DropdownMenu>
+  <DropdownMenuTrigger asChild>
+    <button type="button">Options</button>
+  </DropdownMenuTrigger>
+  <DropdownMenuContent>
+    <DropdownMenuItem>Edit</DropdownMenuItem>
+    <DropdownMenuItem variant="destructive">Delete</DropdownMenuItem>
+  </DropdownMenuContent>
+</DropdownMenu>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["dropdown-menu"]["basic"]}>
+  <DropdownMenuBasic />
+</ComponentPreview>
+
+### Groups
+
+<ComponentPreview code={demoSource["dropdown-menu"]["groups"]}>
+  <DropdownMenuGroups />
+</ComponentPreview>
+
+## API reference
+
+### Subcomponents
+
+- `DropdownMenu`, `DropdownMenuTrigger`, `DropdownMenuContent` — root,
+  button and portalled panel.
+- `DropdownMenuItem` — supports `inset` and `variant="destructive"`.
+- `DropdownMenuLabel`, `DropdownMenuSeparator`, `DropdownMenuShortcut` —
+  supporting content.
+
+## Accessibility
+
+- Built on Radix Dropdown Menu: typeahead, arrow-key navigation and focus
+  return to the trigger.
+- Use `DropdownMenuLabel` for section names and keep shortcuts as visual
+  hints, not the only affordance.

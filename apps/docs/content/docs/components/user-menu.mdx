@@ -1,0 +1,47 @@
+---
+title: User Menu
+description: An account dropdown menu with profile links and sign out.
+---
+
+import { UserMenuBasic, UserMenuWithItems } from "@veil-ui/registry/user-menu/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add user-menu" />
+
+## Usage
+
+```tsx
+import { UserMenu } from "@/components/ui/user-menu";
+
+<UserMenu
+  name="Mira Chen"
+  email="mira@acme.dev"
+  onSignOut={signOut}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["user-menu"]["basic"]}>
+  <UserMenuBasic />
+</ComponentPreview>
+
+### With Items
+
+<ComponentPreview code={demoSource["user-menu"]["with-items"]}>
+  <UserMenuWithItems />
+</ComponentPreview>
+
+## API reference
+
+The package exports `user-menu` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Forms use native inputs with associated labels and descriptive error text.
+- Submission states are announced through disabled controls and live error messaging.
+- Social providers are buttons with discernible provider names.

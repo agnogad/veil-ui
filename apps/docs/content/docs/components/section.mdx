@@ -1,0 +1,93 @@
+---
+title: Section
+description: Groups a heading, description, actions and content into a page section.
+---
+
+import {
+  SectionBasic,
+  SectionSeparated,
+  SectionWithActions,
+} from "@veil-ui/registry/section/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add section" />
+
+## Usage
+
+```tsx
+import {
+  Section,
+  SectionActions,
+  SectionContent,
+  SectionDescription,
+  SectionHeader,
+  SectionTitle,
+} from "@/components/ui/section";
+
+<Section>
+  <SectionHeader>
+    <div className="grid gap-1">
+      <SectionTitle>Team members</SectionTitle>
+      <SectionDescription>People with access to this workspace.</SectionDescription>
+    </div>
+    <SectionActions>
+      <Button size="sm">Invite</Button>
+    </SectionActions>
+  </SectionHeader>
+  <SectionContent>...</SectionContent>
+</Section>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource.section.basic}>
+  <SectionBasic />
+</ComponentPreview>
+
+### With actions
+
+<ComponentPreview code={demoSource.section["with-actions"]}>
+  <SectionWithActions />
+</ComponentPreview>
+
+### Separated
+
+<ComponentPreview code={demoSource.section.separated}>
+  <SectionSeparated />
+</ComponentPreview>
+
+Add `border-t pt-8` to separate stacked sections, as in the last example.
+
+## API reference
+
+### Section
+
+<PropsTable
+  data={[
+    {
+      name: "...props",
+      type: 'React.ComponentProps<"section">',
+      description: "All native section attributes.",
+    },
+  ]}
+/>
+
+### Subcomponents
+
+- `SectionHeader` — flex row that keeps the title and actions apart and wraps.
+- `SectionTitle` — `h2` heading; pass a different element via `asChild`-style
+  composition if your outline requires it.
+- `SectionDescription` — muted supporting text.
+- `SectionActions` — row of buttons aligned with the header.
+- `SectionContent` — grid container for the section body.
+
+## Accessibility
+
+- `Section` renders a real `<section>` landmark region.
+- `SectionTitle` renders an `<h2>`; keep the page's heading hierarchy intact by
+  styling or swapping the element when the section nests deeper.
+- Actions are real buttons supplied by you, not clickable wrappers.

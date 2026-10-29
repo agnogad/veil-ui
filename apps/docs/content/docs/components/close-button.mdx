@@ -1,0 +1,76 @@
+---
+title: Close Button
+description: An icon button with a pre-labelled dismiss affordance.
+---
+
+import {
+  CloseButtonBasic,
+  CloseButtonLarge,
+  CloseButtonOutline,
+} from "@veil-ui/registry/close-button/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add close-button" />
+
+## Usage
+
+```tsx
+import { CloseButton } from "@/components/ui/close-button";
+
+<CloseButton />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["close-button"].basic}>
+  <CloseButtonBasic />
+</ComponentPreview>
+
+### Outline
+
+<ComponentPreview code={demoSource["close-button"].outline}>
+  <CloseButtonOutline />
+</ComponentPreview>
+
+### Large
+
+<ComponentPreview code={demoSource["close-button"].large}>
+  <CloseButtonLarge />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "label",
+      type: "string",
+      default: '"Close"',
+      description: "Accessible name announced to screen readers.",
+    },
+    {
+      name: "variant",
+      type: "ButtonVariant",
+      default: '"ghost"',
+      description: "Visual style inherited from IconButton.",
+    },
+    {
+      name: "size",
+      type: "ButtonSize",
+      default: '"icon"',
+      description: "Icon button size preset.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Ships with a default `aria-label`, so the icon-only button always has an
+  accessible name.
+- The icon is decorative and hidden from assistive technology.
+- Override `label` when the surrounding context needs a more specific name,
+  such as "Close dialog".

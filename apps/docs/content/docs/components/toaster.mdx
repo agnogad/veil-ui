@@ -1,0 +1,39 @@
+---
+title: Toaster
+description: Alias entry for the Toast provider, hook and viewport.
+---
+
+import { ToasterBasic } from "@veil-ui/registry/toaster/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add toaster" />
+
+## Usage
+
+```tsx
+import { Toaster, ToastProvider, useToast } from "@/components/ui/toaster";
+
+<ToastProvider>
+  <App />
+  <Toaster />
+</ToastProvider>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["toaster"]["basic"]}>
+  <ToasterBasic />
+</ComponentPreview>
+
+## API reference
+
+`Toaster`, `ToastProvider`, `useToast` and `toastVariants` re-export the
+[Toast](/docs/components/toast) API.
+
+## Accessibility
+
+- Announcements, dismissal and focus pausing are inherited from Toast.

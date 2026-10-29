@@ -1,0 +1,66 @@
+---
+title: Status Indicator
+description: A small presence dot with an optional pulse animation.
+---
+
+import {
+  StatusIndicatorBasic,
+  StatusIndicatorPulse,
+} from "@veil-ui/registry/status-indicator/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add status-indicator" />
+
+## Usage
+
+```tsx
+import { StatusIndicator } from "@/components/ui/status-indicator";
+
+<StatusIndicator status="online" />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["status-indicator"]["basic"]}>
+  <StatusIndicatorBasic />
+</ComponentPreview>
+
+### Pulse
+
+<ComponentPreview code={demoSource["status-indicator"]["pulse"]}>
+  <StatusIndicatorPulse />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "status",
+      type: '"online" | "offline" | "busy" | "away"',
+      default: '"online"',
+      description: "Presence state and color.",
+    },
+    {
+      name: "label",
+      type: "string",
+      description: "Visible label; defaults to the status name.",
+    },
+    {
+      name: "pulse",
+      type: "boolean",
+      default: "false",
+      description: "Adds a soft ping animation.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- The dot is decorative; the status text is rendered for everyone.
+- Set `pulse` only when the state is live, and respect reduced motion in
+  custom styles.

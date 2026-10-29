@@ -1,0 +1,10 @@
+{
+  "name": "rich-text-editor",
+  "title": "Rich Text Editor",
+  "description": "A lightweight content-editable editor with bold, italic and underline controls.",
+  "category": "forms",
+  "type": "registry:ui",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "disabled"]
+}

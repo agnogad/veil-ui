@@ -1,0 +1,10 @@
+{
+  "name": "section",
+  "title": "Section",
+  "description": "Groups a heading, description, actions and content into a page section.",
+  "category": "layout",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "with-actions", "separated"]
+}

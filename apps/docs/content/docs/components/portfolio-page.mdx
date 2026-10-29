@@ -1,0 +1,37 @@
+---
+title: Portfolio Page
+description: A personal portfolio with project grid, about and contact.
+---
+
+import { PortfolioPageBasic } from "@veil-ui/registry/portfolio-page/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add portfolio-page" />
+
+## Usage
+
+```tsx
+import { PortfolioPage } from "@/components/ui/portfolio-page";
+
+<PortfolioPage />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["portfolio-page"]["basic"]}>
+  <PortfolioPageBasic />
+</ComponentPreview>
+
+## API reference
+
+The package exports `portfolio-page` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Page templates use semantic landmarks and a single page-level heading.
+- Navigation links and actions have discernible names and visible focus styles.
+- Decorative imagery uses empty alt text; content images carry descriptions.

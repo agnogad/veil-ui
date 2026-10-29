@@ -1,0 +1,10 @@
+{
+  "name": "input-with-icon",
+  "title": "Input with Icon",
+  "description": "An input with a leading or trailing decorative icon.",
+  "category": "forms",
+  "type": "registry:ui",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["input", "utils"],
+  "examples": ["basic", "trailing"]
+}

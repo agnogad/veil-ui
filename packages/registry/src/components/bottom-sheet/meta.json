@@ -1,0 +1,10 @@
+{
+  "name": "bottom-sheet",
+  "title": "Bottom Sheet",
+  "description": "A mobile-style sheet anchored to the bottom of the viewport with a drag handle.",
+  "category": "overlays",
+  "type": "registry:ui",
+  "dependencies": ["@radix-ui/react-dialog", "lucide-react"],
+  "registryDependencies": ["utils"],
+  "examples": ["actions", "form"]
+}

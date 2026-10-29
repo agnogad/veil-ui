@@ -1,0 +1,75 @@
+---
+title: Read More
+description: Collapsible text clamped to a line count with an expand toggle.
+---
+
+import {
+  ReadMoreBasic,
+  ReadMoreExpanded,
+} from "@veil-ui/registry/read-more/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add read-more" />
+
+## Usage
+
+```tsx
+import { ReadMore } from "@/components/ui/read-more";
+
+<ReadMore lines={3}>{article.summary}</ReadMore>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["read-more"].basic}>
+  <ReadMoreBasic />
+</ComponentPreview>
+
+### Expanded
+
+<ComponentPreview code={demoSource["read-more"].expanded}>
+  <ReadMoreExpanded />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "lines",
+      type: "1 | 2 | 3 | 4 | 5 | 6",
+      default: "3",
+      description: "Line count shown while collapsed.",
+    },
+    {
+      name: "moreLabel",
+      type: "string",
+      default: '"Read more"',
+      description: "Label of the expand button.",
+    },
+    {
+      name: "lessLabel",
+      type: "string",
+      default: '"Show less"',
+      description: "Label of the collapse button.",
+    },
+    {
+      name: "defaultExpanded",
+      type: "boolean",
+      default: "false",
+      description: "Start in the expanded state.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- The toggle is a real button with `aria-expanded`, so state changes are
+  announced.
+- Labels describe the action in both directions rather than using a bare arrow.
+- Content stays in the DOM and is only visually clamped, keeping it available
+  to assistive technology.

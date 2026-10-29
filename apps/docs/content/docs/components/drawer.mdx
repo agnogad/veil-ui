@@ -1,0 +1,68 @@
+---
+title: Drawer
+description: A side panel that slides over the page from the left or right.
+---
+
+import { DrawerRight, DrawerLeft, DrawerForm } from "@veil-ui/registry/drawer/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add drawer" />
+
+## Usage
+
+```tsx
+import {
+  Drawer,
+  DrawerContent,
+  DrawerDescription,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
+
+<Drawer>
+  <DrawerTrigger asChild>
+    <button type="button">Open drawer</button>
+  </DrawerTrigger>
+  <DrawerContent side="right">
+    <DrawerHeader>
+      <DrawerTitle>Filters</DrawerTitle>
+      <DrawerDescription>Narrow the results.</DrawerDescription>
+    </DrawerHeader>
+  </DrawerContent>
+</Drawer>;
+```
+
+## Examples
+
+### Right
+
+<ComponentPreview code={demoSource["drawer"]["right"]}>
+  <DrawerRight />
+</ComponentPreview>
+
+### Left
+
+<ComponentPreview code={demoSource["drawer"]["left"]}>
+  <DrawerLeft />
+</ComponentPreview>
+
+### Form
+
+<ComponentPreview code={demoSource["drawer"]["form"]}>
+  <DrawerForm />
+</ComponentPreview>
+
+## API reference
+
+- `DrawerContent` accepts `side` (`left` or `right`, default `right`) and exposes it as `data-side`.
+- The full `Dialog` part set is exported with Drawer prefixes.
+- `showCloseButton` hides the built-in close button when a custom one is provided.
+
+## Accessibility
+
+- Built on Radix Dialog, so it traps focus and labels itself from the title.
+- Escape and the close button dismiss it and restore focus.
+- The close button is labelled `Close drawer`.

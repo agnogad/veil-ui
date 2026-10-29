@@ -1,0 +1,23 @@
+{
+  "name": "saas-landing-page",
+  "title": "SaaS Landing Page",
+  "description": "A SaaS landing template with product demo and pricing.",
+  "category": "pages",
+  "type": "registry:block",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "feature-showcase",
+    "final-cta",
+    "hero-section",
+    "marketing-footer",
+    "pricing-section",
+    "product-demo"
+  ],
+  "examples": [
+    "basic"
+  ]
+}

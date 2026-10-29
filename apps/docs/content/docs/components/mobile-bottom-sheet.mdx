@@ -1,0 +1,52 @@
+---
+title: Mobile Bottom Sheet
+description: The BottomSheet component exposed with mobile naming.
+---
+
+import { MobileBottomSheetBasic, MobileBottomSheetConfirm } from "@veil-ui/registry/mobile-bottom-sheet/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add mobile-bottom-sheet" />
+
+## Usage
+
+```tsx
+import {
+  MobileBottomSheet,
+  MobileBottomSheetContent,
+  MobileBottomSheetTrigger,
+} from "@/components/ui/mobile-bottom-sheet";
+
+<MobileBottomSheet>
+  <MobileBottomSheetTrigger asChild>
+    <Button>Add attachment</Button>
+  </MobileBottomSheetTrigger>
+  <MobileBottomSheetContent>{sources}</MobileBottomSheetContent>
+</MobileBottomSheet>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["mobile-bottom-sheet"]["basic"]}>
+  <MobileBottomSheetBasic />
+</ComponentPreview>
+
+### Confirm
+
+<ComponentPreview code={demoSource["mobile-bottom-sheet"]["confirm"]}>
+  <MobileBottomSheetConfirm />
+</ComponentPreview>
+
+## API reference
+
+The package exports `mobile-bottom-sheet` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Touch targets are large enough to tap comfortably and keep visible focus rings for keyboard and switch users.
+- Gesture interactions (swipe, pull to refresh) have visible button alternatives so they are not the only way to act.
+- Sheets, drawers and dialogs follow the underlying accessible primitives for focus trapping and escape handling.

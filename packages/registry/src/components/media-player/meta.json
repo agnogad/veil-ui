@@ -1,0 +1,17 @@
+{
+  "name": "media-player",
+  "title": "Media Player",
+  "description": "A single player that renders video or audio by kind.",
+  "category": "media",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "audio-player",
+    "video-player",
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "audio"
+  ]
+}

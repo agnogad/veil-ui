@@ -1,0 +1,10 @@
+{
+  "name": "copy-button",
+  "title": "Copy Button",
+  "description": "Copies text to the clipboard and confirms the action in place.",
+  "category": "actions",
+  "type": "registry:ui",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["icon-button", "utils"],
+  "examples": ["basic", "sizes", "ghost"]
+}

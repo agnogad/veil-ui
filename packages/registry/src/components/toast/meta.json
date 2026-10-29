@@ -1,0 +1,14 @@
+{
+  "name": "toast",
+  "title": "Toast",
+  "description": "A provider, hook and viewport for transient, accessible notifications.",
+  "category": "feedback",
+  "type": "registry:ui",
+  "dependencies": [
+    "@radix-ui/react-toast",
+    "class-variance-authority",
+    "lucide-react"
+  ],
+  "registryDependencies": ["icon-button", "utils"],
+  "examples": ["basic", "variants", "with-action", "persistent"]
+}

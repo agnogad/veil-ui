@@ -1,0 +1,10 @@
+{
+  "name": "dropzone",
+  "title": "Dropzone",
+  "description": "A keyboard-accessible drag and drop area for adding files.",
+  "category": "forms",
+  "type": "registry:ui",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "custom", "disabled"]
+}

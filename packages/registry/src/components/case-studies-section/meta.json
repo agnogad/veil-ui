@@ -1,0 +1,17 @@
+{
+  "name": "case-studies-section",
+  "title": "Case Studies Section",
+  "description": "Customer stories highlighted with a headline metric.",
+  "category": "marketing",
+  "type": "registry:ui",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "compact"
+  ]
+}

@@ -1,0 +1,37 @@
+---
+title: Search Results Page
+description: A search results page with scopes, snippets and related terms.
+---
+
+import { SearchResultsPageBasic } from "@veil-ui/registry/search-results-page/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add search-results-page" />
+
+## Usage
+
+```tsx
+import { SearchResultsPage } from "@/components/ui/search-results-page";
+
+<SearchResultsPage />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["search-results-page"]["basic"]}>
+  <SearchResultsPageBasic />
+</ComponentPreview>
+
+## API reference
+
+The package exports `search-results-page` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Page templates use semantic landmarks and a single page-level heading.
+- Navigation links and actions have discernible names and visible focus styles.
+- Decorative imagery uses empty alt text; content images carry descriptions.

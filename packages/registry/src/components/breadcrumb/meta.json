@@ -1,0 +1,10 @@
+{
+  "name": "breadcrumb",
+  "title": "Breadcrumb",
+  "description": "Shows the path to the current page with accessible navigation semantics.",
+  "category": "navigation",
+  "type": "registry:ui",
+  "dependencies": ["@radix-ui/react-slot", "lucide-react"],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "collapsed", "custom-separator", "with-icon"]
+}

@@ -1,0 +1,40 @@
+---
+title: Command Palette
+description: Alias of Command Menu for global search-driven actions.
+---
+
+import { CommandPaletteBasic } from "@veil-ui/registry/command-palette/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add command-palette" />
+
+## Usage
+
+```tsx
+import { CommandPalette } from "@/components/ui/command-palette";
+
+<CommandPalette
+  trigger={<button type="button">Command palette</button>}
+  items={[{ label: "Settings" }]}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["command-palette"]["basic"]}>
+  <CommandPaletteBasic />
+</ComponentPreview>
+
+## API reference
+
+`CommandPalette` re-exports [`CommandMenu`](/docs/components/command-menu).
+Use it when the trigger is a global shortcut rather than a page control.
+
+## Accessibility
+
+- Inherits the dialog title, combobox search field and option semantics from
+  Command Menu.

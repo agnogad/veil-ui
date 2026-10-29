@@ -1,0 +1,64 @@
+---
+title: Carousel
+description: A draggable, keyboard-navigable slide carousel powered by Embla.
+---
+
+import { CarouselBasic, CarouselVertical, CarouselLoop } from "@veil-ui/registry/carousel/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add carousel" />
+
+## Usage
+
+```tsx
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+
+<Carousel opts={{ loop: true }}>
+  <CarouselContent>
+    <CarouselItem>Slide one</CarouselItem>
+    <CarouselItem>Slide two</CarouselItem>
+  </CarouselContent>
+  <CarouselPrevious />
+  <CarouselNext />
+</Carousel>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["carousel"]["basic"]}>
+  <CarouselBasic />
+</ComponentPreview>
+
+### Vertical
+
+<ComponentPreview code={demoSource["carousel"]["vertical"]}>
+  <CarouselVertical />
+</ComponentPreview>
+
+### Loop
+
+<ComponentPreview code={demoSource["carousel"]["loop"]}>
+  <CarouselLoop />
+</ComponentPreview>
+
+## API reference
+
+- `Carousel` takes Embla `opts`, an `orientation` and a `setApi` callback for programmatic control.
+- `CarouselContent` is the scroll viewport and `CarouselItem` is re-exported from the standalone item component.
+- `CarouselPrevious` and `CarouselNext` disable themselves at the ends unless looping.
+
+## Accessibility
+
+- The region is labelled `carousel` with slides as `group` / `slide` elements.
+- Left and Right arrows scroll when the carousel has focus.
+- Controls are named `Previous slide` and `Next slide` and reflect disabled state.

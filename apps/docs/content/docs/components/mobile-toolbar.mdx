@@ -1,0 +1,48 @@
+---
+title: Mobile Toolbar
+description: A horizontally scrollable row of labeled toolbar actions.
+---
+
+import { MobileToolbarBasic, MobileToolbarViewSwitch } from "@veil-ui/registry/mobile-toolbar/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add mobile-toolbar" />
+
+## Usage
+
+```tsx
+import { MobileToolbar } from "@/components/ui/mobile-toolbar";
+
+<MobileToolbar
+  items={[
+    { label: "Filter", active: true, onClick: openFilters },
+    { label: "Sort", onClick: openSort },
+  ]}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["mobile-toolbar"]["basic"]}>
+  <MobileToolbarBasic />
+</ComponentPreview>
+
+### View switch
+
+<ComponentPreview code={demoSource["mobile-toolbar"]["view-switch"]}>
+  <MobileToolbarViewSwitch />
+</ComponentPreview>
+
+## API reference
+
+The package exports `mobile-toolbar` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Touch targets are large enough to tap comfortably and keep visible focus rings for keyboard and switch users.
+- Gesture interactions (swipe, pull to refresh) have visible button alternatives so they are not the only way to act.
+- Sheets, drawers and dialogs follow the underlying accessible primitives for focus trapping and escape handling.

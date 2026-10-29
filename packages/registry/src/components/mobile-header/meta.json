@@ -1,0 +1,17 @@
+{
+  "name": "mobile-header",
+  "title": "Mobile Header",
+  "description": "A compact sticky header with back navigation and actions.",
+  "category": "mobile",
+  "type": "registry:ui",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "with-back"
+  ]
+}

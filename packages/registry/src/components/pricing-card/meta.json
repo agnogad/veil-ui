@@ -1,0 +1,19 @@
+{
+  "name": "pricing-card",
+  "title": "Pricing Card",
+  "description": "A plan card with price, feature list and a highlighted call to action.",
+  "category": "data-display",
+  "type": "registry:ui",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "card",
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "highlighted"
+  ]
+}

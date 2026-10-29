@@ -1,0 +1,37 @@
+---
+title: Chip
+description: Alias of Badge for compact, pill-like labels.
+---
+
+import { ChipBasic } from "@veil-ui/registry/chip/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add chip" />
+
+## Usage
+
+```tsx
+import { Chip } from "@/components/ui/chip";
+
+<Chip variant="muted">React</Chip>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["chip"]["basic"]}>
+  <ChipBasic />
+</ComponentPreview>
+
+## API reference
+
+`Chip` and `chipVariants` re-export [Badge](/docs/components/badge). Use
+`muted` for neutral metadata and `secondary` for filters.
+
+## Accessibility
+
+- Chips that can be removed should be buttons with a descriptive accessible
+  name; this alias is for static labels.

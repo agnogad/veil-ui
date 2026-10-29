@@ -1,0 +1,10 @@
+{
+  "name": "read-more",
+  "title": "Read More",
+  "description": "Collapsible text clamped to a line count with an expand toggle.",
+  "category": "typography",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "expanded"]
+}

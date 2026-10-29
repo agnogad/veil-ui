@@ -1,0 +1,88 @@
+---
+title: Upload Button
+description: Opens the file picker from a styled button and reports selections.
+---
+
+import {
+  UploadButtonBasic,
+  UploadButtonImages,
+  UploadButtonOutline,
+} from "@veil-ui/registry/upload-button/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add upload-button" />
+
+## Usage
+
+```tsx
+import { UploadButton } from "@/components/ui/upload-button";
+
+<UploadButton
+  accept="image/*"
+  multiple
+  onFiles={(files) => upload(files)}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["upload-button"].basic}>
+  <UploadButtonBasic />
+</ComponentPreview>
+
+### Images
+
+<ComponentPreview code={demoSource["upload-button"].images}>
+  <UploadButtonImages />
+</ComponentPreview>
+
+### Outline
+
+<ComponentPreview code={demoSource["upload-button"].outline}>
+  <UploadButtonOutline />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "accept",
+      type: "string",
+      description: "File type filter passed to the input.",
+    },
+    {
+      name: "multiple",
+      type: "boolean",
+      default: "false",
+      description: "Allow selecting more than one file.",
+    },
+    {
+      name: "onFiles",
+      type: "(files: FileList) => void",
+      description: "Called with the selected files.",
+    },
+    {
+      name: "label",
+      type: "string",
+      default: '"Upload"',
+      description: "Visible label when no children are given.",
+    },
+    {
+      name: "...props",
+      type: "ButtonProps",
+      description: "All Button props and native button attributes.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- The visible element is a real button named by its label or children.
+- The hidden file input is removed from the tab order; the button is the single
+  keyboard stop.
+- Validate file type and size on the server, not only through `accept`.

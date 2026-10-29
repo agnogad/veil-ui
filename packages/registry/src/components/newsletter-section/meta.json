@@ -1,0 +1,17 @@
+{
+  "name": "newsletter-section",
+  "title": "Newsletter Section",
+  "description": "An email capture band with an inline success state.",
+  "category": "marketing",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "button",
+    "input",
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "custom"
+  ]
+}

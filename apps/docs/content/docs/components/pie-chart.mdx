@@ -1,0 +1,48 @@
+---
+title: Pie Chart
+description: A category pie chart with configurable colors and labels.
+---
+
+import { PieChartBasic, PieChartLabels } from "@veil-ui/registry/pie-chart/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add pie-chart" />
+
+## Usage
+
+```tsx
+import { PieChart } from "@/components/ui/pie-chart";
+
+<PieChart
+  data={[
+    { name: "Organic", value: 4200 },
+    { name: "Referral", value: 2600 },
+  ]}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["pie-chart"]["basic"]}>
+  <PieChartBasic />
+</ComponentPreview>
+
+### Labels
+
+<ComponentPreview code={demoSource["pie-chart"]["labels"]}>
+  <PieChartLabels />
+</ComponentPreview>
+
+## API reference
+
+The package exports `pie-chart` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Charts render inside a container with an explicit height so they stay responsive without layout shift.
+- Color is never the only encoding; pair charts with labels, summaries or a data table for critical information.
+- Tooltips and legends are rendered as HTML, so their text is available to assistive technology.

@@ -1,0 +1,47 @@
+---
+title: Radar Chart
+description: A multi-series radar chart for comparing profiles.
+---
+
+import { RadarChartBasic, RadarChartSingle } from "@veil-ui/registry/radar-chart/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add radar-chart" />
+
+## Usage
+
+```tsx
+import { RadarChart } from "@/components/ui/radar-chart";
+
+<RadarChart
+  data={data}
+  config={{ planning: { label: "Planning" }, execution: { label: "Execution" } }}
+  angleKey="area"
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["radar-chart"]["basic"]}>
+  <RadarChartBasic />
+</ComponentPreview>
+
+### Single
+
+<ComponentPreview code={demoSource["radar-chart"]["single"]}>
+  <RadarChartSingle />
+</ComponentPreview>
+
+## API reference
+
+The package exports `radar-chart` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Charts render inside a container with an explicit height so they stay responsive without layout shift.
+- Color is never the only encoding; pair charts with labels, summaries or a data table for critical information.
+- Tooltips and legends are rendered as HTML, so their text is available to assistive technology.

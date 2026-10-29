@@ -1,0 +1,17 @@
+{
+  "name": "video-thumbnail",
+  "title": "Video Thumbnail",
+  "description": "A poster image with a play overlay and duration badge.",
+  "category": "media",
+  "type": "registry:ui",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "grid"
+  ]
+}

@@ -1,0 +1,43 @@
+---
+title: File Card
+description: A file summary with type icon, size and optional actions.
+---
+
+import { FileCardBasic, FileCardWithActions } from "@veil-ui/registry/file-card/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add file-card" />
+
+## Usage
+
+```tsx
+import { FileCard } from "@/components/ui/file-card";
+
+<FileCard name="quarterly-report.pdf" size="2.4 MB" kind="pdf" />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["file-card"]["basic"]}>
+  <FileCardBasic />
+</ComponentPreview>
+
+### With actions
+
+<ComponentPreview code={demoSource["file-card"]["with-actions"]}>
+  <FileCardWithActions />
+</ComponentPreview>
+
+## API reference
+
+The package exports `file-card` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Content uses semantic HTML — lists are lists, tables are tables and metadata uses a definition list.
+- Interactive elements are real buttons or links with visible focus states.
+- Images require meaningful `alt` text; icons used decoratively are `aria-hidden`.

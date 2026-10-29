@@ -1,0 +1,17 @@
+{
+  "name": "key-value-list",
+  "title": "Key Value List",
+  "description": "A definition list for metadata with optional copy buttons.",
+  "category": "data-display",
+  "type": "registry:ui",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "two-columns"
+  ]
+}

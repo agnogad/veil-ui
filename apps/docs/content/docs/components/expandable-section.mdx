@@ -1,0 +1,53 @@
+---
+title: Expandable Section
+description: A titled card whose body expands and collapses.
+---
+
+import { ExpandableSectionBasic, ExpandableSectionDefaultOpen, ExpandableSectionDisabled } from "@veil-ui/registry/expandable-section/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add expandable-section" />
+
+## Usage
+
+```tsx
+import { ExpandableSection } from "@/components/ui/expandable-section";
+
+<ExpandableSection title="Shipping" description="Delivery details">
+  Body content
+</ExpandableSection>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["expandable-section"]["basic"]}>
+  <ExpandableSectionBasic />
+</ComponentPreview>
+
+### Default open
+
+<ComponentPreview code={demoSource["expandable-section"]["default-open"]}>
+  <ExpandableSectionDefaultOpen />
+</ComponentPreview>
+
+### Disabled
+
+<ComponentPreview code={demoSource["expandable-section"]["disabled"]}>
+  <ExpandableSectionDisabled />
+</ComponentPreview>
+
+## API reference
+
+- `title` is required; `description` renders under it and stays visible when collapsed.
+- `open` / `onOpenChange` control the state, with `defaultOpen` for uncontrolled use.
+- `disabled` blocks toggling while keeping the section readable.
+
+## Accessibility
+
+- The header is a button that reports `aria-expanded`.
+- The chevron and border changes are decorative; state is conveyed to assistive technology.
+- Body content is removed from the DOM while collapsed.

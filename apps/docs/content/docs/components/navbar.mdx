@@ -1,0 +1,71 @@
+---
+title: Navbar
+description: A horizontal top bar for brand, links and actions.
+---
+
+import { NavbarBasic, NavbarSticky } from "@veil-ui/registry/navbar/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add navbar" />
+
+## Usage
+
+```tsx
+import { Navbar } from "@/components/ui/navbar";
+
+<Navbar>
+  <a href="/" className="font-semibold">
+    Acme
+  </a>
+  <nav aria-label="Main" className="ml-auto flex gap-4 text-sm">
+    <a href="/docs">Docs</a>
+    <a href="/pricing">Pricing</a>
+  </nav>
+</Navbar>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["navbar"]["basic"]}>
+  <NavbarBasic />
+</ComponentPreview>
+
+### Sticky
+
+<ComponentPreview code={demoSource["navbar"]["sticky"]}>
+  <NavbarSticky />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "sticky",
+      type: "boolean",
+      default: "false",
+      description: "Pins the bar to the top of the viewport.",
+    },
+    {
+      name: "bordered",
+      type: "boolean",
+      default: "true",
+      description: "Adds a bottom border and backdrop blur.",
+    },
+    {
+      name: "...props",
+      type: 'React.ComponentProps<"header">',
+      description: "All native header attributes.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Use a `<header>` landmark and keep the brand link first.
+- Wrap links in a `<nav>` with an `aria-label` when several navigations
+  coexist on the page.

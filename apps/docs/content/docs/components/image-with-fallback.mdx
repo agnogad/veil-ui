@@ -1,0 +1,43 @@
+---
+title: Image with Fallback
+description: An image that swaps to a placeholder when loading fails.
+---
+
+import { ImageWithFallbackBasic, ImageWithFallbackCustom } from "@veil-ui/registry/image-with-fallback/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add image-with-fallback" />
+
+## Usage
+
+```tsx
+import { ImageWithFallback } from "@/components/ui/image-with-fallback";
+
+<ImageWithFallback src="/photo.jpg" alt="Team offsite" />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["image-with-fallback"]["basic"]}>
+  <ImageWithFallbackBasic />
+</ComponentPreview>
+
+### Custom
+
+<ComponentPreview code={demoSource["image-with-fallback"]["custom"]}>
+  <ImageWithFallbackCustom />
+</ComponentPreview>
+
+## API reference
+
+The package exports `image-with-fallback` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Media players use native `<video>` and `<audio>` controls with accessible labels.
+- Images require meaningful `alt` text; clickable thumbnails are buttons named `Play <title>`.
+- Decorative play overlays, durations and icons are hidden from assistive technology.

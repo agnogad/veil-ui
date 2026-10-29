@@ -1,0 +1,10 @@
+{
+  "name": "action-menu-button",
+  "title": "Action Menu Button",
+  "description": "An icon button that opens a menu of contextual actions.",
+  "category": "actions",
+  "type": "registry:ui",
+  "dependencies": ["@radix-ui/react-dropdown-menu", "lucide-react"],
+  "registryDependencies": ["button", "utils"],
+  "examples": ["basic", "destructive", "align-start"]
+}

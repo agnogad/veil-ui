@@ -1,0 +1,43 @@
+---
+title: Profile Card
+description: A centered profile summary with avatar, bio, stats and a follow action.
+---
+
+import { ProfileCardBasic, ProfileCardCompact } from "@veil-ui/registry/profile-card/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add profile-card" />
+
+## Usage
+
+```tsx
+import { ProfileCard } from "@/components/ui/profile-card";
+
+<ProfileCard name="Ada Lovelace" role="Computing pioneer" followers={12400} />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["profile-card"]["basic"]}>
+  <ProfileCardBasic />
+</ComponentPreview>
+
+### Compact
+
+<ComponentPreview code={demoSource["profile-card"]["compact"]}>
+  <ProfileCardCompact />
+</ComponentPreview>
+
+## API reference
+
+The package exports `profile-card` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Content uses semantic HTML — lists are lists, tables are tables and metadata uses a definition list.
+- Interactive elements are real buttons or links with visible focus states.
+- Images require meaningful `alt` text; icons used decoratively are `aria-hidden`.

@@ -1,0 +1,10 @@
+{
+  "name": "tab-bar",
+  "title": "Tab Bar",
+  "description": "Alias entry for Tabs, tuned for bar-style navigation.",
+  "category": "navigation",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["tabs", "utils"],
+  "examples": ["basic"]
+}

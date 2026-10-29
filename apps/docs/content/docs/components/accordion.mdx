@@ -1,0 +1,61 @@
+---
+title: Accordion
+description: Vertically stacked disclosure panels built on Radix Accordion.
+---
+
+import { AccordionSingle, AccordionMultiple, AccordionDefaultOpen } from "@veil-ui/registry/accordion/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add accordion" />
+
+## Usage
+
+```tsx
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+
+<Accordion type="single" collapsible>
+  <AccordionItem value="one">
+    <AccordionTrigger>First panel</AccordionTrigger>
+    <AccordionContent>First content</AccordionContent>
+  </AccordionItem>
+</Accordion>;
+```
+
+## Examples
+
+### Single
+
+<ComponentPreview code={demoSource["accordion"]["single"]}>
+  <AccordionSingle />
+</ComponentPreview>
+
+### Multiple
+
+<ComponentPreview code={demoSource["accordion"]["multiple"]}>
+  <AccordionMultiple />
+</ComponentPreview>
+
+### Default open
+
+<ComponentPreview code={demoSource["accordion"]["default-open"]}>
+  <AccordionDefaultOpen />
+</ComponentPreview>
+
+## API reference
+
+- `Accordion` requires `type="single"` or `type="multiple"`; single mode accepts `collapsible`.
+- `AccordionTrigger` renders inside a heading wrapper with a rotating chevron.
+- `AccordionContent` animates its height and hides closed panels.
+
+## Accessibility
+
+- Triggers are buttons with `aria-expanded` and `aria-controls` managed by Radix.
+- Up and Down arrows move between triggers; Home and End jump to the edges.
+- Each panel is labelled by its trigger through `aria-labelledby`.

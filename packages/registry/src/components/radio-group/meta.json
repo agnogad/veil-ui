@@ -1,0 +1,10 @@
+{
+  "name": "radio-group",
+  "title": "Radio Group",
+  "description": "A single-choice group with roving focus from Radix Radio Group.",
+  "category": "forms",
+  "type": "registry:ui",
+  "dependencies": ["@radix-ui/react-radio-group", "lucide-react"],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "with-description"]
+}

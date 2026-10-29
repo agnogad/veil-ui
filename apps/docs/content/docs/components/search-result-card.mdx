@@ -1,0 +1,47 @@
+---
+title: Search Result Card
+description: A search hit with breadcrumb, link, snippet and metadata.
+---
+
+import { SearchResultCardBasic, SearchResultCardStack } from "@veil-ui/registry/search-result-card/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add search-result-card" />
+
+## Usage
+
+```tsx
+import { SearchResultCard } from "@/components/ui/search-result-card";
+
+<SearchResultCard
+  title="Getting started with design tokens"
+  url="https://veil-ui.dev/docs/tokens"
+  snippet="Define a minimal token set for color, spacing and radius."
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["search-result-card"]["basic"]}>
+  <SearchResultCardBasic />
+</ComponentPreview>
+
+### Stack
+
+<ComponentPreview code={demoSource["search-result-card"]["stack"]}>
+  <SearchResultCardStack />
+</ComponentPreview>
+
+## API reference
+
+The package exports `search-result-card` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Content uses semantic HTML — lists are lists, tables are tables and metadata uses a definition list.
+- Interactive elements are real buttons or links with visible focus states.
+- Images require meaningful `alt` text; icons used decoratively are `aria-hidden`.

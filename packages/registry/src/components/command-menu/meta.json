@@ -1,0 +1,10 @@
+{
+  "name": "command-menu",
+  "title": "Command Menu",
+  "description": "A searchable command dialog powered by cmdk and Radix Dialog.",
+  "category": "navigation",
+  "type": "registry:ui",
+  "dependencies": ["cmdk", "@radix-ui/react-dialog", "lucide-react"],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "groups"]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "success-state",
+  "title": "Success State",
+  "description": "A confirmation panel for completed flows and empty result screens.",
+  "category": "feedback",
+  "type": "registry:ui",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "with-action", "custom"]
+}

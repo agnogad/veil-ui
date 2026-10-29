@@ -1,0 +1,60 @@
+---
+title: Status Badge
+description: A compact badge with a colored dot for success, warning, danger or info.
+---
+
+import {
+  StatusBadgeBasic,
+  StatusBadgeTones,
+} from "@veil-ui/registry/status-badge/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add status-badge" />
+
+## Usage
+
+```tsx
+import { StatusBadge } from "@/components/ui/status-badge";
+
+<StatusBadge status="success">Active</StatusBadge>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["status-badge"]["basic"]}>
+  <StatusBadgeBasic />
+</ComponentPreview>
+
+### Tones
+
+<ComponentPreview code={demoSource["status-badge"]["tones"]}>
+  <StatusBadgeTones />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "status",
+      type: '"success" | "warning" | "danger" | "info" | "neutral"',
+      default: '"neutral"',
+      description: "Tone of the dot and surface.",
+    },
+    {
+      name: "...props",
+      type: 'React.ComponentProps<"span">',
+      description: "All native span attributes.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- The colored dot is decorative; the text always carries the meaning.
+- `data-status` is available for tests and custom styling.
+- Avoid using color alone for critical states elsewhere on the page.

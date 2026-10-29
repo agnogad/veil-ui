@@ -1,0 +1,45 @@
+---
+title: Swipe to Dismiss
+description: A card that dismisses after a horizontal swipe past a threshold.
+---
+
+import { SwipeToDismissBasic, SwipeToDismissCustomThreshold } from "@veil-ui/registry/swipe-to-dismiss/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add swipe-to-dismiss" />
+
+## Usage
+
+```tsx
+import { SwipeToDismiss } from "@/components/ui/swipe-to-dismiss";
+
+<SwipeToDismiss onDismiss={remove}>
+  <NotificationCard title="Deployment finished" />
+</SwipeToDismiss>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["swipe-to-dismiss"]["basic"]}>
+  <SwipeToDismissBasic />
+</ComponentPreview>
+
+### Custom threshold
+
+<ComponentPreview code={demoSource["swipe-to-dismiss"]["custom-threshold"]}>
+  <SwipeToDismissCustomThreshold />
+</ComponentPreview>
+
+## API reference
+
+The package exports `swipe-to-dismiss` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Touch targets are large enough to tap comfortably and keep visible focus rings for keyboard and switch users.
+- Gesture interactions (swipe, pull to refresh) have visible button alternatives so they are not the only way to act.
+- Sheets, drawers and dialogs follow the underlying accessible primitives for focus trapping and escape handling.

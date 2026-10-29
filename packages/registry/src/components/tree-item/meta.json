@@ -1,0 +1,15 @@
+{
+  "name": "tree-item",
+  "title": "Tree Item",
+  "description": "The tree node primitive re-exported for custom trees.",
+  "category": "data-display",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "tree-view",
+    "utils"
+  ],
+  "examples": [
+    "basic"
+  ]
+}

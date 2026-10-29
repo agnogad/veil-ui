@@ -1,0 +1,10 @@
+{
+  "name": "collapsible",
+  "title": "Collapsible",
+  "description": "A single show/hide section built on Radix Collapsible.",
+  "category": "overlays",
+  "type": "registry:ui",
+  "dependencies": ["@radix-ui/react-collapsible"],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "default-open"]
+}

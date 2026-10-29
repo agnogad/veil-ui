@@ -1,0 +1,10 @@
+{
+  "name": "table-of-contents",
+  "title": "Table of Contents",
+  "description": "A nested page outline that scrolls to sections and tracks the active one.",
+  "category": "navigation",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "active"]
+}

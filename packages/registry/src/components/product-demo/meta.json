@@ -1,0 +1,15 @@
+{
+  "name": "product-demo",
+  "title": "Product Demo",
+  "description": "A browser frame that presents a product screenshot or custom preview.",
+  "category": "marketing",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "image"
+  ]
+}

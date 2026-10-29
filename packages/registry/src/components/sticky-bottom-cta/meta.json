@@ -1,0 +1,15 @@
+{
+  "name": "sticky-bottom-cta",
+  "title": "Sticky Bottom CTA",
+  "description": "A sticky bottom bar pairing context with a primary action.",
+  "category": "mobile",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "checkout"
+  ]
+}

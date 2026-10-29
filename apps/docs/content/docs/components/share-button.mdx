@@ -1,0 +1,93 @@
+---
+title: Share Button
+description: Uses the native share sheet and falls back to copying the link.
+---
+
+import {
+  ShareButtonBasic,
+  ShareButtonOutline,
+  ShareButtonWithUrl,
+} from "@veil-ui/registry/share-button/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add share-button" />
+
+## Usage
+
+```tsx
+import { ShareButton } from "@/components/ui/share-button";
+
+<ShareButton title="Veil UI" url="https://veil-ui.dev" />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["share-button"].basic}>
+  <ShareButtonBasic />
+</ComponentPreview>
+
+### With a URL
+
+<ComponentPreview code={demoSource["share-button"]["with-url"]}>
+  <ShareButtonWithUrl />
+</ComponentPreview>
+
+### Outline
+
+<ComponentPreview code={demoSource["share-button"].outline}>
+  <ShareButtonOutline />
+</ComponentPreview>
+
+The button uses `navigator.share` when the browser exposes it. Otherwise it
+copies the URL to the clipboard and confirms with “Link copied”.
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "title",
+      type: "string",
+      description: "Title passed to the native share sheet.",
+    },
+    {
+      name: "text",
+      type: "string",
+      description: "Body text passed to the native share sheet.",
+    },
+    {
+      name: "url",
+      type: "string",
+      default: "window.location.href",
+      description: "URL to share or copy.",
+    },
+    {
+      name: "label",
+      type: "string",
+      default: '"Share"',
+      description: "Visible button label.",
+    },
+    {
+      name: "copiedLabel",
+      type: "string",
+      default: '"Link copied"',
+      description: "Confirmation shown after copying.",
+    },
+    {
+      name: "...props",
+      type: "ButtonProps",
+      description: "All Button props and native button attributes.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- The label change is announced through a polite live region.
+- Clipboard access requires a secure context; handle failures in your own
+  analytics if needed.
+- The native share sheet is provided by the platform and is fully accessible.

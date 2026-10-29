@@ -1,0 +1,10 @@
+{
+  "name": "link-button",
+  "title": "Link Button",
+  "description": "A text link styled for inline actions, with external-link handling.",
+  "category": "actions",
+  "type": "registry:ui",
+  "dependencies": ["@radix-ui/react-slot", "class-variance-authority", "lucide-react"],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "external", "variants"]
+}

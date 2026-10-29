@@ -1,0 +1,19 @@
+{
+  "name": "user-profile",
+  "title": "User Profile",
+  "description": "A profile summary card with cover, stats and actions.",
+  "category": "auth",
+  "type": "registry:ui",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "avatar",
+    "card"
+  ],
+  "examples": [
+    "basic",
+    "compact"
+  ]
+}

@@ -1,0 +1,74 @@
+---
+title: Success State
+description: A confirmation panel for completed flows and empty result screens.
+---
+
+import {
+  SuccessStateBasic,
+  SuccessStateCustom,
+  SuccessStateWithAction,
+} from "@veil-ui/registry/success-state/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add success-state" />
+
+## Usage
+
+```tsx
+import { SuccessState } from "@/components/ui/success-state";
+
+<SuccessState
+  title="Payment complete"
+  description="A receipt was sent to your inbox."
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["success-state"]["basic"]}>
+  <SuccessStateBasic />
+</ComponentPreview>
+
+### With action
+
+<ComponentPreview code={demoSource["success-state"]["with-action"]}>
+  <SuccessStateWithAction />
+</ComponentPreview>
+
+### Custom message
+
+<ComponentPreview code={demoSource["success-state"]["custom"]}>
+  <SuccessStateCustom />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "title",
+      type: "React.ReactNode",
+      default: '"All done"',
+      description: "Confirmation headline.",
+    },
+    {
+      name: "description",
+      type: "React.ReactNode",
+      description: "Extra context or next step.",
+    },
+    {
+      name: "action",
+      type: "React.ReactNode",
+      description: "Follow-up control, such as “View receipt”.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Rendered inside `role="status"` for a polite announcement.
+- The check icon is decorative; the title conveys the outcome.

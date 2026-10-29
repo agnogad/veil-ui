@@ -1,0 +1,10 @@
+{
+  "name": "page-shell",
+  "title": "Page Shell",
+  "description": "A page frame with header, constrained content and footer.",
+  "category": "layout",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "narrow", "full-width"]
+}

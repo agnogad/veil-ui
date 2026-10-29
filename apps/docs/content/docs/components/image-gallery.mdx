@@ -1,0 +1,43 @@
+---
+title: Image Gallery
+description: A thumbnail grid that opens images in a lightbox.
+---
+
+import { ImageGalleryBasic, ImageGalleryTwoColumns } from "@veil-ui/registry/image-gallery/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add image-gallery" />
+
+## Usage
+
+```tsx
+import { ImageGallery } from "@/components/ui/image-gallery";
+
+<ImageGallery images={[{ src: "/one.jpg", alt: "First" }, { src: "/two.jpg", alt: "Second" }]} />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["image-gallery"]["basic"]}>
+  <ImageGalleryBasic />
+</ComponentPreview>
+
+### Two columns
+
+<ComponentPreview code={demoSource["image-gallery"]["two-columns"]}>
+  <ImageGalleryTwoColumns />
+</ComponentPreview>
+
+## API reference
+
+The package exports `image-gallery` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Media players use native `<video>` and `<audio>` controls with accessible labels.
+- Images require meaningful `alt` text; clickable thumbnails are buttons named `Play <title>`.
+- Decorative play overlays, durations and icons are hidden from assistive technology.

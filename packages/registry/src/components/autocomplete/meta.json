@@ -1,0 +1,10 @@
+{
+  "name": "autocomplete",
+  "title": "Autocomplete",
+  "description": "A text input with a filtered, keyboard-navigable suggestion list.",
+  "category": "forms",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "keyboard", "empty"]
+}

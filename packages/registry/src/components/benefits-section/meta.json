@@ -1,0 +1,17 @@
+{
+  "name": "benefits-section",
+  "title": "Benefits Section",
+  "description": "A checklist of benefits paired with supporting media.",
+  "category": "marketing",
+  "type": "registry:ui",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "with-media"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "audio-player",
+  "title": "Audio Player",
+  "description": "A titled native audio player inside a card.",
+  "category": "media",
+  "type": "registry:ui",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "minimal"
+  ]
+}

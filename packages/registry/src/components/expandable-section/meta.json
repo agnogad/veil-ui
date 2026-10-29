@@ -1,0 +1,10 @@
+{
+  "name": "expandable-section",
+  "title": "Expandable Section",
+  "description": "A titled card whose body expands and collapses.",
+  "category": "overlays",
+  "type": "registry:ui",
+  "dependencies": ["@radix-ui/react-collapsible", "lucide-react"],
+  "registryDependencies": ["collapsible", "utils"],
+  "examples": ["basic", "default-open", "disabled"]
+}

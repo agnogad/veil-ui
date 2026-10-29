@@ -1,0 +1,10 @@
+{
+  "name": "segmented-navigation",
+  "title": "Segmented Navigation",
+  "description": "A compact segmented control with arrow-key navigation.",
+  "category": "navigation",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "disabled"]
+}

@@ -1,0 +1,24 @@
+{
+  "name": "portfolio-page",
+  "title": "Portfolio Page",
+  "description": "A personal portfolio with project grid, about and contact.",
+  "category": "pages",
+  "type": "registry:block",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button",
+    "final-cta",
+    "image-card",
+    "logo",
+    "marketing-footer",
+    "navbar",
+    "timeline"
+  ],
+  "examples": [
+    "basic"
+  ]
+}

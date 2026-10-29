@@ -1,0 +1,37 @@
+---
+title: Product Listing Page
+description: A storefront listing with filters, product grid and pagination.
+---
+
+import { ProductListingPageBasic } from "@veil-ui/registry/product-listing-page/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add product-listing-page" />
+
+## Usage
+
+```tsx
+import { ProductListingPage } from "@/components/ui/product-listing-page";
+
+<ProductListingPage />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["product-listing-page"]["basic"]}>
+  <ProductListingPageBasic />
+</ComponentPreview>
+
+## API reference
+
+The package exports `product-listing-page` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Page templates use semantic landmarks and a single page-level heading.
+- Navigation links and actions have discernible names and visible focus styles.
+- Decorative imagery uses empty alt text; content images carry descriptions.

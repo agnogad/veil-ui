@@ -1,0 +1,112 @@
+---
+title: Split Button
+description: Pairs a primary action with a menu of related actions.
+---
+
+import {
+  SplitButtonAlignStart,
+  SplitButtonBasic,
+  SplitButtonDestructive,
+} from "@veil-ui/registry/split-button/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add split-button" />
+
+## Usage
+
+```tsx
+import { SplitButton } from "@/components/ui/split-button";
+
+<SplitButton
+  label="Deploy"
+  onClick={() => deploy()}
+  items={[
+    { label: "Deploy to preview", onSelect: () => deploy("preview") },
+    { label: "Redeploy previous build", onSelect: () => redeploy() },
+  ]}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["split-button"].basic}>
+  <SplitButtonBasic />
+</ComponentPreview>
+
+### Destructive
+
+<ComponentPreview code={demoSource["split-button"].destructive}>
+  <SplitButtonDestructive />
+</ComponentPreview>
+
+### Align start
+
+<ComponentPreview code={demoSource["split-button"]["align-start"]}>
+  <SplitButtonAlignStart />
+</ComponentPreview>
+
+Use `align="start"` when the button sits near the end of the viewport so the
+menu does not overflow.
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "label",
+      type: "string",
+      description: "Label of the primary action.",
+    },
+    {
+      name: "onClick",
+      type: "React.MouseEventHandler<HTMLButtonElement>",
+      description: "Handler for the primary action.",
+    },
+    {
+      name: "items",
+      type: "SplitButtonAction[]",
+      description: "Menu entries: label, optional onSelect and disabled.",
+    },
+    {
+      name: "align",
+      type: '"start" | "end"',
+      default: '"end"',
+      description: "Edge the menu aligns to.",
+    },
+    {
+      name: "variant",
+      type: 'ButtonProps["variant"]',
+      default: '"default"',
+      description: "Shared variant for both halves, from Button.",
+    },
+    {
+      name: "size",
+      type: 'ButtonProps["size"]',
+      default: '"default"',
+      description: "Shared size for both halves, from Button.",
+    },
+    {
+      name: "disabled",
+      type: "boolean",
+      description: "Disables both the primary action and the trigger.",
+    },
+    {
+      name: "...props",
+      type: 'ButtonProps',
+      description: "Remaining Button props are forwarded to the primary action.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- The trigger has an accessible name that combines the primary label with
+  “More … options” (for example “More Deploy options”), plus `aria-haspopup`
+  and `aria-expanded`.
+- The menu uses `role="menu"` with `role="menuitem"` entries.
+- `ArrowDown` and `ArrowUp` cycle through enabled items, `Escape` closes the
+  menu and returns focus to the trigger, and an outside pointer press closes it.

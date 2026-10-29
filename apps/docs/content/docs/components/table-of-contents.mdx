@@ -1,0 +1,77 @@
+---
+title: Table of Contents
+description: An in-page outline that highlights the section in view.
+---
+
+import {
+  TableOfContentsActive,
+  TableOfContentsBasic,
+} from "@veil-ui/registry/table-of-contents/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add table-of-contents" />
+
+## Usage
+
+```tsx
+import { TableOfContents } from "@/components/ui/table-of-contents";
+
+<TableOfContents
+  items={[
+    { id: "installation", title: "Installation" },
+    { id: "usage", title: "Usage", level: 3 },
+  ]}
+  activeId="usage"
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["table-of-contents"]["basic"]}>
+  <TableOfContentsBasic />
+</ComponentPreview>
+
+### Active
+
+<ComponentPreview code={demoSource["table-of-contents"]["active"]}>
+  <TableOfContentsActive />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "items",
+      type: "{ id; title; level?: 2 | 3 | 4 }[]",
+      required: true,
+      description: "Headings that exist on the page.",
+    },
+    {
+      name: "activeId",
+      type: "string",
+      description: "Id of the section currently in view.",
+    },
+    {
+      name: "onNavigate",
+      type: "(id) => void",
+      description: "Called when a section is chosen.",
+    },
+    {
+      name: "label",
+      type: "string",
+      default: '"On this page"',
+      description: "Accessible name for the nav landmark.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Renders a labelled `<nav>` with links to real heading ids.
+- The active entry exposes `aria-current="location"`.
+- Clicking scrolls the section into view without jumping the URL history.

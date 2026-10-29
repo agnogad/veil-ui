@@ -1,0 +1,15 @@
+{
+  "name": "marketing-footer",
+  "title": "Marketing Footer",
+  "description": "A multi-column site footer with brand, links, socials and legal text.",
+  "category": "marketing",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "minimal"
+  ]
+}

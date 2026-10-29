@@ -1,0 +1,51 @@
+---
+title: Dropzone
+description: A keyboard-accessible drag and drop area for adding files.
+---
+
+import { DropzoneBasic, DropzoneCustom, DropzoneDisabled } from "@veil-ui/registry/dropzone/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add dropzone" />
+
+## Usage
+
+```tsx
+import { Dropzone } from "@/components/ui/dropzone";
+
+<Dropzone onFiles={setFiles} accept="image/*" multiple />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["dropzone"]["basic"]}>
+  <DropzoneBasic />
+</ComponentPreview>
+
+### Custom
+
+<ComponentPreview code={demoSource["dropzone"]["custom"]}>
+  <DropzoneCustom />
+</ComponentPreview>
+
+### Disabled
+
+<ComponentPreview code={demoSource["dropzone"]["disabled"]}>
+  <DropzoneDisabled />
+</ComponentPreview>
+
+## API reference
+
+- `onFiles` receives the dropped or picked files as an array.
+- `accept`, `multiple` and `disabled` forward to the hidden input.
+- `title`, `description` and `icon` customise the visible prompt.
+
+## Accessibility
+
+- The prompt is a `role="button"` target with a visible label and keyboard activation.
+- Drag state changes are purely visual; the file dialog remains the accessible path.
+- Disabled state removes it from the tab order and ignores drops.

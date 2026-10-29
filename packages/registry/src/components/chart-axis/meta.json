@@ -1,0 +1,17 @@
+{
+  "name": "chart-axis",
+  "title": "Chart Axis",
+  "description": "Themed X and Y axis primitives for Recharts charts.",
+  "category": "charts",
+  "type": "registry:ui",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "formatted"
+  ]
+}

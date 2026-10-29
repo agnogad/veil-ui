@@ -1,0 +1,53 @@
+---
+title: Checkbox
+description: A binary or indeterminate control built on Radix Checkbox.
+---
+
+import { CheckboxBasic, CheckboxIndeterminate, CheckboxDisabled } from "@veil-ui/registry/checkbox/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add checkbox" />
+
+## Usage
+
+```tsx
+import { Checkbox } from "@/components/ui/checkbox";
+import { Label } from "@/components/ui/label";
+
+<div className="flex items-center gap-2">
+  <Checkbox id="terms" />
+  <Label htmlFor="terms">Accept terms</Label>
+</div>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["checkbox"]["basic"]}>
+  <CheckboxBasic />
+</ComponentPreview>
+
+### Indeterminate
+
+<ComponentPreview code={demoSource["checkbox"]["indeterminate"]}>
+  <CheckboxIndeterminate />
+</ComponentPreview>
+
+### Disabled
+
+<ComponentPreview code={demoSource["checkbox"]["disabled"]}>
+  <CheckboxDisabled />
+</ComponentPreview>
+
+## API reference
+
+The package exports `checkbox` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- `Checkbox` renders a Radix checkbox with `role="checkbox"`, supports the indeterminate state and receives focus styles through the wrapper.
+- Error and disabled states are exposed through native attributes and Radix data attributes.
+- Focus-visible rings follow the shared token system in both themes.

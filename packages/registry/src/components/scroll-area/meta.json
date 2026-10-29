@@ -1,0 +1,10 @@
+{
+  "name": "scroll-area",
+  "title": "Scroll Area",
+  "description": "A styled scroll container with always-available scrollbars.",
+  "category": "layout",
+  "type": "registry:ui",
+  "dependencies": ["@radix-ui/react-scroll-area"],
+  "registryDependencies": ["utils"],
+  "examples": ["vertical", "horizontal", "both"]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "chip",
+  "title": "Chip",
+  "description": "Alias of Badge for compact, pill-like labels.",
+  "category": "feedback",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["badge", "utils"],
+  "examples": ["basic"]
+}

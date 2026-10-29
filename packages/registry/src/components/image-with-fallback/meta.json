@@ -1,0 +1,17 @@
+{
+  "name": "image-with-fallback",
+  "title": "Image with Fallback",
+  "description": "An image that swaps to a placeholder when loading fails.",
+  "category": "media",
+  "type": "registry:ui",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "custom"
+  ]
+}

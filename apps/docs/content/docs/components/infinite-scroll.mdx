@@ -1,0 +1,45 @@
+---
+title: Infinite Scroll
+description: A sentinel-based list that loads more content when scrolled into view.
+---
+
+import { InfiniteScrollBasic, InfiniteScrollEndState } from "@veil-ui/registry/infinite-scroll/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add infinite-scroll" />
+
+## Usage
+
+```tsx
+import { InfiniteScroll } from "@/components/ui/infinite-scroll";
+
+<InfiniteScroll hasMore={hasMore} loading={loading} onLoadMore={loadMore}>
+  {items.map((item) => <Item key={item.id} {...item} />)}
+</InfiniteScroll>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["infinite-scroll"]["basic"]}>
+  <InfiniteScrollBasic />
+</ComponentPreview>
+
+### End state
+
+<ComponentPreview code={demoSource["infinite-scroll"]["end-state"]}>
+  <InfiniteScrollEndState />
+</ComponentPreview>
+
+## API reference
+
+The package exports `infinite-scroll` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Touch targets are large enough to tap comfortably and keep visible focus rings for keyboard and switch users.
+- Gesture interactions (swipe, pull to refresh) have visible button alternatives so they are not the only way to act.
+- Sheets, drawers and dialogs follow the underlying accessible primitives for focus trapping and escape handling.

@@ -1,0 +1,10 @@
+{
+  "name": "phone-input",
+  "title": "Phone Input",
+  "description": "A dial-code country picker paired with a telephone number field.",
+  "category": "forms",
+  "type": "registry:ui",
+  "dependencies": ["@radix-ui/react-popover", "cmdk", "lucide-react"],
+  "registryDependencies": ["country-select", "input", "utils"],
+  "examples": ["basic", "country-change", "disabled"]
+}

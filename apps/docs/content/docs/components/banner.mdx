@@ -1,0 +1,101 @@
+---
+title: Banner
+description: A page-level message with an icon, body, actions and dismissal.
+---
+
+import {
+  BannerBasic,
+  BannerDestructive,
+  BannerDismissible,
+  BannerWithAction,
+} from "@veil-ui/registry/banner/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add banner" />
+
+## Usage
+
+```tsx
+import {
+  Banner,
+  BannerContent,
+  BannerTitle,
+  BannerDescription,
+} from "@/components/ui/banner";
+
+<Banner>
+  <BannerContent>
+    <BannerTitle>Update available</BannerTitle>
+    <BannerDescription>Reload to apply it.</BannerDescription>
+  </BannerContent>
+</Banner>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource.banner.basic}>
+  <BannerBasic />
+</ComponentPreview>
+
+### With action
+
+<ComponentPreview code={demoSource.banner["with-action"]}>
+  <BannerWithAction />
+</ComponentPreview>
+
+### Dismissible
+
+<ComponentPreview code={demoSource.banner.dismissible}>
+  <BannerDismissible />
+</ComponentPreview>
+
+### Destructive
+
+<ComponentPreview code={demoSource.banner.destructive}>
+  <BannerDestructive />
+</ComponentPreview>
+
+Use `role="alert"` for failures that interrupt the flow, and the default
+`role="status"` for informational messages.
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "variant",
+      type: '"default" | "muted" | "destructive"',
+      default: '"default"',
+      description: "Tone of the banner surface.",
+    },
+    {
+      name: "role",
+      type: '"status" | "alert"',
+      default: '"status"',
+      description: "Live-region politeness. Use alert for errors.",
+    },
+    {
+      name: "...props",
+      type: 'React.ComponentProps<"div">',
+      description: "All native div attributes.",
+    },
+  ]}
+/>
+
+### Subcomponents
+
+- `BannerIcon` — leading icon slot.
+- `BannerContent`, `BannerTitle`, `BannerDescription` — text layout.
+- `BannerActions` — row of buttons below the copy.
+- `BannerClose` — pre-labelled dismiss button.
+
+## Accessibility
+
+- Defaults to a polite status region; pass `role="alert"` for failures.
+- `BannerClose` is named “Dismiss banner” by default and accepts a `label`
+  override.
+- Actions are real buttons, not clickable spans.

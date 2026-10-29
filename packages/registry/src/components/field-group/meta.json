@@ -1,0 +1,10 @@
+{
+  "name": "field-group",
+  "title": "Field Group",
+  "description": "Groups related fields under a shared legend or heading.",
+  "category": "forms",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "rows", "disabled"]
+}

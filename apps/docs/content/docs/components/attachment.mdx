@@ -1,0 +1,43 @@
+---
+title: Attachment
+description: An inline removable file chip.
+---
+
+import { AttachmentBasic, AttachmentRemovable } from "@veil-ui/registry/attachment/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add attachment" />
+
+## Usage
+
+```tsx
+import { Attachment } from "@/components/ui/attachment";
+
+<Attachment name="quarterly-report.pdf" size="2.4 MB" />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["attachment"]["basic"]}>
+  <AttachmentBasic />
+</ComponentPreview>
+
+### Removable
+
+<ComponentPreview code={demoSource["attachment"]["removable"]}>
+  <AttachmentRemovable />
+</ComponentPreview>
+
+## API reference
+
+The package exports `attachment` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Media players use native `<video>` and `<audio>` controls with accessible labels.
+- Images require meaningful `alt` text; clickable thumbnails are buttons named `Play <title>`.
+- Decorative play overlays, durations and icons are hidden from assistive technology.

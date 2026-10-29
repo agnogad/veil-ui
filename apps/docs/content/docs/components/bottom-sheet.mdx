@@ -1,0 +1,62 @@
+---
+title: Bottom Sheet
+description: A mobile-style sheet anchored to the bottom of the viewport with a drag handle.
+---
+
+import { BottomSheetActions, BottomSheetForm } from "@veil-ui/registry/bottom-sheet/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add bottom-sheet" />
+
+## Usage
+
+```tsx
+import {
+  BottomSheet,
+  BottomSheetContent,
+  BottomSheetDescription,
+  BottomSheetHeader,
+  BottomSheetTitle,
+  BottomSheetTrigger,
+} from "@/components/ui/bottom-sheet";
+
+<BottomSheet>
+  <BottomSheetTrigger asChild>
+    <button type="button">Open actions</button>
+  </BottomSheetTrigger>
+  <BottomSheetContent>
+    <BottomSheetHeader>
+      <BottomSheetTitle>Quick actions</BottomSheetTitle>
+      <BottomSheetDescription>Choose what to do next.</BottomSheetDescription>
+    </BottomSheetHeader>
+  </BottomSheetContent>
+</BottomSheet>;
+```
+
+## Examples
+
+### Actions
+
+<ComponentPreview code={demoSource["bottom-sheet"]["actions"]}>
+  <BottomSheetActions />
+</ComponentPreview>
+
+### Form
+
+<ComponentPreview code={demoSource["bottom-sheet"]["form"]}>
+  <BottomSheetForm />
+</ComponentPreview>
+
+## API reference
+
+- `BottomSheetContent` renders a bottom-anchored rounded panel with a decorative drag handle.
+- All Radix Dialog parts are exported with BottomSheet prefixes.
+- `showCloseButton` hides the built-in close button.
+
+## Accessibility
+
+- Dialog semantics and focus trapping come from Radix.
+- The drag handle is decorative and hidden from assistive technology.
+- The close button is labelled `Close bottom sheet`.

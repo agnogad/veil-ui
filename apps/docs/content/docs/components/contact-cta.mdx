@@ -1,0 +1,47 @@
+---
+title: Contact CTA
+description: A contact band with email, phone and a primary action.
+---
+
+import { ContactCtaBasic, ContactCtaCompact } from "@veil-ui/registry/contact-cta/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add contact-cta" />
+
+## Usage
+
+```tsx
+import { ContactCta } from "@/components/ui/contact-cta";
+
+<ContactCta
+  email="hello@veil-ui.dev"
+  phone="+1 555 010 2030"
+  action={<Button>Book a call</Button>}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["contact-cta"]["basic"]}>
+  <ContactCtaBasic />
+</ComponentPreview>
+
+### Compact
+
+<ComponentPreview code={demoSource["contact-cta"]["compact"]}>
+  <ContactCtaCompact />
+</ComponentPreview>
+
+## API reference
+
+The package exports `contact-cta` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Pages keep a single `h1` in the hero and use `h2`/`h3` for section hierarchy.
+- Call-to-action elements are real links or buttons with discernible labels.
+- Decorative icons are `aria-hidden` and meaningful images require `alt` text.

@@ -1,0 +1,10 @@
+{
+  "name": "form-field",
+  "title": "Form Field",
+  "description": "Pairs a label, control, hint and error message with consistent spacing.",
+  "category": "forms",
+  "type": "registry:ui",
+  "dependencies": ["@radix-ui/react-slot"],
+  "registryDependencies": ["label", "utils"],
+  "examples": ["basic", "with-description", "with-error"]
+}

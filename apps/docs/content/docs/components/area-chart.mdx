@@ -1,0 +1,48 @@
+---
+title: Area Chart
+description: A filled area chart supporting stacked series.
+---
+
+import { AreaChartBasic, AreaChartStacked } from "@veil-ui/registry/area-chart/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add area-chart" />
+
+## Usage
+
+```tsx
+import { AreaChart } from "@/components/ui/area-chart";
+
+<AreaChart
+  data={data}
+  config={{ desktop: { label: "Desktop" }, mobile: { label: "Mobile" } }}
+  xKey="hour"
+  stacked
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["area-chart"]["basic"]}>
+  <AreaChartBasic />
+</ComponentPreview>
+
+### Stacked
+
+<ComponentPreview code={demoSource["area-chart"]["stacked"]}>
+  <AreaChartStacked />
+</ComponentPreview>
+
+## API reference
+
+The package exports `area-chart` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Charts render inside a container with an explicit height so they stay responsive without layout shift.
+- Color is never the only encoding; pair charts with labels, summaries or a data table for critical information.
+- Tooltips and legends are rendered as HTML, so their text is available to assistive technology.

@@ -1,0 +1,10 @@
+{
+  "name": "paragraph",
+  "title": "Paragraph",
+  "description": "Body copy with relaxed leading, balanced wrapping and a muted tone.",
+  "category": "typography",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "muted", "lead"]
+}

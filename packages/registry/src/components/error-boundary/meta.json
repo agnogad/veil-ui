@@ -1,0 +1,10 @@
+{
+  "name": "error-boundary",
+  "title": "Error Boundary",
+  "description": "Catches render errors in a subtree and shows a recoverable fallback.",
+  "category": "feedback",
+  "type": "registry:ui",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["button", "utils"],
+  "examples": ["basic", "custom-fallback"]
+}

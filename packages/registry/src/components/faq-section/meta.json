@@ -1,0 +1,16 @@
+{
+  "name": "faq-section",
+  "title": "FAQ Section",
+  "description": "An accordion of frequently asked questions.",
+  "category": "marketing",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "accordion",
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "compact"
+  ]
+}

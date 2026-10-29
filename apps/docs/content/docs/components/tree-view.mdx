@@ -1,0 +1,52 @@
+---
+title: Tree View
+description: An expandable, accessible tree of hierarchical items.
+---
+
+import { TreeViewBasic, TreeViewCollapsed } from "@veil-ui/registry/tree-view/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add tree-view" />
+
+## Usage
+
+```tsx
+import { TreeView } from "@/components/ui/tree-view";
+
+<TreeView
+  data={[
+    {
+      id: "src",
+      label: "src",
+      children: [{ id: "app", label: "app.tsx" }],
+    },
+  ]}
+  defaultExpanded={["src"]}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["tree-view"]["basic"]}>
+  <TreeViewBasic />
+</ComponentPreview>
+
+### Collapsed
+
+<ComponentPreview code={demoSource["tree-view"]["collapsed"]}>
+  <TreeViewCollapsed />
+</ComponentPreview>
+
+## API reference
+
+The package exports `tree-view` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Content uses semantic HTML — lists are lists, tables are tables and metadata uses a definition list.
+- Interactive elements are real buttons or links with visible focus states.
+- Images require meaningful `alt` text; icons used decoratively are `aria-hidden`.

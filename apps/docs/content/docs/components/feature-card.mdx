@@ -1,0 +1,49 @@
+---
+title: Feature Card
+description: An icon, title and description used to explain product capabilities.
+---
+
+import { FeatureCardBasic, FeatureCardGrid } from "@veil-ui/registry/feature-card/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add feature-card" />
+
+## Usage
+
+```tsx
+import { Zap } from "lucide-react";
+
+import { FeatureCard } from "@/components/ui/feature-card";
+
+<FeatureCard
+  icon={Zap}
+  title="Fast by default"
+  description="Sensible defaults with no runtime surprises."
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["feature-card"]["basic"]}>
+  <FeatureCardBasic />
+</ComponentPreview>
+
+### Grid
+
+<ComponentPreview code={demoSource["feature-card"]["grid"]}>
+  <FeatureCardGrid />
+</ComponentPreview>
+
+## API reference
+
+The package exports `feature-card` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Content uses semantic HTML — lists are lists, tables are tables and metadata uses a definition list.
+- Interactive elements are real buttons or links with visible focus states.
+- Images require meaningful `alt` text; icons used decoratively are `aria-hidden`.

@@ -1,0 +1,48 @@
+---
+title: Image Card
+description: A card pairing a cover image with a title, description and footer.
+---
+
+import { ImageCardBasic, ImageCardWithContent } from "@veil-ui/registry/image-card/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add image-card" />
+
+## Usage
+
+```tsx
+import { ImageCard } from "@/components/ui/image-card";
+
+<ImageCard
+  src="/cover.jpg"
+  alt="Cover"
+  title="Designing with landscape textures"
+  description="How natural palettes shape calm interfaces."
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["image-card"]["basic"]}>
+  <ImageCardBasic />
+</ComponentPreview>
+
+### With content
+
+<ComponentPreview code={demoSource["image-card"]["with-content"]}>
+  <ImageCardWithContent />
+</ComponentPreview>
+
+## API reference
+
+The package exports `image-card` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Content uses semantic HTML — lists are lists, tables are tables and metadata uses a definition list.
+- Interactive elements are real buttons or links with visible focus states.
+- Images require meaningful `alt` text; icons used decoratively are `aria-hidden`.

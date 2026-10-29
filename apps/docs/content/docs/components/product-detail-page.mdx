@@ -1,0 +1,37 @@
+---
+title: Product Detail Page
+description: A product page with gallery, purchase panel and related items.
+---
+
+import { ProductDetailPageBasic } from "@veil-ui/registry/product-detail-page/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add product-detail-page" />
+
+## Usage
+
+```tsx
+import { ProductDetailPage } from "@/components/ui/product-detail-page";
+
+<ProductDetailPage />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["product-detail-page"]["basic"]}>
+  <ProductDetailPageBasic />
+</ComponentPreview>
+
+## API reference
+
+The package exports `product-detail-page` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Page templates use semantic landmarks and a single page-level heading.
+- Navigation links and actions have discernible names and visible focus styles.
+- Decorative imagery uses empty alt text; content images carry descriptions.

@@ -1,0 +1,10 @@
+{
+  "name": "blockquote",
+  "title": "Blockquote",
+  "description": "A quoted passage with an optional attribution.",
+  "category": "typography",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "with-citation"]
+}

@@ -1,0 +1,110 @@
+---
+title: Notification
+description: A single notification entry with icon, copy, timestamp and dismissal.
+---
+
+import {
+  NotificationBasic,
+  NotificationDismissible,
+  NotificationUnread,
+  NotificationWithAction,
+} from "@veil-ui/registry/notification/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add notification" />
+
+## Usage
+
+```tsx
+import { Bell } from "lucide-react";
+import { Notification } from "@/components/ui/notification";
+
+<Notification
+  title="Deployment finished"
+  description="Production is running commit 4f2a91c."
+  timestamp="2 minutes ago"
+  icon={Bell}
+  unread
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["notification"]["basic"]}>
+  <NotificationBasic />
+</ComponentPreview>
+
+### Unread
+
+<ComponentPreview code={demoSource["notification"]["unread"]}>
+  <NotificationUnread />
+</ComponentPreview>
+
+### Dismissible
+
+<ComponentPreview code={demoSource["notification"]["dismissible"]}>
+  <NotificationDismissible />
+</ComponentPreview>
+
+### With action
+
+<ComponentPreview code={demoSource["notification"]["with-action"]}>
+  <NotificationWithAction />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "title",
+      type: "React.ReactNode",
+      required: true,
+      description: "Headline of the notification.",
+    },
+    {
+      name: "description",
+      type: "React.ReactNode",
+      description: "Supporting body copy.",
+    },
+    {
+      name: "icon",
+      type: "React.ElementType",
+      description: "Leading decorative icon.",
+    },
+    {
+      name: "timestamp",
+      type: "React.ReactNode",
+      description: "Relative or absolute time.",
+    },
+    {
+      name: "unread",
+      type: "boolean",
+      default: "false",
+      description: "Highlights the entry and adds a hidden “Unread” label.",
+    },
+    {
+      name: "onDismiss",
+      type: "() => void",
+      description: "Shows a dismiss control when provided.",
+    },
+    {
+      name: "action",
+      type: "React.ReactNode",
+      description: "Inline controls such as Accept / Decline.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Unread entries expose a screen-reader-only “Unread” label rather than
+  relying on the dot alone.
+- The dismiss button defaults to “Dismiss notification” and accepts a
+  `dismissLabel` override.
+- Timestamps are plain text; include a machine-readable `<time>` element in
+  `timestamp` when exact dates matter.

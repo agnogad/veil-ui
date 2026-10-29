@@ -1,0 +1,48 @@
+---
+title: Pricing Card
+description: A plan card with price, feature list and a highlighted call to action.
+---
+
+import { PricingCardBasic, PricingCardHighlighted } from "@veil-ui/registry/pricing-card/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add pricing-card" />
+
+## Usage
+
+```tsx
+import { PricingCard } from "@/components/ui/pricing-card";
+
+<PricingCard
+  name="Team"
+  price="$24"
+  features={["Unlimited projects", "Priority support"]}
+  highlighted
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["pricing-card"]["basic"]}>
+  <PricingCardBasic />
+</ComponentPreview>
+
+### Highlighted
+
+<ComponentPreview code={demoSource["pricing-card"]["highlighted"]}>
+  <PricingCardHighlighted />
+</ComponentPreview>
+
+## API reference
+
+The package exports `pricing-card` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Content uses semantic HTML — lists are lists, tables are tables and metadata uses a definition list.
+- Interactive elements are real buttons or links with visible focus states.
+- Images require meaningful `alt` text; icons used decoratively are `aria-hidden`.

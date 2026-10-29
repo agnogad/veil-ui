@@ -1,0 +1,16 @@
+{
+  "name": "pricing-section",
+  "title": "Pricing Section",
+  "description": "A three-plan pricing layout with an optional selection callback.",
+  "category": "marketing",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "pricing-card",
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "selectable"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "product-card",
+  "title": "Product Card",
+  "description": "A product tile with image, price, rating and an add-to-cart action.",
+  "category": "data-display",
+  "type": "registry:ui",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "card",
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "sale"
+  ]
+}

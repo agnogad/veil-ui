@@ -1,0 +1,18 @@
+{
+  "name": "mobile-share-sheet",
+  "title": "Mobile Share Sheet",
+  "description": "A bottom sheet of share targets with copy-link support.",
+  "category": "mobile",
+  "type": "registry:ui",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "bottom-sheet",
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "custom"
+  ]
+}

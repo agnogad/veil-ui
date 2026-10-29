@@ -1,0 +1,15 @@
+{
+  "name": "integrations-section",
+  "title": "Integrations Section",
+  "description": "A tile grid of tools and platforms you connect with.",
+  "category": "marketing",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "monograms"
+  ]
+}

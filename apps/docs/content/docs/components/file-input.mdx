@@ -1,0 +1,56 @@
+---
+title: File Input
+description: A styled native file input with a selected-file list and helper text.
+---
+
+import { FileInputBasic, FileInputMultiple, FileInputError } from "@veil-ui/registry/file-input/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add file-input" />
+
+## Usage
+
+```tsx
+import { FileInput } from "@/components/ui/file-input";
+
+<FileInput
+  label="Attachment"
+  hint="PDF up to 5 MB"
+  accept=".pdf"
+  onFilesChange={setFiles}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["file-input"]["basic"]}>
+  <FileInputBasic />
+</ComponentPreview>
+
+### Multiple
+
+<ComponentPreview code={demoSource["file-input"]["multiple"]}>
+  <FileInputMultiple />
+</ComponentPreview>
+
+### Error
+
+<ComponentPreview code={demoSource["file-input"]["error"]}>
+  <FileInputError />
+</ComponentPreview>
+
+## API reference
+
+- Wraps a native `<input type="file">` and forwards `accept`, `multiple` and `capture`.
+- `onFilesChange` receives the current `FileList` or `null` when cleared.
+- `label`, `hint` and `error` are wired with `aria-describedby` and `aria-invalid`.
+
+## Accessibility
+
+- The label is associated with the input through a generated id.
+- Error text is announced and marks the field invalid.
+- Selected files are listed as plain text, and Clear selection is a normal button.

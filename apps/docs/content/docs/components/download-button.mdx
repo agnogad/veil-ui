@@ -1,0 +1,85 @@
+---
+title: Download Button
+description: A button-styled download link with a file name hint.
+---
+
+import {
+  DownloadButtonBasic,
+  DownloadButtonFileName,
+  DownloadButtonOutline,
+} from "@veil-ui/registry/download-button/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add download-button" />
+
+## Usage
+
+```tsx
+import { DownloadButton } from "@/components/ui/download-button";
+
+<DownloadButton href="/files/report.pdf" download="report.pdf">
+  Download report
+</DownloadButton>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["download-button"].basic}>
+  <DownloadButtonBasic />
+</ComponentPreview>
+
+### File name
+
+<ComponentPreview code={demoSource["download-button"]["file-name"]}>
+  <DownloadButtonFileName />
+</ComponentPreview>
+
+### Outline
+
+<ComponentPreview code={demoSource["download-button"].outline}>
+  <DownloadButtonOutline />
+</ComponentPreview>
+
+## API reference
+
+`DownloadButton` renders an anchor styled as a button and always sets the
+`download` attribute.
+
+<PropsTable
+  data={[
+    {
+      name: "href",
+      type: "string",
+      description: "File URL to download.",
+    },
+    {
+      name: "download",
+      type: "boolean | string",
+      default: '""',
+      description:
+        "Suggested file name. The attribute is always present, even if empty.",
+    },
+    {
+      name: "label",
+      type: "string",
+      default: '"Download"',
+      description: "Visible label when no children are given.",
+    },
+    {
+      name: "...props",
+      type: 'React.ComponentProps<"a">',
+      description: "All native anchor attributes.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- It is a real link, so it supports open-in-new-tab, copy-link and the browser
+  context menu.
+- Add a descriptive label that names the file, not just “Download”.
+- `download` is ignored for cross-origin URLs by most browsers.

@@ -1,0 +1,65 @@
+---
+title: Dock
+description: A floating icon bar for quick access to app actions.
+---
+
+import { DockActive, DockBasic } from "@veil-ui/registry/dock/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add dock" />
+
+## Usage
+
+```tsx
+import { Home, Settings } from "lucide-react";
+import { Dock } from "@/components/ui/dock";
+
+<Dock
+  items={[
+    { label: "Home", icon: Home, href: "/", active: true },
+    { label: "Settings", icon: Settings, href: "/settings" },
+  ]}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["dock"]["basic"]}>
+  <DockBasic />
+</ComponentPreview>
+
+### Active
+
+<ComponentPreview code={demoSource["dock"]["active"]}>
+  <DockActive />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "items",
+      type: "{ label; icon; href?; active?; onClick? }[]",
+      required: true,
+      description: "Dock destinations or actions.",
+    },
+    {
+      name: "label",
+      type: "string",
+      default: '"Dock"',
+      description: "Accessible name for the toolbar.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Renders `role="toolbar"` with an accessible name.
+- Each icon has a screen-reader-only label; the active item shows a dot and
+  `aria-current="page"`.
+- Items can be links or buttons depending on whether `href` is set.

@@ -1,0 +1,65 @@
+---
+title: Markdown
+description: Render markdown strings with GFM tables, code and styled elements.
+---
+
+import {
+  MarkdownBasic,
+  MarkdownGfm,
+} from "@veil-ui/registry/markdown/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add markdown" />
+
+## Usage
+
+```tsx
+import { Markdown } from "@/components/ui/markdown";
+
+<Markdown>{"## Title\n\nSome **bold** text."}</Markdown>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource.markdown.basic}>
+  <MarkdownBasic />
+</ComponentPreview>
+
+### GFM
+
+<ComponentPreview code={demoSource.markdown.gfm}>
+  <MarkdownGfm />
+</ComponentPreview>
+
+The component maps headings, lists, tables, quotes and code to the same
+typographic scale used across the docs. Pass `className` to constrain measure,
+for example `max-w-prose`.
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      type: "string",
+      description: "Markdown source to render.",
+    },
+    {
+      name: "className",
+      type: "string",
+      description: "Wrapper class; useful for max-width and spacing.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Renders semantic elements for headings, lists, tables and links, keeping the
+  document outline intact.
+- Tables must include a header row in the markdown source for proper
+  associations.
+- Raw HTML is not enabled, which removes a common injection vector.

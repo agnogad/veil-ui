@@ -1,0 +1,10 @@
+{
+  "name": "carousel-item",
+  "title": "Carousel Item",
+  "description": "A single slide within a carousel track.",
+  "category": "overlays",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["utils"],
+  "examples": ["basic"]
+}

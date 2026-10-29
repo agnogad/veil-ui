@@ -1,0 +1,10 @@
+{
+  "name": "checkbox-group",
+  "title": "Checkbox Group",
+  "description": "A labelled fieldset of checkboxes with multi-select state.",
+  "category": "forms",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["checkbox", "label", "utils"],
+  "examples": ["basic", "with-descriptions", "controlled"]
+}

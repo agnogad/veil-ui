@@ -1,0 +1,44 @@
+---
+title: Tab
+description: Alias entry for the Tabs primitives.
+---
+
+import { TabBasic } from "@veil-ui/registry/tab/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add tab" />
+
+## Usage
+
+```tsx
+import { Tab, TabContent, TabList, TabTrigger } from "@/components/ui/tab";
+
+<Tab defaultValue="account">
+  <TabList>
+    <TabTrigger value="account">Account</TabTrigger>
+    <TabTrigger value="password">Password</TabTrigger>
+  </TabList>
+  <TabContent value="account">Account settings.</TabContent>
+  <TabContent value="password">Password settings.</TabContent>
+</Tab>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["tab"]["basic"]}>
+  <TabBasic />
+</ComponentPreview>
+
+## API reference
+
+`Tab`, `TabList`, `TabTrigger` and `TabContent` re-export the
+[Tabs](/docs/components/tabs) primitives.
+
+## Accessibility
+
+- Radix Tabs provides `tablist` / `tab` / `tabpanel` semantics, arrow-key
+  navigation and focus management.

@@ -1,0 +1,10 @@
+{
+  "name": "spinner",
+  "title": "Spinner",
+  "description": "An animated indicator for work in progress.",
+  "category": "feedback",
+  "type": "registry:ui",
+  "dependencies": ["class-variance-authority", "lucide-react"],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "sizes", "button"]
+}

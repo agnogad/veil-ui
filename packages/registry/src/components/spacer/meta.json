@@ -1,0 +1,10 @@
+{
+  "name": "spacer",
+  "title": "Spacer",
+  "description": "Adds flexible or fixed space between flex children.",
+  "category": "layout",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["utils"],
+  "examples": ["flexible", "fixed", "toolbar"]
+}

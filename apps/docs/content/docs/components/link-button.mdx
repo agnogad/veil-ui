@@ -1,0 +1,83 @@
+---
+title: Link Button
+description: A text link styled for inline actions, with external-link handling.
+---
+
+import {
+  LinkButtonBasic,
+  LinkButtonExternal,
+  LinkButtonVariants,
+} from "@veil-ui/registry/link-button/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add link-button" />
+
+## Usage
+
+```tsx
+import { LinkButton } from "@/components/ui/link-button";
+
+<LinkButton href="/docs">Read the docs</LinkButton>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["link-button"].basic}>
+  <LinkButtonBasic />
+</ComponentPreview>
+
+### External
+
+<ComponentPreview code={demoSource["link-button"].external}>
+  <LinkButtonExternal />
+</ComponentPreview>
+
+### Variants
+
+<ComponentPreview code={demoSource["link-button"].variants}>
+  <LinkButtonVariants />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "variant",
+      type: '"default" | "muted" | "destructive"',
+      default: '"default"',
+      description: "Colour and weight of the link.",
+    },
+    {
+      name: "underline",
+      type: "boolean",
+      default: "false",
+      description: "Always underline instead of only on hover.",
+    },
+    {
+      name: "external",
+      type: "boolean",
+      default: "false",
+      description:
+        "Adds target, rel and a visually hidden “opens in a new tab” note.",
+    },
+    {
+      name: "asChild",
+      type: "boolean",
+      default: "false",
+      description: "Render your router link instead of an anchor.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Renders a real `<a>` with `href`, so it is reachable with Tab and announced
+  as a link.
+- External links include the warning in their accessible name, not just an
+  icon.
+- Link text describes the destination; avoid “click here”.

@@ -1,0 +1,10 @@
+{
+  "name": "rating-input",
+  "title": "Rating Input",
+  "description": "A keyboard-accessible star rating with a radiogroup pattern.",
+  "category": "forms",
+  "type": "registry:ui",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "readonly", "sizes"]
+}

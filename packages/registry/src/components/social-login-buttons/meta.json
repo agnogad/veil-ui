@@ -1,0 +1,15 @@
+{
+  "name": "social-login-buttons",
+  "title": "Social Login Buttons",
+  "description": "A stack of social provider sign-in buttons.",
+  "category": "auth",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "pair"
+  ]
+}

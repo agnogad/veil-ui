@@ -1,0 +1,10 @@
+{
+  "name": "upload-button",
+  "title": "Upload Button",
+  "description": "Opens the file picker from a styled button and reports selections.",
+  "category": "actions",
+  "type": "registry:ui",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["button", "utils"],
+  "examples": ["basic", "images", "outline"]
+}

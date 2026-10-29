@@ -1,0 +1,26 @@
+{
+  "name": "blog-post-page",
+  "title": "Blog Post Page",
+  "description": "An article page with metadata, prose, code and related posts.",
+  "category": "pages",
+  "type": "registry:block",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "article-card",
+    "avatar",
+    "badge",
+    "blockquote",
+    "breadcrumb",
+    "button",
+    "code-block",
+    "logo",
+    "marketing-footer",
+    "navbar"
+  ],
+  "examples": [
+    "basic"
+  ]
+}

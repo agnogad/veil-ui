@@ -1,0 +1,10 @@
+{
+  "name": "bottom-navigation",
+  "title": "Bottom Navigation",
+  "description": "A mobile tab bar with icons, labels and optional badges.",
+  "category": "navigation",
+  "type": "registry:ui",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "badges"]
+}

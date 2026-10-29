@@ -1,0 +1,10 @@
+{
+  "name": "status-badge",
+  "title": "Status Badge",
+  "description": "A compact badge with a colored dot for success, warning, danger or info.",
+  "category": "feedback",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "tones"]
+}

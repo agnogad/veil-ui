@@ -1,0 +1,77 @@
+---
+title: Logo
+description: A brand mark and wordmark lockup in three sizes.
+---
+
+import {
+  LogoBasic,
+  LogoLink,
+  LogoSizes,
+} from "@veil-ui/registry/logo/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add logo" />
+
+## Usage
+
+```tsx
+import { Logo } from "@/components/ui/logo";
+
+<Logo name="Veil UI" mark={<Mark />} />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource.logo.basic}>
+  <LogoBasic />
+</ComponentPreview>
+
+### Linked
+
+<ComponentPreview code={demoSource.logo.link}>
+  <LogoLink />
+</ComponentPreview>
+
+### Sizes
+
+<ComponentPreview code={demoSource.logo.sizes}>
+  <LogoSizes />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "name",
+      type: "string",
+      description: "Wordmark text, also the accessible name when linked.",
+    },
+    {
+      name: "mark",
+      type: "ReactNode",
+      description: "Optional square brand mark rendered before the name.",
+    },
+    {
+      name: "size",
+      type: '"sm" | "md" | "lg"',
+      default: '"md"',
+      description: "Lockup scale.",
+    },
+    {
+      name: "href",
+      type: "string",
+      description: "Wrap the lockup in a link, typically to the home page.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- The wordmark is real text, so the logo keeps a readable accessible name.
+- When linked, the anchor contains that text and shows a visible focus ring.
+- Keep decorative marks decorative; the name already identifies the brand.

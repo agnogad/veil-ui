@@ -1,0 +1,10 @@
+{
+  "name": "otp-input",
+  "title": "OTP Input",
+  "description": "A segmented one-time-code field with paste and keyboard support.",
+  "category": "forms",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "four-digits", "disabled"]
+}

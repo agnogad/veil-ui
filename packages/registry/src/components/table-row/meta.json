@@ -1,0 +1,15 @@
+{
+  "name": "table-row",
+  "title": "Table Row",
+  "description": "A re-export of the Table row primitive for standalone composition.",
+  "category": "data-display",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "table",
+    "utils"
+  ],
+  "examples": [
+    "basic"
+  ]
+}

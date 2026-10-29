@@ -1,0 +1,43 @@
+---
+title: Newsletter Section
+description: An email capture band with an inline success state.
+---
+
+import { NewsletterSectionBasic, NewsletterSectionCustom } from "@veil-ui/registry/newsletter-section/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add newsletter-section" />
+
+## Usage
+
+```tsx
+import { NewsletterSection } from "@/components/ui/newsletter-section";
+
+<NewsletterSection onSubmit={subscribe} />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["newsletter-section"]["basic"]}>
+  <NewsletterSectionBasic />
+</ComponentPreview>
+
+### Custom
+
+<ComponentPreview code={demoSource["newsletter-section"]["custom"]}>
+  <NewsletterSectionCustom />
+</ComponentPreview>
+
+## API reference
+
+The package exports `newsletter-section` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Pages keep a single `h1` in the hero and use `h2`/`h3` for section hierarchy.
+- Call-to-action elements are real links or buttons with discernible labels.
+- Decorative icons are `aria-hidden` and meaningful images require `alt` text.

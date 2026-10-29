@@ -1,0 +1,10 @@
+{
+  "name": "pagination",
+  "title": "Pagination",
+  "description": "Page controls with ellipsis ranges and previous/next buttons.",
+  "category": "navigation",
+  "type": "registry:ui",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "short"]
+}

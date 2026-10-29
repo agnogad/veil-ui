@@ -1,0 +1,82 @@
+---
+title: Empty State
+description: A centered placeholder for lists, tables and panels without content.
+---
+
+import {
+  EmptyStateBasic,
+  EmptyStateCustom,
+  EmptyStateWithAction,
+} from "@veil-ui/registry/empty-state/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add empty-state" />
+
+## Usage
+
+```tsx
+import { Inbox } from "lucide-react";
+import { EmptyState } from "@/components/ui/empty-state";
+
+<EmptyState
+  icon={Inbox}
+  title="No messages"
+  description="Messages you receive will show up here."
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["empty-state"]["basic"]}>
+  <EmptyStateBasic />
+</ComponentPreview>
+
+### With action
+
+<ComponentPreview code={demoSource["empty-state"]["with-action"]}>
+  <EmptyStateWithAction />
+</ComponentPreview>
+
+### Custom content
+
+<ComponentPreview code={demoSource["empty-state"]["custom"]}>
+  <EmptyStateCustom />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "icon",
+      type: "LucideIcon",
+      description: "Decorative icon shown above the copy.",
+    },
+    {
+      name: "title",
+      type: "React.ReactNode",
+      required: true,
+      description: "Primary message.",
+    },
+    {
+      name: "description",
+      type: "React.ReactNode",
+      description: "Supporting explanation.",
+    },
+    {
+      name: "action",
+      type: "React.ReactNode",
+      description: "Primary call to action, usually a button.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- The icon is hidden from assistive technology; the title carries the
+  meaning.
+- Actions are real buttons or links supplied by the caller.

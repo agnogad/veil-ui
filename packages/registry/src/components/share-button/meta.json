@@ -1,0 +1,10 @@
+{
+  "name": "share-button",
+  "title": "Share Button",
+  "description": "Uses the native share sheet and falls back to copying the link.",
+  "category": "actions",
+  "type": "registry:ui",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["button", "utils"],
+  "examples": ["basic", "with-url", "outline"]
+}

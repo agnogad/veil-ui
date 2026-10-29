@@ -1,0 +1,37 @@
+---
+title: Contact Page
+description: A contact page pairing a form with support channels and FAQ.
+---
+
+import { ContactPageBasic } from "@veil-ui/registry/contact-page/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add contact-page" />
+
+## Usage
+
+```tsx
+import { ContactPage } from "@/components/ui/contact-page";
+
+<ContactPage />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["contact-page"]["basic"]}>
+  <ContactPageBasic />
+</ComponentPreview>
+
+## API reference
+
+The package exports `contact-page` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Page templates use semantic landmarks and a single page-level heading.
+- Navigation links and actions have discernible names and visible focus styles.
+- Decorative imagery uses empty alt text; content images carry descriptions.

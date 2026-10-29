@@ -1,0 +1,10 @@
+{
+  "name": "hstack",
+  "title": "HStack",
+  "description": "A horizontal Stack preset with centered items by default.",
+  "category": "layout",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["stack", "utils"],
+  "examples": ["basic", "toolbar", "wrap"]
+}

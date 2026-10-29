@@ -1,0 +1,39 @@
+---
+title: Carousel Item
+description: A single slide within a carousel track.
+---
+
+import { CarouselItemBasic } from "@veil-ui/registry/carousel-item/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add carousel-item" />
+
+## Usage
+
+```tsx
+import { CarouselItem } from "@/components/ui/carousel-item";
+
+<CarouselItem>Slide content</CarouselItem>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["carousel-item"]["basic"]}>
+  <CarouselItemBasic />
+</ComponentPreview>
+
+## API reference
+
+- Renders a `role="group"` slide with `aria-roledescription="slide"` and a full-width basis.
+- `orientation` adjusts vertical padding for carousels that scroll on the Y axis.
+- The carousel package re-exports the same component, so either import works.
+
+## Accessibility
+
+- Slides expose their role and roledescription to screen readers.
+- Use with the Carousel region so arrow-key navigation applies.
+- Keep slide content meaningful without the visual track context.

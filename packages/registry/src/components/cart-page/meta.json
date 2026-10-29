@@ -1,0 +1,25 @@
+{
+  "name": "cart-page",
+  "title": "Cart Page",
+  "description": "A shopping cart with quantity controls and order summary.",
+  "category": "pages",
+  "type": "registry:block",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "card",
+    "input",
+    "logo",
+    "marketing-footer",
+    "navbar",
+    "progress",
+    "separator",
+    "table"
+  ],
+  "examples": [
+    "basic"
+  ]
+}

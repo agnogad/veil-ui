@@ -1,0 +1,16 @@
+{
+  "name": "image-carousel",
+  "title": "Image Carousel",
+  "description": "A looping carousel of captioned images.",
+  "category": "media",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "carousel",
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "compact"
+  ]
+}

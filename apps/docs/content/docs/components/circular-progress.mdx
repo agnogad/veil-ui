@@ -1,0 +1,80 @@
+---
+title: Circular Progress
+description: An SVG ring indicator with an optional percentage label.
+---
+
+import {
+  CircularProgressBasic,
+  CircularProgressSizes,
+} from "@veil-ui/registry/circular-progress/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add circular-progress" />
+
+## Usage
+
+```tsx
+import { CircularProgress } from "@/components/ui/circular-progress";
+
+<CircularProgress value={72} showValue aria-label="Upload progress" />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["circular-progress"]["basic"]}>
+  <CircularProgressBasic />
+</ComponentPreview>
+
+### Sizes
+
+<ComponentPreview code={demoSource["circular-progress"]["sizes"]}>
+  <CircularProgressSizes />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "value",
+      type: "number",
+      required: true,
+      description: "Completion from 0 to 100.",
+    },
+    {
+      name: "size",
+      type: "number",
+      default: "48",
+      description: "Diameter in pixels.",
+    },
+    {
+      name: "strokeWidth",
+      type: "number",
+      default: "4",
+      description: "Ring thickness in pixels.",
+    },
+    {
+      name: "showValue",
+      type: "boolean",
+      default: "false",
+      description: "Shows the rounded percentage in the center.",
+    },
+    {
+      name: "label",
+      type: "string",
+      default: '"Progress"',
+      description: "Accessible name for the progressbar.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Exposes `role="progressbar"` with `aria-valuemin`, `aria-valuemax` and
+  `aria-valuenow`.
+- The SVG and percentage text are hidden from screen readers, which read the
+  numeric value instead.

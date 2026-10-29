@@ -1,0 +1,21 @@
+{
+  "name": "account-settings",
+  "title": "Account Settings",
+  "description": "Sectioned account settings for profile, security and notifications.",
+  "category": "auth",
+  "type": "registry:ui",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "input",
+    "label",
+    "switch"
+  ],
+  "examples": [
+    "basic",
+    "security"
+  ]
+}

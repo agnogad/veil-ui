@@ -28,7 +28,7 @@ export default function HomePage() {
             className="mb-8 inline-flex items-center gap-2 rounded-full border bg-background/80 px-3 py-1 text-xs text-muted-foreground backdrop-blur transition-colors hover:text-foreground"
           >
             <span className="size-1.5 rounded-full bg-emerald-500" aria-hidden />
-            v0.1.0 — foundations shipped, 200+ components on the way
+            v0.1.0 — 297 components, 669 examples, 30 page templates
             <ArrowRight className="size-3" aria-hidden />
           </a>
 
@@ -63,8 +63,8 @@ export default function HomePage() {
       <section className="border-b">
         <div className="mx-auto grid max-w-5xl grid-cols-2 divide-x divide-border border-x md:grid-cols-4">
           {[
-            { label: "Components planned", value: "210" },
-            { label: "Blocks planned", value: "75" },
+            { label: "Components", value: "297" },
+            { label: "Page templates", value: "30" },
             { label: "Runtime wrappers", value: "0" },
             { label: "License", value: "MIT" },
           ].map((stat) => (
@@ -179,7 +179,7 @@ export default function HomePage() {
             </a>
             <a
               className="inline-flex items-center gap-1.5 transition-colors hover:text-foreground"
-              href="https://github.com/veil-ui/veil-ui"
+              href="https://github.com/agnogad/veil-ui"
             >
               <ArrowUpRight className="size-4" aria-hidden /> GitHub
             </a>

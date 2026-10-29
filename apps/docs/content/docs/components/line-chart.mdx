@@ -1,0 +1,47 @@
+---
+title: Line Chart
+description: A responsive multi-series line chart built on Recharts.
+---
+
+import { LineChartBasic, LineChartSingle } from "@veil-ui/registry/line-chart/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add line-chart" />
+
+## Usage
+
+```tsx
+import { LineChart } from "@/components/ui/line-chart";
+
+<LineChart
+  data={data}
+  config={{ visitors: { label: "Visitors" } }}
+  xKey="day"
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["line-chart"]["basic"]}>
+  <LineChartBasic />
+</ComponentPreview>
+
+### Single
+
+<ComponentPreview code={demoSource["line-chart"]["single"]}>
+  <LineChartSingle />
+</ComponentPreview>
+
+## API reference
+
+The package exports `line-chart` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Charts render inside a container with an explicit height so they stay responsive without layout shift.
+- Color is never the only encoding; pair charts with labels, summaries or a data table for critical information.
+- Tooltips and legends are rendered as HTML, so their text is available to assistive technology.

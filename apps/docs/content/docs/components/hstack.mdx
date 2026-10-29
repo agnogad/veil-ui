@@ -1,0 +1,90 @@
+---
+title: HStack
+description: A horizontal Stack preset with centered items by default.
+---
+
+import {
+  HstackBasic,
+  HstackToolbar,
+  HstackWrap,
+} from "@veil-ui/registry/hstack/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add hstack" />
+
+## Usage
+
+```tsx
+import { HStack } from "@/components/ui/hstack";
+
+<HStack gap="sm">
+  <Badge>React</Badge>
+  <Badge>Tailwind</Badge>
+</HStack>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource.hstack.basic}>
+  <HstackBasic />
+</ComponentPreview>
+
+### Toolbar
+
+<ComponentPreview code={demoSource.hstack.toolbar}>
+  <HstackToolbar />
+</ComponentPreview>
+
+### Wrapping
+
+<ComponentPreview code={demoSource.hstack.wrap}>
+  <HstackWrap />
+</ComponentPreview>
+
+## API reference
+
+`HStack` forwards every `Stack` prop except `direction`, which is fixed to
+`row`. Defaults: `gap="md"`, `align="center"` and `justify="start"`.
+
+<PropsTable
+  data={[
+    {
+      name: "gap",
+      type: '"none" | "xs" | "sm" | "md" | "lg" | "xl"',
+      default: '"md"',
+      description: "Space between children.",
+    },
+    {
+      name: "align",
+      type: '"start" | "center" | "end" | "stretch" | "baseline"',
+      default: '"center"',
+      description: "Cross-axis alignment.",
+    },
+    {
+      name: "justify",
+      type: '"start" | "center" | "end" | "between" | "around"',
+      default: '"start"',
+      description: "Main-axis distribution.",
+    },
+    {
+      name: "wrap",
+      type: "boolean",
+      default: "false",
+      description: "Allow children to wrap onto multiple lines.",
+    },
+    {
+      name: "...props",
+      type: 'React.ComponentProps<"div">',
+      description: "All native div attributes.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Presentational flex wrapper; it adds no ARIA roles.
+- It renders the shared `stack` source, so install it together with `stack`.

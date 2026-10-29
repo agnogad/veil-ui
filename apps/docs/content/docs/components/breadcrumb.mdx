@@ -1,0 +1,104 @@
+---
+title: Breadcrumb
+description: Shows the path to the current page with accessible navigation semantics.
+---
+
+import {
+  BreadcrumbBasic,
+  BreadcrumbCollapsed,
+  BreadcrumbCustomSeparator,
+  BreadcrumbWithIcon,
+} from "@veil-ui/registry/breadcrumb/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add breadcrumb" />
+
+## Usage
+
+```tsx
+import {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+
+<Breadcrumb>
+  <BreadcrumbList>
+    <BreadcrumbItem>
+      <BreadcrumbLink href="/">Home</BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator />
+    <BreadcrumbItem>
+      <BreadcrumbPage>Components</BreadcrumbPage>
+    </BreadcrumbItem>
+  </BreadcrumbList>
+</Breadcrumb>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource.breadcrumb.basic}>
+  <BreadcrumbBasic />
+</ComponentPreview>
+
+### Collapsed
+
+<ComponentPreview code={demoSource.breadcrumb.collapsed}>
+  <BreadcrumbCollapsed />
+</ComponentPreview>
+
+### Custom separator
+
+<ComponentPreview code={demoSource.breadcrumb["custom-separator"]}>
+  <BreadcrumbCustomSeparator />
+</ComponentPreview>
+
+### With icon
+
+<ComponentPreview code={demoSource.breadcrumb["with-icon"]}>
+  <BreadcrumbWithIcon />
+</ComponentPreview>
+
+## API reference
+
+### Breadcrumb
+
+<PropsTable
+  data={[
+    {
+      name: "aria-label",
+      type: "string",
+      default: '"breadcrumb"',
+      description: "Name of the navigation landmark.",
+    },
+  ]}
+/>
+
+### BreadcrumbLink
+
+<PropsTable
+  data={[
+    {
+      name: "asChild",
+      type: "boolean",
+      default: "false",
+      description: "Render your router link instead of an anchor.",
+    },
+  ]}
+/>
+
+`BreadcrumbPage` marks the current item with `aria-current="page"`.
+
+## Accessibility
+
+- Renders a `<nav>` with an accessible name, plus an ordered list for structure.
+- Separators are presentational and hidden from assistive technology.
+- The collapsed item announces “More pages” through visually hidden text.
+- Use `asChild` on `BreadcrumbLink` to keep client-side routing.

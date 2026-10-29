@@ -1,0 +1,56 @@
+---
+title: Checkbox Group
+description: A labelled fieldset of checkboxes with multi-select state.
+---
+
+import { CheckboxGroupBasic, CheckboxGroupWithDescriptions, CheckboxGroupControlled } from "@veil-ui/registry/checkbox-group/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add checkbox-group" />
+
+## Usage
+
+```tsx
+import { CheckboxGroup } from "@/components/ui/checkbox-group";
+
+<CheckboxGroup
+  label="Notifications"
+  options={[
+    { value: "email", label: "Email" },
+    { value: "sms", label: "SMS" },
+  ]}
+  defaultValue={["email"]}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["checkbox-group"]["basic"]}>
+  <CheckboxGroupBasic />
+</ComponentPreview>
+
+### With Descriptions
+
+<ComponentPreview code={demoSource["checkbox-group"]["with-descriptions"]}>
+  <CheckboxGroupWithDescriptions />
+</ComponentPreview>
+
+### Controlled
+
+<ComponentPreview code={demoSource["checkbox-group"]["controlled"]}>
+  <CheckboxGroupControlled />
+</ComponentPreview>
+
+## API reference
+
+The package exports `checkbox-group` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- `CheckboxGroup` renders a labelled `fieldset`; keyboard focus moves through native checkbox controls.
+- Error and disabled states are exposed through native attributes and Radix data attributes.
+- Focus-visible rings follow the shared token system in both themes.

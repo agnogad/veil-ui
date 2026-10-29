@@ -1,0 +1,48 @@
+---
+title: File List
+description: A compact list of files with icons, sizes and links.
+---
+
+import { FileListBasic, FileListLinked } from "@veil-ui/registry/file-list/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add file-list" />
+
+## Usage
+
+```tsx
+import { FileList } from "@/components/ui/file-list";
+
+<FileList
+  items={[
+    { id: "1", name: "brand-guide.pdf", size: "4.2 MB", kind: "pdf" },
+    { id: "2", name: "hero.png", size: "860 KB", kind: "image" },
+  ]}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["file-list"]["basic"]}>
+  <FileListBasic />
+</ComponentPreview>
+
+### Linked
+
+<ComponentPreview code={demoSource["file-list"]["linked"]}>
+  <FileListLinked />
+</ComponentPreview>
+
+## API reference
+
+The package exports `file-list` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Media players use native `<video>` and `<audio>` controls with accessible labels.
+- Images require meaningful `alt` text; clickable thumbnails are buttons named `Play <title>`.
+- Decorative play overlays, durations and icons are hidden from assistive technology.

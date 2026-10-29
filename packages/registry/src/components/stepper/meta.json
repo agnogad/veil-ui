@@ -1,0 +1,10 @@
+{
+  "name": "stepper",
+  "title": "Stepper",
+  "description": "A multi-step progress indicator in horizontal or vertical layouts.",
+  "category": "navigation",
+  "type": "registry:ui",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "vertical"]
+}

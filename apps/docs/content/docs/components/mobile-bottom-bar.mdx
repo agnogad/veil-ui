@@ -1,0 +1,46 @@
+---
+title: Mobile Bottom Bar
+description: A sticky bottom action bar that respects the safe area.
+---
+
+import { MobileBottomBarBasic, MobileBottomBarCheckout } from "@veil-ui/registry/mobile-bottom-bar/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add mobile-bottom-bar" />
+
+## Usage
+
+```tsx
+import { MobileBottomBar } from "@/components/ui/mobile-bottom-bar";
+
+<MobileBottomBar>
+  <Button variant="outline" className="flex-1">Cancel</Button>
+  <Button className="flex-1">Save changes</Button>
+</MobileBottomBar>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["mobile-bottom-bar"]["basic"]}>
+  <MobileBottomBarBasic />
+</ComponentPreview>
+
+### Checkout
+
+<ComponentPreview code={demoSource["mobile-bottom-bar"]["checkout"]}>
+  <MobileBottomBarCheckout />
+</ComponentPreview>
+
+## API reference
+
+The package exports `mobile-bottom-bar` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Touch targets are large enough to tap comfortably and keep visible focus rings for keyboard and switch users.
+- Gesture interactions (swipe, pull to refresh) have visible button alternatives so they are not the only way to act.
+- Sheets, drawers and dialogs follow the underlying accessible primitives for focus trapping and escape handling.

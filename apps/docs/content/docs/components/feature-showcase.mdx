@@ -1,0 +1,51 @@
+---
+title: Feature Showcase
+description: Alternating feature rows with copy, bullets and media.
+---
+
+import { FeatureShowcaseBasic, FeatureShowcaseSingle } from "@veil-ui/registry/feature-showcase/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add feature-showcase" />
+
+## Usage
+
+```tsx
+import { FeatureShowcase } from "@/components/ui/feature-showcase";
+
+<FeatureShowcase
+  features={[
+    {
+      title: "Design tokens that travel",
+      description: "One source of truth for every component.",
+      bullets: ["Light and dark themes", "CSS variables"],
+    },
+  ]}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["feature-showcase"]["basic"]}>
+  <FeatureShowcaseBasic />
+</ComponentPreview>
+
+### Single
+
+<ComponentPreview code={demoSource["feature-showcase"]["single"]}>
+  <FeatureShowcaseSingle />
+</ComponentPreview>
+
+## API reference
+
+The package exports `feature-showcase` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Pages keep a single `h1` in the hero and use `h2`/`h3` for section hierarchy.
+- Call-to-action elements are real links or buttons with discernible labels.
+- Decorative icons are `aria-hidden` and meaningful images require `alt` text.

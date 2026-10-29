@@ -1,0 +1,10 @@
+{
+  "name": "resizable-panel",
+  "title": "Resizable Panel",
+  "description": "Resizable panel groups with drag handles and keyboard support.",
+  "category": "layout",
+  "type": "registry:ui",
+  "dependencies": ["react-resizable-panels", "lucide-react"],
+  "registryDependencies": ["utils"],
+  "examples": ["horizontal", "vertical", "with-handle"]
+}

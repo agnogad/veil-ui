@@ -1,0 +1,47 @@
+---
+title: MultiSelect
+description: A popover list of checkboxes with multi-value state and a summary trigger.
+---
+
+import { MultiselectBasic, MultiselectControlled } from "@veil-ui/registry/multiselect/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add multiselect" />
+
+## Usage
+
+```tsx
+import { MultiSelect } from "@/components/ui/multiselect";
+
+<MultiSelect
+  label="Labels"
+  options={labels}
+  onValueChange={setSelected}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["multiselect"]["basic"]}>
+  <MultiselectBasic />
+</ComponentPreview>
+
+### Controlled
+
+<ComponentPreview code={demoSource["multiselect"]["controlled"]}>
+  <MultiselectControlled />
+</ComponentPreview>
+
+## API reference
+
+The package exports `multiselect` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- The popover is a labelled dialog of checkboxes; selections are announced through the trigger summary.
+- Error and disabled states are exposed through native attributes and Radix data attributes.
+- Focus-visible rings follow the shared token system in both themes.

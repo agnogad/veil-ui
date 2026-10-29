@@ -1,0 +1,23 @@
+{
+  "name": "blog-page",
+  "title": "Blog Page",
+  "description": "A journal index with featured post and article grid.",
+  "category": "pages",
+  "type": "registry:block",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "article-card",
+    "button",
+    "input",
+    "logo",
+    "marketing-footer",
+    "navbar",
+    "pagination"
+  ],
+  "examples": [
+    "basic"
+  ]
+}

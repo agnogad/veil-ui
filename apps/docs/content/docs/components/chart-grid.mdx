@@ -1,0 +1,45 @@
+---
+title: Chart Grid
+description: A themed Cartesian grid for Recharts charts.
+---
+
+import { ChartGridBasic, ChartGridVertical } from "@veil-ui/registry/chart-grid/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add chart-grid" />
+
+## Usage
+
+```tsx
+import { CartesianGrid } from "recharts";
+
+import { ChartGrid } from "@/components/ui/chart-grid";
+
+<ChartGrid />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["chart-grid"]["basic"]}>
+  <ChartGridBasic />
+</ComponentPreview>
+
+### Vertical
+
+<ComponentPreview code={demoSource["chart-grid"]["vertical"]}>
+  <ChartGridVertical />
+</ComponentPreview>
+
+## API reference
+
+The package exports `chart-grid` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Charts render inside a container with an explicit height so they stay responsive without layout shift.
+- Color is never the only encoding; pair charts with labels, summaries or a data table for critical information.
+- Tooltips and legends are rendered as HTML, so their text is available to assistive technology.

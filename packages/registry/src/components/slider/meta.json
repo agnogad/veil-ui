@@ -1,0 +1,10 @@
+{
+  "name": "slider",
+  "title": "Slider",
+  "description": "A single or multi-thumb range input built on Radix Slider.",
+  "category": "forms",
+  "type": "registry:ui",
+  "dependencies": ["@radix-ui/react-slider"],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "step", "disabled"]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "context-menu",
+  "title": "Context Menu",
+  "description": "A right-click menu built on Radix Context Menu.",
+  "category": "navigation",
+  "type": "registry:ui",
+  "dependencies": ["@radix-ui/react-context-menu"],
+  "registryDependencies": ["utils"],
+  "examples": ["basic"]
+}

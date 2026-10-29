@@ -1,0 +1,79 @@
+---
+title: Alert Dialog
+description: A modal confirmation that interrupts the user for destructive actions.
+---
+
+import {
+  AlertDialogBasic,
+  AlertDialogDestructive,
+} from "@veil-ui/registry/alert-dialog/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add alert-dialog" />
+
+## Usage
+
+```tsx
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
+
+<AlertDialog>
+  <AlertDialogTrigger asChild>
+    <button type="button">Delete</button>
+  </AlertDialogTrigger>
+  <AlertDialogContent>
+    <AlertDialogHeader>
+      <AlertDialogTitle>Delete this workspace?</AlertDialogTitle>
+      <AlertDialogDescription>This cannot be undone.</AlertDialogDescription>
+    </AlertDialogHeader>
+    <AlertDialogFooter>
+      <AlertDialogCancel>Cancel</AlertDialogCancel>
+      <AlertDialogAction>Delete</AlertDialogAction>
+    </AlertDialogFooter>
+  </AlertDialogContent>
+</AlertDialog>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["alert-dialog"]["basic"]}>
+  <AlertDialogBasic />
+</ComponentPreview>
+
+### Destructive
+
+<ComponentPreview code={demoSource["alert-dialog"]["destructive"]}>
+  <AlertDialogDestructive />
+</ComponentPreview>
+
+## API reference
+
+### Subcomponents
+
+- `AlertDialog`, `AlertDialogTrigger`, `AlertDialogContent` — root, trigger
+  and portalled modal.
+- `AlertDialogHeader`, `AlertDialogTitle`, `AlertDialogDescription`,
+  `AlertDialogFooter` — layout and required labelling.
+- `AlertDialogAction`, `AlertDialogCancel` — pre-styled destructive and
+  outline buttons.
+
+## Accessibility
+
+- Radix Alert Dialog uses `role="alertdialog"`, traps focus and requires an
+  explicit action or cancel.
+- Escape and overlay clicks cancel; the title labels the dialog and the
+  description is announced with it.
+- Use it only for consequential confirmations, not informational dialogs.

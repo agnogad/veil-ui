@@ -1,0 +1,24 @@
+{
+  "name": "checkout-page",
+  "title": "Checkout Page",
+  "description": "A multi-step checkout with shipping, delivery and payment.",
+  "category": "pages",
+  "type": "registry:block",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "card",
+    "checkbox",
+    "input",
+    "label",
+    "logo",
+    "stepper",
+    "separator"
+  ],
+  "examples": [
+    "basic"
+  ]
+}

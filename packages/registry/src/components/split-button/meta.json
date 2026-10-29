@@ -1,0 +1,10 @@
+{
+  "name": "split-button",
+  "title": "Split Button",
+  "description": "Pairs a primary action with a menu of related actions.",
+  "category": "actions",
+  "type": "registry:ui",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["button", "utils"],
+  "examples": ["basic", "destructive", "align-start"]
+}

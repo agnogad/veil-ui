@@ -1,0 +1,48 @@
+---
+title: Metric Card
+description: A value measured against a target with a progress indicator.
+---
+
+import { MetricCardBasic, MetricCardUnits } from "@veil-ui/registry/metric-card/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add metric-card" />
+
+## Usage
+
+```tsx
+import { MetricCard } from "@/components/ui/metric-card";
+
+<MetricCard
+  label="Monthly revenue"
+  value="$18,240"
+  current={18240}
+  target={25000}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["metric-card"]["basic"]}>
+  <MetricCardBasic />
+</ComponentPreview>
+
+### Units
+
+<ComponentPreview code={demoSource["metric-card"]["units"]}>
+  <MetricCardUnits />
+</ComponentPreview>
+
+## API reference
+
+The package exports `metric-card` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Content uses semantic HTML — lists are lists, tables are tables and metadata uses a definition list.
+- Interactive elements are real buttons or links with visible focus states.
+- Images require meaningful `alt` text; icons used decoratively are `aria-hidden`.

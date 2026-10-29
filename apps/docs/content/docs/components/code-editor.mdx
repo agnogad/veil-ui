@@ -1,0 +1,56 @@
+---
+title: Code Editor
+description: A monospace textarea with line numbers, a language label and tab indentation.
+---
+
+import { CodeEditorBasic, CodeEditorControlled, CodeEditorReadonly } from "@veil-ui/registry/code-editor/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add code-editor" />
+
+## Usage
+
+```tsx
+import { CodeEditor } from "@/components/ui/code-editor";
+
+<CodeEditor
+  label="index.ts"
+  language="ts"
+  defaultValue={code}
+  onValueChange={setCode}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["code-editor"]["basic"]}>
+  <CodeEditorBasic />
+</ComponentPreview>
+
+### Controlled
+
+<ComponentPreview code={demoSource["code-editor"]["controlled"]}>
+  <CodeEditorControlled />
+</ComponentPreview>
+
+### Readonly
+
+<ComponentPreview code={demoSource["code-editor"]["readonly"]}>
+  <CodeEditorReadonly />
+</ComponentPreview>
+
+## API reference
+
+- `value` / `defaultValue` hold the source; `onValueChange` emits on every edit.
+- `language` labels the header and `showLineNumbers` toggles the gutter.
+- `rows`, `readOnly` and `disabled` control the editing surface.
+
+## Accessibility
+
+- The textarea is labelled and keeps the native editing shortcuts.
+- Line numbers are decorative and hidden from assistive technology.
+- Tab inserts two spaces and restores the caret instead of leaving the field.

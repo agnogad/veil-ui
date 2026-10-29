@@ -1,0 +1,30 @@
+{
+  "name": "dashboard-page",
+  "title": "Dashboard Page",
+  "description": "An app dashboard with sidebar, metrics, chart and recent orders.",
+  "category": "pages",
+  "type": "registry:block",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "activity-feed",
+    "app-shell",
+    "area-chart",
+    "avatar",
+    "badge",
+    "button",
+    "card",
+    "input",
+    "kbd",
+    "logo",
+    "navbar",
+    "sidebar",
+    "statistic-card",
+    "table"
+  ],
+  "examples": [
+    "basic"
+  ]
+}

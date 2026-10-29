@@ -1,0 +1,10 @@
+{
+  "name": "truncated-text",
+  "title": "Truncated Text",
+  "description": "Multi-line text clamped to a fixed number of lines with an ellipsis.",
+  "category": "typography",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "single-line"]
+}

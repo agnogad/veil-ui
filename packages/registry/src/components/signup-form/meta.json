@@ -1,0 +1,19 @@
+{
+  "name": "signup-form",
+  "title": "Signup Form",
+  "description": "Account creation form with terms acceptance and validation.",
+  "category": "auth",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "checkbox",
+    "input",
+    "label"
+  ],
+  "examples": [
+    "basic",
+    "with-error"
+  ]
+}

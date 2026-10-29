@@ -1,0 +1,22 @@
+{
+  "name": "profile-editor",
+  "title": "Profile Editor",
+  "description": "A controlled profile editing form with save state.",
+  "category": "auth",
+  "type": "registry:ui",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "avatar",
+    "button",
+    "input",
+    "label",
+    "textarea"
+  ],
+  "examples": [
+    "basic",
+    "empty"
+  ]
+}

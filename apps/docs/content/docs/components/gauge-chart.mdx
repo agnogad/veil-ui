@@ -1,0 +1,43 @@
+---
+title: Gauge Chart
+description: A semicircular gauge showing a value against a maximum.
+---
+
+import { GaugeChartBasic, GaugeChartComplete } from "@veil-ui/registry/gauge-chart/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add gauge-chart" />
+
+## Usage
+
+```tsx
+import { GaugeChart } from "@/components/ui/gauge-chart";
+
+<GaugeChart value={68} label="CPU load" />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["gauge-chart"]["basic"]}>
+  <GaugeChartBasic />
+</ComponentPreview>
+
+### Complete
+
+<ComponentPreview code={demoSource["gauge-chart"]["complete"]}>
+  <GaugeChartComplete />
+</ComponentPreview>
+
+## API reference
+
+The package exports `gauge-chart` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Charts render inside a container with an explicit height so they stay responsive without layout shift.
+- Color is never the only encoding; pair charts with labels, summaries or a data table for critical information.
+- Tooltips and legends are rendered as HTML, so their text is available to assistive technology.

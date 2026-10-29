@@ -1,0 +1,10 @@
+{
+  "name": "banner",
+  "title": "Banner",
+  "description": "A page-level message with an icon, body, actions and dismissal.",
+  "category": "feedback",
+  "type": "registry:ui",
+  "dependencies": ["class-variance-authority", "lucide-react"],
+  "registryDependencies": ["icon-button", "utils"],
+  "examples": ["basic", "with-action", "dismissible", "destructive"]
+}

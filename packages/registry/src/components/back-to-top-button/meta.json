@@ -1,0 +1,10 @@
+{
+  "name": "back-to-top-button",
+  "title": "Back To Top Button",
+  "description": "A floating button that appears after scrolling and returns to the top.",
+  "category": "actions",
+  "type": "registry:ui",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["button", "utils"],
+  "examples": ["basic", "outline", "controlled"]
+}

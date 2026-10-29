@@ -1,0 +1,78 @@
+---
+title: Error Boundary
+description: Catches render errors in a subtree and shows a recoverable fallback.
+---
+
+import {
+  ErrorBoundaryBasic,
+  ErrorBoundaryCustomFallback,
+} from "@veil-ui/registry/error-boundary/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add error-boundary" />
+
+## Usage
+
+```tsx
+import { ErrorBoundary } from "@/components/ui/error-boundary";
+
+<ErrorBoundary onError={(error) => report(error)} fallback={({ reset }) => (
+  <button type="button" onClick={reset}>
+    Try again
+  </button>
+)}>
+  <Dashboard />
+</ErrorBoundary>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["error-boundary"]["basic"]}>
+  <ErrorBoundaryBasic />
+</ComponentPreview>
+
+### Custom fallback
+
+<ComponentPreview code={demoSource["error-boundary"]["custom-fallback"]}>
+  <ErrorBoundaryCustomFallback />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      type: "React.ReactNode",
+      required: true,
+      description: "Subtree protected by the boundary.",
+    },
+    {
+      name: "fallback",
+      type: "ReactNode | ({ error, reset }) => ReactNode",
+      description: "Static or render-prop fallback; defaults to an alert panel.",
+    },
+    {
+      name: "onError",
+      type: "(error, info) => void",
+      description: "Called from componentDidCatch for logging.",
+    },
+    {
+      name: "className",
+      type: "string",
+      description: "Applies to the default fallback.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- The default fallback is a `role="alert"` region with the error message and
+  a labelled “Try again” button.
+- Always provide a way to recover; resetting re-mounts the children.
+- Error boundaries do not catch async or event-handler errors; handle those
+  locally.

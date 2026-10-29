@@ -1,0 +1,43 @@
+---
+title: Media Player
+description: A single player that renders video or audio by kind.
+---
+
+import { MediaPlayerBasic, MediaPlayerAudio } from "@veil-ui/registry/media-player/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add media-player" />
+
+## Usage
+
+```tsx
+import { MediaPlayer } from "@/components/ui/media-player";
+
+<MediaPlayer kind="video" src="/clip.mp4" poster="/poster.jpg" title="Spring in motion" />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["media-player"]["basic"]}>
+  <MediaPlayerBasic />
+</ComponentPreview>
+
+### Audio
+
+<ComponentPreview code={demoSource["media-player"]["audio"]}>
+  <MediaPlayerAudio />
+</ComponentPreview>
+
+## API reference
+
+The package exports `media-player` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Media players use native `<video>` and `<audio>` controls with accessible labels.
+- Images require meaningful `alt` text; clickable thumbnails are buttons named `Play <title>`.
+- Decorative play overlays, durations and icons are hidden from assistive technology.

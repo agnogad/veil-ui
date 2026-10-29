@@ -1,0 +1,51 @@
+---
+title: Country Select
+description: A searchable country picker with flags and dial codes built on cmdk.
+---
+
+import { CountrySelectBasic, CountrySelectControlled, CountrySelectDialCode } from "@veil-ui/registry/country-select/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add country-select" />
+
+## Usage
+
+```tsx
+import { CountrySelect } from "@/components/ui/country-select";
+
+<CountrySelect label="Country" value={country} onValueChange={setCountry} />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["country-select"]["basic"]}>
+  <CountrySelectBasic />
+</ComponentPreview>
+
+### Controlled
+
+<ComponentPreview code={demoSource["country-select"]["controlled"]}>
+  <CountrySelectControlled />
+</ComponentPreview>
+
+### Dial code
+
+<ComponentPreview code={demoSource["country-select"]["dial-code"]}>
+  <CountrySelectDialCode />
+</ComponentPreview>
+
+## API reference
+
+- `value` / `defaultValue` hold the ISO country code; `onValueChange` emits the selected code.
+- `display` switches the trigger between the country name and its dial code.
+- `countries` overrides the built-in list; `countries`, `flagEmoji` and `Country` are exported for reuse.
+
+## Accessibility
+
+- The trigger is a labelled `combobox` that expands into a searchable listbox.
+- Typing filters by country name and code; arrows move and Enter selects.
+- Flags are decorative and the country name is always part of the option label.

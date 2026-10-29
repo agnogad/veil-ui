@@ -1,0 +1,45 @@
+---
+title: Input with Icon
+description: An input with a leading or trailing decorative icon.
+---
+
+import { InputWithIconBasic, InputWithIconTrailing } from "@veil-ui/registry/input-with-icon/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add input-with-icon" />
+
+## Usage
+
+```tsx
+import { Search } from "lucide-react";
+
+import { InputWithIcon } from "@/components/ui/input-with-icon";
+
+<InputWithIcon icon={Search} placeholder="Search…" aria-label="Search" />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["input-with-icon"]["basic"]}>
+  <InputWithIconBasic />
+</ComponentPreview>
+
+### Trailing
+
+<ComponentPreview code={demoSource["input-with-icon"]["trailing"]}>
+  <InputWithIconTrailing />
+</ComponentPreview>
+
+## API reference
+
+The package exports `input-with-icon` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- The decorative icon is `aria-hidden`; the input keeps its own accessible name from a label or `aria-label`.
+- Error and disabled states are exposed through native attributes and Radix data attributes.
+- Focus-visible rings follow the shared token system in both themes.

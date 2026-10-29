@@ -1,0 +1,15 @@
+{
+  "name": "video-player",
+  "title": "Video Player",
+  "description": "A native video player with poster and caption support.",
+  "category": "media",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "auto-play"
+  ]
+}

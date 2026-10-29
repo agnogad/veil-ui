@@ -1,0 +1,10 @@
+{
+  "name": "circular-progress",
+  "title": "Circular Progress",
+  "description": "An SVG ring showing determinate progress with an optional value.",
+  "category": "feedback",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "sizes"]
+}

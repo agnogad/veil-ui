@@ -1,0 +1,43 @@
+---
+title: Product Card
+description: A product tile with image, price, rating and an add-to-cart action.
+---
+
+import { ProductCardBasic, ProductCardSale } from "@veil-ui/registry/product-card/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add product-card" />
+
+## Usage
+
+```tsx
+import { ProductCard } from "@/components/ui/product-card";
+
+<ProductCard src="/watch.jpg" alt="Minimal watch" name="Minimal watch" price={129} />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["product-card"]["basic"]}>
+  <ProductCardBasic />
+</ComponentPreview>
+
+### Sale
+
+<ComponentPreview code={demoSource["product-card"]["sale"]}>
+  <ProductCardSale />
+</ComponentPreview>
+
+## API reference
+
+The package exports `product-card` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Content uses semantic HTML — lists are lists, tables are tables and metadata uses a definition list.
+- Interactive elements are real buttons or links with visible focus states.
+- Images require meaningful `alt` text; icons used decoratively are `aria-hidden`.

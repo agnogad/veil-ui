@@ -1,0 +1,10 @@
+{
+  "name": "navigation-drawer",
+  "title": "Navigation Drawer",
+  "description": "A slide-in navigation panel built on Radix Dialog.",
+  "category": "navigation",
+  "type": "registry:ui",
+  "dependencies": ["@radix-ui/react-dialog", "lucide-react"],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "right"]
+}

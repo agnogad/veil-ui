@@ -1,0 +1,47 @@
+---
+title: Bar Chart
+description: A responsive bar chart with optional stacking.
+---
+
+import { BarChartBasic, BarChartStacked } from "@veil-ui/registry/bar-chart/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add bar-chart" />
+
+## Usage
+
+```tsx
+import { BarChart } from "@/components/ui/bar-chart";
+
+<BarChart
+  data={data}
+  config={{ orders: { label: "Orders" } }}
+  xKey="week"
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["bar-chart"]["basic"]}>
+  <BarChartBasic />
+</ComponentPreview>
+
+### Stacked
+
+<ComponentPreview code={demoSource["bar-chart"]["stacked"]}>
+  <BarChartStacked />
+</ComponentPreview>
+
+## API reference
+
+The package exports `bar-chart` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Charts render inside a container with an explicit height so they stay responsive without layout shift.
+- Color is never the only encoding; pair charts with labels, summaries or a data table for critical information.
+- Tooltips and legends are rendered as HTML, so their text is available to assistive technology.

@@ -1,0 +1,71 @@
+---
+title: Back Button
+description: A button that returns to the previous page with a fallback URL.
+---
+
+import {
+  BackButtonBasic,
+  BackButtonOutline,
+} from "@veil-ui/registry/back-button/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add back-button" />
+
+## Usage
+
+```tsx
+import { BackButton } from "@/components/ui/back-button";
+
+<BackButton fallbackHref="/dashboard" />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["back-button"]["basic"]}>
+  <BackButtonBasic />
+</ComponentPreview>
+
+### Outline
+
+<ComponentPreview code={demoSource["back-button"]["outline"]}>
+  <BackButtonOutline />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "label",
+      type: "string",
+      default: '"Back"',
+      description: "Visible and accessible label.",
+    },
+    {
+      name: "fallbackHref",
+      type: "string",
+      description: "Navigated to when there is no history entry.",
+    },
+    {
+      name: "showIcon",
+      type: "boolean",
+      default: "true",
+      description: "Shows the leading arrow icon.",
+    },
+    {
+      name: "onClick",
+      type: "() => void",
+      description: "Overrides the default history navigation.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Renders a real button with an icon plus visible text.
+- The arrow icon is decorative and hidden from assistive technology.
+- Pair `fallbackHref` with a stable destination for deep links.

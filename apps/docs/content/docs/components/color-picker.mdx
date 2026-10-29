@@ -1,0 +1,51 @@
+---
+title: Color Picker
+description: A hex input, native color field and preset swatches in a popover.
+---
+
+import { ColorPickerBasic, ColorPickerPresets, ColorPickerDisabled } from "@veil-ui/registry/color-picker/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add color-picker" />
+
+## Usage
+
+```tsx
+import { ColorPicker } from "@/components/ui/color-picker";
+
+<ColorPicker label="Brand color" value={color} onValueChange={setColor} />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["color-picker"]["basic"]}>
+  <ColorPickerBasic />
+</ComponentPreview>
+
+### Presets
+
+<ComponentPreview code={demoSource["color-picker"]["presets"]}>
+  <ColorPickerPresets />
+</ComponentPreview>
+
+### Disabled
+
+<ComponentPreview code={demoSource["color-picker"]["disabled"]}>
+  <ColorPickerDisabled />
+</ComponentPreview>
+
+## API reference
+
+- `value` / `defaultValue` use hex strings; the input accepts 3- and 6-digit values and normalises them.
+- `presets` renders quick swatches with `aria-pressed` state.
+- `label`, `disabled` and `className` apply to the trigger and panel.
+
+## Accessibility
+
+- The native color field and hex field each have explicit labels tied to `label`.
+- Preset buttons announce `Use #hex` and their pressed state.
+- The popover closes with Escape and returns focus to the trigger.

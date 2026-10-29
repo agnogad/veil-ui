@@ -1,0 +1,43 @@
+---
+title: Navigation Menu Item
+description: Alias entry that re-exports NavigationMenuItem.
+---
+
+import { NavigationMenuItemBasic } from "@veil-ui/registry/navigation-menu-item/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add navigation-menu-item" />
+
+## Usage
+
+```tsx
+import { NavigationMenuItem } from "@/components/ui/navigation-menu-item";
+
+<NavigationMenuList>
+  <NavigationMenuItem>
+    <NavigationMenuLink href="/docs">Docs</NavigationMenuLink>
+  </NavigationMenuItem>
+</NavigationMenuList>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["navigation-menu-item"]["basic"]}>
+  <NavigationMenuItemBasic />
+</ComponentPreview>
+
+## API reference
+
+`NavigationMenuItem` re-exports the item from
+[`Navigation Menu`](/docs/components/navigation-menu); it renders a list item
+that participates in the menu's roving focus.
+
+## Accessibility
+
+- Keep items as direct children of `NavigationMenuList`.
+- The item itself is presentational; accessible names come from links or
+  triggers inside it.

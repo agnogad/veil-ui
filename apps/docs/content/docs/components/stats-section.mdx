@@ -1,0 +1,48 @@
+---
+title: Stats Section
+description: A band of headline metrics with labels and captions.
+---
+
+import { StatsSectionBasic, StatsSectionCompact } from "@veil-ui/registry/stats-section/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add stats-section" />
+
+## Usage
+
+```tsx
+import { StatsSection } from "@/components/ui/stats-section";
+
+<StatsSection
+  stats={[
+    { value: "120k+", label: "Downloads" },
+    { value: "480+", label: "Components" },
+  ]}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["stats-section"]["basic"]}>
+  <StatsSectionBasic />
+</ComponentPreview>
+
+### Compact
+
+<ComponentPreview code={demoSource["stats-section"]["compact"]}>
+  <StatsSectionCompact />
+</ComponentPreview>
+
+## API reference
+
+The package exports `stats-section` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Pages keep a single `h1` in the hero and use `h2`/`h3` for section hierarchy.
+- Call-to-action elements are real links or buttons with discernible labels.
+- Decorative icons are `aria-hidden` and meaningful images require `alt` text.

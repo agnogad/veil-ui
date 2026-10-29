@@ -1,0 +1,10 @@
+{
+  "name": "calendar",
+  "title": "Calendar",
+  "description": "A date grid with single, multiple and range selection built on react-day-picker.",
+  "category": "forms",
+  "type": "registry:ui",
+  "dependencies": ["react-day-picker", "lucide-react"],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "range", "dropdown", "disabled"]
+}

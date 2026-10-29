@@ -1,0 +1,10 @@
+{
+  "name": "accordion",
+  "title": "Accordion",
+  "description": "Vertically stacked disclosure panels built on Radix Accordion.",
+  "category": "overlays",
+  "type": "registry:ui",
+  "dependencies": ["@radix-ui/react-accordion", "lucide-react"],
+  "registryDependencies": ["utils"],
+  "examples": ["single", "multiple", "default-open"]
+}

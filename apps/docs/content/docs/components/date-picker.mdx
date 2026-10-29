@@ -1,0 +1,51 @@
+---
+title: Date Picker
+description: A calendar in a popover for choosing a single date.
+---
+
+import { DatePickerBasic, DatePickerControlled, DatePickerDisabled } from "@veil-ui/registry/date-picker/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add date-picker" />
+
+## Usage
+
+```tsx
+import { DatePicker } from "@/components/ui/date-picker";
+
+<DatePicker label="Start date" value={date} onValueChange={setDate} />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["date-picker"]["basic"]}>
+  <DatePickerBasic />
+</ComponentPreview>
+
+### Controlled
+
+<ComponentPreview code={demoSource["date-picker"]["controlled"]}>
+  <DatePickerControlled />
+</ComponentPreview>
+
+### Disabled
+
+<ComponentPreview code={demoSource["date-picker"]["disabled"]}>
+  <DatePickerDisabled />
+</ComponentPreview>
+
+## API reference
+
+- `value` / `defaultValue` hold the selected `Date`; `onValueChange` fires with `undefined` when cleared.
+- `placeholder`, `label`, `disabled`, `formatDate`, `fromDate` and `toDate` shape the trigger and the selectable window.
+- Selecting a day commits the value and closes the popover.
+
+## Accessibility
+
+- The trigger is a labelled `combobox` with `aria-haspopup="dialog"` and exposes the formatted value.
+- The popover traps focus, closes on Escape and returns focus to the trigger.
+- The inner calendar keeps its full keyboard grid navigation.

@@ -1,0 +1,47 @@
+---
+title: Testimonials Section
+description: A responsive grid of customer testimonial cards.
+---
+
+import { TestimonialsSectionBasic, TestimonialsSectionPair } from "@veil-ui/registry/testimonials-section/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add testimonials-section" />
+
+## Usage
+
+```tsx
+import { TestimonialsSection } from "@/components/ui/testimonials-section";
+
+<TestimonialsSection
+  testimonials={[
+    { quote: "We shipped two weeks early.", name: "Mira Chen", role: "Product lead", rating: 5 },
+  ]}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["testimonials-section"]["basic"]}>
+  <TestimonialsSectionBasic />
+</ComponentPreview>
+
+### Pair
+
+<ComponentPreview code={demoSource["testimonials-section"]["pair"]}>
+  <TestimonialsSectionPair />
+</ComponentPreview>
+
+## API reference
+
+The package exports `testimonials-section` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Pages keep a single `h1` in the hero and use `h2`/`h3` for section hierarchy.
+- Call-to-action elements are real links or buttons with discernible labels.
+- Decorative icons are `aria-hidden` and meaningful images require `alt` text.

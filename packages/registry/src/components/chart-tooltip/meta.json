@@ -1,0 +1,16 @@
+{
+  "name": "chart-tooltip",
+  "title": "Chart Tooltip",
+  "description": "The chart tooltip and its custom content renderer.",
+  "category": "charts",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "chart",
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "compact"
+  ]
+}

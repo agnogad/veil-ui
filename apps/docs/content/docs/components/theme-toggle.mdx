@@ -1,0 +1,79 @@
+---
+title: Theme Toggle
+description: Switches between light and dark themes and remembers the choice.
+---
+
+import {
+  ThemeToggleBasic,
+  ThemeToggleOutline,
+  ThemeToggleSizes,
+} from "@veil-ui/registry/theme-toggle/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add theme-toggle" />
+
+## Usage
+
+```tsx
+import { ThemeToggle } from "@/components/ui/theme-toggle";
+
+<ThemeToggle />;
+```
+
+The toggle flips the `dark` class on `<html>` and stores the choice in
+`localStorage` under `veil-theme`.
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["theme-toggle"].basic}>
+  <ThemeToggleBasic />
+</ComponentPreview>
+
+### Sizes
+
+<ComponentPreview code={demoSource["theme-toggle"].sizes}>
+  <ThemeToggleSizes />
+</ComponentPreview>
+
+### Outline
+
+<ComponentPreview code={demoSource["theme-toggle"].outline}>
+  <ThemeToggleOutline />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "storageKey",
+      type: "string",
+      default: '"veil-theme"',
+      description: "localStorage key used to persist the choice.",
+    },
+    {
+      name: "variant",
+      type: '"default" | "secondary" | "outline" | "ghost" | "destructive"',
+      default: '"ghost"',
+      description: "Visual style of the icon button.",
+    },
+    {
+      name: "size",
+      type: '"sm" | "default" | "lg"',
+      default: '"default"',
+      description: "Control size.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- The accessible name tracks the next action: “Switch to dark theme” or
+  “Switch to light theme”.
+- `aria-pressed` reports whether dark mode is active.
+- Storage errors are swallowed, so the toggle still works when storage is
+  blocked.

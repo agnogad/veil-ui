@@ -1,0 +1,14 @@
+{
+  "name": "date-picker",
+  "title": "Date Picker",
+  "description": "A calendar in a popover for choosing a single date.",
+  "category": "forms",
+  "type": "registry:ui",
+  "dependencies": [
+    "@radix-ui/react-popover",
+    "react-day-picker",
+    "lucide-react"
+  ],
+  "registryDependencies": ["button", "calendar", "utils"],
+  "examples": ["basic", "controlled", "disabled"]
+}

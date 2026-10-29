@@ -1,0 +1,48 @@
+---
+title: Lightbox
+description: A full-screen image viewer with previous and next controls.
+---
+
+import { LightboxBasic, LightboxControlled } from "@veil-ui/registry/lightbox/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add lightbox" />
+
+## Usage
+
+```tsx
+import { Lightbox } from "@/components/ui/lightbox";
+
+<Lightbox
+  images={photos}
+  trigger={<button type="button">View gallery</button>}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["lightbox"]["basic"]}>
+  <LightboxBasic />
+</ComponentPreview>
+
+### Controlled
+
+<ComponentPreview code={demoSource["lightbox"]["controlled"]}>
+  <LightboxControlled />
+</ComponentPreview>
+
+## API reference
+
+- `images` is an array of `{ src, alt }`; `index` / `defaultIndex` and `onIndexChange` track the current image.
+- `open` / `defaultOpen` and `onOpenChange` control visibility; `trigger` is optional.
+- Navigation wraps around and the counter is announced through `aria-live`.
+
+## Accessibility
+
+- The viewer is a labelled dialog that traps focus until dismissed.
+- Arrow keys move between images and the close button is labelled `Close lightbox`.
+- Every image carries its `alt` text and the position is announced as `N / total`.

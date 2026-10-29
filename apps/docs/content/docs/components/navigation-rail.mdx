@@ -1,0 +1,72 @@
+---
+title: Navigation Rail
+description: A slim vertical icon rail for app-level destinations.
+---
+
+import {
+  NavigationRailActive,
+  NavigationRailBasic,
+} from "@veil-ui/registry/navigation-rail/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add navigation-rail" />
+
+## Usage
+
+```tsx
+import { Home, Search } from "lucide-react";
+import { NavigationRail } from "@/components/ui/navigation-rail";
+
+<NavigationRail
+  items={[
+    { label: "Home", icon: Home, href: "/", active: true },
+    { label: "Search", icon: Search, href: "/search" },
+  ]}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["navigation-rail"]["basic"]}>
+  <NavigationRailBasic />
+</ComponentPreview>
+
+### Active
+
+<ComponentPreview code={demoSource["navigation-rail"]["active"]}>
+  <NavigationRailActive />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "items",
+      type: "{ label; icon; href?; active? }[]",
+      required: true,
+      description: "Rail destinations with icons and labels.",
+    },
+    {
+      name: "label",
+      type: "string",
+      default: '"Navigation"',
+      description: "Accessible name for the nav landmark.",
+    },
+    {
+      name: "onSelect",
+      type: "(item) => void",
+      description: "Called instead of navigating when an item is clicked.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Icons are hidden from screen readers; labels are rendered visually hidden
+  inside each link.
+- The active item gets `aria-current="page"` and a visible indicator bar.

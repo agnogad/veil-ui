@@ -1,0 +1,18 @@
+{
+  "name": "file-card",
+  "title": "File Card",
+  "description": "A file summary with type icon, size and optional actions.",
+  "category": "data-display",
+  "type": "registry:ui",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "card",
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "with-actions"
+  ]
+}

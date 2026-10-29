@@ -1,0 +1,40 @@
+---
+title: List Item
+description: A re-export of the List View item primitive.
+---
+
+import { ListItemBasic } from "@veil-ui/registry/list-item/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add list-item" />
+
+## Usage
+
+```tsx
+import { ListView } from "@/components/ui/list-view";
+import { ListItem } from "@/components/ui/list-item";
+
+<ListView label="Queue">
+  <ListItem title="Review pull request" description="Assigned to you" />
+</ListView>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["list-item"]["basic"]}>
+  <ListItemBasic />
+</ComponentPreview>
+
+## API reference
+
+The package exports `list-item` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Content uses semantic HTML — lists are lists, tables are tables and metadata uses a definition list.
+- Interactive elements are real buttons or links with visible focus states.
+- Images require meaningful `alt` text; icons used decoratively are `aria-hidden`.

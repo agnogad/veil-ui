@@ -1,0 +1,10 @@
+{
+  "name": "download-button",
+  "title": "Download Button",
+  "description": "A button-styled download link with a file name hint.",
+  "category": "actions",
+  "type": "registry:ui",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["button", "utils"],
+  "examples": ["basic", "file-name", "outline"]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "markdown",
+  "title": "Markdown",
+  "description": "Render markdown strings with GFM tables, code and styled elements.",
+  "category": "typography",
+  "type": "registry:ui",
+  "dependencies": ["react-markdown", "remark-gfm"],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "gfm"]
+}

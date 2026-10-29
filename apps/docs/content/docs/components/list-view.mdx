@@ -1,0 +1,46 @@
+---
+title: List View
+description: A bordered list of rich items with leading and trailing slots.
+---
+
+import { ListViewBasic, ListViewCompact } from "@veil-ui/registry/list-view/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add list-view" />
+
+## Usage
+
+```tsx
+import { ListItem, ListView } from "@/components/ui/list-view";
+
+<ListView label="Files">
+  <ListItem title="proposal.pdf" description="2.4 MB" />
+  <ListItem title="hero.png" description="860 KB" />
+</ListView>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["list-view"]["basic"]}>
+  <ListViewBasic />
+</ComponentPreview>
+
+### Compact
+
+<ComponentPreview code={demoSource["list-view"]["compact"]}>
+  <ListViewCompact />
+</ComponentPreview>
+
+## API reference
+
+The package exports `list-view` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Content uses semantic HTML — lists are lists, tables are tables and metadata uses a definition list.
+- Interactive elements are real buttons or links with visible focus states.
+- Images require meaningful `alt` text; icons used decoratively are `aria-hidden`.

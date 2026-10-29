@@ -1,0 +1,14 @@
+{
+  "name": "combobox",
+  "title": "Combobox",
+  "description": "A searchable single-select popover powered by cmdk.",
+  "category": "forms",
+  "type": "registry:ui",
+  "dependencies": [
+    "@radix-ui/react-popover",
+    "cmdk",
+    "lucide-react"
+  ],
+  "registryDependencies": ["button", "utils"],
+  "examples": ["basic", "disabled"]
+}

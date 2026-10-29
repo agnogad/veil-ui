@@ -1,0 +1,48 @@
+---
+title: User Card
+description: A compact user profile with handle, bio, stats and an action.
+---
+
+import { UserCardBasic, UserCardWithAction } from "@veil-ui/registry/user-card/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add user-card" />
+
+## Usage
+
+```tsx
+import { UserCard } from "@/components/ui/user-card";
+
+<UserCard
+  name="Ada Lovelace"
+  handle="ada"
+  bio="Mathematician and writer."
+  stats={[{ label: "followers", value: "12.4k" }]}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["user-card"]["basic"]}>
+  <UserCardBasic />
+</ComponentPreview>
+
+### With action
+
+<ComponentPreview code={demoSource["user-card"]["with-action"]}>
+  <UserCardWithAction />
+</ComponentPreview>
+
+## API reference
+
+The package exports `user-card` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Content uses semantic HTML — lists are lists, tables are tables and metadata uses a definition list.
+- Interactive elements are real buttons or links with visible focus states.
+- Images require meaningful `alt` text; icons used decoratively are `aria-hidden`.

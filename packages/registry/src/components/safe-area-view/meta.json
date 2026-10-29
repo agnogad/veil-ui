@@ -1,0 +1,15 @@
+{
+  "name": "safe-area-view",
+  "title": "Safe Area View",
+  "description": "A wrapper that applies device safe-area insets on selected edges.",
+  "category": "mobile",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "bottom-only"
+  ]
+}

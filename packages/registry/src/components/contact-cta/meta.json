@@ -1,0 +1,17 @@
+{
+  "name": "contact-cta",
+  "title": "Contact CTA",
+  "description": "A contact band with email, phone and a primary action.",
+  "category": "marketing",
+  "type": "registry:ui",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "compact"
+  ]
+}

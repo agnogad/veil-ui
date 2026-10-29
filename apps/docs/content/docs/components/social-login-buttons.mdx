@@ -1,0 +1,46 @@
+---
+title: Social Login Buttons
+description: A stack of social provider sign-in buttons.
+---
+
+import { SocialLoginButtonsBasic, SocialLoginButtonsPair } from "@veil-ui/registry/social-login-buttons/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add social-login-buttons" />
+
+## Usage
+
+```tsx
+import { SocialLoginButtons } from "@/components/ui/social-login-buttons";
+
+<SocialLoginButtons
+  providers={["github", "google", "apple"]}
+  onSelect={startOAuth}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["social-login-buttons"]["basic"]}>
+  <SocialLoginButtonsBasic />
+</ComponentPreview>
+
+### Pair
+
+<ComponentPreview code={demoSource["social-login-buttons"]["pair"]}>
+  <SocialLoginButtonsPair />
+</ComponentPreview>
+
+## API reference
+
+The package exports `social-login-buttons` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Forms use native inputs with associated labels and descriptive error text.
+- Submission states are announced through disabled controls and live error messaging.
+- Social providers are buttons with discernible provider names.

@@ -1,0 +1,17 @@
+{
+  "name": "feature-showcase",
+  "title": "Feature Showcase",
+  "description": "Alternating feature rows with copy, bullets and media.",
+  "category": "marketing",
+  "type": "registry:ui",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "single"
+  ]
+}

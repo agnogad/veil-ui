@@ -1,0 +1,71 @@
+---
+title: Modal
+description: A centered dialog with overlay, header, footer and a close button.
+---
+
+import { ModalBasic, ModalForm, ModalNoCloseButton } from "@veil-ui/registry/modal/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add modal" />
+
+## Usage
+
+```tsx
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/modal";
+
+<Dialog>
+  <DialogTrigger asChild>
+    <button type="button">Open modal</button>
+  </DialogTrigger>
+  <DialogContent>
+    <DialogHeader>
+      <DialogTitle>Edit profile</DialogTitle>
+      <DialogDescription>Update your details and save.</DialogDescription>
+    </DialogHeader>
+    {/* form fields */}
+    <DialogFooter>{/* actions */}</DialogFooter>
+  </DialogContent>
+</Dialog>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["modal"]["basic"]}>
+  <ModalBasic />
+</ComponentPreview>
+
+### Form
+
+<ComponentPreview code={demoSource["modal"]["form"]}>
+  <ModalForm />
+</ComponentPreview>
+
+### No close button
+
+<ComponentPreview code={demoSource["modal"]["no-close-button"]}>
+  <ModalNoCloseButton />
+</ComponentPreview>
+
+## API reference
+
+- `Dialog` is the root and `DialogTrigger` opens it; both accept controlled `open` / `onOpenChange`.
+- `DialogContent` renders a portal, overlay and close button (`showCloseButton` opts out).
+- `DialogHeader`, `DialogTitle`, `DialogDescription` and `DialogFooter` compose the layout.
+
+## Accessibility
+
+- Uses `role="dialog"` with a required title and optional description for the accessible name.
+- Focus is trapped inside, Escape and the overlay close it, and focus returns to the trigger.
+- The default close button is labelled `Close dialog`.

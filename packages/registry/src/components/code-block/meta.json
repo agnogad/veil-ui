@@ -1,0 +1,10 @@
+{
+  "name": "code-block",
+  "title": "Code Block",
+  "description": "A preformatted code sample with a filename, line numbers and copy button.",
+  "category": "typography",
+  "type": "registry:ui",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "filename", "line-numbers"]
+}

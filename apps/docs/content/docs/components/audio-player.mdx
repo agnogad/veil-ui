@@ -1,0 +1,43 @@
+---
+title: Audio Player
+description: A titled native audio player inside a card.
+---
+
+import { AudioPlayerBasic, AudioPlayerMinimal } from "@veil-ui/registry/audio-player/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add audio-player" />
+
+## Usage
+
+```tsx
+import { AudioPlayer } from "@/components/ui/audio-player";
+
+<AudioPlayer src="/track.mp3" title="Product walkthrough" artist="Veil team" />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["audio-player"]["basic"]}>
+  <AudioPlayerBasic />
+</ComponentPreview>
+
+### Minimal
+
+<ComponentPreview code={demoSource["audio-player"]["minimal"]}>
+  <AudioPlayerMinimal />
+</ComponentPreview>
+
+## API reference
+
+The package exports `audio-player` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Media players use native `<video>` and `<audio>` controls with accessible labels.
+- Images require meaningful `alt` text; clickable thumbnails are buttons named `Play <title>`.
+- Decorative play overlays, durations and icons are hidden from assistive technology.

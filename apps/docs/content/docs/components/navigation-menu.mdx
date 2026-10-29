@@ -1,0 +1,71 @@
+---
+title: Navigation Menu
+description: Radix navigation menu primitives with dropdown panels.
+---
+
+import {
+  NavigationMenuBasic,
+  NavigationMenuGrid,
+} from "@veil-ui/registry/navigation-menu/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add navigation-menu" />
+
+## Usage
+
+```tsx
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
+
+<NavigationMenu>
+  <NavigationMenuList>
+    <NavigationMenuItem>
+      <NavigationMenuTrigger>Products</NavigationMenuTrigger>
+      <NavigationMenuContent>
+        <NavigationMenuLink href="/analytics">Analytics</NavigationMenuLink>
+      </NavigationMenuContent>
+    </NavigationMenuItem>
+  </NavigationMenuList>
+</NavigationMenu>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["navigation-menu"]["basic"]}>
+  <NavigationMenuBasic />
+</ComponentPreview>
+
+### Grid
+
+<ComponentPreview code={demoSource["navigation-menu"]["grid"]}>
+  <NavigationMenuGrid />
+</ComponentPreview>
+
+## API reference
+
+### Subcomponents
+
+- `NavigationMenu` — root viewport provider.
+- `NavigationMenuList`, `NavigationMenuItem` — list structure.
+- `NavigationMenuTrigger` — button that opens a panel; the chevron rotates
+  while open.
+- `NavigationMenuContent` — absolutely positioned dropdown panel.
+- `NavigationMenuLink` — link styled for panels.
+
+## Accessibility
+
+- Built on Radix Navigation Menu: arrow keys move between triggers, Escape
+  closes the panel, and focus returns to the trigger.
+- Triggers are buttons with `aria-expanded`; panels are associated
+  automatically.
+- Keep panel content shallow; long lists belong in a mega menu.

@@ -1,0 +1,79 @@
+---
+title: Command Menu
+description: A searchable command dialog built with cmdk.
+---
+
+import {
+  CommandMenuBasic,
+  CommandMenuGroups,
+} from "@veil-ui/registry/command-menu/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add command-menu" />
+
+## Usage
+
+```tsx
+import { CommandMenu } from "@/components/ui/command-menu";
+
+<CommandMenu
+  trigger={<button type="button">Open commands</button>}
+  items={[
+    { label: "Settings", shortcut: "⌘S" },
+    { label: "New project", group: "Create" },
+  ]}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["command-menu"]["basic"]}>
+  <CommandMenuBasic />
+</ComponentPreview>
+
+### Groups
+
+<ComponentPreview code={demoSource["command-menu"]["groups"]}>
+  <CommandMenuGroups />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "items",
+      type: "{ label; value?; icon?; shortcut?; group?; onSelect? }[]",
+      required: true,
+      description: "Commands; group defaults to “Actions”.",
+    },
+    {
+      name: "trigger",
+      type: "React.ReactNode",
+      description: "Element that opens the dialog.",
+    },
+    {
+      name: "open / onOpenChange",
+      type: "boolean / (open) => void",
+      description: "Controlled state, useful for a global ⌘K shortcut.",
+    },
+    {
+      name: "placeholder",
+      type: "string",
+      default: '"Search commands…"',
+      description: "Search input placeholder and accessible name.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- The dialog has a hidden title and description, and focuses the search
+  field on open.
+- The input is a `combobox` named by the placeholder; results are options
+  with active-descendant tracking.
+- Selecting an item runs `onSelect` and closes the dialog.

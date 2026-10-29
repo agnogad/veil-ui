@@ -1,0 +1,15 @@
+{
+  "name": "how-it-works-section",
+  "title": "How It Works Section",
+  "description": "Numbered steps that explain a workflow end to end.",
+  "category": "marketing",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "icons"
+  ]
+}

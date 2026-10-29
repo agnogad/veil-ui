@@ -1,0 +1,10 @@
+{
+  "name": "tag",
+  "title": "Tag",
+  "description": "Alias of Badge for lightweight labels and filters.",
+  "category": "feedback",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["badge", "utils"],
+  "examples": ["basic"]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "mobile-toolbar",
+  "title": "Mobile Toolbar",
+  "description": "A horizontally scrollable row of labeled toolbar actions.",
+  "category": "mobile",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "view-switch"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "split-layout",
+  "title": "Split Layout",
+  "description": "A main pane with a secondary aside that stacks on small screens.",
+  "category": "layout",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["utils"],
+  "examples": ["aside-end", "aside-start", "sticky"]
+}

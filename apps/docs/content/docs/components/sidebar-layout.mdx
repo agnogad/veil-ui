@@ -1,0 +1,99 @@
+---
+title: Sidebar Layout
+description: Documentation-style layout with a sticky sidebar and content column.
+---
+
+import {
+  SidebarLayoutBasic,
+  SidebarLayoutHeader,
+  SidebarLayoutSidebarEnd,
+} from "@veil-ui/registry/sidebar-layout/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add sidebar-layout" />
+
+## Usage
+
+```tsx
+import { SidebarLayout } from "@/components/ui/sidebar-layout";
+
+<SidebarLayout sidebar={<DocsNav />} header={<h1>Theming</h1>}>
+  <DocsContent />
+</SidebarLayout>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["sidebar-layout"].basic}>
+  <SidebarLayoutBasic />
+</ComponentPreview>
+
+### With header
+
+<ComponentPreview code={demoSource["sidebar-layout"].header}>
+  <SidebarLayoutHeader />
+</ComponentPreview>
+
+### Sidebar at the end
+
+<ComponentPreview code={demoSource["sidebar-layout"]["sidebar-end"]}>
+  <SidebarLayoutSidebarEnd />
+</ComponentPreview>
+
+Unlike `AppShell`, this layout is page-level: it constrains width, adds padding
+and does not force a viewport height.
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "sidebar",
+      type: "React.ReactNode",
+      description: "Sidebar content.",
+    },
+    {
+      name: "header",
+      type: "React.ReactNode",
+      description: "Optional content above the main column.",
+    },
+    {
+      name: "footer",
+      type: "React.ReactNode",
+      description: "Optional content below the main column.",
+    },
+    {
+      name: "sidebarPosition",
+      type: '"start" | "end"',
+      default: '"start"',
+      description: "Sidebar side at lg and up.",
+    },
+    {
+      name: "sidebarSize",
+      type: '"sm" | "md" | "lg"',
+      default: '"md"',
+      description: "Sidebar width: 220, 260 or 300px.",
+    },
+    {
+      name: "stickySidebar",
+      type: "boolean",
+      default: "true",
+      description: "Keep the sidebar visible while reading.",
+    },
+    {
+      name: "...props",
+      type: 'React.ComponentProps<"div">',
+      description: "All native div attributes.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- The sidebar renders as an `aside`; label it when it acts as navigation.
+- The layout stacks on small screens. Move the same links into a collapsible
+  menu on mobile.

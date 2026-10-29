@@ -1,0 +1,47 @@
+---
+title: Mobile Search
+description: A rounded search field with clear and recent-suggestion controls.
+---
+
+import { MobileSearchBasic, MobileSearchMinimal } from "@veil-ui/registry/mobile-search/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add mobile-search" />
+
+## Usage
+
+```tsx
+import { MobileSearch } from "@/components/ui/mobile-search";
+
+<MobileSearch
+  placeholder="Search projects"
+  suggestions={["Design tokens", "Release notes"]}
+  onSearch={search}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["mobile-search"]["basic"]}>
+  <MobileSearchBasic />
+</ComponentPreview>
+
+### Minimal
+
+<ComponentPreview code={demoSource["mobile-search"]["minimal"]}>
+  <MobileSearchMinimal />
+</ComponentPreview>
+
+## API reference
+
+The package exports `mobile-search` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Touch targets are large enough to tap comfortably and keep visible focus rings for keyboard and switch users.
+- Gesture interactions (swipe, pull to refresh) have visible button alternatives so they are not the only way to act.
+- Sheets, drawers and dialogs follow the underlying accessible primitives for focus trapping and escape handling.

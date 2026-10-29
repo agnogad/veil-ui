@@ -1,0 +1,38 @@
+---
+title: Tag
+description: Alias of Badge for lightweight labels and filters.
+---
+
+import { TagBasic } from "@veil-ui/registry/tag/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add tag" />
+
+## Usage
+
+```tsx
+import { Tag } from "@/components/ui/tag";
+
+<Tag variant="secondary">Beta</Tag>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["tag"]["basic"]}>
+  <TagBasic />
+</ComponentPreview>
+
+## API reference
+
+`Tag` and `tagVariants` re-export [Badge](/docs/components/badge) and its
+variants (`default`, `secondary`, `outline`, `muted`, `destructive`).
+
+## Accessibility
+
+- Tags are static text, not interactive; use buttons for dismissible
+  filters.
+- Because the label is real text, screen readers announce it directly.

@@ -1,0 +1,10 @@
+{
+  "name": "range-slider",
+  "title": "Range Slider",
+  "description": "A two-thumb slider for selecting a numeric range.",
+  "category": "forms",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["slider", "utils"],
+  "examples": ["basic"]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "notification-center",
+  "title": "Notification Center",
+  "description": "A bell trigger with an unread badge and a popover list of notifications.",
+  "category": "feedback",
+  "type": "registry:ui",
+  "dependencies": ["@radix-ui/react-popover", "lucide-react"],
+  "registryDependencies": ["button", "icon-button", "notification", "utils"],
+  "examples": ["basic", "empty", "mark-all-read"]
+}

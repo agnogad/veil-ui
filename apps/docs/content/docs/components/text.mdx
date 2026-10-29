@@ -1,0 +1,92 @@
+---
+title: Text
+description: A polymorphic text primitive with size, weight and tone presets.
+---
+
+import {
+  TextBasic,
+  TextTones,
+  TextTruncate,
+} from "@veil-ui/registry/text/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add text" />
+
+## Usage
+
+```tsx
+import { Text } from "@/components/ui/text";
+
+<Text size="sm" tone="muted">
+  Updated a moment ago
+</Text>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource.text.basic}>
+  <TextBasic />
+</ComponentPreview>
+
+### Tones and weights
+
+<ComponentPreview code={demoSource.text.tones}>
+  <TextTones />
+</ComponentPreview>
+
+### Truncate
+
+<ComponentPreview code={demoSource.text.truncate}>
+  <TextTruncate />
+</ComponentPreview>
+
+`truncate` keeps the text on one line and clips it with an ellipsis. For
+multi-line clamping use Truncated Text.
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "as",
+      type: '"p" | "span" | "div" | "label" | "strong" | "em"',
+      default: '"p"',
+      description: "Element rendered by the primitive.",
+    },
+    {
+      name: "size",
+      type: '"xs" | "sm" | "base" | "lg" | "xl"',
+      default: '"base"',
+      description: "Font size preset.",
+    },
+    {
+      name: "weight",
+      type: '"normal" | "medium" | "semibold" | "bold"',
+      default: '"normal"',
+      description: "Font weight preset.",
+    },
+    {
+      name: "tone",
+      type: '"default" | "muted" | "destructive"',
+      default: '"default"',
+      description: "Foreground color tone.",
+    },
+    {
+      name: "truncate",
+      type: "boolean",
+      default: "false",
+      description: "Clip a single line with an ellipsis.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Renders a real text element rather than a generic div, so semantics follow
+  the chosen `as` value.
+- Avoid truncating the only copy of essential information; expose the full value
+  through a title or details view when needed.

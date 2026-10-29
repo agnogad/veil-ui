@@ -1,0 +1,76 @@
+---
+title: Link
+description: Inline text links with underline styling and safe external defaults.
+---
+
+import {
+  LinkBasic,
+  LinkExternal,
+  LinkMuted,
+} from "@veil-ui/registry/link/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add link" />
+
+## Usage
+
+```tsx
+import { Link } from "@/components/ui/link";
+
+<Link href="/docs">Read the documentation</Link>;
+```
+
+For links that look like buttons, use Link Button instead.
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource.link.basic}>
+  <LinkBasic />
+</ComponentPreview>
+
+### External
+
+<ComponentPreview code={demoSource.link.external}>
+  <LinkExternal />
+</ComponentPreview>
+
+### Muted
+
+<ComponentPreview code={demoSource.link.muted}>
+  <LinkMuted />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "external",
+      type: "boolean",
+      default: "false",
+      description: "Opens in a new tab with rel=noopener noreferrer.",
+    },
+    {
+      name: "tone",
+      type: '"default" | "muted"',
+      default: '"default"',
+      description: "Foreground color tone.",
+    },
+    {
+      name: "...props",
+      type: "AnchorProps",
+      description: "All native anchor attributes.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Always underlined, so links are distinguishable without relying on color.
+- External links open in a new tab with `noopener noreferrer` to protect the
+  opener page.
+- A visible focus ring is rendered for keyboard users.

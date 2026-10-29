@@ -1,0 +1,56 @@
+---
+title: Form Repeater
+description: Repeatable groups of fields with add, remove and row limits.
+---
+
+import { FormRepeaterBasic, FormRepeaterLimited, FormRepeaterDisabled } from "@veil-ui/registry/form-repeater/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add form-repeater" />
+
+## Usage
+
+```tsx
+import { FormRepeater } from "@/components/ui/form-repeater";
+
+const fields = [
+  { name: "name", label: "Guest name" },
+  { name: "email", label: "Email", type: "email" },
+];
+
+<FormRepeater fields={fields} min={1} max={5} onChange={setRows} />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["form-repeater"]["basic"]}>
+  <FormRepeaterBasic />
+</ComponentPreview>
+
+### Limited
+
+<ComponentPreview code={demoSource["form-repeater"]["limited"]}>
+  <FormRepeaterLimited />
+</ComponentPreview>
+
+### Disabled
+
+<ComponentPreview code={demoSource["form-repeater"]["disabled"]}>
+  <FormRepeaterDisabled />
+</ComponentPreview>
+
+## API reference
+
+- `fields` describes each input with `name`, `label`, optional `placeholder` and `type`.
+- `defaultValue` seeds the rows and `onChange` receives the full row array on every edit.
+- `min` / `max` constrain the number of rows; `addLabel` and `disabled` adjust the controls.
+
+## Accessibility
+
+- Each row is announced with its position and every input is named `<Field> row N`.
+- Remove buttons are named `Remove row N` and are disabled at the minimum.
+- Add and remove actions are plain buttons reachable by keyboard.

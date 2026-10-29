@@ -1,0 +1,37 @@
+---
+title: Landing Page
+description: A complete marketing landing page composed from section blocks.
+---
+
+import { LandingPageBasic } from "@veil-ui/registry/landing-page/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add landing-page" />
+
+## Usage
+
+```tsx
+import { LandingPage } from "@/components/ui/landing-page";
+
+<LandingPage />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["landing-page"]["basic"]}>
+  <LandingPageBasic />
+</ComponentPreview>
+
+## API reference
+
+The package exports `landing-page` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Page templates use semantic landmarks and a single page-level heading.
+- Navigation links and actions have discernible names and visible focus styles.
+- Decorative imagery uses empty alt text; content images carry descriptions.

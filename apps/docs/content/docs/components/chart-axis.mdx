@@ -1,0 +1,52 @@
+---
+title: Chart Axis
+description: Themed X and Y axis primitives for Recharts charts.
+---
+
+import { ChartAxisBasic, ChartAxisFormatted } from "@veil-ui/registry/chart-axis/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add chart-axis" />
+
+## Usage
+
+```tsx
+import { Bar, BarChart } from "recharts";
+
+import { ChartContainer } from "@/components/ui/chart";
+import { ChartXAxis, ChartYAxis } from "@/components/ui/chart-axis";
+
+<ChartContainer config={config}>
+  <BarChart data={data}>
+    <ChartXAxis dataKey="day" />
+    <ChartYAxis />
+    <Bar dataKey="orders" fill="#6366f1" />
+  </BarChart>
+</ChartContainer>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["chart-axis"]["basic"]}>
+  <ChartAxisBasic />
+</ComponentPreview>
+
+### Formatted
+
+<ComponentPreview code={demoSource["chart-axis"]["formatted"]}>
+  <ChartAxisFormatted />
+</ComponentPreview>
+
+## API reference
+
+The package exports `chart-axis` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Charts render inside a container with an explicit height so they stay responsive without layout shift.
+- Color is never the only encoding; pair charts with labels, summaries or a data table for critical information.
+- Tooltips and legends are rendered as HTML, so their text is available to assistive technology.

@@ -1,0 +1,10 @@
+{
+  "name": "code",
+  "title": "Code",
+  "description": "Inline code with a subtle background and monospace type.",
+  "category": "typography",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "in-sentence"]
+}

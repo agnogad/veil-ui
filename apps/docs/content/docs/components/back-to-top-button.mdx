@@ -1,0 +1,88 @@
+---
+title: Back To Top Button
+description: A floating button that appears after scrolling and returns to the top.
+---
+
+import {
+  BackToTopButtonBasic,
+  BackToTopButtonControlled,
+  BackToTopButtonOutline,
+} from "@veil-ui/registry/back-to-top-button/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add back-to-top-button" />
+
+## Usage
+
+```tsx
+import { BackToTopButton } from "@/components/ui/back-to-top-button";
+
+<BackToTopButton className="fixed bottom-6 right-6" size="icon" />;
+```
+
+The button renders nothing until the page has been scrolled past `threshold`.
+Position it yourself with classes; the component only handles visibility and the
+scroll action.
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["back-to-top-button"].basic}>
+  <BackToTopButtonBasic />
+</ComponentPreview>
+
+### Outline
+
+<ComponentPreview code={demoSource["back-to-top-button"].outline}>
+  <BackToTopButtonOutline />
+</ComponentPreview>
+
+### Controlled
+
+<ComponentPreview code={demoSource["back-to-top-button"].controlled}>
+  <BackToTopButtonControlled />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "threshold",
+      type: "number",
+      default: "400",
+      description: "Scroll distance in pixels before the button appears.",
+    },
+    {
+      name: "visible",
+      type: "boolean",
+      description: "Control visibility yourself instead of tracking window scroll.",
+    },
+    {
+      name: "label",
+      type: "string",
+      default: '"Back to top"',
+      description: "Accessible name of the icon button.",
+    },
+    {
+      name: "onScrollToTop",
+      type: "() => void",
+      description: "Called before the smooth scroll to the top begins.",
+    },
+    {
+      name: "...props",
+      type: "ButtonProps",
+      description: "All Button props; use className to position it.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Icon-only trigger carries an accessible `label`.
+- The scroll listener is passive and removed on unmount.
+- Respects the platform's smooth-scroll behavior; users who reduce motion get
+  the default jump.

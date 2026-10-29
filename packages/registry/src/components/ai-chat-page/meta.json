@@ -1,0 +1,22 @@
+{
+  "name": "ai-chat-page",
+  "title": "AI Chat Page",
+  "description": "An AI assistant chat with suggestions and message actions.",
+  "category": "pages",
+  "type": "registry:block",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "avatar",
+    "badge",
+    "button",
+    "input",
+    "logo",
+    "scroll-area"
+  ],
+  "examples": [
+    "basic"
+  ]
+}

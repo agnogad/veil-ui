@@ -1,0 +1,74 @@
+---
+title: Social Button
+description: A full-width sign-in button with a provider mark.
+---
+
+import {
+  SocialButtonBasic,
+  SocialButtonProviders,
+  SocialButtonSizes,
+} from "@veil-ui/registry/social-button/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add social-button" />
+
+## Usage
+
+```tsx
+import { SocialButton } from "@/components/ui/social-button";
+
+<SocialButton icon={<GitHubMark />}>Continue with GitHub</SocialButton>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["social-button"].basic}>
+  <SocialButtonBasic />
+</ComponentPreview>
+
+### Providers
+
+<ComponentPreview code={demoSource["social-button"].providers}>
+  <SocialButtonProviders />
+</ComponentPreview>
+
+### Sizes
+
+<ComponentPreview code={demoSource["social-button"].sizes}>
+  <SocialButtonSizes />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "icon",
+      type: "React.ReactNode",
+      description: "Provider mark rendered before the label.",
+    },
+    {
+      name: "variant",
+      type: "Button variant",
+      default: '"outline"',
+      description: "Visual style inherited from Button.",
+    },
+    {
+      name: "...props",
+      type: "ButtonProps",
+      description: "Size, disabled, onClick and native button attributes.",
+    },
+  ]}
+/>
+
+Wrap several buttons in `SocialButtonGroup` for consistent spacing.
+
+## Accessibility
+
+- The provider mark is decorative; the visible label is the accessible name.
+- Buttons are full width and at least 32px tall, with a visible focus ring.
+- Keep the provider name in the label instead of relying on the logo alone.

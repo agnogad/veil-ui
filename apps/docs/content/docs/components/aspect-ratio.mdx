@@ -1,0 +1,75 @@
+---
+title: Aspect Ratio
+description: Locks a box to a width-to-height ratio while it resizes.
+---
+
+import {
+  AspectRatioBasic,
+  AspectRatioPortrait,
+  AspectRatioSquare,
+} from "@veil-ui/registry/aspect-ratio/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add aspect-ratio" />
+
+## Usage
+
+```tsx
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+
+<AspectRatio ratio={16 / 9}>
+  <img src="/cover.jpg" alt="" className="size-full object-cover" />
+</AspectRatio>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["aspect-ratio"].basic}>
+  <AspectRatioBasic />
+</ComponentPreview>
+
+### Square
+
+<ComponentPreview code={demoSource["aspect-ratio"].square}>
+  <AspectRatioSquare />
+</ComponentPreview>
+
+### Portrait
+
+<ComponentPreview code={demoSource["aspect-ratio"].portrait}>
+  <AspectRatioPortrait />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "ratio",
+      type: "number",
+      default: "16 / 9",
+      description: "Width divided by height.",
+    },
+    {
+      name: "style",
+      type: "React.CSSProperties",
+      description: "Merged with the aspect-ratio style; your values win.",
+    },
+    {
+      name: "...props",
+      type: 'React.ComponentProps<"div">',
+      description: "All native div attributes.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Presentational wrapper; it adds no roles or landmarks.
+- Children should fill the box (for example `className="size-full"`) or they
+  will only occupy their intrinsic size. Use `object-cover` on images to avoid
+  distortion.

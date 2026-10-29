@@ -1,0 +1,80 @@
+---
+title: Page Shell
+description: A page frame with header, constrained content and footer.
+---
+
+import {
+  PageShellBasic,
+  PageShellFullWidth,
+  PageShellNarrow,
+} from "@veil-ui/registry/page-shell/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add page-shell" />
+
+## Usage
+
+```tsx
+import { PageShell } from "@/components/ui/page-shell";
+
+<PageShell header={<SiteHeader />} footer={<SiteFooter />} size="md">
+  <h1>Page title</h1>
+</PageShell>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["page-shell"].basic}>
+  <PageShellBasic />
+</ComponentPreview>
+
+### Narrow
+
+<ComponentPreview code={demoSource["page-shell"].narrow}>
+  <PageShellNarrow />
+</ComponentPreview>
+
+### Full width
+
+<ComponentPreview code={demoSource["page-shell"]["full-width"]}>
+  <PageShellFullWidth />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "header",
+      type: "React.ReactNode",
+      description: "Content of the top bar.",
+    },
+    {
+      name: "footer",
+      type: "React.ReactNode",
+      description: "Content of the bottom bar.",
+    },
+    {
+      name: "size",
+      type: '"sm" | "md" | "lg" | "full"',
+      default: '"lg"',
+      description: "Max content width: 3xl, 5xl, 7xl or none.",
+    },
+    {
+      name: "...props",
+      type: 'React.ComponentProps<"div">',
+      description: "All native div attributes.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- The content region is a single `main` landmark; header and footer are
+  complementary regions supplied by you.
+- Keep a single `h1` and a logical heading order inside the page.
+- Add `skip` links in the header when the navigation is long.

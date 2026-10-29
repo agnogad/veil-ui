@@ -1,0 +1,56 @@
+---
+title: Hover Card
+description: A preview card shown while hovering or focusing a trigger.
+---
+
+import { HoverCardBasic, HoverCardProfile } from "@veil-ui/registry/hover-card/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add hover-card" />
+
+## Usage
+
+```tsx
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card";
+
+<HoverCard>
+  <HoverCardTrigger asChild>
+    <a href="#">@veil</a>
+  </HoverCardTrigger>
+  <HoverCardContent aria-label="Profile">
+    Preview content
+  </HoverCardContent>
+</HoverCard>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["hover-card"]["basic"]}>
+  <HoverCardBasic />
+</ComponentPreview>
+
+### Profile
+
+<ComponentPreview code={demoSource["hover-card"]["profile"]}>
+  <HoverCardProfile />
+</ComponentPreview>
+
+## API reference
+
+- `HoverCard` opens on hover and on keyboard focus with configurable open and close delays.
+- `HoverCardContent` portals with `role="dialog"`, `w-64` width and configurable `align` / `sideOffset`.
+- Give the content an `aria-label` or a heading so it has an accessible name.
+
+## Accessibility
+
+- The content is a labelled dialog and stays open while the pointer is over it.
+- Keyboard focus on the trigger opens it, so it is not hover-only.
+- Content should be preview-oriented, not contain critical actions.

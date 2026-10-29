@@ -1,0 +1,27 @@
+{
+  "name": "documentation-page",
+  "title": "Documentation Page",
+  "description": "A three-column documentation layout with nav, article and ToC.",
+  "category": "pages",
+  "type": "registry:block",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "alert",
+    "badge",
+    "breadcrumb",
+    "button",
+    "code-block",
+    "input",
+    "kbd",
+    "logo",
+    "navbar",
+    "sidebar",
+    "table-of-contents"
+  ],
+  "examples": [
+    "basic"
+  ]
+}

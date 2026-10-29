@@ -1,0 +1,15 @@
+{
+  "name": "heatmap",
+  "title": "Heatmap",
+  "description": "A table-based heatmap that scales cell color by value.",
+  "category": "charts",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "custom-max"
+  ]
+}

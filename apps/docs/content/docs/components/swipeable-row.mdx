@@ -1,0 +1,47 @@
+---
+title: Swipeable Row
+description: A pointer-swipeable list row that reveals action buttons.
+---
+
+import { SwipeableRowBasic, SwipeableRowTwoActions } from "@veil-ui/registry/swipeable-row/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add swipeable-row" />
+
+## Usage
+
+```tsx
+import { SwipeableRow } from "@/components/ui/swipeable-row";
+
+<SwipeableRow
+  actions={[{ label: "Delete", destructive: true, onClick: remove }]}
+>
+  <RowContent />
+</SwipeableRow>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["swipeable-row"]["basic"]}>
+  <SwipeableRowBasic />
+</ComponentPreview>
+
+### Two actions
+
+<ComponentPreview code={demoSource["swipeable-row"]["two-actions"]}>
+  <SwipeableRowTwoActions />
+</ComponentPreview>
+
+## API reference
+
+The package exports `swipeable-row` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Touch targets are large enough to tap comfortably and keep visible focus rings for keyboard and switch users.
+- Gesture interactions (swipe, pull to refresh) have visible button alternatives so they are not the only way to act.
+- Sheets, drawers and dialogs follow the underlying accessible primitives for focus trapping and escape handling.

@@ -1,0 +1,16 @@
+{
+  "name": "avatar-group",
+  "title": "Avatar Group",
+  "description": "Overlapping avatars with a count for the remaining people.",
+  "category": "media",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "avatar",
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "small"
+  ]
+}

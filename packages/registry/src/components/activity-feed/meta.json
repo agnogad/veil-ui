@@ -1,0 +1,17 @@
+{
+  "name": "activity-feed",
+  "title": "Activity Feed",
+  "description": "A chronological list of actor events with avatars and icons.",
+  "category": "data-display",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "avatar",
+    "card",
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "compact"
+  ]
+}

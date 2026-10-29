@@ -1,0 +1,83 @@
+---
+title: Heading
+description: Semantic h1–h6 headings with matching visual sizes.
+---
+
+import {
+  HeadingBasic,
+  HeadingLevels,
+  HeadingVisualOverride,
+} from "@veil-ui/registry/heading/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add heading" />
+
+## Usage
+
+```tsx
+import { Heading } from "@/components/ui/heading";
+
+<Heading level={1}>Own your interface.</Heading>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource.heading.basic}>
+  <HeadingBasic />
+</ComponentPreview>
+
+### Levels
+
+<ComponentPreview code={demoSource.heading.levels}>
+  <HeadingLevels />
+</ComponentPreview>
+
+### Visual override
+
+<ComponentPreview code={demoSource.heading["visual-override"]}>
+  <HeadingVisualOverride />
+</ComponentPreview>
+
+Keep the semantic level correct and use `size` only to change the visual scale.
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "level",
+      type: "1 | 2 | 3 | 4 | 5 | 6",
+      default: "2",
+      description: "Heading level and default visual size.",
+    },
+    {
+      name: "size",
+      type: "1 | 2 | 3 | 4 | 5 | 6",
+      description: "Visual size override that leaves the element unchanged.",
+    },
+    {
+      name: "weight",
+      type: '"normal" | "medium" | "semibold" | "bold"',
+      default: '"semibold"',
+      description: "Font weight preset.",
+    },
+    {
+      name: "tone",
+      type: '"default" | "muted"',
+      default: '"default"',
+      description: "Foreground color tone.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- The element matches `level`, so the document outline stays correct even when
+  the visual size is overridden.
+- Keep one `h1` per page and avoid skipping levels.
+- Text is balanced with `text-balance` to reduce awkward line breaks in large
+  headings.

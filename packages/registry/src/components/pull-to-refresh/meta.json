@@ -1,0 +1,17 @@
+{
+  "name": "pull-to-refresh",
+  "title": "Pull to Refresh",
+  "description": "A touch container that triggers refresh when pulled past a threshold.",
+  "category": "mobile",
+  "type": "registry:ui",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "list"
+  ]
+}

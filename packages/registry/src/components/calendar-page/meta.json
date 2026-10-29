@@ -1,0 +1,23 @@
+{
+  "name": "calendar-page",
+  "title": "Calendar Page",
+  "description": "A calendar page with month picker, agenda and milestones.",
+  "category": "pages",
+  "type": "registry:block",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "avatar",
+    "badge",
+    "button",
+    "calendar",
+    "card",
+    "segmented-navigation",
+    "timeline"
+  ],
+  "examples": [
+    "basic"
+  ]
+}

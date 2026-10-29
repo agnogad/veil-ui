@@ -1,0 +1,20 @@
+{
+  "name": "forgot-password-form",
+  "title": "Forgot Password Form",
+  "description": "Password reset request form with a sent confirmation state.",
+  "category": "auth",
+  "type": "registry:ui",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "input",
+    "label"
+  ],
+  "examples": [
+    "basic",
+    "custom"
+  ]
+}

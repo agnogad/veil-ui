@@ -1,0 +1,79 @@
+---
+title: Icon
+description: A lucide icon wrapper with size presets and accessible labels.
+---
+
+import {
+  IconBasic,
+  IconLabeled,
+  IconSizes,
+} from "@veil-ui/registry/icon/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add icon" />
+
+## Usage
+
+```tsx
+import { ArrowRight } from "lucide-react";
+import { Icon } from "@/components/ui/icon";
+
+<Icon icon={ArrowRight} />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource.icon.basic}>
+  <IconBasic />
+</ComponentPreview>
+
+### Labeled
+
+<ComponentPreview code={demoSource.icon.labeled}>
+  <IconLabeled />
+</ComponentPreview>
+
+### Sizes
+
+<ComponentPreview code={demoSource.icon.sizes}>
+  <IconSizes />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "icon",
+      type: "LucideIcon",
+      description: "The lucide icon component to render.",
+    },
+    {
+      name: "size",
+      type: '"xs" | "sm" | "md" | "lg" | "xl"',
+      default: '"md"',
+      description: "Square size preset from 12px to 32px.",
+    },
+    {
+      name: "strokeWidth",
+      type: "number",
+      default: "2",
+      description: "SVG stroke width.",
+    },
+    {
+      name: "label",
+      type: "string",
+      description: "When set, the icon becomes an image with this accessible name.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Decorative icons are hidden from assistive technology by default.
+- Give standalone, meaningful icons a `label`; otherwise the surrounding text
+  already provides the name.

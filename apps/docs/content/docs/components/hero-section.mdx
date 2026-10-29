@@ -1,0 +1,49 @@
+---
+title: Hero Section
+description: A landing hero with eyebrow, headline, actions and optional media.
+---
+
+import { HeroSectionBasic, HeroSectionWithMedia } from "@veil-ui/registry/hero-section/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add hero-section" />
+
+## Usage
+
+```tsx
+import { HeroSection } from "@/components/ui/hero-section";
+
+<HeroSection
+  eyebrow="New · Version 2.0"
+  title="Build calm interfaces, faster"
+  description="Accessible defaults with a CLI that keeps you in control."
+  actions={<HeroCta />}
+  media={<ProductDemo />}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["hero-section"]["basic"]}>
+  <HeroSectionBasic />
+</ComponentPreview>
+
+### With media
+
+<ComponentPreview code={demoSource["hero-section"]["with-media"]}>
+  <HeroSectionWithMedia />
+</ComponentPreview>
+
+## API reference
+
+The package exports `hero-section` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Pages keep a single `h1` in the hero and use `h2`/`h3` for section hierarchy.
+- Call-to-action elements are real links or buttons with discernible labels.
+- Decorative icons are `aria-hidden` and meaningful images require `alt` text.

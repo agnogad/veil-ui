@@ -1,0 +1,25 @@
+{
+  "name": "settings-page",
+  "title": "Settings Page",
+  "description": "A settings layout with profile, notifications and danger zone.",
+  "category": "pages",
+  "type": "registry:block",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "avatar",
+    "button",
+    "card",
+    "input",
+    "label",
+    "sidebar",
+    "sidebar-layout",
+    "switch",
+    "textarea"
+  ],
+  "examples": [
+    "basic"
+  ]
+}

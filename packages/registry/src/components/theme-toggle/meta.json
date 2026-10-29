@@ -1,0 +1,10 @@
+{
+  "name": "theme-toggle",
+  "title": "Theme Toggle",
+  "description": "Switches between light and dark themes and remembers the choice.",
+  "category": "actions",
+  "type": "registry:ui",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["icon-button", "utils"],
+  "examples": ["basic", "sizes", "outline"]
+}

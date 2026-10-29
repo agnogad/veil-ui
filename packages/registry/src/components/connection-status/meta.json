@@ -1,0 +1,10 @@
+{
+  "name": "connection-status",
+  "title": "Connection Status",
+  "description": "A live-region label showing network or service connectivity.",
+  "category": "feedback",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "statuses", "custom-label"]
+}

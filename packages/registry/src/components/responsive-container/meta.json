@@ -1,0 +1,10 @@
+{
+  "name": "responsive-container",
+  "title": "Responsive Container",
+  "description": "Constrains content with breakpoint-aware widths and gutters.",
+  "category": "layout",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["utils"],
+  "examples": ["sizes", "gutters", "fluid"]
+}

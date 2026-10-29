@@ -1,0 +1,15 @@
+{
+  "name": "search-result-card",
+  "title": "Search Result Card",
+  "description": "A search hit with breadcrumb, link, snippet and metadata.",
+  "category": "data-display",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "stack"
+  ]
+}

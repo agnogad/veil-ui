@@ -1,0 +1,72 @@
+---
+title: Bottom Navigation
+description: A thumb-friendly tab bar for primary mobile destinations.
+---
+
+import {
+  BottomNavigationBadges,
+  BottomNavigationBasic,
+} from "@veil-ui/registry/bottom-navigation/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add bottom-navigation" />
+
+## Usage
+
+```tsx
+import { Home, User } from "lucide-react";
+import { BottomNavigation } from "@/components/ui/bottom-navigation";
+
+<BottomNavigation
+  items={[
+    { label: "Home", icon: Home, href: "/", active: true },
+    { label: "Account", icon: User, href: "/account" },
+  ]}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["bottom-navigation"]["basic"]}>
+  <BottomNavigationBasic />
+</ComponentPreview>
+
+### Badges
+
+<ComponentPreview code={demoSource["bottom-navigation"]["badges"]}>
+  <BottomNavigationBadges />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "items",
+      type: "{ label; icon; href?; active?; badge? }[]",
+      required: true,
+      description: "Destinations, each with a required lucide icon.",
+    },
+    {
+      name: "onSelect",
+      type: "(item) => void",
+      description: "Called instead of navigating when an item is clicked.",
+    },
+    {
+      name: "...props",
+      type: 'React.ComponentProps<"nav">',
+      description: "All native nav attributes.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Renders a labelled `<nav>` landmark.
+- The active destination receives `aria-current="page"`.
+- Badges are purely visual; keep counts out of the accessible name unless
+  they change meaning.

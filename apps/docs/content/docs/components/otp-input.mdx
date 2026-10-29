@@ -1,0 +1,51 @@
+---
+title: OTP Input
+description: A segmented one-time-code field with paste and keyboard support.
+---
+
+import { OtpInputBasic, OtpInputFourDigits, OtpInputDisabled } from "@veil-ui/registry/otp-input/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add otp-input" />
+
+## Usage
+
+```tsx
+import { OtpInput } from "@/components/ui/otp-input";
+
+<OtpInput length={6} onComplete={verify} />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["otp-input"]["basic"]}>
+  <OtpInputBasic />
+</ComponentPreview>
+
+### Four digits
+
+<ComponentPreview code={demoSource["otp-input"]["four-digits"]}>
+  <OtpInputFourDigits />
+</ComponentPreview>
+
+### Disabled
+
+<ComponentPreview code={demoSource["otp-input"]["disabled"]}>
+  <OtpInputDisabled />
+</ComponentPreview>
+
+## API reference
+
+- `length` (default `6`) sets the number of boxes; `value` / `defaultValue` mirror the code.
+- `onValueChange` fires on every edit and `onComplete` when all digits are filled.
+- Typing advances focus automatically, Backspace steps back and pasting fills from the current box.
+
+## Accessibility
+
+- Each box is labelled `OTP, digit N` and grouped under a labelled `group`.
+- The group uses `inputMode="numeric"` and `autoComplete="one-time-code"`.
+- Arrow, Home and End keys move between boxes without changing values.

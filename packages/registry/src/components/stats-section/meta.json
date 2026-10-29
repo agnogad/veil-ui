@@ -1,0 +1,15 @@
+{
+  "name": "stats-section",
+  "title": "Stats Section",
+  "description": "A band of headline metrics with labels and captions.",
+  "category": "marketing",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "compact"
+  ]
+}

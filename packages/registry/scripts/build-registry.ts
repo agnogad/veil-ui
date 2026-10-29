@@ -52,7 +52,13 @@ function pascal(value: string) {
 function transformSource(source: string) {
   return source
     .replaceAll("@veil-ui/utils", "@/lib/utils")
-    .replaceAll("@veil-ui/registry/", "@/components/ui/");
+    .replaceAll("@veil-ui/registry/", "@/components/ui/")
+    // Cross-component imports are relative inside the monorepo but must point
+    // at the consumer's ui alias once the file is copied into a project.
+    .replace(
+      /(["'])\.\.\/([a-z0-9-]+)(?:\/index)?\1/g,
+      '"@/components/ui/$2"',
+    );
 }
 
 /** Extract the source text of every exported example function. */

@@ -1,0 +1,50 @@
+---
+title: Mobile App Shell
+description: A safe-area aware phone frame with header, scrollable body and footer slots.
+---
+
+import { MobileAppShellBasic, MobileAppShellWithFab } from "@veil-ui/registry/mobile-app-shell/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add mobile-app-shell" />
+
+## Usage
+
+```tsx
+import { MobileAppShell } from "@/components/ui/mobile-app-shell";
+import { MobileBottomBar } from "@/components/ui/mobile-bottom-bar";
+import { MobileHeader } from "@/components/ui/mobile-header";
+
+<MobileAppShell
+  header={<MobileHeader title="Tasks" subtitle="4 lists" />}
+  footer={<MobileBottomBar>{footerActions}</MobileBottomBar>}
+>
+  <TaskList />
+</MobileAppShell>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["mobile-app-shell"]["basic"]}>
+  <MobileAppShellBasic />
+</ComponentPreview>
+
+### With fab
+
+<ComponentPreview code={demoSource["mobile-app-shell"]["with-fab"]}>
+  <MobileAppShellWithFab />
+</ComponentPreview>
+
+## API reference
+
+The package exports `mobile-app-shell` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Touch targets are large enough to tap comfortably and keep visible focus rings for keyboard and switch users.
+- Gesture interactions (swipe, pull to refresh) have visible button alternatives so they are not the only way to act.
+- Sheets, drawers and dialogs follow the underlying accessible primitives for focus trapping and escape handling.

@@ -1,0 +1,47 @@
+---
+title: FAQ Section
+description: An accordion of frequently asked questions.
+---
+
+import { FaqSectionBasic, FaqSectionCompact } from "@veil-ui/registry/faq-section/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add faq-section" />
+
+## Usage
+
+```tsx
+import { FaqSection } from "@/components/ui/faq-section";
+
+<FaqSection
+  items={[
+    { question: "Can I cancel anytime?", answer: "Yes, from your dashboard." },
+  ]}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["faq-section"]["basic"]}>
+  <FaqSectionBasic />
+</ComponentPreview>
+
+### Compact
+
+<ComponentPreview code={demoSource["faq-section"]["compact"]}>
+  <FaqSectionCompact />
+</ComponentPreview>
+
+## API reference
+
+The package exports `faq-section` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Pages keep a single `h1` in the hero and use `h2`/`h3` for section hierarchy.
+- Call-to-action elements are real links or buttons with discernible labels.
+- Decorative icons are `aria-hidden` and meaningful images require `alt` text.

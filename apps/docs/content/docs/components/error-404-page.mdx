@@ -1,0 +1,37 @@
+---
+title: 404 Page
+description: A friendly not-found page with search and recovery links.
+---
+
+import { Error404PageBasic } from "@veil-ui/registry/error-404-page/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add error-404-page" />
+
+## Usage
+
+```tsx
+import { Error404Page } from "@/components/ui/error-404-page";
+
+<Error404Page />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["error-404-page"]["basic"]}>
+  <Error404PageBasic />
+</ComponentPreview>
+
+## API reference
+
+The package exports `error-404-page` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Page templates use semantic landmarks and a single page-level heading.
+- Navigation links and actions have discernible names and visible focus styles.
+- Decorative imagery uses empty alt text; content images carry descriptions.

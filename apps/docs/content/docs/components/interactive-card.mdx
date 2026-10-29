@@ -1,0 +1,43 @@
+---
+title: Interactive Card
+description: A card that behaves as one interactive surface with keyboard support.
+---
+
+import { InteractiveCardBasic, InteractiveCardDisabled } from "@veil-ui/registry/interactive-card/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add interactive-card" />
+
+## Usage
+
+```tsx
+import { InteractiveCard } from "@/components/ui/interactive-card";
+
+<InteractiveCard onClick={() => {}}>Open settings</InteractiveCard>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["interactive-card"]["basic"]}>
+  <InteractiveCardBasic />
+</ComponentPreview>
+
+### Disabled
+
+<ComponentPreview code={demoSource["interactive-card"]["disabled"]}>
+  <InteractiveCardDisabled />
+</ComponentPreview>
+
+## API reference
+
+The package exports `interactive-card` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Content uses semantic HTML — lists are lists, tables are tables and metadata uses a definition list.
+- Interactive elements are real buttons or links with visible focus states.
+- Images require meaningful `alt` text; icons used decoratively are `aria-hidden`.

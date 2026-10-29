@@ -1,0 +1,37 @@
+---
+title: Calendar Page
+description: A calendar page with month picker, agenda and milestones.
+---
+
+import { CalendarPageBasic } from "@veil-ui/registry/calendar-page/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add calendar-page" />
+
+## Usage
+
+```tsx
+import { CalendarPage } from "@/components/ui/calendar-page";
+
+<CalendarPage />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["calendar-page"]["basic"]}>
+  <CalendarPageBasic />
+</ComponentPreview>
+
+## API reference
+
+The package exports `calendar-page` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Page templates use semantic landmarks and a single page-level heading.
+- Navigation links and actions have discernible names and visible focus styles.
+- Decorative imagery uses empty alt text; content images carry descriptions.

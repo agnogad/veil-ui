@@ -1,0 +1,56 @@
+---
+title: Phone Input
+description: A dial-code country picker paired with a telephone number field.
+---
+
+import { PhoneInputBasic, PhoneInputCountryChange, PhoneInputDisabled } from "@veil-ui/registry/phone-input/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add phone-input" />
+
+## Usage
+
+```tsx
+import { PhoneInput } from "@/components/ui/phone-input";
+
+<PhoneInput
+  label="Phone number"
+  value={phone}
+  onValueChange={setPhone}
+  onCountryChange={setCountry}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["phone-input"]["basic"]}>
+  <PhoneInputBasic />
+</ComponentPreview>
+
+### Country change
+
+<ComponentPreview code={demoSource["phone-input"]["country-change"]}>
+  <PhoneInputCountryChange />
+</ComponentPreview>
+
+### Disabled
+
+<ComponentPreview code={demoSource["phone-input"]["disabled"]}>
+  <PhoneInputDisabled />
+</ComponentPreview>
+
+## API reference
+
+- `value` / `defaultValue` hold the local number; `onValueChange` emits the sanitised input.
+- `country` / `defaultCountry` control the dial-code picker; `onCountryChange` reports changes.
+- Non-numeric characters other than spaces, parentheses and dashes are stripped.
+
+## Accessibility
+
+- The country picker and the number field are both labelled and grouped together.
+- The field uses `type="tel"` and `inputMode="tel"` for the right mobile keyboard.
+- The country trigger remains a labelled combobox with search.

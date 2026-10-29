@@ -1,0 +1,10 @@
+{
+  "name": "logo-cloud",
+  "title": "Logo Cloud",
+  "description": "A responsive grid of customer or partner logos.",
+  "category": "typography",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "linked"]
+}

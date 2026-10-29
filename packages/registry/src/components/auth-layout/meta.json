@@ -1,0 +1,17 @@
+{
+  "name": "auth-layout",
+  "title": "Auth Layout",
+  "description": "A split authentication layout with brand panel and footer.",
+  "category": "auth",
+  "type": "registry:ui",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "minimal"
+  ]
+}

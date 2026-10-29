@@ -1,0 +1,48 @@
+---
+title: Donut Chart
+description: A pie chart with a configurable inner radius.
+---
+
+import { DonutChartBasic, DonutChartThin } from "@veil-ui/registry/donut-chart/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add donut-chart" />
+
+## Usage
+
+```tsx
+import { DonutChart } from "@/components/ui/donut-chart";
+
+<DonutChart
+  data={[
+    { name: "Documents", value: 38 },
+    { name: "Images", value: 27 },
+  ]}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["donut-chart"]["basic"]}>
+  <DonutChartBasic />
+</ComponentPreview>
+
+### Thin
+
+<ComponentPreview code={demoSource["donut-chart"]["thin"]}>
+  <DonutChartThin />
+</ComponentPreview>
+
+## API reference
+
+The package exports `donut-chart` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Charts render inside a container with an explicit height so they stay responsive without layout shift.
+- Color is never the only encoding; pair charts with labels, summaries or a data table for critical information.
+- Tooltips and legends are rendered as HTML, so their text is available to assistive technology.

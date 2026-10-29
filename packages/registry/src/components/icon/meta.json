@@ -1,0 +1,10 @@
+{
+  "name": "icon",
+  "title": "Icon",
+  "description": "A lucide icon wrapper with size presets and accessible labels.",
+  "category": "typography",
+  "type": "registry:ui",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "labeled", "sizes"]
+}

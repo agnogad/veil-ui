@@ -1,0 +1,17 @@
+{
+  "name": "pricing-page",
+  "title": "Pricing Page",
+  "description": "A pricing page with plans, comparison table and FAQ.",
+  "category": "pages",
+  "type": "registry:block",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "comparison-table",
+    "faq-section",
+    "pricing-section"
+  ],
+  "examples": [
+    "basic"
+  ]
+}

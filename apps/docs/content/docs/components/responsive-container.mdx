@@ -1,0 +1,81 @@
+---
+title: Responsive Container
+description: Constrains content with breakpoint-aware widths and gutters.
+---
+
+import {
+  ResponsiveContainerFluid,
+  ResponsiveContainerGutters,
+  ResponsiveContainerSizes,
+} from "@veil-ui/registry/responsive-container/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add responsive-container" />
+
+## Usage
+
+```tsx
+import { ResponsiveContainer } from "@/components/ui/responsive-container";
+
+<ResponsiveContainer maxWidth="md" gutter="lg">
+  <Page />
+</ResponsiveContainer>;
+```
+
+## Examples
+
+### Sizes
+
+<ComponentPreview code={demoSource["responsive-container"].sizes}>
+  <ResponsiveContainerSizes />
+</ComponentPreview>
+
+### Gutters
+
+<ComponentPreview code={demoSource["responsive-container"].gutters}>
+  <ResponsiveContainerGutters />
+</ComponentPreview>
+
+### Fluid
+
+<ComponentPreview code={demoSource["responsive-container"].fluid}>
+  <ResponsiveContainerFluid />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "maxWidth",
+      type: '"xs" | "sm" | "md" | "lg" | "xl" | "full"',
+      default: '"lg"',
+      description: "Max width token: sm to 7xl, or none.",
+    },
+    {
+      name: "gutter",
+      type: '"none" | "sm" | "md" | "lg"',
+      default: '"md"',
+      description: "Horizontal padding that grows on larger screens.",
+    },
+    {
+      name: "fluid",
+      type: "boolean",
+      default: "false",
+      description: "Skip auto-centering.",
+    },
+    {
+      name: "...props",
+      type: 'React.ComponentProps<"div">',
+      description: "All native div attributes.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Presentational wrapper; it adds no roles.
+- Resize the viewport to check that content reflows without horizontal
+  scrolling.

@@ -1,0 +1,37 @@
+---
+title: Coming Soon Page
+description: A waitlist landing page with countdown and email capture.
+---
+
+import { ComingSoonPageBasic } from "@veil-ui/registry/coming-soon-page/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add coming-soon-page" />
+
+## Usage
+
+```tsx
+import { ComingSoonPage } from "@/components/ui/coming-soon-page";
+
+<ComingSoonPage />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["coming-soon-page"]["basic"]}>
+  <ComingSoonPageBasic />
+</ComponentPreview>
+
+## API reference
+
+The package exports `coming-soon-page` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Page templates use semantic landmarks and a single page-level heading.
+- Navigation links and actions have discernible names and visible focus styles.
+- Decorative imagery uses empty alt text; content images carry descriptions.

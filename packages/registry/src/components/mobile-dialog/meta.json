@@ -1,0 +1,16 @@
+{
+  "name": "mobile-dialog",
+  "title": "Mobile Dialog",
+  "description": "The modal dialog exposed with mobile naming.",
+  "category": "mobile",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "modal",
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "confirm"
+  ]
+}

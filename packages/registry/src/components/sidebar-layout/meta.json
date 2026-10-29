@@ -1,0 +1,10 @@
+{
+  "name": "sidebar-layout",
+  "title": "Sidebar Layout",
+  "description": "Documentation-style layout with a sticky sidebar and content column.",
+  "category": "layout",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "header", "sidebar-end"]
+}

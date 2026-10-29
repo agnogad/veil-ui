@@ -1,0 +1,52 @@
+---
+title: Activity Feed
+description: A chronological list of actor events with avatars and icons.
+---
+
+import { ActivityFeedBasic, ActivityFeedCompact } from "@veil-ui/registry/activity-feed/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add activity-feed" />
+
+## Usage
+
+```tsx
+import { ActivityFeed } from "@/components/ui/activity-feed";
+
+<ActivityFeed
+  items={[
+    {
+      id: "1",
+      actor: "Ada Lovelace",
+      action: "opened a pull request",
+      time: "2 minutes ago",
+    },
+  ]}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["activity-feed"]["basic"]}>
+  <ActivityFeedBasic />
+</ComponentPreview>
+
+### Compact
+
+<ComponentPreview code={demoSource["activity-feed"]["compact"]}>
+  <ActivityFeedCompact />
+</ComponentPreview>
+
+## API reference
+
+The package exports `activity-feed` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Content uses semantic HTML — lists are lists, tables are tables and metadata uses a definition list.
+- Interactive elements are real buttons or links with visible focus states.
+- Images require meaningful `alt` text; icons used decoratively are `aria-hidden`.

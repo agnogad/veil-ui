@@ -1,0 +1,63 @@
+---
+title: Truncated Text
+description: Multi-line text clamped to a fixed number of lines with an ellipsis.
+---
+
+import {
+  TruncatedTextBasic,
+  TruncatedTextSingleLine,
+} from "@veil-ui/registry/truncated-text/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add truncated-text" />
+
+## Usage
+
+```tsx
+import { TruncatedText } from "@/components/ui/truncated-text";
+
+<TruncatedText lines={3}>{description}</TruncatedText>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["truncated-text"].basic}>
+  <TruncatedTextBasic />
+</ComponentPreview>
+
+### Single line
+
+<ComponentPreview code={demoSource["truncated-text"]["single-line"]}>
+  <TruncatedTextSingleLine />
+</ComponentPreview>
+
+If the text should be expandable, use Read More, which adds a toggle button.
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "lines",
+      type: "1 | 2 | 3 | 4 | 5 | 6",
+      default: "2",
+      description: "Maximum number of lines before the ellipsis.",
+    },
+    {
+      name: "...props",
+      type: "ComponentProps<'p'>",
+      description: "All native paragraph attributes.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- The full text remains in the DOM, so screen readers and search engines can
+  access it; only the visual rendering is clamped.
+- Provide a title or detail view when the clipped information is needed to
+  complete a task.

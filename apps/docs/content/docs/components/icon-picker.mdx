@@ -1,0 +1,70 @@
+---
+title: Icon Picker
+description: A searchable icon grid for choosing an icon by name.
+---
+
+import {
+  IconPickerBasic,
+  IconPickerSelected,
+} from "@veil-ui/registry/icon-picker/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add icon-picker" />
+
+## Usage
+
+```tsx
+import { IconPicker } from "@/components/ui/icon-picker";
+
+<IconPicker value={icon} onSelect={(item) => setIcon(item.name)} />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["icon-picker"].basic}>
+  <IconPickerBasic />
+</ComponentPreview>
+
+### Selected
+
+<ComponentPreview code={demoSource["icon-picker"].selected}>
+  <IconPickerSelected />
+</ComponentPreview>
+
+Pass your own `icons` array when the default set is too small. Each entry is a
+name and a lucide component; keeping the array explicit means no icon library is
+bundled wholesale.
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "icons",
+      type: "IconPickerItem[]",
+      default: "defaultIcons",
+      description: "Name and lucide component pairs to offer.",
+    },
+    {
+      name: "value",
+      type: "string",
+      description: "Name of the selected icon.",
+    },
+    {
+      name: "onSelect",
+      type: "(item: IconPickerItem) => void",
+      description: "Called with the chosen entry.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- The search field is labelled and filters as you type.
+- Every icon button has its name as the accessible label and exposes selection
+  through `aria-pressed`.
+- An empty result is announced as plain text instead of leaving a blank grid.

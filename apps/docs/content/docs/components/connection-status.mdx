@@ -1,0 +1,68 @@
+---
+title: Connection Status
+description: A live-region label showing network or service connectivity.
+---
+
+import {
+  ConnectionStatusBasic,
+  ConnectionStatusCustomLabel,
+  ConnectionStatusStatuses,
+} from "@veil-ui/registry/connection-status/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add connection-status" />
+
+## Usage
+
+```tsx
+import { ConnectionStatus } from "@/components/ui/connection-status";
+
+<ConnectionStatus status="reconnecting" />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["connection-status"]["basic"]}>
+  <ConnectionStatusBasic />
+</ComponentPreview>
+
+### Statuses
+
+<ComponentPreview code={demoSource["connection-status"]["statuses"]}>
+  <ConnectionStatusStatuses />
+</ComponentPreview>
+
+### Custom label
+
+<ComponentPreview code={demoSource["connection-status"]["custom-label"]}>
+  <ConnectionStatusCustomLabel />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "status",
+      type: '"online" | "offline" | "connecting" | "reconnecting"',
+      default: '"online"',
+      description: "Connectivity state and default label.",
+    },
+    {
+      name: "label",
+      type: "string",
+      description: "Overrides the default status text.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Uses `role="status"` with `aria-live="polite"` so changes are announced
+  without interrupting.
+- Connecting states pulse; the dot is decorative and the text carries the
+  meaning.

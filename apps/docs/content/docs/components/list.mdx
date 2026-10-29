@@ -1,0 +1,79 @@
+---
+title: List
+description: Ordered and unordered lists with marker, spacing and layout presets.
+---
+
+import {
+  ListBullet,
+  ListOrdered,
+  ListUnstyled,
+} from "@veil-ui/registry/list/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add list" />
+
+## Usage
+
+```tsx
+import { List, ListItem } from "@/components/ui/list";
+
+<List>
+  <ListItem>Copy the source</ListItem>
+  <ListItem>Own the code</ListItem>
+</List>;
+```
+
+## Examples
+
+### Bullet
+
+<ComponentPreview code={demoSource.list.bullet}>
+  <ListBullet />
+</ComponentPreview>
+
+### Ordered
+
+<ComponentPreview code={demoSource.list.ordered}>
+  <ListOrdered />
+</ComponentPreview>
+
+### Unstyled
+
+<ComponentPreview code={demoSource.list.unstyled}>
+  <ListUnstyled />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "as",
+      type: '"ul" | "ol"',
+      default: '"ul"',
+      description: "List element; use ol with the decimal variant.",
+    },
+    {
+      name: "variant",
+      type: '"disc" | "decimal" | "none"',
+      default: '"disc"',
+      description: "Marker style, or none for layout-only lists.",
+    },
+    {
+      name: "spacing",
+      type: '"sm" | "md" | "lg"',
+      default: '"md"',
+      description: "Vertical rhythm between items.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Renders native list elements, so screen readers announce item counts and
+  position.
+- Markers pick up the muted foreground color while keeping the text readable.
+- Use `variant="none"` for navigation-like layouts only when the items are
+  links; otherwise keep markers for scannability.

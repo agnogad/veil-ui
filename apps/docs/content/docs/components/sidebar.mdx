@@ -1,0 +1,67 @@
+---
+title: Sidebar
+description: A vertical navigation panel with headers, groups and footer slots.
+---
+
+import { SidebarBasic, SidebarGroups } from "@veil-ui/registry/sidebar/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add sidebar" />
+
+## Usage
+
+```tsx
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarGroup,
+  SidebarGroupLabel,
+  SidebarHeader,
+  SidebarItem,
+} from "@/components/ui/sidebar";
+
+<Sidebar>
+  <SidebarHeader>Acme</SidebarHeader>
+  <SidebarContent>
+    <SidebarGroup>
+      <SidebarGroupLabel>Workspace</SidebarGroupLabel>
+      <SidebarItem href="/" active>
+        Dashboard
+      </SidebarItem>
+      <SidebarItem href="/settings">Settings</SidebarItem>
+    </SidebarGroup>
+  </SidebarContent>
+</Sidebar>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["sidebar"]["basic"]}>
+  <SidebarBasic />
+</ComponentPreview>
+
+### Groups
+
+<ComponentPreview code={demoSource["sidebar"]["groups"]}>
+  <SidebarGroups />
+</ComponentPreview>
+
+## API reference
+
+### Subcomponents
+
+- `Sidebar` — bordered column container.
+- `SidebarHeader`, `SidebarContent`, `SidebarFooter` — vertical regions.
+- `SidebarGroup`, `SidebarGroupLabel` — labelled link clusters.
+- `SidebarItem` — anchor with an `active` state.
+
+## Accessibility
+
+- `SidebarItem` exposes `aria-current="page"` when `active`.
+- Group labels are plain text; pair the sidebar with a surrounding
+  `<nav aria-label="…">` when it is the primary navigation.
+- Rendered links are real anchors, so keyboard and middle-click work.

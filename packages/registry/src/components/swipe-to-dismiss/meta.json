@@ -1,0 +1,17 @@
+{
+  "name": "swipe-to-dismiss",
+  "title": "Swipe to Dismiss",
+  "description": "A card that dismisses after a horizontal swipe past a threshold.",
+  "category": "mobile",
+  "type": "registry:ui",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "custom-threshold"
+  ]
+}

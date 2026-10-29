@@ -1,0 +1,48 @@
+---
+title: Data Table
+description: A sortable table driven by column definitions and typed rows.
+---
+
+import { DataTableBasic, DataTableEmpty } from "@veil-ui/registry/data-table/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add data-table" />
+
+## Usage
+
+```tsx
+import { DataTable } from "@/components/ui/data-table";
+
+const columns = [
+  { key: "name", header: "Name", sortable: true },
+  { key: "role", header: "Role", sortable: true },
+];
+
+<DataTable columns={columns} data={members} caption="Team activity" />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["data-table"]["basic"]}>
+  <DataTableBasic />
+</ComponentPreview>
+
+### Empty
+
+<ComponentPreview code={demoSource["data-table"]["empty"]}>
+  <DataTableEmpty />
+</ComponentPreview>
+
+## API reference
+
+The package exports `data-table` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Content uses semantic HTML — lists are lists, tables are tables and metadata uses a definition list.
+- Interactive elements are real buttons or links with visible focus states.
+- Images require meaningful `alt` text; icons used decoratively are `aria-hidden`.

@@ -1,0 +1,80 @@
+---
+title: Rich Text
+description: A lightweight contenteditable editor with basic formatting controls.
+---
+
+import {
+  RichTextBasic,
+  RichTextDisabled,
+} from "@veil-ui/registry/rich-text/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add rich-text" />
+
+## Usage
+
+```tsx
+import { RichText } from "@/components/ui/rich-text";
+
+<RichText
+  onChange={(html) => setValue(html)}
+  defaultValue="<p>Hello <strong>world</strong>.</p>"
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["rich-text"].basic}>
+  <RichTextBasic />
+</ComponentPreview>
+
+### Disabled
+
+<ComponentPreview code={demoSource["rich-text"].disabled}>
+  <RichTextDisabled />
+</ComponentPreview>
+
+This is a deliberately small editor: bold, italic and underline on a
+contenteditable surface. For collaborative documents or complex embeds, bring a
+dedicated editor such as Tiptap or Lexical.
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "defaultValue",
+      type: "string",
+      description: "Initial HTML; sanitized against a tag and attribute allowlist.",
+    },
+    {
+      name: "onChange",
+      type: "(html: string) => void",
+      description: "Called with the editor HTML after every input.",
+    },
+    {
+      name: "placeholder",
+      type: "string",
+      default: '"Write something…"',
+      description: "Hint shown while the editor is empty.",
+    },
+    {
+      name: "disabled",
+      type: "boolean",
+      default: "false",
+      description: "Makes the editor read-only and disables the toolbar.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- The editable area is a labelled, multiline textbox; the toolbar has a name and
+  icon buttons carry labels.
+- Toolbar buttons keep the text selection because mousedown is prevented.
+- The initial HTML is parsed in an inert document and filtered, so scripts,
+  event handlers and `javascript:` URLs never reach the editor.

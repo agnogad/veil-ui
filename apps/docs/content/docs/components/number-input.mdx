@@ -1,0 +1,105 @@
+---
+title: Number Input
+description: A numeric field with step buttons and clamping.
+---
+
+import {
+  NumberInputBasic,
+  NumberInputDisabled,
+  NumberInputRange,
+  NumberInputWithLabel,
+} from "@veil-ui/registry/number-input/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add number-input" />
+
+## Usage
+
+```tsx
+import { NumberInput } from "@/components/ui/number-input";
+
+<NumberInput defaultValue={2} min={1} max={10} aria-label="Quantity" />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["number-input"].basic}>
+  <NumberInputBasic />
+</ComponentPreview>
+
+### With label
+
+<ComponentPreview code={demoSource["number-input"]["with-label"]}>
+  <NumberInputWithLabel />
+</ComponentPreview>
+
+### Range
+
+<ComponentPreview code={demoSource["number-input"].range}>
+  <NumberInputRange />
+</ComponentPreview>
+
+Step buttons disable themselves at `min` and `max`, while typed values are
+clamped to the same range.
+
+### Disabled
+
+<ComponentPreview code={demoSource["number-input"].disabled}>
+  <NumberInputDisabled />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "value",
+      type: "number",
+      description: "Controlled value.",
+    },
+    {
+      name: "defaultValue",
+      type: "number",
+      default: "0",
+      description: "Initial value when uncontrolled.",
+    },
+    {
+      name: "min",
+      type: "number",
+      description: "Lower bound, enforced on typing and stepping.",
+    },
+    {
+      name: "max",
+      type: "number",
+      description: "Upper bound, enforced on typing and stepping.",
+    },
+    {
+      name: "step",
+      type: "number",
+      default: "1",
+      description: "Increment applied by the step buttons and arrow keys.",
+    },
+    {
+      name: "onValueChange",
+      type: "(value: number) => void",
+      description: "Called with the clamped value after every change.",
+    },
+    {
+      name: "...props",
+      type: 'React.ComponentProps<"input">',
+      description: "All native input attributes except type, value and onChange.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- The input keeps the native `spinbutton` role, so arrow keys and screen
+  readers work as expected.
+- Step buttons are named “Decrease value” and “Increase value”; raise the value
+  with the keyboard using the arrow keys.
+- Pass an `aria-label` or pair the field with a visible `<Label>`.

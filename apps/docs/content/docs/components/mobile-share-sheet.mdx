@@ -1,0 +1,48 @@
+---
+title: Mobile Share Sheet
+description: A bottom sheet of share targets with copy-link support.
+---
+
+import { MobileShareSheetBasic, MobileShareSheetCustom } from "@veil-ui/registry/mobile-share-sheet/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add mobile-share-sheet" />
+
+## Usage
+
+```tsx
+import { MobileShareSheet } from "@/components/ui/mobile-share-sheet";
+
+<MobileShareSheet
+  open={open}
+  onOpenChange={setOpen}
+  url="https://veil-ui.dev/docs/theming"
+  title="Share guide"
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["mobile-share-sheet"]["basic"]}>
+  <MobileShareSheetBasic />
+</ComponentPreview>
+
+### Custom
+
+<ComponentPreview code={demoSource["mobile-share-sheet"]["custom"]}>
+  <MobileShareSheetCustom />
+</ComponentPreview>
+
+## API reference
+
+The package exports `mobile-share-sheet` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Touch targets are large enough to tap comfortably and keep visible focus rings for keyboard and switch users.
+- Gesture interactions (swipe, pull to refresh) have visible button alternatives so they are not the only way to act.
+- Sheets, drawers and dialogs follow the underlying accessible primitives for focus trapping and escape handling.

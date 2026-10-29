@@ -1,0 +1,15 @@
+{
+  "name": "final-cta",
+  "title": "Final CTA",
+  "description": "A closing call-to-action band for the end of a page.",
+  "category": "marketing",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "compact"
+  ]
+}

@@ -1,0 +1,85 @@
+---
+title: Full Screen Layout
+description: A viewport-height layout with optional header, footer and centering.
+---
+
+import {
+  FullScreenLayoutApp,
+  FullScreenLayoutCentered,
+  FullScreenLayoutPadded,
+} from "@veil-ui/registry/full-screen-layout/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add full-screen-layout" />
+
+## Usage
+
+```tsx
+import { FullScreenLayout } from "@/components/ui/full-screen-layout";
+
+<FullScreenLayout centered>
+  <LoginCard />
+</FullScreenLayout>;
+```
+
+## Examples
+
+### Centered
+
+<ComponentPreview code={demoSource["full-screen-layout"].centered}>
+  <FullScreenLayoutCentered />
+</ComponentPreview>
+
+### Application frame
+
+<ComponentPreview code={demoSource["full-screen-layout"].app}>
+  <FullScreenLayoutApp />
+</ComponentPreview>
+
+### Padded
+
+<ComponentPreview code={demoSource["full-screen-layout"].padded}>
+  <FullScreenLayoutPadded />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "header",
+      type: "React.ReactNode",
+      description: "Optional top bar.",
+    },
+    {
+      name: "footer",
+      type: "React.ReactNode",
+      description: "Optional bottom bar.",
+    },
+    {
+      name: "centered",
+      type: "boolean",
+      default: "false",
+      description: "Center the main content on both axes.",
+    },
+    {
+      name: "padded",
+      type: "boolean",
+      default: "false",
+      description: "Apply responsive padding to the main region.",
+    },
+    {
+      name: "...props",
+      type: 'React.ComponentProps<"div">',
+      description: "All native div attributes.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- The main region is a `main` landmark.
+- Centering is visual only; keep the DOM order logical.
+- Avoid trapping scroll inside the layout; it grows with its content.

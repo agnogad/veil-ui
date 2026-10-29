@@ -1,0 +1,10 @@
+{
+  "name": "text",
+  "title": "Text",
+  "description": "A polymorphic text primitive with size, weight and tone presets.",
+  "category": "typography",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "tones", "truncate"]
+}

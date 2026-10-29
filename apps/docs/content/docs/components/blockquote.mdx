@@ -1,0 +1,62 @@
+---
+title: Blockquote
+description: A quoted passage with an optional attribution.
+---
+
+import {
+  BlockquoteBasic,
+  BlockquoteWithCitation,
+} from "@veil-ui/registry/blockquote/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add blockquote" />
+
+## Usage
+
+```tsx
+import { Blockquote } from "@/components/ui/blockquote";
+
+<Blockquote cite="Veil UI docs">
+  <p>The same code you would write yourself.</p>
+</Blockquote>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource.blockquote.basic}>
+  <BlockquoteBasic />
+</ComponentPreview>
+
+### With citation
+
+<ComponentPreview code={demoSource.blockquote["with-citation"]}>
+  <BlockquoteWithCitation />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "cite",
+      type: "string",
+      description: "Source attribution, rendered in a footer with cite.",
+    },
+    {
+      name: "...props",
+      type: "BlockquoteProps",
+      description: "All native blockquote attributes.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Uses a native `<blockquote>` with the attribution inside a `<footer>` and
+  `<cite>`, matching the HTML content model.
+- Keep quoted paragraphs inside the blockquote and avoid styling it as a
+  heading.

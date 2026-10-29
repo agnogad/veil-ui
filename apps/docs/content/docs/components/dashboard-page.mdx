@@ -1,0 +1,37 @@
+---
+title: Dashboard Page
+description: An app dashboard with sidebar, metrics, chart and recent orders.
+---
+
+import { DashboardPageBasic } from "@veil-ui/registry/dashboard-page/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add dashboard-page" />
+
+## Usage
+
+```tsx
+import { DashboardPage } from "@/components/ui/dashboard-page";
+
+<DashboardPage />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["dashboard-page"]["basic"]}>
+  <DashboardPageBasic />
+</ComponentPreview>
+
+## API reference
+
+The package exports `dashboard-page` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Page templates use semantic landmarks and a single page-level heading.
+- Navigation links and actions have discernible names and visible focus styles.
+- Decorative imagery uses empty alt text; content images carry descriptions.

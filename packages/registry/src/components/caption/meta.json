@@ -1,0 +1,10 @@
+{
+  "name": "caption",
+  "title": "Caption",
+  "description": "Small supporting text for images, fields and metadata.",
+  "category": "typography",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "with-figure"]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "chart-grid",
+  "title": "Chart Grid",
+  "description": "A themed Cartesian grid for Recharts charts.",
+  "category": "charts",
+  "type": "registry:ui",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "vertical"
+  ]
+}

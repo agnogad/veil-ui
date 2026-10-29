@@ -1,0 +1,48 @@
+---
+title: Testimonial Card
+description: A customer quote with rating, avatar and attribution.
+---
+
+import { TestimonialCardBasic, TestimonialCardCompact } from "@veil-ui/registry/testimonial-card/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add testimonial-card" />
+
+## Usage
+
+```tsx
+import { TestimonialCard } from "@/components/ui/testimonial-card";
+
+<TestimonialCard
+  quote="We shipped our dashboard two weeks early."
+  name="Mira Chen"
+  role="Product lead"
+  rating={5}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["testimonial-card"]["basic"]}>
+  <TestimonialCardBasic />
+</ComponentPreview>
+
+### Compact
+
+<ComponentPreview code={demoSource["testimonial-card"]["compact"]}>
+  <TestimonialCardCompact />
+</ComponentPreview>
+
+## API reference
+
+The package exports `testimonial-card` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Content uses semantic HTML — lists are lists, tables are tables and metadata uses a definition list.
+- Interactive elements are real buttons or links with visible focus states.
+- Images require meaningful `alt` text; icons used decoratively are `aria-hidden`.

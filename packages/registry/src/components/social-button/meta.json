@@ -1,0 +1,10 @@
+{
+  "name": "social-button",
+  "title": "Social Button",
+  "description": "A full-width sign-in button with a provider mark.",
+  "category": "actions",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["button", "utils"],
+  "examples": ["basic", "providers", "sizes"]
+}

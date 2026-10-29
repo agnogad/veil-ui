@@ -1,0 +1,19 @@
+{
+  "name": "error-404-page",
+  "title": "404 Page",
+  "description": "A friendly not-found page with search and recovery links.",
+  "category": "pages",
+  "type": "registry:block",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "input",
+    "kbd"
+  ],
+  "examples": [
+    "basic"
+  ]
+}

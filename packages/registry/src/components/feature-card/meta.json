@@ -1,0 +1,16 @@
+{
+  "name": "feature-card",
+  "title": "Feature Card",
+  "description": "An icon, title and description used to explain product capabilities.",
+  "category": "data-display",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "card",
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "grid"
+  ]
+}

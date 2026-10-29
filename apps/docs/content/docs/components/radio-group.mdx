@@ -1,0 +1,49 @@
+---
+title: Radio Group
+description: A single-choice group with roving focus from Radix Radio Group.
+---
+
+import { RadioGroupBasic, RadioGroupWithDescription } from "@veil-ui/registry/radio-group/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add radio-group" />
+
+## Usage
+
+```tsx
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Label } from "@/components/ui/label";
+
+<RadioGroup defaultValue="standard" aria-label="Plan">
+  <div className="flex items-center gap-2">
+    <RadioGroupItem value="standard" id="standard" />
+    <Label htmlFor="standard">Standard</Label>
+  </div>
+</RadioGroup>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["radio-group"]["basic"]}>
+  <RadioGroupBasic />
+</ComponentPreview>
+
+### With Description
+
+<ComponentPreview code={demoSource["radio-group"]["with-description"]}>
+  <RadioGroupWithDescription />
+</ComponentPreview>
+
+## API reference
+
+The package exports `radio-group` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- `RadioGroup` uses Radix roving focus: arrow keys change the selected item and the group exposes `radiogroup` semantics.
+- Error and disabled states are exposed through native attributes and Radix data attributes.
+- Focus-visible rings follow the shared token system in both themes.

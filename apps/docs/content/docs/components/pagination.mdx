@@ -1,0 +1,79 @@
+---
+title: Pagination
+description: Page controls with numbered links, ellipses and prev/next buttons.
+---
+
+import {
+  PaginationBasic,
+  PaginationShort,
+} from "@veil-ui/registry/pagination/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add pagination" />
+
+## Usage
+
+```tsx
+import { Pagination } from "@/components/ui/pagination";
+
+<Pagination page={1} totalPages={12} onPageChange={(page) => console.log(page)} />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["pagination"]["basic"]}>
+  <PaginationBasic />
+</ComponentPreview>
+
+### Short
+
+<ComponentPreview code={demoSource["pagination"]["short"]}>
+  <PaginationShort />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "page",
+      type: "number",
+      required: true,
+      description: "Current page, 1-based.",
+    },
+    {
+      name: "totalPages",
+      type: "number",
+      required: true,
+      description: "Number of pages available.",
+    },
+    {
+      name: "onPageChange",
+      type: "(page) => void",
+      description: "Called with the requested page.",
+    },
+    {
+      name: "siblingCount",
+      type: "number",
+      default: "1",
+      description: "Pages shown on each side of the current page.",
+    },
+    {
+      name: "label",
+      type: "string",
+      default: '"Pagination"',
+      description: "Accessible name for the nav landmark.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Renders a labelled `<nav>` with a list of page buttons.
+- The current page has `aria-current="page"` and is disabled from repeat
+  navigation.
+- Prev/next controls are named “Previous page” and “Next page”.

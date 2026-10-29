@@ -1,0 +1,10 @@
+{
+  "name": "sidebar",
+  "title": "Sidebar",
+  "description": "A vertical navigation panel with header, content, groups and footer.",
+  "category": "navigation",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "groups"]
+}

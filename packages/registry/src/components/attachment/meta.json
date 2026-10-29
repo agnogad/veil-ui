@@ -1,0 +1,17 @@
+{
+  "name": "attachment",
+  "title": "Attachment",
+  "description": "An inline removable file chip.",
+  "category": "media",
+  "type": "registry:ui",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "removable"
+  ]
+}

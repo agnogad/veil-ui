@@ -1,0 +1,16 @@
+{
+  "name": "mobile-fab",
+  "title": "Mobile FAB",
+  "description": "The floating action button preset for mobile surfaces.",
+  "category": "mobile",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "fab",
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "extended"
+  ]
+}

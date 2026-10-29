@@ -1,0 +1,10 @@
+{
+  "name": "loading-button",
+  "title": "Loading Button",
+  "description": "A button that shows a spinner and disables itself while busy.",
+  "category": "actions",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["button", "spinner", "utils"],
+  "examples": ["basic", "loading", "toggle"]
+}

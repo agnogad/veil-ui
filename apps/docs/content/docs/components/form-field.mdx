@@ -1,0 +1,103 @@
+---
+title: Form Field
+description: Pairs a label, control, hint and error message with consistent spacing.
+---
+
+import {
+  FormFieldBasic,
+  FormFieldWithDescription,
+  FormFieldWithError,
+} from "@veil-ui/registry/form-field/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add form-field" />
+
+## Usage
+
+```tsx
+import {
+  FormField,
+  FormFieldLabel,
+  FormFieldDescription,
+  FormFieldError,
+} from "@/components/ui/form-field";
+import { Input } from "@/components/ui/input";
+
+<FormField>
+  <FormFieldLabel htmlFor="email">Email</FormFieldLabel>
+  <Input id="email" type="email" />
+  <FormFieldDescription>We never share it.</FormFieldDescription>
+  <FormFieldError>Enter a valid address.</FormFieldError>
+</FormField>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["form-field"].basic}>
+  <FormFieldBasic />
+</ComponentPreview>
+
+### With description
+
+<ComponentPreview code={demoSource["form-field"]["with-description"]}>
+  <FormFieldWithDescription />
+</ComponentPreview>
+
+### With error
+
+<ComponentPreview code={demoSource["form-field"]["with-error"]}>
+  <FormFieldWithError />
+</ComponentPreview>
+
+Set `aria-invalid` and `aria-describedby` on the control so the error is
+announced with the field.
+
+## API reference
+
+### FormField
+
+<PropsTable
+  data={[
+    {
+      name: "...props",
+      type: 'React.ComponentProps<"div">',
+      description: "Native div attributes. Renders a two-row grid.",
+    },
+  ]}
+/>
+
+### FormFieldLabel
+
+<PropsTable
+  data={[
+    {
+      name: "...props",
+      type: "React.ComponentProps<typeof Label>",
+      description: "Pass htmlFor to associate the label with its control.",
+    },
+  ]}
+/>
+
+### FormFieldError
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      type: "React.ReactNode",
+      description: "Message text. Nothing renders when empty.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- `FormFieldError` renders `role="alert"` and disappears when there is no
+  message, so the region never sits empty.
+- Always connect the label with `htmlFor` and the input with a matching `id`.
+- Link the error through `aria-describedby` and set `aria-invalid` on the
+  control.

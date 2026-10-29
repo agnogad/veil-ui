@@ -1,0 +1,10 @@
+{
+  "name": "flex",
+  "title": "Flex",
+  "description": "An alias of Stack for teams that prefer a flexbox name.",
+  "category": "layout",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["stack", "utils"],
+  "examples": ["basic", "between"]
+}

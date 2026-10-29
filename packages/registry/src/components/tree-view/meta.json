@@ -1,0 +1,17 @@
+{
+  "name": "tree-view",
+  "title": "Tree View",
+  "description": "An expandable, accessible tree of hierarchical items.",
+  "category": "data-display",
+  "type": "registry:ui",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "collapsed"
+  ]
+}

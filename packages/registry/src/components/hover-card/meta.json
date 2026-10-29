@@ -1,0 +1,10 @@
+{
+  "name": "hover-card",
+  "title": "Hover Card",
+  "description": "A preview card shown while hovering or focusing a trigger.",
+  "category": "overlays",
+  "type": "registry:ui",
+  "dependencies": ["@radix-ui/react-hover-card"],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "profile"]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "modal",
+  "title": "Modal",
+  "description": "A centered dialog with overlay, header, footer and a close button.",
+  "category": "overlays",
+  "type": "registry:ui",
+  "dependencies": ["@radix-ui/react-dialog", "lucide-react"],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "form", "no-close-button"]
+}

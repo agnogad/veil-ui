@@ -1,0 +1,10 @@
+{
+  "name": "navigation-menu-item",
+  "title": "Navigation Menu Item",
+  "description": "Alias entry that re-exports NavigationMenuItem.",
+  "category": "navigation",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["navigation-menu", "utils"],
+  "examples": ["basic"]
+}

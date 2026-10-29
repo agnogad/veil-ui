@@ -1,0 +1,15 @@
+{
+  "name": "table",
+  "title": "Table",
+  "description": "A semantic table with header, body, footer and caption slots.",
+  "category": "data-display",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "selected-row"
+  ]
+}

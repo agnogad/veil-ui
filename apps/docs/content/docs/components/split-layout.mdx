@@ -1,0 +1,95 @@
+---
+title: Split Layout
+description: A main pane with a secondary aside that stacks on small screens.
+---
+
+import {
+  SplitLayoutAsideEnd,
+  SplitLayoutAsideStart,
+  SplitLayoutSticky,
+} from "@veil-ui/registry/split-layout/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add split-layout" />
+
+## Usage
+
+```tsx
+import { SplitLayout } from "@/components/ui/split-layout";
+
+<SplitLayout aside={<TableOfContents />}>
+  <Article />
+</SplitLayout>;
+```
+
+## Examples
+
+### Aside at the end
+
+<ComponentPreview code={demoSource["split-layout"]["aside-end"]}>
+  <SplitLayoutAsideEnd />
+</ComponentPreview>
+
+### Aside at the start
+
+<ComponentPreview code={demoSource["split-layout"]["aside-start"]}>
+  <SplitLayoutAsideStart />
+</ComponentPreview>
+
+### Sticky aside
+
+<ComponentPreview code={demoSource["split-layout"].sticky}>
+  <SplitLayoutSticky />
+</ComponentPreview>
+
+Below the `lg` breakpoint the panes stack in DOM order.
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "aside",
+      type: "React.ReactNode",
+      description: "Secondary pane content.",
+    },
+    {
+      name: "asidePosition",
+      type: '"start" | "end"',
+      default: '"end"',
+      description: "Which side the aside sits on at lg and up.",
+    },
+    {
+      name: "asideSize",
+      type: '"sm" | "md" | "lg"',
+      default: '"md"',
+      description: "Aside width: 240, 320 or 400px.",
+    },
+    {
+      name: "gap",
+      type: '"none" | "sm" | "md" | "lg"',
+      default: '"md"',
+      description: "Space between the panes.",
+    },
+    {
+      name: "stickyAside",
+      type: "boolean",
+      default: "false",
+      description: "Keep the aside visible while the main pane scrolls.",
+    },
+    {
+      name: "...props",
+      type: 'React.ComponentProps<"div">',
+      description: "All native div attributes.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- The aside renders as an `aside` landmark; give it a label when the page has
+  more than one.
+- DOM order follows `asidePosition`; choose the position that matches the
+  reading order you want on mobile.

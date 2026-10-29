@@ -1,0 +1,10 @@
+{
+  "name": "code-editor",
+  "title": "Code Editor",
+  "description": "A monospace textarea with line numbers, a language label and tab indentation.",
+  "category": "forms",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "controlled", "readonly"]
+}

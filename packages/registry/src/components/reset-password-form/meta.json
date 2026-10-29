@@ -1,0 +1,18 @@
+{
+  "name": "reset-password-form",
+  "title": "Reset Password Form",
+  "description": "New password form with length and match validation.",
+  "category": "auth",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "input",
+    "label"
+  ],
+  "examples": [
+    "basic",
+    "loading"
+  ]
+}

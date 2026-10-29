@@ -1,0 +1,10 @@
+{
+  "name": "description-list",
+  "title": "Description List",
+  "description": "Term and detail pairs for metadata, specs and settings summaries.",
+  "category": "typography",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "inline"]
+}

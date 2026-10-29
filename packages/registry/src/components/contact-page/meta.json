@@ -1,0 +1,27 @@
+{
+  "name": "contact-page",
+  "title": "Contact Page",
+  "description": "A contact page pairing a form with support channels and FAQ.",
+  "category": "pages",
+  "type": "registry:block",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "card",
+    "checkbox",
+    "faq-section",
+    "input",
+    "label",
+    "logo",
+    "marketing-footer",
+    "navbar",
+    "select",
+    "textarea"
+  ],
+  "examples": [
+    "basic"
+  ]
+}

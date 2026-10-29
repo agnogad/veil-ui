@@ -1,0 +1,16 @@
+{
+  "name": "article-card",
+  "title": "Article Card",
+  "description": "An editorial preview with category, title, excerpt and byline.",
+  "category": "data-display",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "card",
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "with-image"
+  ]
+}

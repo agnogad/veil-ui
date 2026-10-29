@@ -1,0 +1,57 @@
+---
+title: Calendar
+description: A date grid with single, multiple and range selection built on react-day-picker.
+---
+
+import { CalendarBasic, CalendarRange, CalendarDropdown, CalendarDisabled } from "@veil-ui/registry/calendar/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add calendar" />
+
+## Usage
+
+```tsx
+import { Calendar } from "@/components/ui/calendar";
+
+<Calendar mode="single" selected={date} onSelect={setDate} />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["calendar"]["basic"]}>
+  <CalendarBasic />
+</ComponentPreview>
+
+### Range
+
+<ComponentPreview code={demoSource["calendar"]["range"]}>
+  <CalendarRange />
+</ComponentPreview>
+
+### Dropdown
+
+<ComponentPreview code={demoSource["calendar"]["dropdown"]}>
+  <CalendarDropdown />
+</ComponentPreview>
+
+### Disabled
+
+<ComponentPreview code={demoSource["calendar"]["disabled"]}>
+  <CalendarDisabled />
+</ComponentPreview>
+
+## API reference
+
+- `Calendar` forwards every react-day-picker prop, including `mode` (`single`, `multiple`, `range`), `selected`, `onSelect` and `disabled`.
+- `classNames` and `components` are merged with the built-in styles so individual cells can be restyled or replaced.
+- `showOutsideDays` (default `true`) controls the trailing and leading days of adjacent months.
+
+## Accessibility
+
+- The grid is a table with weekday column headers, so screen readers announce the date column for every cell.
+- Arrow keys move by day, Page Up/Down by month and Shift+Page Up/Down by year; Home and End jump to week edges.
+- Selected, disabled and outside days are exposed through `data-*` attributes and readable button labels.

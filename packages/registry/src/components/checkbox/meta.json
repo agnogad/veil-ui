@@ -1,0 +1,10 @@
+{
+  "name": "checkbox",
+  "title": "Checkbox",
+  "description": "A binary or indeterminate control built on Radix Checkbox.",
+  "category": "forms",
+  "type": "registry:ui",
+  "dependencies": ["@radix-ui/react-checkbox", "lucide-react"],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "indeterminate", "disabled"]
+}

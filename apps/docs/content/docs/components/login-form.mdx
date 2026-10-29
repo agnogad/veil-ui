@@ -1,0 +1,47 @@
+---
+title: Login Form
+description: Email and password sign-in form with loading and error states.
+---
+
+import { LoginFormBasic, LoginFormWithError } from "@veil-ui/registry/login-form/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add login-form" />
+
+## Usage
+
+```tsx
+import { LoginForm } from "@/components/ui/login-form";
+
+<LoginForm
+  onSubmit={({ email, password }) => signIn(email, password)}
+  forgotHref="/forgot-password"
+  signupHref="/signup"
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["login-form"]["basic"]}>
+  <LoginFormBasic />
+</ComponentPreview>
+
+### With Error
+
+<ComponentPreview code={demoSource["login-form"]["with-error"]}>
+  <LoginFormWithError />
+</ComponentPreview>
+
+## API reference
+
+The package exports `login-form` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Forms use native inputs with associated labels and descriptive error text.
+- Submission states are announced through disabled controls and live error messaging.
+- Social providers are buttons with discernible provider names.

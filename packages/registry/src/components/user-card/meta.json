@@ -1,0 +1,17 @@
+{
+  "name": "user-card",
+  "title": "User Card",
+  "description": "A compact user profile with handle, bio, stats and an action.",
+  "category": "data-display",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "avatar",
+    "card",
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "with-action"
+  ]
+}

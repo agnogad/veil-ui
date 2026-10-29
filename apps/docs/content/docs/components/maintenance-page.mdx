@@ -1,0 +1,37 @@
+---
+title: Maintenance Page
+description: A maintenance page with countdown, progress and notify form.
+---
+
+import { MaintenancePageBasic } from "@veil-ui/registry/maintenance-page/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add maintenance-page" />
+
+## Usage
+
+```tsx
+import { MaintenancePage } from "@/components/ui/maintenance-page";
+
+<MaintenancePage />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["maintenance-page"]["basic"]}>
+  <MaintenancePageBasic />
+</ComponentPreview>
+
+## API reference
+
+The package exports `maintenance-page` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Page templates use semantic landmarks and a single page-level heading.
+- Navigation links and actions have discernible names and visible focus styles.
+- Decorative imagery uses empty alt text; content images carry descriptions.

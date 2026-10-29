@@ -1,0 +1,48 @@
+---
+title: Key Value List
+description: A definition list for metadata with optional copy buttons.
+---
+
+import { KeyValueListBasic, KeyValueListTwoColumns } from "@veil-ui/registry/key-value-list/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add key-value-list" />
+
+## Usage
+
+```tsx
+import { KeyValueList } from "@/components/ui/key-value-list";
+
+<KeyValueList
+  items={[
+    { label: "Workspace", value: "Northwind" },
+    { label: "API key", value: "sk_live_••••42", copyValue: "sk_live_key" },
+  ]}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["key-value-list"]["basic"]}>
+  <KeyValueListBasic />
+</ComponentPreview>
+
+### Two columns
+
+<ComponentPreview code={demoSource["key-value-list"]["two-columns"]}>
+  <KeyValueListTwoColumns />
+</ComponentPreview>
+
+## API reference
+
+The package exports `key-value-list` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Content uses semantic HTML — lists are lists, tables are tables and metadata uses a definition list.
+- Interactive elements are real buttons or links with visible focus states.
+- Images require meaningful `alt` text; icons used decoratively are `aria-hidden`.

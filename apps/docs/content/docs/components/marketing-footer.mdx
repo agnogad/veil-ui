@@ -1,0 +1,48 @@
+---
+title: Marketing Footer
+description: A multi-column site footer with brand, links, socials and legal text.
+---
+
+import { MarketingFooterBasic, MarketingFooterMinimal } from "@veil-ui/registry/marketing-footer/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add marketing-footer" />
+
+## Usage
+
+```tsx
+import { MarketingFooter } from "@/components/ui/marketing-footer";
+
+<MarketingFooter
+  columns={[
+    { title: "Product", links: [{ label: "Docs", href: "/docs" }] },
+  ]}
+  legal={<p>© 2026 Veil UI. All rights reserved.</p>}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["marketing-footer"]["basic"]}>
+  <MarketingFooterBasic />
+</ComponentPreview>
+
+### Minimal
+
+<ComponentPreview code={demoSource["marketing-footer"]["minimal"]}>
+  <MarketingFooterMinimal />
+</ComponentPreview>
+
+## API reference
+
+The package exports `marketing-footer` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Pages keep a single `h1` in the hero and use `h2`/`h3` for section hierarchy.
+- Call-to-action elements are real links or buttons with discernible labels.
+- Decorative icons are `aria-hidden` and meaningful images require `alt` text.

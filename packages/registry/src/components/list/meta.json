@@ -1,0 +1,10 @@
+{
+  "name": "list",
+  "title": "List",
+  "description": "Ordered and unordered lists with marker, spacing and layout presets.",
+  "category": "typography",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["utils"],
+  "examples": ["bullet", "ordered", "unstyled"]
+}

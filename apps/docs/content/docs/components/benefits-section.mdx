@@ -1,0 +1,48 @@
+---
+title: Benefits Section
+description: A checklist of benefits paired with supporting media.
+---
+
+import { BenefitsSectionBasic, BenefitsSectionWithMedia } from "@veil-ui/registry/benefits-section/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add benefits-section" />
+
+## Usage
+
+```tsx
+import { BenefitsSection } from "@/components/ui/benefits-section";
+
+<BenefitsSection
+  title="Why teams switch"
+  benefits={[
+    { title: "Own the source", description: "Components land in your repo." },
+  ]}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["benefits-section"]["basic"]}>
+  <BenefitsSectionBasic />
+</ComponentPreview>
+
+### With media
+
+<ComponentPreview code={demoSource["benefits-section"]["with-media"]}>
+  <BenefitsSectionWithMedia />
+</ComponentPreview>
+
+## API reference
+
+The package exports `benefits-section` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Pages keep a single `h1` in the hero and use `h2`/`h3` for section hierarchy.
+- Call-to-action elements are real links or buttons with discernible labels.
+- Decorative icons are `aria-hidden` and meaningful images require `alt` text.

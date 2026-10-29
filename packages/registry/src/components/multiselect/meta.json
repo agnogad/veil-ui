@@ -1,0 +1,10 @@
+{
+  "name": "multiselect",
+  "title": "MultiSelect",
+  "description": "A popover list of checkboxes with multi-value state and a summary trigger.",
+  "category": "forms",
+  "type": "registry:ui",
+  "dependencies": ["@radix-ui/react-popover", "lucide-react"],
+  "registryDependencies": ["button", "checkbox", "utils"],
+  "examples": ["basic", "controlled"]
+}

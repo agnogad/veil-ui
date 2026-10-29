@@ -1,0 +1,51 @@
+---
+title: Date Range Picker
+description: Two calendars in a popover for choosing a start and end date.
+---
+
+import { DateRangePickerBasic, DateRangePickerPresets, DateRangePickerSingleMonth } from "@veil-ui/registry/date-range-picker/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add date-range-picker" />
+
+## Usage
+
+```tsx
+import { DateRangePicker } from "@/components/ui/date-range-picker";
+
+<DateRangePicker value={range} onValueChange={setRange} />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["date-range-picker"]["basic"]}>
+  <DateRangePickerBasic />
+</ComponentPreview>
+
+### Presets
+
+<ComponentPreview code={demoSource["date-range-picker"]["presets"]}>
+  <DateRangePickerPresets />
+</ComponentPreview>
+
+### Single month
+
+<ComponentPreview code={demoSource["date-range-picker"]["single-month"]}>
+  <DateRangePickerSingleMonth />
+</ComponentPreview>
+
+## API reference
+
+- `value` / `defaultValue` hold a react-day-picker `DateRange`; `onValueChange` fires on each click.
+- The first click starts a new range, the second completes it and closes the popover.
+- `numberOfMonths` (default `2`), `defaultMonth`, `label` and `disabled` control the panel.
+
+## Accessibility
+
+- The trigger is a labelled `combobox` announcing the formatted range.
+- Both month grids are keyboard navigable and share the same selection state.
+- Escape closes the popover and restores focus to the trigger.

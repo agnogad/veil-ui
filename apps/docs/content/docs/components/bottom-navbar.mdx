@@ -1,0 +1,43 @@
+---
+title: Bottom Navbar
+description: Alias of Bottom Navigation for mobile tab bars.
+---
+
+import { BottomNavbarBasic } from "@veil-ui/registry/bottom-navbar/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add bottom-navbar" />
+
+## Usage
+
+```tsx
+import { Home, Settings } from "lucide-react";
+import { BottomNavbar } from "@/components/ui/bottom-navbar";
+
+<BottomNavbar
+  items={[
+    { label: "Home", icon: Home, href: "/", active: true },
+    { label: "Settings", icon: Settings, href: "/settings" },
+  ]}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["bottom-navbar"]["basic"]}>
+  <BottomNavbarBasic />
+</ComponentPreview>
+
+## API reference
+
+`BottomNavbar` re-exports [`BottomNavigation`](/docs/components/bottom-navigation)
+under a navbar-oriented name; props and accessibility notes are identical.
+
+## Accessibility
+
+- The alias keeps the labelled `<nav>` landmark and `aria-current` handling
+  from Bottom Navigation.

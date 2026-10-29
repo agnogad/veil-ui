@@ -1,0 +1,10 @@
+{
+  "name": "back-button",
+  "title": "Back Button",
+  "description": "A navigation button that returns to the previous page.",
+  "category": "navigation",
+  "type": "registry:ui",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["button", "utils"],
+  "examples": ["basic", "outline"]
+}

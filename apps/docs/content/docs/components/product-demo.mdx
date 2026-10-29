@@ -1,0 +1,45 @@
+---
+title: Product Demo
+description: A browser frame that presents a product screenshot or custom preview.
+---
+
+import { ProductDemoBasic, ProductDemoImage } from "@veil-ui/registry/product-demo/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add product-demo" />
+
+## Usage
+
+```tsx
+import { ProductDemo } from "@/components/ui/product-demo";
+
+<ProductDemo url="app.veil-ui.dev" caption="Dashboard preview.">
+  <DashboardPreview />
+</ProductDemo>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["product-demo"]["basic"]}>
+  <ProductDemoBasic />
+</ComponentPreview>
+
+### Image
+
+<ComponentPreview code={demoSource["product-demo"]["image"]}>
+  <ProductDemoImage />
+</ComponentPreview>
+
+## API reference
+
+The package exports `product-demo` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Pages keep a single `h1` in the hero and use `h2`/`h3` for section hierarchy.
+- Call-to-action elements are real links or buttons with discernible labels.
+- Decorative icons are `aria-hidden` and meaningful images require `alt` text.

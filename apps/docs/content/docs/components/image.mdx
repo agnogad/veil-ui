@@ -1,0 +1,43 @@
+---
+title: Image
+description: A rounded image with optional aspect ratio presets.
+---
+
+import { ImageBasic, ImageVideoRatio } from "@veil-ui/registry/image/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add image" />
+
+## Usage
+
+```tsx
+import { Image } from "@/components/ui/image";
+
+<Image src="/photo.jpg" alt="A mountain valley" ratio="video" />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["image"]["basic"]}>
+  <ImageBasic />
+</ComponentPreview>
+
+### Video ratio
+
+<ComponentPreview code={demoSource["image"]["video-ratio"]}>
+  <ImageVideoRatio />
+</ComponentPreview>
+
+## API reference
+
+The package exports `image` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Media players use native `<video>` and `<audio>` controls with accessible labels.
+- Images require meaningful `alt` text; clickable thumbnails are buttons named `Play <title>`.
+- Decorative play overlays, durations and icons are hidden from assistive technology.

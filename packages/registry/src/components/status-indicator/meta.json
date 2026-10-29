@@ -1,0 +1,10 @@
+{
+  "name": "status-indicator",
+  "title": "Status Indicator",
+  "description": "A dot and label showing presence or availability.",
+  "category": "feedback",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "pulse"]
+}

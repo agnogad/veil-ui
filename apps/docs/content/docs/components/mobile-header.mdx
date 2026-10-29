@@ -1,0 +1,48 @@
+---
+title: Mobile Header
+description: A compact sticky header with back navigation and actions.
+---
+
+import { MobileHeaderBasic, MobileHeaderWithBack } from "@veil-ui/registry/mobile-header/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add mobile-header" />
+
+## Usage
+
+```tsx
+import { MobileHeader } from "@/components/ui/mobile-header";
+
+<MobileHeader
+  title="Billing"
+  subtitle="Acme workspace"
+  onBack={() => history.back()}
+  actions={<Button size="icon" variant="ghost" aria-label="Share" />}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["mobile-header"]["basic"]}>
+  <MobileHeaderBasic />
+</ComponentPreview>
+
+### With back
+
+<ComponentPreview code={demoSource["mobile-header"]["with-back"]}>
+  <MobileHeaderWithBack />
+</ComponentPreview>
+
+## API reference
+
+The package exports `mobile-header` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Touch targets are large enough to tap comfortably and keep visible focus rings for keyboard and switch users.
+- Gesture interactions (swipe, pull to refresh) have visible button alternatives so they are not the only way to act.
+- Sheets, drawers and dialogs follow the underlying accessible primitives for focus trapping and escape handling.

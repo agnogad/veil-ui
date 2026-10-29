@@ -1,0 +1,10 @@
+{
+  "name": "country-select",
+  "title": "Country Select",
+  "description": "A searchable country picker with flags and dial codes built on cmdk.",
+  "category": "forms",
+  "type": "registry:ui",
+  "dependencies": ["@radix-ui/react-popover", "cmdk", "lucide-react"],
+  "registryDependencies": ["button", "utils"],
+  "examples": ["basic", "controlled", "dial-code"]
+}

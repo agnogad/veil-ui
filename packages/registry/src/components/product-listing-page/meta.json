@@ -1,0 +1,28 @@
+{
+  "name": "product-listing-page",
+  "title": "Product Listing Page",
+  "description": "A storefront listing with filters, product grid and pagination.",
+  "category": "pages",
+  "type": "registry:block",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "breadcrumb",
+    "button",
+    "checkbox",
+    "input",
+    "label",
+    "logo",
+    "marketing-footer",
+    "navbar",
+    "pagination",
+    "product-card",
+    "select"
+  ],
+  "examples": [
+    "basic"
+  ]
+}

@@ -1,0 +1,37 @@
+---
+title: Cart Page
+description: A shopping cart with quantity controls and order summary.
+---
+
+import { CartPageBasic } from "@veil-ui/registry/cart-page/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add cart-page" />
+
+## Usage
+
+```tsx
+import { CartPage } from "@/components/ui/cart-page";
+
+<CartPage />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["cart-page"]["basic"]}>
+  <CartPageBasic />
+</ComponentPreview>
+
+## API reference
+
+The package exports `cart-page` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Page templates use semantic landmarks and a single page-level heading.
+- Navigation links and actions have discernible names and visible focus styles.
+- Decorative imagery uses empty alt text; content images carry descriptions.

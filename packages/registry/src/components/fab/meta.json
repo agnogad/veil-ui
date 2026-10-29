@@ -1,0 +1,10 @@
+{
+  "name": "fab",
+  "title": "Floating Action Button",
+  "description": "A fixed circular action for the primary task on a screen.",
+  "category": "actions",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "extended", "positions"]
+}

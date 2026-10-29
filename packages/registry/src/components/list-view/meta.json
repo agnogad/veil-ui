@@ -1,0 +1,16 @@
+{
+  "name": "list-view",
+  "title": "List View",
+  "description": "A bordered list of rich items with leading and trailing slots.",
+  "category": "data-display",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "card",
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "compact"
+  ]
+}

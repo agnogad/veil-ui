@@ -1,0 +1,43 @@
+---
+title: Statistic Card
+description: A single metric with an optional delta and trend direction.
+---
+
+import { StatisticCardBasic, StatisticCardDecline } from "@veil-ui/registry/statistic-card/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add statistic-card" />
+
+## Usage
+
+```tsx
+import { StatisticCard } from "@/components/ui/statistic-card";
+
+<StatisticCard label="Active users" value="12,480" delta={12.4} trend="up" />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["statistic-card"]["basic"]}>
+  <StatisticCardBasic />
+</ComponentPreview>
+
+### Decline
+
+<ComponentPreview code={demoSource["statistic-card"]["decline"]}>
+  <StatisticCardDecline />
+</ComponentPreview>
+
+## API reference
+
+The package exports `statistic-card` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Content uses semantic HTML — lists are lists, tables are tables and metadata uses a definition list.
+- Interactive elements are real buttons or links with visible focus states.
+- Images require meaningful `alt` text; icons used decoratively are `aria-hidden`.

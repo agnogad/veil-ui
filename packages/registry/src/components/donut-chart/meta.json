@@ -1,0 +1,16 @@
+{
+  "name": "donut-chart",
+  "title": "Donut Chart",
+  "description": "A pie chart with a configurable inner radius.",
+  "category": "charts",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "pie-chart",
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "thin"
+  ]
+}

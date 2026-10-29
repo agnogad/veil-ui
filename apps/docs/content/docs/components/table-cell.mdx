@@ -1,0 +1,45 @@
+---
+title: Table Cell
+description: A re-export of the Table cell primitive for standalone composition.
+---
+
+import { TableCellBasic } from "@veil-ui/registry/table-cell/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add table-cell" />
+
+## Usage
+
+```tsx
+import { Table, TableBody, TableRow } from "@/components/ui/table";
+import { TableCell } from "@/components/ui/table-cell";
+
+<Table>
+  <TableBody>
+    <TableRow>
+      <TableCell>Total</TableCell>
+      <TableCell>$750.00</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["table-cell"]["basic"]}>
+  <TableCellBasic />
+</ComponentPreview>
+
+## API reference
+
+The package exports `table-cell` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Content uses semantic HTML — lists are lists, tables are tables and metadata uses a definition list.
+- Interactive elements are real buttons or links with visible focus states.
+- Images require meaningful `alt` text; icons used decoratively are `aria-hidden`.

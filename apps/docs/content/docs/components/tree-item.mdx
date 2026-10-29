@@ -1,0 +1,39 @@
+---
+title: Tree Item
+description: The tree node primitive re-exported for custom trees.
+---
+
+import { TreeItemBasic } from "@veil-ui/registry/tree-item/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add tree-item" />
+
+## Usage
+
+```tsx
+import { TreeItem } from "@/components/ui/tree-item";
+
+// TreeItem is the node primitive rendered recursively by TreeView.
+// Use TreeView for standard trees and TreeItem for custom layouts.
+<TreeItem node={{ id: "src", label: "src" }} level={0} />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["tree-item"]["basic"]}>
+  <TreeItemBasic />
+</ComponentPreview>
+
+## API reference
+
+The package exports `tree-item` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Content uses semantic HTML — lists are lists, tables are tables and metadata uses a definition list.
+- Interactive elements are real buttons or links with visible focus states.
+- Images require meaningful `alt` text; icons used decoratively are `aria-hidden`.

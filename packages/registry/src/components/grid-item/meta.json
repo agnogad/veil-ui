@@ -1,0 +1,10 @@
+{
+  "name": "grid-item",
+  "title": "Grid Item",
+  "description": "Places an item across columns and rows of a 12-column grid.",
+  "category": "layout",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "spans", "dashboard"]
+}

@@ -1,0 +1,37 @@
+---
+title: About Page
+description: A company about page with story, values and team.
+---
+
+import { AboutPageBasic } from "@veil-ui/registry/about-page/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add about-page" />
+
+## Usage
+
+```tsx
+import { AboutPage } from "@/components/ui/about-page";
+
+<AboutPage />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["about-page"]["basic"]}>
+  <AboutPageBasic />
+</ComponentPreview>
+
+## API reference
+
+The package exports `about-page` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Page templates use semantic landmarks and a single page-level heading.
+- Navigation links and actions have discernible names and visible focus styles.
+- Decorative imagery uses empty alt text; content images carry descriptions.

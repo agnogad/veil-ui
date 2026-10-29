@@ -1,0 +1,16 @@
+{
+  "name": "image-card",
+  "title": "Image Card",
+  "description": "A card pairing a cover image with a title, description and footer.",
+  "category": "data-display",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "card",
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "with-content"
+  ]
+}

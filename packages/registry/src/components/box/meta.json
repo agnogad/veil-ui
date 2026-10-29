@@ -1,0 +1,10 @@
+{
+  "name": "box",
+  "title": "Box",
+  "description": "A generic layout primitive with padding and asChild composition.",
+  "category": "layout",
+  "type": "registry:ui",
+  "dependencies": ["@radix-ui/react-slot"],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "padding", "as-child"]
+}

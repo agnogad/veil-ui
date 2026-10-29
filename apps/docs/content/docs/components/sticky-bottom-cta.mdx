@@ -1,0 +1,47 @@
+---
+title: Sticky Bottom CTA
+description: A sticky bottom bar pairing context with a primary action.
+---
+
+import { StickyBottomCtaBasic, StickyBottomCtaCheckout } from "@veil-ui/registry/sticky-bottom-cta/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add sticky-bottom-cta" />
+
+## Usage
+
+```tsx
+import { StickyBottomCta } from "@/components/ui/sticky-bottom-cta";
+
+<StickyBottomCta
+  label="$24 / month"
+  description="Billed monthly"
+  action={<Button>Start trial</Button>}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["sticky-bottom-cta"]["basic"]}>
+  <StickyBottomCtaBasic />
+</ComponentPreview>
+
+### Checkout
+
+<ComponentPreview code={demoSource["sticky-bottom-cta"]["checkout"]}>
+  <StickyBottomCtaCheckout />
+</ComponentPreview>
+
+## API reference
+
+The package exports `sticky-bottom-cta` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Touch targets are large enough to tap comfortably and keep visible focus rings for keyboard and switch users.
+- Gesture interactions (swipe, pull to refresh) have visible button alternatives so they are not the only way to act.
+- Sheets, drawers and dialogs follow the underlying accessible primitives for focus trapping and escape handling.

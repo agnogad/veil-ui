@@ -1,0 +1,37 @@
+---
+title: Profile Page
+description: A social profile page with cover, tabs, posts and sidebar.
+---
+
+import { ProfilePageBasic } from "@veil-ui/registry/profile-page/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add profile-page" />
+
+## Usage
+
+```tsx
+import { ProfilePage } from "@/components/ui/profile-page";
+
+<ProfilePage />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["profile-page"]["basic"]}>
+  <ProfilePageBasic />
+</ComponentPreview>
+
+## API reference
+
+The package exports `profile-page` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Page templates use semantic landmarks and a single page-level heading.
+- Navigation links and actions have discernible names and visible focus styles.
+- Decorative imagery uses empty alt text; content images carry descriptions.

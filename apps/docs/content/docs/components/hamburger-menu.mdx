@@ -1,0 +1,60 @@
+---
+title: Hamburger Menu
+description: An animated three-line button that toggles to a close icon.
+---
+
+import {
+  HamburgerMenuBasic,
+  HamburgerMenuControlled,
+} from "@veil-ui/registry/hamburger-menu/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add hamburger-menu" />
+
+## Usage
+
+```tsx
+import { HamburgerMenu } from "@/components/ui/hamburger-menu";
+
+<HamburgerMenu onOpenChange={(open) => console.log(open)} />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["hamburger-menu"]["basic"]}>
+  <HamburgerMenuBasic />
+</ComponentPreview>
+
+### Controlled
+
+<ComponentPreview code={demoSource["hamburger-menu"]["controlled"]}>
+  <HamburgerMenuControlled />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "open / onOpenChange",
+      type: "boolean / (open) => void",
+      description: "Controlled state; omit to let the button manage itself.",
+    },
+    {
+      name: "label",
+      type: "string",
+      default: '"Open menu"',
+      description: "Accessible name for the toggle button.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Renders a button with a stable accessible name and `aria-expanded`.
+- The lines animate into an X while `data-state="open"`.
+- Only use it as a visual control for a real menu or drawer.

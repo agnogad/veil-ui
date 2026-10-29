@@ -1,0 +1,71 @@
+---
+title: Form Actions
+description: Aligns the submit and cancel buttons at the end of a form.
+---
+
+import {
+  FormActionsBasic,
+  FormActionsSplit,
+  FormActionsWithHint,
+} from "@veil-ui/registry/form-actions/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add form-actions" />
+
+## Usage
+
+```tsx
+import { FormActions } from "@/components/ui/form-actions";
+
+<FormActions>
+  <Button variant="outline">Cancel</Button>
+  <Button type="submit">Save</Button>
+</FormActions>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["form-actions"].basic}>
+  <FormActionsBasic />
+</ComponentPreview>
+
+### Split
+
+<ComponentPreview code={demoSource["form-actions"].split}>
+  <FormActionsSplit />
+</ComponentPreview>
+
+### With hint
+
+<ComponentPreview code={demoSource["form-actions"]["with-hint"]}>
+  <FormActionsWithHint />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "align",
+      type: '"start" | "center" | "end" | "between"',
+      default: '"end"',
+      description: "Distribution of the actions along the row.",
+    },
+    {
+      name: "...props",
+      type: 'React.ComponentProps<"div">',
+      description: "All native div attributes.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Renders a plain container; the buttons keep their native semantics.
+- Make the primary action the last button in DOM order so keyboard focus reaches
+  the safe choice before the destructive one.
+- Wrap on small viewports instead of shrinking the buttons below 32px.

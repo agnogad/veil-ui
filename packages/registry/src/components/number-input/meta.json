@@ -1,0 +1,10 @@
+{
+  "name": "number-input",
+  "title": "Number Input",
+  "description": "A numeric field with step buttons and clamping.",
+  "category": "forms",
+  "type": "registry:ui",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "with-label", "range", "disabled"]
+}

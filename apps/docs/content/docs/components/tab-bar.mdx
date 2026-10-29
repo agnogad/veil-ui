@@ -1,0 +1,49 @@
+---
+title: Tab Bar
+description: Alias entry for Tabs, tuned for bar-style navigation.
+---
+
+import { TabBarBasic } from "@veil-ui/registry/tab-bar/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add tab-bar" />
+
+## Usage
+
+```tsx
+import {
+  TabBar,
+  TabBarContent,
+  TabBarItem,
+  TabBarList,
+} from "@/components/ui/tab-bar";
+
+<TabBar defaultValue="overview">
+  <TabBarList>
+    <TabBarItem value="overview">Overview</TabBarItem>
+    <TabBarItem value="activity">Activity</TabBarItem>
+  </TabBarList>
+  <TabBarContent value="overview">Project overview.</TabBarContent>
+  <TabBarContent value="activity">Recent activity.</TabBarContent>
+</TabBar>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["tab-bar"]["basic"]}>
+  <TabBarBasic />
+</ComponentPreview>
+
+## API reference
+
+The alias maps `TabBar` → `Tabs`, `TabBarList` → `TabsList`,
+`TabBarItem` → `TabsTrigger` and `TabBarContent` → `TabsContent`.
+
+## Accessibility
+
+- Inherits full Tabs behavior: roving focus, `aria-selected` and labelled
+  tab panels.

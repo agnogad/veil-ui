@@ -1,0 +1,51 @@
+---
+title: Time Picker
+description: Hour and minute lists in a popover for picking a time.
+---
+
+import { TimePickerBasic, TimePickerStep, TimePickerDisabled } from "@veil-ui/registry/time-picker/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add time-picker" />
+
+## Usage
+
+```tsx
+import { TimePicker } from "@/components/ui/time-picker";
+
+<TimePicker label="Meeting time" value={time} onValueChange={setTime} minuteStep={15} />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["time-picker"]["basic"]}>
+  <TimePickerBasic />
+</ComponentPreview>
+
+### Step
+
+<ComponentPreview code={demoSource["time-picker"]["step"]}>
+  <TimePickerStep />
+</ComponentPreview>
+
+### Disabled
+
+<ComponentPreview code={demoSource["time-picker"]["disabled"]}>
+  <TimePickerDisabled />
+</ComponentPreview>
+
+## API reference
+
+- `value` / `defaultValue` use 24-hour `HH:mm` strings; `onValueChange` emits the committed time.
+- `minuteStep` (default `5`) controls the spacing of minute options.
+- `label`, `placeholder`, `disabled` and `className` style the trigger and panel.
+
+## Accessibility
+
+- Hours and minutes are separate labelled `listbox` widgets with `aria-selected` on the active option.
+- Options are reachable with Tab and activated with Enter or Space.
+- A Done action commits the draft and returns focus to the trigger.

@@ -1,0 +1,10 @@
+{
+  "name": "progress-bar",
+  "title": "Progress Bar",
+  "description": "Alias of Progress for horizontal completion indicators.",
+  "category": "feedback",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["progress", "utils"],
+  "examples": ["basic"]
+}

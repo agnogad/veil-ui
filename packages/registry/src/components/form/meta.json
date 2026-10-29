@@ -1,0 +1,10 @@
+{
+  "name": "form",
+  "title": "Form",
+  "description": "A vertical form layout with sections and a validation summary.",
+  "category": "forms",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "sections", "with-error"]
+}

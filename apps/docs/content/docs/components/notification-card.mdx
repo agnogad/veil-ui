@@ -1,0 +1,47 @@
+---
+title: Notification Card
+description: An inbox-style notification with type, time and unread state.
+---
+
+import { NotificationCardBasic, NotificationCardUnread } from "@veil-ui/registry/notification-card/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add notification-card" />
+
+## Usage
+
+```tsx
+import { NotificationCard } from "@/components/ui/notification-card";
+
+<NotificationCard
+  title="New comment on your pull request"
+  description="Mira left feedback on the token refactor."
+  time="5 minutes ago"
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["notification-card"]["basic"]}>
+  <NotificationCardBasic />
+</ComponentPreview>
+
+### Unread
+
+<ComponentPreview code={demoSource["notification-card"]["unread"]}>
+  <NotificationCardUnread />
+</ComponentPreview>
+
+## API reference
+
+The package exports `notification-card` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Content uses semantic HTML — lists are lists, tables are tables and metadata uses a definition list.
+- Interactive elements are real buttons or links with visible focus states.
+- Images require meaningful `alt` text; icons used decoratively are `aria-hidden`.

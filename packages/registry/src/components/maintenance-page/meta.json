@@ -1,0 +1,21 @@
+{
+  "name": "maintenance-page",
+  "title": "Maintenance Page",
+  "description": "A maintenance page with countdown, progress and notify form.",
+  "category": "pages",
+  "type": "registry:block",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "input",
+    "logo",
+    "progress",
+    "status-indicator"
+  ],
+  "examples": [
+    "basic"
+  ]
+}

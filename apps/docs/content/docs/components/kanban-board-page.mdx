@@ -1,0 +1,37 @@
+---
+title: Kanban Board Page
+description: A sprint board with columns, task cards and assignees.
+---
+
+import { KanbanBoardPageBasic } from "@veil-ui/registry/kanban-board-page/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add kanban-board-page" />
+
+## Usage
+
+```tsx
+import { KanbanBoardPage } from "@/components/ui/kanban-board-page";
+
+<KanbanBoardPage />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["kanban-board-page"]["basic"]}>
+  <KanbanBoardPageBasic />
+</ComponentPreview>
+
+## API reference
+
+The package exports `kanban-board-page` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Page templates use semantic landmarks and a single page-level heading.
+- Navigation links and actions have discernible names and visible focus styles.
+- Decorative imagery uses empty alt text; content images carry descriptions.

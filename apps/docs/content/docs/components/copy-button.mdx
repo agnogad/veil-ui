@@ -1,0 +1,87 @@
+---
+title: Copy Button
+description: Copies text to the clipboard and confirms the action in place.
+---
+
+import {
+  CopyButtonBasic,
+  CopyButtonGhost,
+  CopyButtonSizes,
+} from "@veil-ui/registry/copy-button/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add copy-button" />
+
+## Usage
+
+```tsx
+import { CopyButton } from "@/components/ui/copy-button";
+
+<CopyButton value="npx veil-ui@latest add button" />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["copy-button"].basic}>
+  <CopyButtonBasic />
+</ComponentPreview>
+
+### Sizes
+
+<ComponentPreview code={demoSource["copy-button"].sizes}>
+  <CopyButtonSizes />
+</ComponentPreview>
+
+### Ghost
+
+<ComponentPreview code={demoSource["copy-button"].ghost}>
+  <CopyButtonGhost />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "value",
+      type: "string",
+      description: "Text written to the clipboard.",
+    },
+    {
+      name: "label",
+      type: "string",
+      default: '"Copy"',
+      description: "Accessible name before copying.",
+    },
+    {
+      name: "copiedLabel",
+      type: "string",
+      default: '"Copied"',
+      description: "Accessible name and announcement after copying.",
+    },
+    {
+      name: "timeout",
+      type: "number",
+      default: "1600",
+      description: "How long the confirmed state lasts, in milliseconds.",
+    },
+    {
+      name: "...props",
+      type: "Omit<IconButtonProps, 'children' | 'aria-label'>",
+      description: "Variant, size and native button attributes.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- The button name changes from “Copy” to “Copied”, and a polite live region
+  announces the result without moving focus.
+- Labels are overridable, so the name can describe the target, such as “Copy
+  API key”.
+- Clipboard failures leave the button in its original state instead of claiming
+  success.

@@ -1,0 +1,16 @@
+{
+  "name": "mobile-bottom-sheet",
+  "title": "Mobile Bottom Sheet",
+  "description": "The BottomSheet component exposed with mobile naming.",
+  "category": "mobile",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "bottom-sheet",
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "confirm"
+  ]
+}

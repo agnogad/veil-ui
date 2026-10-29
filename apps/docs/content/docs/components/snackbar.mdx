@@ -1,0 +1,44 @@
+---
+title: Snackbar
+description: Alias of Toast for brief, bottom-anchored messages.
+---
+
+import { SnackbarBasic } from "@veil-ui/registry/snackbar/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add snackbar" />
+
+## Usage
+
+```tsx
+import {
+  Snackbar,
+  SnackbarProvider,
+  useSnackbar,
+} from "@/components/ui/snackbar";
+
+<SnackbarProvider>
+  <App />
+  <Snackbar />
+</SnackbarProvider>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["snackbar"]["basic"]}>
+  <SnackbarBasic />
+</ComponentPreview>
+
+## API reference
+
+The alias maps `Snackbar` → `Toaster`, `SnackbarProvider` →
+`ToastProvider` and `useSnackbar` → `useToast` from
+[Toast](/docs/components/toast).
+
+## Accessibility
+
+- Snackbars share Toast's labelled live region and dismiss semantics.

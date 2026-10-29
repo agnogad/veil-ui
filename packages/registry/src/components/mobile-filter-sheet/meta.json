@@ -1,0 +1,17 @@
+{
+  "name": "mobile-filter-sheet",
+  "title": "Mobile Filter Sheet",
+  "description": "A bottom sheet with toggleable filter groups and apply/reset actions.",
+  "category": "mobile",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "bottom-sheet",
+    "button",
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "preset"
+  ]
+}

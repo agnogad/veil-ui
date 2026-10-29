@@ -1,0 +1,43 @@
+---
+title: Safe Area View
+description: A wrapper that applies device safe-area insets on selected edges.
+---
+
+import { SafeAreaViewBasic, SafeAreaViewBottomOnly } from "@veil-ui/registry/safe-area-view/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add safe-area-view" />
+
+## Usage
+
+```tsx
+import { SafeAreaView } from "@/components/ui/safe-area-view";
+
+<SafeAreaView edges={["top", "bottom"]}>{content}</SafeAreaView>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["safe-area-view"]["basic"]}>
+  <SafeAreaViewBasic />
+</ComponentPreview>
+
+### Bottom only
+
+<ComponentPreview code={demoSource["safe-area-view"]["bottom-only"]}>
+  <SafeAreaViewBottomOnly />
+</ComponentPreview>
+
+## API reference
+
+The package exports `safe-area-view` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Touch targets are large enough to tap comfortably and keep visible focus rings for keyboard and switch users.
+- Gesture interactions (swipe, pull to refresh) have visible button alternatives so they are not the only way to act.
+- Sheets, drawers and dialogs follow the underlying accessible primitives for focus trapping and escape handling.

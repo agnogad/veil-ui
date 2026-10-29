@@ -1,0 +1,78 @@
+---
+title: Description List
+description: Term and detail pairs for metadata, specs and settings summaries.
+---
+
+import {
+  DescriptionListBasic,
+  DescriptionListInline,
+} from "@veil-ui/registry/description-list/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add description-list" />
+
+## Usage
+
+```tsx
+import {
+  DescriptionList,
+  DescriptionTerm,
+  DescriptionDetails,
+} from "@/components/ui/description-list";
+
+<DescriptionList>
+  <DescriptionTerm>License</DescriptionTerm>
+  <DescriptionDetails>MIT</DescriptionDetails>
+</DescriptionList>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["description-list"].basic}>
+  <DescriptionListBasic />
+</ComponentPreview>
+
+### Inline
+
+<ComponentPreview code={demoSource["description-list"].inline}>
+  <DescriptionListInline />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "layout",
+      type: '"stacked" | "inline"',
+      default: '"stacked"',
+      description: "Stack pairs or place terms beside their details.",
+    },
+  ]}
+/>
+
+<PropsTable
+  data={[
+    {
+      name: "DescriptionTerm",
+      type: "ComponentProps<'dt'>",
+      description: "Medium-weight term text.",
+    },
+    {
+      name: "DescriptionDetails",
+      type: "ComponentProps<'dd'>",
+      description: "Muted detail text aligned with the term.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Uses the native `dl`, `dt` and `dd` elements so term-detail relationships are
+  programmatic.
+- The inline layout collapses to a single column on narrow screens instead of
+  squeezing long values.

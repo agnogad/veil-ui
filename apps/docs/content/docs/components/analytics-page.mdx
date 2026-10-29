@@ -1,0 +1,37 @@
+---
+title: Analytics Page
+description: A traffic analytics page with charts, goals and top pages.
+---
+
+import { AnalyticsPageBasic } from "@veil-ui/registry/analytics-page/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add analytics-page" />
+
+## Usage
+
+```tsx
+import { AnalyticsPage } from "@/components/ui/analytics-page";
+
+<AnalyticsPage />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["analytics-page"]["basic"]}>
+  <AnalyticsPageBasic />
+</ComponentPreview>
+
+## API reference
+
+The package exports `analytics-page` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Page templates use semantic landmarks and a single page-level heading.
+- Navigation links and actions have discernible names and visible focus styles.
+- Decorative imagery uses empty alt text; content images carry descriptions.

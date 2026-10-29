@@ -1,0 +1,10 @@
+{
+  "name": "confirmation-dialog",
+  "title": "Confirmation Dialog",
+  "description": "A prompted confirmation built on alert-dialog with confirm and cancel callbacks.",
+  "category": "overlays",
+  "type": "registry:ui",
+  "dependencies": ["@radix-ui/react-alert-dialog"],
+  "registryDependencies": ["button", "utils"],
+  "examples": ["destructive", "confirm", "controlled"]
+}

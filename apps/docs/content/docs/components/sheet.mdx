@@ -1,0 +1,68 @@
+---
+title: Sheet
+description: A dialog panel that can slide in from any edge of the screen.
+---
+
+import { SheetRight, SheetBottom, SheetLeft } from "@veil-ui/registry/sheet/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add sheet" />
+
+## Usage
+
+```tsx
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+
+<Sheet>
+  <SheetTrigger asChild>
+    <button type="button">Open sheet</button>
+  </SheetTrigger>
+  <SheetContent side="bottom">
+    <SheetHeader>
+      <SheetTitle>Share</SheetTitle>
+      <SheetDescription>Pick a destination.</SheetDescription>
+    </SheetHeader>
+  </SheetContent>
+</Sheet>;
+```
+
+## Examples
+
+### Right
+
+<ComponentPreview code={demoSource["sheet"]["right"]}>
+  <SheetRight />
+</ComponentPreview>
+
+### Bottom
+
+<ComponentPreview code={demoSource["sheet"]["bottom"]}>
+  <SheetBottom />
+</ComponentPreview>
+
+### Left
+
+<ComponentPreview code={demoSource["sheet"]["left"]}>
+  <SheetLeft />
+</ComponentPreview>
+
+## API reference
+
+- `SheetContent` accepts `side` as `top`, `bottom`, `left` or `right`, exposed as `data-side`.
+- Top and bottom sheets cap their height and side sheets become full width on small screens.
+- All Radix Dialog parts are exported with Sheet prefixes.
+
+## Accessibility
+
+- Radix Dialog semantics provide the dialog role, focus trap and labelling.
+- The close button is labelled `Close sheet`.
+- Focus returns to the trigger on close.

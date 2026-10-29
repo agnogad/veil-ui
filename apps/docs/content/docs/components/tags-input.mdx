@@ -1,0 +1,51 @@
+---
+title: Tags Input
+description: A multi-value text field that turns entries into removable tags.
+---
+
+import { TagsInputBasic, TagsInputMaxTags, TagsInputDisabled } from "@veil-ui/registry/tags-input/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add tags-input" />
+
+## Usage
+
+```tsx
+import { TagsInput } from "@/components/ui/tags-input";
+
+<TagsInput label="Topics" value={tags} onValueChange={setTags} maxTags={5} />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["tags-input"]["basic"]}>
+  <TagsInputBasic />
+</ComponentPreview>
+
+### Max tags
+
+<ComponentPreview code={demoSource["tags-input"]["max-tags"]}>
+  <TagsInputMaxTags />
+</ComponentPreview>
+
+### Disabled
+
+<ComponentPreview code={demoSource["tags-input"]["disabled"]}>
+  <TagsInputDisabled />
+</ComponentPreview>
+
+## API reference
+
+- `value` / `defaultValue` hold the tag strings; `onValueChange` fires on add and remove.
+- Enter or comma adds the current text, Backspace on an empty field removes the last tag.
+- `maxTags`, `allowDuplicates`, `label`, `placeholder` and `disabled` refine behaviour.
+
+## Accessibility
+
+- Every tag has a Remove button named `Remove tag <text>`.
+- The text field is labelled and keeps focus after a tag is added.
+- The wrapper shows a focus ring while any child has focus.

@@ -1,0 +1,58 @@
+---
+title: Confirmation Dialog
+description: A prompted confirmation built on alert-dialog with confirm and cancel callbacks.
+---
+
+import { ConfirmationDialogDestructive, ConfirmationDialogConfirm, ConfirmationDialogControlled } from "@veil-ui/registry/confirmation-dialog/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add confirmation-dialog" />
+
+## Usage
+
+```tsx
+import { ConfirmationDialog } from "@/components/ui/confirmation-dialog";
+
+<ConfirmationDialog
+  title="Delete this file?"
+  description="This cannot be undone."
+  destructive
+  confirmLabel="Delete"
+  onConfirm={remove}
+  trigger={<button type="button">Delete</button>}
+/>;
+```
+
+## Examples
+
+### Destructive
+
+<ComponentPreview code={demoSource["confirmation-dialog"]["destructive"]}>
+  <ConfirmationDialogDestructive />
+</ComponentPreview>
+
+### Confirm
+
+<ComponentPreview code={demoSource["confirmation-dialog"]["confirm"]}>
+  <ConfirmationDialogConfirm />
+</ComponentPreview>
+
+### Controlled
+
+<ComponentPreview code={demoSource["confirmation-dialog"]["controlled"]}>
+  <ConfirmationDialogControlled />
+</ComponentPreview>
+
+## API reference
+
+- `title` is required; `description`, `confirmLabel` and `cancelLabel` fill the body and actions.
+- `onConfirm` and `onCancel` run from the action buttons, and `destructive` styles the confirm action.
+- `open` / `onOpenChange` allow controlled use; `trigger` renders the default trigger.
+
+## Accessibility
+
+- Rendered as an alert dialog so it interrupts the flow and requires an explicit choice.
+- Escape and cancel dismiss it without confirming.
+- Confirm and cancel buttons keep their visible text as their accessible names.

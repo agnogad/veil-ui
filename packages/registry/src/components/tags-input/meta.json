@@ -1,0 +1,10 @@
+{
+  "name": "tags-input",
+  "title": "Tags Input",
+  "description": "A multi-value text field that turns entries into removable tags.",
+  "category": "forms",
+  "type": "registry:ui",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "max-tags", "disabled"]
+}

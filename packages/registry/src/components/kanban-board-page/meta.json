@@ -1,0 +1,22 @@
+{
+  "name": "kanban-board-page",
+  "title": "Kanban Board Page",
+  "description": "A sprint board with columns, task cards and assignees.",
+  "category": "pages",
+  "type": "registry:block",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "avatar",
+    "avatar-group",
+    "badge",
+    "button",
+    "input",
+    "logo"
+  ],
+  "examples": [
+    "basic"
+  ]
+}

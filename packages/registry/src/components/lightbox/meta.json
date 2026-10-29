@@ -1,0 +1,10 @@
+{
+  "name": "lightbox",
+  "title": "Lightbox",
+  "description": "A full-screen image viewer with previous and next controls.",
+  "category": "overlays",
+  "type": "registry:ui",
+  "dependencies": ["@radix-ui/react-dialog", "lucide-react"],
+  "registryDependencies": ["button", "utils"],
+  "examples": ["basic", "controlled"]
+}

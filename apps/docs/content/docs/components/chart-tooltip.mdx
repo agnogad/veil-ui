@@ -1,0 +1,43 @@
+---
+title: Chart Tooltip
+description: The chart tooltip and its custom content renderer.
+---
+
+import { ChartTooltipBasic, ChartTooltipCompact } from "@veil-ui/registry/chart-tooltip/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add chart-tooltip" />
+
+## Usage
+
+```tsx
+import { ChartContainer, ChartTooltip } from "@/components/ui/chart";
+// ChartTooltip is the styled Recharts tooltip used by every chart in this registry.
+<ChartTooltip />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["chart-tooltip"]["basic"]}>
+  <ChartTooltipBasic />
+</ComponentPreview>
+
+### Compact
+
+<ComponentPreview code={demoSource["chart-tooltip"]["compact"]}>
+  <ChartTooltipCompact />
+</ComponentPreview>
+
+## API reference
+
+The package exports `chart-tooltip` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Charts render inside a container with an explicit height so they stay responsive without layout shift.
+- Color is never the only encoding; pair charts with labels, summaries or a data table for critical information.
+- Tooltips and legends are rendered as HTML, so their text is available to assistive technology.

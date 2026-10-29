@@ -1,0 +1,10 @@
+{
+  "name": "mega-menu",
+  "title": "Mega Menu",
+  "description": "A multi-column navigation panel built on Navigation Menu.",
+  "category": "navigation",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["navigation-menu", "utils"],
+  "examples": ["basic"]
+}

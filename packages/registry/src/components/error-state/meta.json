@@ -1,0 +1,10 @@
+{
+  "name": "error-state",
+  "title": "Error State",
+  "description": "A prominent failure message with an optional retry action.",
+  "category": "feedback",
+  "type": "registry:ui",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "with-retry", "custom"]
+}

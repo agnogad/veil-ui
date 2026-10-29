@@ -1,0 +1,56 @@
+---
+title: File Upload
+description: A dropzone with a file list, size limits and an upload action.
+---
+
+import { FileUploadBasic, FileUploadLimits, FileUploadDisabled } from "@veil-ui/registry/file-upload/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add file-upload" />
+
+## Usage
+
+```tsx
+import { FileUpload } from "@/components/ui/file-upload";
+
+<FileUpload
+  accept="image/*"
+  maxSize={5 * 1024 * 1024}
+  maxFiles={4}
+  onUpload={handleUpload}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["file-upload"]["basic"]}>
+  <FileUploadBasic />
+</ComponentPreview>
+
+### Limits
+
+<ComponentPreview code={demoSource["file-upload"]["limits"]}>
+  <FileUploadLimits />
+</ComponentPreview>
+
+### Disabled
+
+<ComponentPreview code={demoSource["file-upload"]["disabled"]}>
+  <FileUploadDisabled />
+</ComponentPreview>
+
+## API reference
+
+- `accept`, `multiple`, `maxSize` (bytes) and `maxFiles` constrain what can be added.
+- `onFilesChange` fires for every list change; `onUpload` runs from the upload button.
+- Rejected files are reported in a `role="alert"` message.
+
+## Accessibility
+
+- The dropzone is a focusable button that opens the file dialog with Enter or Space.
+- Each listed file has a dedicated Remove button named after the file.
+- Size and count violations are announced through an alert region.

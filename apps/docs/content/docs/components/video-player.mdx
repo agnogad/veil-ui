@@ -1,0 +1,43 @@
+---
+title: Video Player
+description: A native video player with poster and caption support.
+---
+
+import { VideoPlayerBasic, VideoPlayerAutoPlay } from "@veil-ui/registry/video-player/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add video-player" />
+
+## Usage
+
+```tsx
+import { VideoPlayer } from "@/components/ui/video-player";
+
+<VideoPlayer src="/clip.mp4" poster="/poster.jpg" caption="Spring in motion" />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["video-player"]["basic"]}>
+  <VideoPlayerBasic />
+</ComponentPreview>
+
+### Auto play
+
+<ComponentPreview code={demoSource["video-player"]["auto-play"]}>
+  <VideoPlayerAutoPlay />
+</ComponentPreview>
+
+## API reference
+
+The package exports `video-player` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Media players use native `<video>` and `<audio>` controls with accessible labels.
+- Images require meaningful `alt` text; clickable thumbnails are buttons named `Play <title>`.
+- Decorative play overlays, durations and icons are hidden from assistive technology.

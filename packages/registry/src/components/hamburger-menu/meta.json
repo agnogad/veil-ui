@@ -1,0 +1,10 @@
+{
+  "name": "hamburger-menu",
+  "title": "Hamburger Menu",
+  "description": "A three-line menu toggle that animates into a close icon.",
+  "category": "navigation",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "controlled"]
+}

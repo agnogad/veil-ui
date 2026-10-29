@@ -1,0 +1,17 @@
+{
+  "name": "login-page",
+  "title": "Login Page",
+  "description": "A full login page with auth form and social providers.",
+  "category": "pages",
+  "type": "registry:block",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "auth-layout",
+    "login-form",
+    "social-login-buttons"
+  ],
+  "examples": [
+    "basic"
+  ]
+}

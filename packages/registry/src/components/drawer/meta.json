@@ -1,0 +1,10 @@
+{
+  "name": "drawer",
+  "title": "Drawer",
+  "description": "A side panel that slides over the page from the left or right.",
+  "category": "overlays",
+  "type": "registry:ui",
+  "dependencies": ["@radix-ui/react-dialog", "lucide-react"],
+  "registryDependencies": ["utils"],
+  "examples": ["right", "left", "form"]
+}

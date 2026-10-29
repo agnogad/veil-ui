@@ -1,0 +1,79 @@
+---
+title: Loading Button
+description: A button that shows a spinner and disables itself while busy.
+---
+
+import {
+  LoadingButtonBasic,
+  LoadingButtonLoading,
+  LoadingButtonToggle,
+} from "@veil-ui/registry/loading-button/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add loading-button" />
+
+## Usage
+
+```tsx
+import { LoadingButton } from "@/components/ui/loading-button";
+
+<LoadingButton loading={isSaving} loadingLabel="Saving">
+  Save changes
+</LoadingButton>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["loading-button"].basic}>
+  <LoadingButtonBasic />
+</ComponentPreview>
+
+### Loading
+
+<ComponentPreview code={demoSource["loading-button"].loading}>
+  <LoadingButtonLoading />
+</ComponentPreview>
+
+### Toggle
+
+<ComponentPreview code={demoSource["loading-button"].toggle}>
+  <LoadingButtonToggle />
+</ComponentPreview>
+
+The label stays in place while the spinner appears, so the button does not
+change width and the action remains recognizable.
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "loading",
+      type: "boolean",
+      default: "false",
+      description: "Show a spinner, set aria-busy and disable the button.",
+    },
+    {
+      name: "loadingLabel",
+      type: "string",
+      default: '"Loading"',
+      description: "Screen-reader text for the loading state.",
+    },
+    {
+      name: "...props",
+      type: "ButtonProps",
+      description: "All Button props and native button attributes.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Sets `aria-busy` and disables the button while loading to prevent double
+  submission.
+- The spinner is a polite status region with screen-reader-only text.
+- Keep the visible label mounted so the accessible name stays stable.

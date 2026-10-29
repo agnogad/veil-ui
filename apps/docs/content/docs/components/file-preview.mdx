@@ -1,0 +1,43 @@
+---
+title: File Preview
+description: A file summary that previews images and text inline.
+---
+
+import { FilePreviewBasic, FilePreviewImage } from "@veil-ui/registry/file-preview/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add file-preview" />
+
+## Usage
+
+```tsx
+import { FilePreview } from "@/components/ui/file-preview";
+
+<FilePreview name="release-notes.md" size="12 KB" type="text/markdown" text="# Release 2.4" />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["file-preview"]["basic"]}>
+  <FilePreviewBasic />
+</ComponentPreview>
+
+### Image
+
+<ComponentPreview code={demoSource["file-preview"]["image"]}>
+  <FilePreviewImage />
+</ComponentPreview>
+
+## API reference
+
+The package exports `file-preview` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Media players use native `<video>` and `<audio>` controls with accessible labels.
+- Images require meaningful `alt` text; clickable thumbnails are buttons named `Play <title>`.
+- Decorative play overlays, durations and icons are hidden from assistive technology.

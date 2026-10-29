@@ -1,0 +1,10 @@
+{
+  "name": "heading",
+  "title": "Heading",
+  "description": "Semantic h1–h6 headings with matching visual sizes.",
+  "category": "typography",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "levels", "visual-override"]
+}

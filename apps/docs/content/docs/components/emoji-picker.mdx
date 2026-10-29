@@ -1,0 +1,43 @@
+---
+title: Emoji Picker
+description: A searchable emoji grid with a selection callback.
+---
+
+import { EmojiPickerBasic, EmojiPickerCompact } from "@veil-ui/registry/emoji-picker/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add emoji-picker" />
+
+## Usage
+
+```tsx
+import { EmojiPicker } from "@/components/ui/emoji-picker";
+
+<EmojiPicker onSelect={(emoji) => console.log(emoji)} />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["emoji-picker"]["basic"]}>
+  <EmojiPickerBasic />
+</ComponentPreview>
+
+### Compact
+
+<ComponentPreview code={demoSource["emoji-picker"]["compact"]}>
+  <EmojiPickerCompact />
+</ComponentPreview>
+
+## API reference
+
+The package exports `emoji-picker` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Media players use native `<video>` and `<audio>` controls with accessible labels.
+- Images require meaningful `alt` text; clickable thumbnails are buttons named `Play <title>`.
+- Decorative play overlays, durations and icons are hidden from assistive technology.

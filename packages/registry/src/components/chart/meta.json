@@ -1,0 +1,17 @@
+{
+  "name": "chart",
+  "title": "Chart",
+  "description": "A responsive chart shell with shared config, tooltip and legend content.",
+  "category": "charts",
+  "type": "registry:ui",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "compact"
+  ]
+}

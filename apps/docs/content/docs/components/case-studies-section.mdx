@@ -1,0 +1,53 @@
+---
+title: Case Studies Section
+description: Customer stories highlighted with a headline metric.
+---
+
+import { CaseStudiesSectionBasic, CaseStudiesSectionCompact } from "@veil-ui/registry/case-studies-section/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add case-studies-section" />
+
+## Usage
+
+```tsx
+import { CaseStudiesSection } from "@/components/ui/case-studies-section";
+
+<CaseStudiesSection
+  studies={[
+    {
+      company: "Acme",
+      title: "Rebuilding the admin",
+      summary: "One coherent shell replaced three interfaces.",
+      metric: "3×",
+      metricLabel: "faster delivery",
+    },
+  ]}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["case-studies-section"]["basic"]}>
+  <CaseStudiesSectionBasic />
+</ComponentPreview>
+
+### Compact
+
+<ComponentPreview code={demoSource["case-studies-section"]["compact"]}>
+  <CaseStudiesSectionCompact />
+</ComponentPreview>
+
+## API reference
+
+The package exports `case-studies-section` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Pages keep a single `h1` in the hero and use `h2`/`h3` for section hierarchy.
+- Call-to-action elements are real links or buttons with discernible labels.
+- Decorative icons are `aria-hidden` and meaningful images require `alt` text.

@@ -1,0 +1,43 @@
+---
+title: Profile Editor
+description: A controlled profile editing form with save state.
+---
+
+import { ProfileEditorBasic, ProfileEditorEmpty } from "@veil-ui/registry/profile-editor/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add profile-editor" />
+
+## Usage
+
+```tsx
+import { ProfileEditor } from "@/components/ui/profile-editor";
+
+<ProfileEditor defaultName="Mira Chen" onSave={saveProfile} />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["profile-editor"]["basic"]}>
+  <ProfileEditorBasic />
+</ComponentPreview>
+
+### Empty
+
+<ComponentPreview code={demoSource["profile-editor"]["empty"]}>
+  <ProfileEditorEmpty />
+</ComponentPreview>
+
+## API reference
+
+The package exports `profile-editor` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Forms use native inputs with associated labels and descriptive error text.
+- Submission states are announced through disabled controls and live error messaging.
+- Social providers are buttons with discernible provider names.

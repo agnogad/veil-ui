@@ -1,0 +1,16 @@
+{
+  "name": "metric-card",
+  "title": "Metric Card",
+  "description": "A value measured against a target with a progress indicator.",
+  "category": "data-display",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "card",
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "units"
+  ]
+}

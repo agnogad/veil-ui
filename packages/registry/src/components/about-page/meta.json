@@ -1,0 +1,28 @@
+{
+  "name": "about-page",
+  "title": "About Page",
+  "description": "A company about page with story, values and team.",
+  "category": "pages",
+  "type": "registry:block",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "avatar",
+    "avatar-group",
+    "badge",
+    "button",
+    "feature-grid",
+    "final-cta",
+    "logo",
+    "marketing-footer",
+    "navbar",
+    "profile-card",
+    "stats-section",
+    "timeline"
+  ],
+  "examples": [
+    "basic"
+  ]
+}

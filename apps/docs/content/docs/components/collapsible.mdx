@@ -1,0 +1,52 @@
+---
+title: Collapsible
+description: A single show/hide section built on Radix Collapsible.
+---
+
+import { CollapsibleBasic, CollapsibleDefaultOpen } from "@veil-ui/registry/collapsible/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add collapsible" />
+
+## Usage
+
+```tsx
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
+
+<Collapsible>
+  <CollapsibleTrigger>Toggle details</CollapsibleTrigger>
+  <CollapsibleContent>Hidden details</CollapsibleContent>
+</Collapsible>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["collapsible"]["basic"]}>
+  <CollapsibleBasic />
+</ComponentPreview>
+
+### Default open
+
+<ComponentPreview code={demoSource["collapsible"]["default-open"]}>
+  <CollapsibleDefaultOpen />
+</ComponentPreview>
+
+## API reference
+
+- `Collapsible` supports controlled `open` / `onOpenChange` and `defaultOpen`.
+- `CollapsibleTrigger` is a button with `aria-expanded` managed by Radix.
+- `CollapsibleContent` removes its children from the DOM when closed.
+
+## Accessibility
+
+- The trigger announces its expanded state and controls the content region.
+- Enter and Space toggle it; the trigger stays focusable throughout.
+- Use Accordion when several sections share a heading pattern.

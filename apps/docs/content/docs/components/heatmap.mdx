@@ -1,0 +1,47 @@
+---
+title: Heatmap
+description: A table-based heatmap that scales cell color by value.
+---
+
+import { HeatmapBasic, HeatmapCustomMax } from "@veil-ui/registry/heatmap/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add heatmap" />
+
+## Usage
+
+```tsx
+import { Heatmap } from "@/components/ui/heatmap";
+
+<Heatmap
+  data={[[2, 4, 6], [3, 6, 9]]}
+  rows={["Mon", "Tue"]}
+  columns={["00", "08", "16"]}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["heatmap"]["basic"]}>
+  <HeatmapBasic />
+</ComponentPreview>
+
+### Custom max
+
+<ComponentPreview code={demoSource["heatmap"]["custom-max"]}>
+  <HeatmapCustomMax />
+</ComponentPreview>
+
+## API reference
+
+The package exports `heatmap` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Charts render inside a container with an explicit height so they stay responsive without layout shift.
+- Color is never the only encoding; pair charts with labels, summaries or a data table for critical information.
+- Tooltips and legends are rendered as HTML, so their text is available to assistive technology.

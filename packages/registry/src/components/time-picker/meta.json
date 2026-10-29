@@ -1,0 +1,10 @@
+{
+  "name": "time-picker",
+  "title": "Time Picker",
+  "description": "Hour and minute lists in a popover for picking a time.",
+  "category": "forms",
+  "type": "registry:ui",
+  "dependencies": ["@radix-ui/react-popover", "lucide-react"],
+  "registryDependencies": ["button", "utils"],
+  "examples": ["basic", "step", "disabled"]
+}

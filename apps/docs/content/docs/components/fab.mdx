@@ -1,0 +1,85 @@
+---
+title: Floating Action Button
+description: A fixed circular action for the primary task on a screen.
+---
+
+import {
+  FabBasic,
+  FabExtended,
+  FabPositions,
+} from "@veil-ui/registry/fab/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add fab" />
+
+## Usage
+
+```tsx
+import { Fab } from "@/components/ui/fab";
+import { Plus } from "lucide-react";
+
+<Fab aria-label="Create item">
+  <Plus />
+</Fab>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource.fab.basic}>
+  <FabBasic />
+</ComponentPreview>
+
+### Extended
+
+<ComponentPreview code={demoSource.fab.extended}>
+  <FabExtended />
+</ComponentPreview>
+
+### Positions
+
+<ComponentPreview code={demoSource.fab.positions}>
+  <FabPositions />
+</ComponentPreview>
+
+Pass a `className` with `absolute` inside a positioned container to keep the
+button scoped to a panel instead of the viewport.
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "position",
+      type: '"bottom-right" | "bottom-left" | "bottom-center"',
+      default: '"bottom-right"',
+      description: "Corner of the viewport where the button floats.",
+    },
+    {
+      name: "size",
+      type: '"default" | "lg"',
+      default: '"default"',
+      description: "Icon-only diameter: 48px or 56px.",
+    },
+    {
+      name: "label",
+      type: "React.ReactNode",
+      description: "Visible label; turns the button into an extended FAB.",
+    },
+    {
+      name: "...props",
+      type: 'React.ComponentProps<"button">',
+      description: "All native button attributes, including aria-label.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Icon-only FABs need an `aria-label`; extended FABs use their visible label.
+- Defaults to `type="button"` so it never submits a surrounding form by
+  accident.
+- Only one FAB should be visible at a time; it marks the single primary action.

@@ -1,0 +1,10 @@
+{
+  "name": "loading-overlay",
+  "title": "Loading Overlay",
+  "description": "A busy overlay with a spinner for in-place loading states.",
+  "category": "feedback",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["spinner", "utils"],
+  "examples": ["basic", "custom-label"]
+}

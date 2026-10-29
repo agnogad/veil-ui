@@ -1,0 +1,10 @@
+{
+  "name": "carousel",
+  "title": "Carousel",
+  "description": "A draggable, keyboard-navigable slide carousel powered by Embla.",
+  "category": "overlays",
+  "type": "registry:ui",
+  "dependencies": ["embla-carousel-react", "lucide-react"],
+  "registryDependencies": ["button", "carousel-item", "utils"],
+  "examples": ["basic", "vertical", "loop"]
+}

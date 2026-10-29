@@ -1,0 +1,10 @@
+{
+  "name": "select",
+  "title": "Select",
+  "description": "A native-style single select built on Radix Select.",
+  "category": "forms",
+  "type": "registry:ui",
+  "dependencies": ["@radix-ui/react-select", "lucide-react"],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "groups", "disabled"]
+}

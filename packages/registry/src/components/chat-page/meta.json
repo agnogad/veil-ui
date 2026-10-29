@@ -1,0 +1,23 @@
+{
+  "name": "chat-page",
+  "title": "Chat Page",
+  "description": "A two-pane messaging interface with conversations and composer.",
+  "category": "pages",
+  "type": "registry:block",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "avatar",
+    "badge",
+    "button",
+    "input",
+    "logo",
+    "scroll-area",
+    "status-indicator"
+  ],
+  "examples": [
+    "basic"
+  ]
+}

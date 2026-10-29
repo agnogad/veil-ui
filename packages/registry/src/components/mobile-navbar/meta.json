@@ -1,0 +1,10 @@
+{
+  "name": "mobile-navbar",
+  "title": "Mobile Navbar",
+  "description": "A top bar with a slide-in menu for small screens.",
+  "category": "navigation",
+  "type": "registry:ui",
+  "dependencies": ["@radix-ui/react-dialog", "lucide-react"],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "with-actions"]
+}

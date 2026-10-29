@@ -1,0 +1,10 @@
+{
+  "name": "aspect-ratio",
+  "title": "Aspect Ratio",
+  "description": "Locks a box to a width-to-height ratio while it resizes.",
+  "category": "layout",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "square", "portrait"]
+}

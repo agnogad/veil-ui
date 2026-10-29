@@ -1,0 +1,10 @@
+{
+  "name": "popover",
+  "title": "Popover",
+  "description": "A floating panel anchored to a trigger, built on Radix Popover.",
+  "category": "overlays",
+  "type": "registry:ui",
+  "dependencies": ["@radix-ui/react-popover"],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "form", "align"]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "swipeable-row",
+  "title": "Swipeable Row",
+  "description": "A pointer-swipeable list row that reveals action buttons.",
+  "category": "mobile",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "two-actions"
+  ]
+}

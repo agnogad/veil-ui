@@ -1,5 +1,8 @@
+# Dependencies
 node_modules/
 .pnpm-store/
+
+# Build output
 .turbo/
 .next/
 out/
@@ -8,11 +11,40 @@ coverage/
 .source/
 *.tsbuildinfo
 next-env.d.ts
+
+# Generated registry artifacts (recreated by `pnpm registry:build`)
+apps/docs/public/r/
+apps/docs/lib/generated/
+
+# Environment and credentials
 .env
 .env.*
 !.env.example
-.DS_Store
+.npmrc
+
+# Local tooling and editor state
+.qoder/settings.local.json
+.idea/
+.vscode/
+.fleet/
+.eslintcache
+*.eslintcache
+.vscode-test/
+
+# Logs and debug output
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Test artifacts
 playwright-report/
 test-results/
-apps/docs/public/r/
-apps/docs/lib/generated/
+
+# Deployment output
+.vercel/
+
+# OS files
+.DS_Store
+Thumbs.db

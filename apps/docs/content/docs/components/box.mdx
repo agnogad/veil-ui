@@ -1,0 +1,78 @@
+---
+title: Box
+description: A generic layout primitive with padding and asChild composition.
+---
+
+import {
+  BoxAsChild,
+  BoxBasic,
+  BoxPadding,
+} from "@veil-ui/registry/box/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add box" />
+
+## Usage
+
+```tsx
+import { Box } from "@/components/ui/box";
+
+<Box padding="md" className="rounded-lg border">
+  Content
+</Box>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource.box.basic}>
+  <BoxBasic />
+</ComponentPreview>
+
+### Padding
+
+<ComponentPreview code={demoSource.box.padding}>
+  <BoxPadding />
+</ComponentPreview>
+
+### Composition
+
+<ComponentPreview code={demoSource.box["as-child"]}>
+  <BoxAsChild />
+</ComponentPreview>
+
+`asChild` forwards the styles and props to a single child element, so you can
+render a link or a custom component without an extra wrapper.
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "asChild",
+      type: "boolean",
+      default: "false",
+      description: "Render the styles onto a single child element.",
+    },
+    {
+      name: "padding",
+      type: '"none" | "xs" | "sm" | "md" | "lg" | "xl"',
+      default: '"none"',
+      description: "Padding scale: 0, 4, 8, 16, 24 or 32px.",
+    },
+    {
+      name: "...props",
+      type: 'React.ComponentProps<"div">',
+      description: "All native div attributes.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Presentational primitive; it adds no roles.
+- When `asChild` renders a link or button, that element keeps its own semantics
+  and keyboard behaviour.

@@ -1,0 +1,10 @@
+{
+  "name": "sheet",
+  "title": "Sheet",
+  "description": "A dialog panel that can slide in from any edge of the screen.",
+  "category": "overlays",
+  "type": "registry:ui",
+  "dependencies": ["@radix-ui/react-dialog", "lucide-react"],
+  "registryDependencies": ["utils"],
+  "examples": ["right", "bottom", "left"]
+}

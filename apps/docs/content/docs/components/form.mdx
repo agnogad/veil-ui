@@ -1,0 +1,96 @@
+---
+title: Form
+description: A vertical form layout with sections and a validation summary.
+---
+
+import {
+  FormBasic,
+  FormSections,
+  FormWithError,
+} from "@veil-ui/registry/form/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add form" />
+
+## Usage
+
+```tsx
+import { Form, FormSection, FormError } from "@/components/ui/form";
+
+<Form onSubmit={handleSubmit}>
+  <FormSection title="Profile" description="How you appear to teammates.">
+    {fields}
+  </FormSection>
+  <FormError>Check the highlighted fields.</FormError>
+</Form>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource.form.basic}>
+  <FormBasic />
+</ComponentPreview>
+
+### Sections
+
+<ComponentPreview code={demoSource.form.sections}>
+  <FormSections />
+</ComponentPreview>
+
+### With error summary
+
+<ComponentPreview code={demoSource.form["with-error"]}>
+  <FormWithError />
+</ComponentPreview>
+
+Place the summary above the fields so keyboard and screen-reader users reach it
+first.
+
+## API reference
+
+### Form
+
+<PropsTable
+  data={[
+    {
+      name: "noValidate",
+      type: "boolean",
+      default: "true",
+      description:
+        "Skips native validation so you can render your own messages.",
+    },
+    {
+      name: "...props",
+      type: 'React.ComponentProps<"form">',
+      description: "All native form attributes, including onSubmit and action.",
+    },
+  ]}
+/>
+
+### FormSection
+
+<PropsTable
+  data={[
+    {
+      name: "title",
+      type: "React.ReactNode",
+      description: "Optional section heading.",
+    },
+    {
+      name: "description",
+      type: "React.ReactNode",
+      description: "Optional supporting copy below the heading.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Validation messages use `role="alert"`, so they are announced when they
+  appear.
+- Use real `<label>` elements through `FormField`; placeholders are not labels.
+- Keep the submit button inside the form so Enter submits from any field.

@@ -1,0 +1,71 @@
+---
+title: Loading Overlay
+description: A translucent surface that blocks interaction while work finishes.
+---
+
+import {
+  LoadingOverlayBasic,
+  LoadingOverlayCustomLabel,
+} from "@veil-ui/registry/loading-overlay/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add loading-overlay" />
+
+## Usage
+
+```tsx
+import { LoadingOverlay } from "@/components/ui/loading-overlay";
+
+<div className="relative min-h-40">
+  <LoadingOverlay label="Saving changes" />
+</div>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["loading-overlay"]["basic"]}>
+  <LoadingOverlayBasic />
+</ComponentPreview>
+
+### Custom label
+
+<ComponentPreview code={demoSource["loading-overlay"]["custom-label"]}>
+  <LoadingOverlayCustomLabel />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "visible",
+      type: "boolean",
+      default: "true",
+      description: "Unmounts the overlay when false.",
+    },
+    {
+      name: "label",
+      type: "string",
+      default: '"Loading"',
+      description: "Status text announced by the spinner.",
+    },
+    {
+      name: "fullscreen",
+      type: "boolean",
+      default: "false",
+      description: "Covers the viewport instead of the nearest positioned ancestor.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Sets `aria-busy="true"` on the overlay and announces the label through the
+  spinner's status role.
+- The visible text is hidden from screen readers to avoid double
+  announcements.
+- Give the container `relative` positioning for the default overlay.

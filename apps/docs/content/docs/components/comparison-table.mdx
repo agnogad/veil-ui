@@ -1,0 +1,49 @@
+---
+title: Comparison Table
+description: A feature matrix comparing plans with check marks.
+---
+
+import { ComparisonTableBasic, ComparisonTableCaption } from "@veil-ui/registry/comparison-table/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add comparison-table" />
+
+## Usage
+
+```tsx
+import { ComparisonTable } from "@/components/ui/comparison-table";
+
+<ComparisonTable
+  plans={[{ name: "Starter", price: "$0" }, { name: "Team", price: "$24" }]}
+  rows={[
+    { feature: "Projects", values: ["3", "Unlimited"] },
+    { feature: "SSO", values: [false, true] },
+  ]}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["comparison-table"]["basic"]}>
+  <ComparisonTableBasic />
+</ComponentPreview>
+
+### Caption
+
+<ComponentPreview code={demoSource["comparison-table"]["caption"]}>
+  <ComparisonTableCaption />
+</ComponentPreview>
+
+## API reference
+
+The package exports `comparison-table` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Content uses semantic HTML — lists are lists, tables are tables and metadata uses a definition list.
+- Interactive elements are real buttons or links with visible focus states.
+- Images require meaningful `alt` text; icons used decoratively are `aria-hidden`.

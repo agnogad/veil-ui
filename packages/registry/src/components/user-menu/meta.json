@@ -1,0 +1,19 @@
+{
+  "name": "user-menu",
+  "title": "User Menu",
+  "description": "An account dropdown menu with profile links and sign out.",
+  "category": "auth",
+  "type": "registry:ui",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "avatar",
+    "dropdown-menu"
+  ],
+  "examples": [
+    "basic",
+    "with-items"
+  ]
+}

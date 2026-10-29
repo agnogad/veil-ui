@@ -1,0 +1,53 @@
+---
+title: Autocomplete
+description: A text input with a filtered, keyboard-navigable suggestion list.
+---
+
+import { AutocompleteBasic, AutocompleteKeyboard, AutocompleteEmpty } from "@veil-ui/registry/autocomplete/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add autocomplete" />
+
+## Usage
+
+```tsx
+import { Autocomplete } from "@/components/ui/autocomplete";
+
+<Autocomplete
+  options={cities}
+  placeholder="Search cities…"
+  onValueChange={setCity}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["autocomplete"]["basic"]}>
+  <AutocompleteBasic />
+</ComponentPreview>
+
+### Keyboard
+
+<ComponentPreview code={demoSource["autocomplete"]["keyboard"]}>
+  <AutocompleteKeyboard />
+</ComponentPreview>
+
+### Empty
+
+<ComponentPreview code={demoSource["autocomplete"]["empty"]}>
+  <AutocompleteEmpty />
+</ComponentPreview>
+
+## API reference
+
+The package exports `autocomplete` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Suggestions use a listbox pattern with `aria-activedescendant`; Arrow keys move the active option and Escape dismisses the list.
+- Error and disabled states are exposed through native attributes and Radix data attributes.
+- Focus-visible rings follow the shared token system in both themes.

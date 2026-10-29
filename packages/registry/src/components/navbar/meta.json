@@ -1,0 +1,10 @@
+{
+  "name": "navbar",
+  "title": "Navbar",
+  "description": "A top application bar with sticky and bordered options.",
+  "category": "navigation",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "sticky"]
+}

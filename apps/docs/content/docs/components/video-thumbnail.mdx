@@ -1,0 +1,43 @@
+---
+title: Video Thumbnail
+description: A poster image with a play overlay and duration badge.
+---
+
+import { VideoThumbnailBasic, VideoThumbnailGrid } from "@veil-ui/registry/video-thumbnail/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add video-thumbnail" />
+
+## Usage
+
+```tsx
+import { VideoThumbnail } from "@/components/ui/video-thumbnail";
+
+<VideoThumbnail src="/poster.jpg" title="How tokens power theming" duration="4:12" />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["video-thumbnail"]["basic"]}>
+  <VideoThumbnailBasic />
+</ComponentPreview>
+
+### Grid
+
+<ComponentPreview code={demoSource["video-thumbnail"]["grid"]}>
+  <VideoThumbnailGrid />
+</ComponentPreview>
+
+## API reference
+
+The package exports `video-thumbnail` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Media players use native `<video>` and `<audio>` controls with accessible labels.
+- Images require meaningful `alt` text; clickable thumbnails are buttons named `Play <title>`.
+- Decorative play overlays, durations and icons are hidden from assistive technology.

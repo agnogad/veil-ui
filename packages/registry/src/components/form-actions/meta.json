@@ -1,0 +1,10 @@
+{
+  "name": "form-actions",
+  "title": "Form Actions",
+  "description": "Aligns the submit and cancel buttons at the end of a form.",
+  "category": "forms",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "split", "with-hint"]
+}

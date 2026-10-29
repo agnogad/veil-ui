@@ -1,0 +1,18 @@
+{
+  "name": "scatter-chart",
+  "title": "Scatter Chart",
+  "description": "A numeric scatter plot with optional bubble sizing.",
+  "category": "charts",
+  "type": "registry:ui",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [
+    "chart",
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "dense"
+  ]
+}

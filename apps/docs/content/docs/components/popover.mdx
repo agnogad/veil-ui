@@ -1,0 +1,60 @@
+---
+title: Popover
+description: A floating panel anchored to a trigger, built on Radix Popover.
+---
+
+import { PopoverBasic, PopoverForm, PopoverAlign } from "@veil-ui/registry/popover/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add popover" />
+
+## Usage
+
+```tsx
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+
+<Popover>
+  <PopoverTrigger asChild>
+    <button type="button">Open popover</button>
+  </PopoverTrigger>
+  <PopoverContent align="start">Panel content</PopoverContent>
+</Popover>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["popover"]["basic"]}>
+  <PopoverBasic />
+</ComponentPreview>
+
+### Form
+
+<ComponentPreview code={demoSource["popover"]["form"]}>
+  <PopoverForm />
+</ComponentPreview>
+
+### Align
+
+<ComponentPreview code={demoSource["popover"]["align"]}>
+  <PopoverAlign />
+</ComponentPreview>
+
+## API reference
+
+- `PopoverContent` portals to the body with `align` (default `center`) and `sideOffset` (default `4`).
+- `PopoverAnchor` pins the panel to an element other than the trigger.
+- Content receives a `w-72` width by default that `className` can override.
+
+## Accessibility
+
+- Radix provides the dialog role, focus management and Escape handling.
+- The trigger keeps `aria-expanded` and `aria-controls` in sync.
+- Focus returns to the trigger when the panel closes.

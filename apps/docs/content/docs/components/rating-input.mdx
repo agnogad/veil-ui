@@ -1,0 +1,51 @@
+---
+title: Rating Input
+description: A keyboard-accessible star rating with a radiogroup pattern.
+---
+
+import { RatingInputBasic, RatingInputReadonly, RatingInputSizes } from "@veil-ui/registry/rating-input/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add rating-input" />
+
+## Usage
+
+```tsx
+import { RatingInput } from "@/components/ui/rating-input";
+
+<RatingInput label="Rating" value={rating} onValueChange={setRating} />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["rating-input"]["basic"]}>
+  <RatingInputBasic />
+</ComponentPreview>
+
+### Readonly
+
+<ComponentPreview code={demoSource["rating-input"]["readonly"]}>
+  <RatingInputReadonly />
+</ComponentPreview>
+
+### Sizes
+
+<ComponentPreview code={demoSource["rating-input"]["sizes"]}>
+  <RatingInputSizes />
+</ComponentPreview>
+
+## API reference
+
+- `value` / `defaultValue` hold the score; `onValueChange` emits `0` when the active star is clicked again.
+- `max`, `size` (`sm`, `md`, `lg`), `showValue` and `readOnly` adjust the presentation.
+- `disabled` removes it from interaction while `readOnly` keeps it focusable.
+
+## Accessibility
+
+- Implements the WAI-ARIA radiogroup pattern with roving tabindex.
+- Arrow keys change the score, Home and End jump to the first and last star.
+- Each radio is named `<N> star` / `<N> stars` and exposes `aria-checked`.

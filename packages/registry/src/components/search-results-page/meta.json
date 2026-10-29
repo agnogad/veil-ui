@@ -1,0 +1,24 @@
+{
+  "name": "search-results-page",
+  "title": "Search Results Page",
+  "description": "A search results page with scopes, snippets and related terms.",
+  "category": "pages",
+  "type": "registry:block",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "card",
+    "input",
+    "kbd",
+    "logo",
+    "pagination",
+    "search-result-card",
+    "segmented-navigation"
+  ],
+  "examples": [
+    "basic"
+  ]
+}

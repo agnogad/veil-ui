@@ -1,0 +1,10 @@
+{
+  "name": "navigation-menu",
+  "title": "Navigation Menu",
+  "description": "A Radix navigation menu with triggers and dropdown panels.",
+  "category": "navigation",
+  "type": "registry:ui",
+  "dependencies": ["@radix-ui/react-navigation-menu", "lucide-react"],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "grid"]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "close-button",
+  "title": "Close Button",
+  "description": "An icon button with a pre-labelled dismiss affordance.",
+  "category": "actions",
+  "type": "registry:ui",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["icon-button", "utils"],
+  "examples": ["basic", "outline", "large"]
+}

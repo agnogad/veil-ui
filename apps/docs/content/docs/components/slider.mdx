@@ -1,0 +1,49 @@
+---
+title: Slider
+description: A single or multi-thumb range input built on Radix Slider.
+---
+
+import { SliderBasic, SliderStep, SliderDisabled } from "@veil-ui/registry/slider/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add slider" />
+
+## Usage
+
+```tsx
+import { Slider } from "@/components/ui/slider";
+
+<Slider defaultValue={[40]} max={100} step={10} aria-label="Volume" />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["slider"]["basic"]}>
+  <SliderBasic />
+</ComponentPreview>
+
+### Step
+
+<ComponentPreview code={demoSource["slider"]["step"]}>
+  <SliderStep />
+</ComponentPreview>
+
+### Disabled
+
+<ComponentPreview code={demoSource["slider"]["disabled"]}>
+  <SliderDisabled />
+</ComponentPreview>
+
+## API reference
+
+The package exports `slider` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- `Slider` maps to a Radix slider with Arrow/Page/Home/End keyboard support and `aria-valuenow`.
+- Error and disabled states are exposed through native attributes and Radix data attributes.
+- Focus-visible rings follow the shared token system in both themes.

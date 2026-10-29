@@ -1,0 +1,10 @@
+{
+  "name": "full-screen-layout",
+  "title": "Full Screen Layout",
+  "description": "A viewport-height layout with optional header, footer and centering.",
+  "category": "layout",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["utils"],
+  "examples": ["centered", "app", "padded"]
+}

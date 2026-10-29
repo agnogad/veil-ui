@@ -1,0 +1,54 @@
+---
+title: Context Menu
+description: Radix context menu triggered by right click or long press.
+---
+
+import { ContextMenuBasic } from "@veil-ui/registry/context-menu/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add context-menu" />
+
+## Usage
+
+```tsx
+import {
+  ContextMenu,
+  ContextMenuContent,
+  ContextMenuItem,
+  ContextMenuTrigger,
+} from "@/components/ui/context-menu";
+
+<ContextMenu>
+  <ContextMenuTrigger>Right-click this area</ContextMenuTrigger>
+  <ContextMenuContent>
+    <ContextMenuItem>Copy</ContextMenuItem>
+    <ContextMenuItem>Paste</ContextMenuItem>
+  </ContextMenuContent>
+</ContextMenu>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["context-menu"]["basic"]}>
+  <ContextMenuBasic />
+</ComponentPreview>
+
+## API reference
+
+### Subcomponents
+
+- `ContextMenu`, `ContextMenuTrigger`, `ContextMenuContent` — root and
+  trigger area with a portalled panel.
+- `ContextMenuItem`, `ContextMenuLabel`, `ContextMenuSeparator` — entries
+  and grouping.
+
+## Accessibility
+
+- Radix also opens the menu with the keyboard context-menu key and handles
+  focus return.
+- Give the trigger visible instructions when right-click is not obvious.
+- Do not put destructive-only actions here without a confirmation dialog.

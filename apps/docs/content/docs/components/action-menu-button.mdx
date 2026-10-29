@@ -1,0 +1,93 @@
+---
+title: Action Menu Button
+description: An icon button that opens a menu of contextual actions.
+---
+
+import {
+  ActionMenuButtonAlignStart,
+  ActionMenuButtonBasic,
+  ActionMenuButtonDestructive,
+} from "@veil-ui/registry/action-menu-button/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add action-menu-button" />
+
+## Usage
+
+```tsx
+import { ActionMenuButton } from "@/components/ui/action-menu-button";
+
+<ActionMenuButton
+  items={[
+    { label: "Edit", onSelect: () => openEditor() },
+    { label: "Delete", destructive: true, onSelect: () => remove() },
+  ]}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["action-menu-button"].basic}>
+  <ActionMenuButtonBasic />
+</ComponentPreview>
+
+### Destructive
+
+<ComponentPreview code={demoSource["action-menu-button"].destructive}>
+  <ActionMenuButtonDestructive />
+</ComponentPreview>
+
+### Align start
+
+<ComponentPreview code={demoSource["action-menu-button"]["align-start"]}>
+  <ActionMenuButtonAlignStart />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "items",
+      type: "ActionMenuItem[]",
+      description: "Menu entries with label, onSelect, disabled and destructive flags.",
+    },
+    {
+      name: "label",
+      type: "string",
+      default: '"Open actions"',
+      description: "Accessible name of the trigger button.",
+    },
+    {
+      name: "align",
+      type: '"start" | "center" | "end"',
+      default: '"end"',
+      description: "Alignment of the menu relative to the trigger.",
+    },
+    {
+      name: "variant",
+      type: "ButtonVariant",
+      default: '"ghost"',
+      description: "Visual style of the trigger button.",
+    },
+    {
+      name: "size",
+      type: "ButtonSize",
+      default: '"icon"',
+      description: "Size preset of the trigger button.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Built on Radix Dropdown Menu: arrow keys, Home/End and typeahead work out of
+  the box.
+- Focus returns to the trigger when the menu closes; Escape dismisses it.
+- Disabled items stay in the list, marked and skipped by keyboard navigation.
+- Give `label` a specific name such as "Project actions" when several menus
+  appear on one page.

@@ -1,0 +1,10 @@
+{
+  "name": "navigation-rail",
+  "title": "Navigation Rail",
+  "description": "A narrow icon-only navigation column for app shells.",
+  "category": "navigation",
+  "type": "registry:ui",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "active"]
+}

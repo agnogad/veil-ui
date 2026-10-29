@@ -1,0 +1,10 @@
+{
+  "name": "app-shell",
+  "title": "App Shell",
+  "description": "A full-height application frame with a sidebar, header and main area.",
+  "category": "layout",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "header", "sidebar-width"]
+}

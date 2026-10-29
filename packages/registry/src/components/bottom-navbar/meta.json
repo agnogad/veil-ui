@@ -1,0 +1,10 @@
+{
+  "name": "bottom-navbar",
+  "title": "Bottom Navbar",
+  "description": "Alias of Bottom Navigation for mobile tab bars.",
+  "category": "navigation",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["bottom-navigation", "utils"],
+  "examples": ["basic"]
+}

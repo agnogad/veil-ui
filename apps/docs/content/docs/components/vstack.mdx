@@ -1,0 +1,84 @@
+---
+title: VStack
+description: A vertical Stack preset for form and content sections.
+---
+
+import {
+  VstackBasic,
+  VstackCentered,
+  VstackForm,
+} from "@veil-ui/registry/vstack/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add vstack" />
+
+## Usage
+
+```tsx
+import { VStack } from "@/components/ui/vstack";
+
+<VStack gap="sm">
+  <Input placeholder="Email" />
+  <Input placeholder="Password" type="password" />
+</VStack>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource.vstack.basic}>
+  <VstackBasic />
+</ComponentPreview>
+
+### Form
+
+<ComponentPreview code={demoSource.vstack.form}>
+  <VstackForm />
+</ComponentPreview>
+
+### Centered
+
+<ComponentPreview code={demoSource.vstack.centered}>
+  <VstackCentered />
+</ComponentPreview>
+
+## API reference
+
+`VStack` forwards every `Stack` prop except `direction`, which is fixed to
+`column`. Defaults: `gap="md"`, `align="stretch"` and `justify="start"`.
+
+<PropsTable
+  data={[
+    {
+      name: "gap",
+      type: '"none" | "xs" | "sm" | "md" | "lg" | "xl"',
+      default: '"md"',
+      description: "Space between children.",
+    },
+    {
+      name: "align",
+      type: '"start" | "center" | "end" | "stretch" | "baseline"',
+      default: '"stretch"',
+      description: "Cross-axis alignment.",
+    },
+    {
+      name: "justify",
+      type: '"start" | "center" | "end" | "between" | "around"',
+      default: '"start"',
+      description: "Main-axis distribution.",
+    },
+    {
+      name: "...props",
+      type: 'React.ComponentProps<"div">',
+      description: "All native div attributes.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Presentational flex wrapper; it adds no ARIA roles.
+- Install it together with `stack`, which holds the shared implementation.

@@ -1,0 +1,47 @@
+---
+title: Article Card
+description: An editorial preview with category, title, excerpt and byline.
+---
+
+import { ArticleCardBasic, ArticleCardWithImage } from "@veil-ui/registry/article-card/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add article-card" />
+
+## Usage
+
+```tsx
+import { ArticleCard } from "@/components/ui/article-card";
+
+<ArticleCard
+  title="A practical guide to design tokens"
+  author="Elena Ruiz"
+  date="Mar 4, 2026"
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["article-card"]["basic"]}>
+  <ArticleCardBasic />
+</ComponentPreview>
+
+### With image
+
+<ComponentPreview code={demoSource["article-card"]["with-image"]}>
+  <ArticleCardWithImage />
+</ComponentPreview>
+
+## API reference
+
+The package exports `article-card` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Content uses semantic HTML — lists are lists, tables are tables and metadata uses a definition list.
+- Interactive elements are real buttons or links with visible focus states.
+- Images require meaningful `alt` text; icons used decoratively are `aria-hidden`.

@@ -1,0 +1,43 @@
+---
+title: Chart Legend
+description: A standalone legend of labeled color swatches.
+---
+
+import { ChartLegendBasic, ChartLegendComputing } from "@veil-ui/registry/chart-legend/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add chart-legend" />
+
+## Usage
+
+```tsx
+import { ChartLegend } from "@/components/ui/chart-legend";
+
+<ChartLegend items={[{ label: "Revenue", color: "#6366f1" }, { label: "Costs" }]} />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["chart-legend"]["basic"]}>
+  <ChartLegendBasic />
+</ComponentPreview>
+
+### Computing
+
+<ComponentPreview code={demoSource["chart-legend"]["computing"]}>
+  <ChartLegendComputing />
+</ComponentPreview>
+
+## API reference
+
+The package exports `chart-legend` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Charts render inside a container with an explicit height so they stay responsive without layout shift.
+- Color is never the only encoding; pair charts with labels, summaries or a data table for critical information.
+- Tooltips and legends are rendered as HTML, so their text is available to assistive technology.

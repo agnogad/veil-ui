@@ -1,0 +1,53 @@
+---
+title: Switch
+description: A toggle for immediately applied settings, built on Radix Switch.
+---
+
+import { SwitchBasic, SwitchSizes, SwitchDisabled } from "@veil-ui/registry/switch/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add switch" />
+
+## Usage
+
+```tsx
+import { Switch } from "@/components/ui/switch";
+import { Label } from "@/components/ui/label";
+
+<div className="flex items-center gap-2">
+  <Switch id="airplane" />
+  <Label htmlFor="airplane">Airplane mode</Label>
+</div>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["switch"]["basic"]}>
+  <SwitchBasic />
+</ComponentPreview>
+
+### Sizes
+
+<ComponentPreview code={demoSource["switch"]["sizes"]}>
+  <SwitchSizes />
+</ComponentPreview>
+
+### Disabled
+
+<ComponentPreview code={demoSource["switch"]["disabled"]}>
+  <SwitchDisabled />
+</ComponentPreview>
+
+## API reference
+
+The package exports `switch` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- `Switch` exposes `role="switch"` and Space/Enter toggling; pair it with a `Label` for a discernible name.
+- Error and disabled states are exposed through native attributes and Radix data attributes.
+- Focus-visible rings follow the shared token system in both themes.

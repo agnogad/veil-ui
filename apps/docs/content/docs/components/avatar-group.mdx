@@ -1,0 +1,43 @@
+---
+title: Avatar Group
+description: Overlapping avatars with a count for the remaining people.
+---
+
+import { AvatarGroupBasic, AvatarGroupSmall } from "@veil-ui/registry/avatar-group/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add avatar-group" />
+
+## Usage
+
+```tsx
+import { AvatarGroup } from "@/components/ui/avatar-group";
+
+<AvatarGroup users={[{ name: "Ada Lovelace" }, { name: "Grace Hopper" }]} />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["avatar-group"]["basic"]}>
+  <AvatarGroupBasic />
+</ComponentPreview>
+
+### Small
+
+<ComponentPreview code={demoSource["avatar-group"]["small"]}>
+  <AvatarGroupSmall />
+</ComponentPreview>
+
+## API reference
+
+The package exports `avatar-group` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Media players use native `<video>` and `<audio>` controls with accessible labels.
+- Images require meaningful `alt` text; clickable thumbnails are buttons named `Play <title>`.
+- Decorative play overlays, durations and icons are hidden from assistive technology.

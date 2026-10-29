@@ -1,0 +1,24 @@
+{
+  "name": "landing-page",
+  "title": "Landing Page",
+  "description": "A complete marketing landing page composed from section blocks.",
+  "category": "pages",
+  "type": "registry:block",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "feature-grid",
+    "final-cta",
+    "hero-section",
+    "marketing-footer",
+    "stats-section",
+    "testimonials-section",
+    "trust-bar"
+  ],
+  "examples": [
+    "basic"
+  ]
+}

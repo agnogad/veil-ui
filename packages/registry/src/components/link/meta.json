@@ -1,0 +1,10 @@
+{
+  "name": "link",
+  "title": "Link",
+  "description": "Inline text links with underline styling and safe external defaults.",
+  "category": "typography",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "external", "muted"]
+}

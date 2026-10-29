@@ -1,0 +1,15 @@
+{
+  "name": "gauge-chart",
+  "title": "Gauge Chart",
+  "description": "A semicircular gauge showing a value against a maximum.",
+  "category": "charts",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "complete"
+  ]
+}

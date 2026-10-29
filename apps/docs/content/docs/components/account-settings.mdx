@@ -1,0 +1,43 @@
+---
+title: Account Settings
+description: Sectioned account settings for profile, security and notifications.
+---
+
+import { AccountSettingsBasic, AccountSettingsSecurity } from "@veil-ui/registry/account-settings/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add account-settings" />
+
+## Usage
+
+```tsx
+import { AccountSettings } from "@/components/ui/account-settings";
+
+<AccountSettings defaultSection="security" />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["account-settings"]["basic"]}>
+  <AccountSettingsBasic />
+</ComponentPreview>
+
+### Security
+
+<ComponentPreview code={demoSource["account-settings"]["security"]}>
+  <AccountSettingsSecurity />
+</ComponentPreview>
+
+## API reference
+
+The package exports `account-settings` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Forms use native inputs with associated labels and descriptive error text.
+- Submission states are announced through disabled controls and live error messaging.
+- Social providers are buttons with discernible provider names.

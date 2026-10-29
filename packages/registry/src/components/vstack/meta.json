@@ -1,0 +1,10 @@
+{
+  "name": "vstack",
+  "title": "VStack",
+  "description": "A vertical Stack preset for form and content sections.",
+  "category": "layout",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["stack", "utils"],
+  "examples": ["basic", "form", "centered"]
+}

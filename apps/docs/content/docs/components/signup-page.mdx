@@ -1,0 +1,37 @@
+---
+title: Signup Page
+description: A full signup page with account form and social providers.
+---
+
+import { SignupPageBasic } from "@veil-ui/registry/signup-page/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add signup-page" />
+
+## Usage
+
+```tsx
+import { SignupPage } from "@/components/ui/signup-page";
+
+<SignupPage />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["signup-page"]["basic"]}>
+  <SignupPageBasic />
+</ComponentPreview>
+
+## API reference
+
+The package exports `signup-page` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Page templates use semantic landmarks and a single page-level heading.
+- Navigation links and actions have discernible names and visible focus styles.
+- Decorative imagery uses empty alt text; content images carry descriptions.

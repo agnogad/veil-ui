@@ -1,0 +1,10 @@
+{
+  "name": "snackbar",
+  "title": "Snackbar",
+  "description": "Alias of Toast for brief, bottom-anchored messages.",
+  "category": "feedback",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["toast", "utils"],
+  "examples": ["basic"]
+}

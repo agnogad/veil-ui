@@ -1,0 +1,43 @@
+---
+title: Sparkline
+description: A compact inline trend line with an optional area fill.
+---
+
+import { SparklineBasic, SparklineArea } from "@veil-ui/registry/sparkline/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add sparkline" />
+
+## Usage
+
+```tsx
+import { Sparkline } from "@/components/ui/sparkline";
+
+<Sparkline data={[12, 18, 14, 22, 20, 27]} label="Weekly trend" />;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["sparkline"]["basic"]}>
+  <SparklineBasic />
+</ComponentPreview>
+
+### Area
+
+<ComponentPreview code={demoSource["sparkline"]["area"]}>
+  <SparklineArea />
+</ComponentPreview>
+
+## API reference
+
+The package exports `sparkline` along with its composable parts. It forwards standard attributes to its root element; see the examples above for the component-specific props.
+
+## Accessibility
+
+- Charts render inside a container with an explicit height so they stay responsive without layout shift.
+- Color is never the only encoding; pair charts with labels, summaries or a data table for critical information.
+- Tooltips and legends are rendered as HTML, so their text is available to assistive technology.

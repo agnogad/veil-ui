@@ -1,0 +1,13 @@
+{
+  "name": "switch",
+  "title": "Switch",
+  "description": "A toggle for immediately applied settings, built on Radix Switch.",
+  "category": "forms",
+  "type": "registry:ui",
+  "dependencies": [
+    "@radix-ui/react-switch",
+    "class-variance-authority"
+  ],
+  "registryDependencies": ["utils"],
+  "examples": ["basic", "sizes", "disabled"]
+}

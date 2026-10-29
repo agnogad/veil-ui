@@ -1,0 +1,10 @@
+{
+  "name": "toaster",
+  "title": "Toaster",
+  "description": "Alias entry for the Toast provider, hook and viewport.",
+  "category": "feedback",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": ["toast", "utils"],
+  "examples": ["basic"]
+}

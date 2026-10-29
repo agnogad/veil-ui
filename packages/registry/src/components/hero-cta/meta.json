@@ -1,0 +1,16 @@
+{
+  "name": "hero-cta",
+  "title": "Hero CTA",
+  "description": "A centered pair of hero call-to-action links with a note.",
+  "category": "marketing",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "button",
+    "utils"
+  ],
+  "examples": [
+    "basic",
+    "single"
+  ]
+}

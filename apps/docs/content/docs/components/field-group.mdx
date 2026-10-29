@@ -1,0 +1,86 @@
+---
+title: Field Group
+description: Groups related fields under a shared legend or heading.
+---
+
+import {
+  FieldGroupBasic,
+  FieldGroupDisabled,
+  FieldGroupRows,
+} from "@veil-ui/registry/field-group/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add field-group" />
+
+## Usage
+
+```tsx
+import {
+  FieldGroup,
+  FieldGroupLegend,
+  FieldGroupRow,
+} from "@/components/ui/field-group";
+
+<FieldGroup>
+  <FieldGroupLegend>Billing address</FieldGroupLegend>
+  <FieldGroupRow>{fields}</FieldGroupRow>
+</FieldGroup>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["field-group"].basic}>
+  <FieldGroupBasic />
+</ComponentPreview>
+
+### Rows
+
+<ComponentPreview code={demoSource["field-group"].rows}>
+  <FieldGroupRows />
+</ComponentPreview>
+
+### Disabled
+
+<ComponentPreview code={demoSource["field-group"].disabled}>
+  <FieldGroupDisabled />
+</ComponentPreview>
+
+`disabled` on a `<fieldset>` disables every nested control at once.
+
+## API reference
+
+### FieldGroup
+
+<PropsTable
+  data={[
+    {
+      name: "...props",
+      type: 'React.ComponentProps<"fieldset">',
+      description:
+        "All native fieldset attributes. Group-level disabled and form props apply to descendants.",
+    },
+  ]}
+/>
+
+### FieldGroupRow
+
+<PropsTable
+  data={[
+    {
+      name: "...props",
+      type: 'React.ComponentProps<"div">',
+      description: "Two-column grid from the sm breakpoint up.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- The `<legend>` names the whole fieldset, so screen readers announce the group
+  when entering any field inside it.
+- The fieldset resets the browser's default border and padding; spacing comes
+  from the grid.

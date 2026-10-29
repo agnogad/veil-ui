@@ -1,0 +1,29 @@
+{
+  "name": "admin-dashboard",
+  "title": "Admin Dashboard",
+  "description": "An operations console with resource metrics and deploy timeline.",
+  "category": "pages",
+  "type": "registry:block",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "app-shell",
+    "avatar",
+    "bar-chart",
+    "badge",
+    "button",
+    "card",
+    "logo",
+    "metric-card",
+    "navbar",
+    "progress",
+    "sidebar",
+    "status-indicator",
+    "timeline"
+  ],
+  "examples": [
+    "basic"
+  ]
+}

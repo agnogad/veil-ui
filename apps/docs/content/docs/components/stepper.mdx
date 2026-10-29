@@ -1,0 +1,71 @@
+---
+title: Stepper
+description: A progress indicator for multi-step flows.
+---
+
+import { StepperBasic, StepperVertical } from "@veil-ui/registry/stepper/demo";
+import demoSource from "@/lib/generated/demo-source.json";
+
+## Installation
+
+<InstallCommand command="npx veil-ui@latest add stepper" />
+
+## Usage
+
+```tsx
+import { Stepper } from "@/components/ui/stepper";
+
+<Stepper
+  current={2}
+  steps={[
+    { title: "Account", description: "Your details" },
+    { title: "Plan", description: "Choose a tier" },
+    { title: "Review" },
+  ]}
+/>;
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview code={demoSource["stepper"]["basic"]}>
+  <StepperBasic />
+</ComponentPreview>
+
+### Vertical
+
+<ComponentPreview code={demoSource["stepper"]["vertical"]}>
+  <StepperVertical />
+</ComponentPreview>
+
+## API reference
+
+<PropsTable
+  data={[
+    {
+      name: "steps",
+      type: "{ title; description? }[]",
+      required: true,
+      description: "Ordered step definitions.",
+    },
+    {
+      name: "current",
+      type: "number",
+      required: true,
+      description: "1-based index of the active step.",
+    },
+    {
+      name: "orientation",
+      type: '"horizontal" | "vertical"',
+      default: '"horizontal"',
+      description: "Layout direction.",
+    },
+  ]}
+/>
+
+## Accessibility
+
+- Renders an ordered list; the active step gets `aria-current="step"`.
+- Completed steps show a check icon and expose `data-state` for styling.
+- Descriptions provide extra context without changing the step label.
