@@ -15,6 +15,7 @@
     "@veil-ui/registry": "workspace:*",
     "@veil-ui/tokens": "workspace:*",
     "@veil-ui/utils": "workspace:*",
+    "flexsearch": "^0.8.212",
     "fumadocs-core": "16.17.9",
     "fumadocs-mdx": "15.4.10",
     "fumadocs-ui": "npm:@fumadocs/base-ui@16.17.9",

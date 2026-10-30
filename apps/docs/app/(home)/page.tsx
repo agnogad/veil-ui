@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@veil-ui/registry/card
 import { Input } from "@veil-ui/registry/input";
 
 import { InstallCommand } from "@/components/install-command";
+import { withBasePath } from "@/lib/shared";
 
 const gridStyle = {
   backgroundImage:
@@ -24,7 +25,7 @@ export default function HomePage() {
         />
         <div className="relative mx-auto flex max-w-5xl flex-col items-center px-6 py-24 text-center md:py-32">
           <a
-            href="/docs"
+            href={withBasePath("/docs")}
             className="mb-8 inline-flex items-center gap-2 rounded-full border bg-background/80 px-3 py-1 text-xs text-muted-foreground backdrop-blur transition-colors hover:text-foreground"
           >
             <span className="size-1.5 rounded-full bg-emerald-500" aria-hidden />
@@ -43,12 +44,12 @@ export default function HomePage() {
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <Button asChild size="lg">
-              <a href="/docs">
+              <a href={withBasePath("/docs")}>
                 Get started <ArrowRight />
               </a>
             </Button>
             <Button asChild size="lg" variant="outline">
-              <a href="/docs/components/button">Browse components</a>
+              <a href={withBasePath("/docs/components/button")}>Browse components</a>
             </Button>
           </div>
 
@@ -174,7 +175,7 @@ export default function HomePage() {
         <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-4 px-6 py-8 text-sm text-muted-foreground sm:flex-row">
           <span>© 2026 Veil UI · MIT</span>
           <div className="flex items-center gap-5">
-            <a className="transition-colors hover:text-foreground" href="/docs">
+            <a className="transition-colors hover:text-foreground" href={withBasePath("/docs")}>
               Docs
             </a>
             <a

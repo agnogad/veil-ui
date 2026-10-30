@@ -10,7 +10,10 @@ A monochrome component registry — 298 React components, 691 live examples, 30 
 and a growing Vue + HTML surface. One command writes readable source into your codebase. No
 wrapper package to upgrade, no runtime to fight.
 
+**Live docs:** https://agnogad.github.io/veil-ui/
+
 [![CI](https://img.shields.io/github/actions/workflow/status/agnogad/veil-ui/ci.yml?branch=main&style=flat-square&label=CI)](https://github.com/agnogad/veil-ui/actions/workflows/ci.yml)
+[![Docs](https://img.shields.io/badge/docs-live-0A0A0A?style=flat-square)](https://agnogad.github.io/veil-ui/)
 [![License](https://img.shields.io/badge/license-MIT-0A0A0A?style=flat-square)](./LICENSE)
 [![React](https://img.shields.io/badge/React-19-0A0A0A?style=flat-square&logo=react&logoColor=white)](https://react.dev)
 [![Vue](https://img.shields.io/badge/Vue-3.5-0A0A0A?style=flat-square&logo=vue.js&logoColor=white)](https://vuejs.org)

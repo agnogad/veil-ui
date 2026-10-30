@@ -4,6 +4,8 @@ import { GeistSans } from "geist/font/sans";
 
 import "./global.css";
 
+import { StaticSearchDialog } from "@/components/search";
+
 export const metadata = {
   title: {
     default: "Veil UI — Copy-paste components for React",
@@ -21,7 +23,9 @@ export default function Layout({ children }: LayoutProps<"/">) {
       suppressHydrationWarning
     >
       <body className="flex min-h-screen flex-col font-sans antialiased">
-        <RootProvider>{children}</RootProvider>
+        <RootProvider search={{ SearchDialog: StaticSearchDialog }}>
+          {children}
+        </RootProvider>
       </body>
     </html>
   );
