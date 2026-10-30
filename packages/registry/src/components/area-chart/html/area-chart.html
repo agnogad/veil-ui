@@ -1,0 +1,43 @@
+<!-- Area Chart — requires Veil UI tokens and Tailwind v4. -->
+<div data-slot="chart" class="w-full max-w-xl" style="height: 300px">
+  <svg viewBox="0 0 600 300" class="size-full" role="img" aria-label="Desktop and mobile sessions by hour">
+    <title>Desktop and mobile sessions by hour</title>
+<g stroke="var(--border)" stroke-dasharray="3 3">
+      <line x1="44" y1="8.0" x2="592" y2="8.0" />
+      <line x1="44" y1="75.0" x2="592" y2="75.0" />
+      <line x1="44" y1="142.0" x2="592" y2="142.0" />
+      <line x1="44" y1="209.0" x2="592" y2="209.0" />
+      <line x1="44" y1="276.0" x2="592" y2="276.0" />
+    </g>
+    <g>
+      <path d="M44.0,231.3 L181.0,186.7 L318.0,82.4 L455.0,48.9 L592.0,171.8 L592.0,276 L44,276 Z" fill="#6366f1" fill-opacity="0.18" />
+      <path d="M44.0,231.3 L181.0,186.7 L318.0,82.4 L455.0,48.9 L592.0,171.8" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      <circle cx="44.0" cy="231.3" r="2.5" fill="#6366f1" />
+      <circle cx="181.0" cy="186.7" r="2.5" fill="#6366f1" />
+      <circle cx="318.0" cy="82.4" r="2.5" fill="#6366f1" />
+      <circle cx="455.0" cy="48.9" r="2.5" fill="#6366f1" />
+      <circle cx="592.0" cy="171.8" r="2.5" fill="#6366f1" />
+    </g>
+    <g>
+      <path d="M44.0,246.2 L181.0,160.6 L318.0,48.9 L455.0,8.0 L592.0,130.8 L592.0,276 L44,276 Z" fill="#06b6d4" fill-opacity="0.18" />
+      <path d="M44.0,246.2 L181.0,160.6 L318.0,48.9 L455.0,8.0 L592.0,130.8" fill="none" stroke="#06b6d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      <circle cx="44.0" cy="246.2" r="2.5" fill="#06b6d4" />
+      <circle cx="181.0" cy="160.6" r="2.5" fill="#06b6d4" />
+      <circle cx="318.0" cy="48.9" r="2.5" fill="#06b6d4" />
+      <circle cx="455.0" cy="8.0" r="2.5" fill="#06b6d4" />
+      <circle cx="592.0" cy="130.8" r="2.5" fill="#06b6d4" />
+    </g>
+<g class="fill-muted-foreground" font-size="12" text-anchor="middle">
+      <text x="44.0" y="288">00</text>
+      <text x="181.0" y="288">06</text>
+      <text x="318.0" y="288">12</text>
+      <text x="455.0" y="288">18</text>
+      <text x="592.0" y="288">24</text>
+    </g>
+  </svg>
+</div>
+
+<ul class="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs">
+  <li class="flex items-center gap-1.5"><span class="size-2 rounded-[2px]" style="background-color: #6366f1" aria-hidden="true"></span><span class="text-muted-foreground">Desktop</span></li>
+  <li class="flex items-center gap-1.5"><span class="size-2 rounded-[2px]" style="background-color: #06b6d4" aria-hidden="true"></span><span class="text-muted-foreground">Mobile</span></li>
+</ul>

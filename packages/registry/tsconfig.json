@@ -1,7 +1,12 @@
 {
   "extends": "../../tooling/tsconfig/base.json",
   "compilerOptions": {
-    "types": ["vitest/globals"]
+    "types": ["vitest/globals"],
+    "baseUrl": ".",
+    "paths": {
+      "@/components/ui/*": ["src/components/*/vue/index.ts"],
+      "@/lib/utils": ["src/lib/utils.ts"]
+    }
   },
   "include": ["src", "scripts", "vitest.config.ts", "vitest.setup.ts"]
 }

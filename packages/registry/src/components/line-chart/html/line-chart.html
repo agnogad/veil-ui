@@ -1,0 +1,47 @@
+<!-- Line Chart — requires Veil UI tokens and Tailwind v4. -->
+<div data-slot="chart" class="w-full max-w-xl" style="height: 300px">
+  <svg viewBox="0 0 600 300" class="size-full" role="img" aria-label="Visitors and sign-ups by day">
+    <title>Visitors and sign-ups by day</title>
+<g stroke="var(--border)" stroke-dasharray="3 3">
+      <line x1="44" y1="8.0" x2="592" y2="8.0" />
+      <line x1="44" y1="75.0" x2="592" y2="75.0" />
+      <line x1="44" y1="142.0" x2="592" y2="142.0" />
+      <line x1="44" y1="209.0" x2="592" y2="209.0" />
+      <line x1="44" y1="276.0" x2="592" y2="276.0" />
+    </g>
+    <g>
+      <path d="M44.0,92.9 L135.3,66.1 L226.7,50.4 L318.0,57.1 L409.3,12.5 L500.7,106.3 L592.0,121.9" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      <circle cx="44.0" cy="92.9" r="2.5" fill="#6366f1" />
+      <circle cx="135.3" cy="66.1" r="2.5" fill="#6366f1" />
+      <circle cx="226.7" cy="50.4" r="2.5" fill="#6366f1" />
+      <circle cx="318.0" cy="57.1" r="2.5" fill="#6366f1" />
+      <circle cx="409.3" cy="12.5" r="2.5" fill="#6366f1" />
+      <circle cx="500.7" cy="106.3" r="2.5" fill="#6366f1" />
+      <circle cx="592.0" cy="121.9" r="2.5" fill="#6366f1" />
+    </g>
+    <g>
+      <path d="M44.0,254.6 L135.3,249.6 L226.7,246.5 L318.0,249.0 L409.3,240.7 L500.7,257.7 L592.0,259.5" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      <circle cx="44.0" cy="254.6" r="2.5" fill="#22c55e" />
+      <circle cx="135.3" cy="249.6" r="2.5" fill="#22c55e" />
+      <circle cx="226.7" cy="246.5" r="2.5" fill="#22c55e" />
+      <circle cx="318.0" cy="249.0" r="2.5" fill="#22c55e" />
+      <circle cx="409.3" cy="240.7" r="2.5" fill="#22c55e" />
+      <circle cx="500.7" cy="257.7" r="2.5" fill="#22c55e" />
+      <circle cx="592.0" cy="259.5" r="2.5" fill="#22c55e" />
+    </g>
+<g class="fill-muted-foreground" font-size="12" text-anchor="middle">
+      <text x="44.0" y="288">Mon</text>
+      <text x="135.3" y="288">Tue</text>
+      <text x="226.7" y="288">Wed</text>
+      <text x="318.0" y="288">Thu</text>
+      <text x="409.3" y="288">Fri</text>
+      <text x="500.7" y="288">Sat</text>
+      <text x="592.0" y="288">Sun</text>
+    </g>
+  </svg>
+</div>
+
+<ul class="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs">
+  <li class="flex items-center gap-1.5"><span class="size-2 rounded-[2px]" style="background-color: #6366f1" aria-hidden="true"></span><span class="text-muted-foreground">Visitors</span></li>
+  <li class="flex items-center gap-1.5"><span class="size-2 rounded-[2px]" style="background-color: #22c55e" aria-hidden="true"></span><span class="text-muted-foreground">Sign-ups</span></li>
+</ul>

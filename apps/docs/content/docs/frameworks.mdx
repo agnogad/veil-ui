@@ -12,12 +12,12 @@ folder and published in their own registry indexes.
 | Framework | Runtime | Registry | Components |
 | --- | --- | --- | --- |
 | React | React 19 + Radix UI | `/r` | 298 |
-| Vue | Vue 3.5 + Reka UI | `/r/vue` | 20, growing |
-| HTML | Tailwind v4 + native elements | `/r/html` | 20, growing |
+| Vue | Vue 3.5 + Reka UI | `/r/vue` | 298 |
+| HTML | Tailwind v4 + native elements | `/r/html` | 298 |
 
-Vue and HTML coverage grows in waves. Every component page lists the ports it
-has in a **Vue and plain HTML** section at the bottom, and the CLI tells you
-when a component is not available for your framework yet.
+Every component in the catalog has a Vue and a plain HTML port. Each component
+page lists the frameworks it supports in a **Vue and plain HTML** section at
+the bottom, and the CLI installs the matching files for your framework.
 
 ## Vue
 
@@ -140,13 +140,12 @@ npx veil-ui view card --framework html --code
 
 ## Ported components
 
-The first wave covers the primitives every other component builds on:
+All 298 components are ported. That includes the primitives (`accordion`,
+`alert`, `button`, `tabs`, `tooltip`, …), forms, data display, charts, media,
+navigation, overlays, typography, layout, mobile patterns, landing sections,
+auth flows and full page templates.
 
-`accordion`, `alert`, `alert-dialog`, `avatar`, `badge`, `button`, `card`,
-`checkbox`, `dropdown-menu`, `input`, `label`, `popover`, `progress`,
-`separator`, `skeleton`, `spinner`, `switch`, `tabs`, `textarea`, `tooltip`.
-
-New ports land in batches. The React registry stays the source of truth; Vue
-and HTML outputs are validated during `pnpm registry:build` (Vue SFCs are
-parsed with `@vue/compiler-sfc`, and cross-component imports are resolved
-against the Vue registry).
+New components are expected to ship with their Vue and HTML ports. The React
+registry stays the source of truth; Vue and HTML outputs are validated during
+`pnpm registry:build` (Vue SFCs are parsed with `@vue/compiler-sfc`, and
+cross-component imports are resolved against the Vue registry).

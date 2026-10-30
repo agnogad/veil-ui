@@ -117,13 +117,13 @@ Full reference: [`apps/docs/content/docs/cli.mdx`](apps/docs/content/docs/cli.md
 | Framework | Runtime | Registry | Components |
 | --- | --- | --- | ---: |
 | React | React 19 + Radix UI | `/r` | 298 |
-| Vue | Vue 3.5 + Reka UI | `/r/vue` | 20 |
-| HTML | Tailwind v4 + native elements | `/r/html` | 20 |
+| Vue | Vue 3.5 + Reka UI | `/r/vue` | 298 |
+| HTML | Tailwind v4 + native elements | `/r/html` | 298 |
 
-The Vue and HTML waves begin with the primitives everything else builds on:
-accordion, alert, alert dialog, avatar, badge, button, card, checkbox, dropdown menu, input,
-label, popover, progress, separator, skeleton, spinner, switch, tabs, textarea and tooltip.
-New ports land in batches, and every component page shows the frameworks it supports.
+Every component ships all three runtimes: the React implementation, a Vue port
+and a plain HTML snippet (plus a dependency-free sibling `.js` file when the
+snippet needs behaviour). New components are expected to land with their Vue
+and HTML ports in the same folder.
 
 React coverage by group:
 

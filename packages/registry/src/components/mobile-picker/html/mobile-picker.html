@@ -1,0 +1,37 @@
+<!-- Mobile Picker — requires Veil UI tokens, Tailwind v4 and the sibling mobile-picker.js script. -->
+<div class="flex w-full max-w-sm items-center justify-between gap-3 rounded-lg border p-4">
+  <div class="text-sm">
+    <p class="font-medium">Timezone</p>
+    <p data-picker-value class="text-xs text-muted-foreground">UTC</p>
+  </div>
+  <button type="button" data-picker-trigger class="inline-flex h-9 shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-md border border-input bg-background px-4 py-2 text-sm font-medium outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50">
+    Change
+  </button>
+</div>
+
+<div data-picker-sheet hidden class="fixed inset-0 z-50 flex items-end justify-center bg-black/40 p-0 sm:items-center sm:p-6">
+  <div role="dialog" aria-modal="true" aria-labelledby="picker-title" class="w-full max-w-sm rounded-t-xl border-t bg-background p-5 shadow-lg sm:rounded-xl sm:border">
+    <div class="grid gap-1 pb-3">
+      <h2 id="picker-title" class="text-base font-semibold">Select timezone</h2>
+      <p class="text-sm text-muted-foreground">Used for schedules and reports.</p>
+    </div>
+    <div role="radiogroup" aria-label="Select timezone" class="grid gap-1">
+      <button type="button" role="radio" aria-checked="true" data-picker-option data-label="UTC" class="flex items-center gap-3 rounded-lg bg-accent/60 px-3 py-3 text-left text-sm font-medium">
+        <span class="min-w-0 flex-1"><span class="block truncate">UTC</span><span class="block truncate text-xs font-normal text-muted-foreground">Coordinated Universal Time</span></span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4 text-primary" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
+      </button>
+      <button type="button" role="radio" aria-checked="false" data-picker-option data-label="Berlin" class="flex items-center gap-3 rounded-lg px-3 py-3 text-left text-sm hover:bg-accent">
+        <span class="min-w-0 flex-1"><span class="block truncate">Berlin</span><span class="block truncate text-xs text-muted-foreground">Central European Time</span></span>
+        <svg class="hidden size-4 text-primary" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
+      </button>
+      <button type="button" role="radio" aria-checked="false" data-picker-option data-label="New York" class="flex items-center gap-3 rounded-lg px-3 py-3 text-left text-sm hover:bg-accent">
+        <span class="min-w-0 flex-1"><span class="block truncate">New York</span><span class="block truncate text-xs text-muted-foreground">Eastern Time</span></span>
+        <svg class="hidden size-4 text-primary" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
+      </button>
+      <button type="button" role="radio" aria-checked="false" data-picker-option data-label="Tokyo" class="flex items-center gap-3 rounded-lg px-3 py-3 text-left text-sm hover:bg-accent">
+        <span class="min-w-0 flex-1"><span class="block truncate">Tokyo</span><span class="block truncate text-xs text-muted-foreground">Japan Standard Time</span></span>
+        <svg class="hidden size-4 text-primary" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
+      </button>
+    </div>
+  </div>
+</div>

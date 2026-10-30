@@ -1,0 +1,14 @@
+<!-- Split Button — requires Veil UI tokens, Tailwind v4 and the sibling split-button.js script. -->
+<div data-slot="split-button" class="relative inline-flex items-stretch">
+  <button type="button" data-slot="button" class="inline-flex h-9 shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-md rounded-r-none bg-primary px-4 py-2 text-sm font-medium text-primary-foreground outline-none transition-colors hover:bg-primary/90 focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50">
+    Deploy
+  </button>
+  <button type="button" data-slot="button" data-split-trigger aria-label="More Deploy options" aria-haspopup="menu" aria-expanded="false" class="inline-flex h-9 shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-md rounded-l-none border-l border-primary-foreground/20 bg-primary px-2 py-2 text-sm font-medium text-primary-foreground outline-none transition-colors hover:bg-primary/90 focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+  </button>
+  <div data-split-menu role="menu" aria-label="Deploy options" hidden class="absolute right-0 top-full z-50 mt-1 min-w-48 rounded-md border bg-popover p-1 text-popover-foreground shadow-md">
+    <button type="button" role="menuitem" class="flex w-full items-center rounded-sm px-2 py-1.5 text-left text-sm outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:bg-accent focus-visible:text-accent-foreground">Deploy to production</button>
+    <button type="button" role="menuitem" class="flex w-full items-center rounded-sm px-2 py-1.5 text-left text-sm outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:bg-accent focus-visible:text-accent-foreground">Deploy to preview</button>
+    <button type="button" role="menuitem" class="flex w-full items-center rounded-sm px-2 py-1.5 text-left text-sm outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:bg-accent focus-visible:text-accent-foreground">Redeploy previous build</button>
+  </div>
+</div>
